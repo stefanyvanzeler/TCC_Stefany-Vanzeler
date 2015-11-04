@@ -1,0 +1,160 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+\autor{Walter Andrés Vermehren Valenzuela}
+\titulo{título }
+\orientador[Orientador:\vspace{1mm}\\ ]{José Sérgio da Rocha Neto }
+\coorientador[Co-orientador:\vspace{1mm}\\ ]{Antonio Marcus Nogueira Lima }
+\comentario{texto com a natureza e o objetivo do trabalho }
+\instituicao{Universidade Federal de Campina Grande \par Centro de Engenharia Elétrica e informática \vskip 10mm{ Programa de Pós-Graduação em Engenharia Elétrica}}
+\local{Campina Grande }
+\data{data (ano do depósito) }
+% this command was inserted by lyx2lyx
+\usepackage{multirow}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options false
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+CONCLUSÕES
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:conclusões"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Comparando-se todos os testes com controladores PI e PID, tem-se que o considera
+do melhor método de sintonia e controlador, tendo como critério o consumo
+ de energia, é o Ziegler-Nichols com controlador PI, uma vez que teve o
+ regime transi Numericamente, o seu consumo é maior que, por exemplo, aos
+ métodos IAE, ISE e ITAE com controlador PID.
+ Porém, a diferença é pequena, cerca de 0,002 Wh a mais, e a taxa de variação
+ média com relação ao valor de velocidade esperado no regime permanente
+ é a menor de todos os testes.
+ 
+\end_layout
+
+\begin_layout Standard
+Com exceção do teste com controlador PI e método de sintonia Ziegler-Nichols,
+ todos os testes com controlador PID mostraram-se mais eficiente que os
+ testes com controlador PI.
+ Por isso, como segundo melhor tem-se o controlador PID com método de sintonia
+ ISE.
+\end_layout
+
+\begin_layout Section
+Trabalhos futuros
+\end_layout
+
+\begin_layout Standard
+Tem-se como trabalhos futuros 
+\end_layout
+
+\begin_layout Itemize
+Verificação da autonomia da bateria, quando o controlador PID é sintonizado
+ de maneiras diferentes;
+\end_layout
+
+\begin_layout Itemize
+Realização dos testes em ambientes no qual o protótipo esteja sujeito a
+ disturbios previamente estabelecidos, como uma rampa ou um peso extra;
+\end_layout
+
+\begin_layout Itemize
+Testes de consumo de energia com mais métodos de sintonia de controladores
+ PID;
+\end_layout
+
+\begin_layout Itemize
+Testes de consumo de energia com outros tipos de controladores, como os
+ que envolvem controle robusto, inteligência artificial e controle adaptativo;
+\end_layout
+
+\begin_layout Itemize
+Realizar os testes com diferentes tipos de sistemas (térmicos, controle
+ de nível, entre outros), verificando-se se a diferença de consumo de energia
+ entre os diferentes métodos de sintonia de controlador PID também existe
+ nesses sistemas;
+\end_layout
+
+\begin_layout Itemize
+Melhorar a 
+\shape italic
+interface 
+\shape default
+do sistema supervirsório, exibindo as informações em diferentes janelas.
+\end_layout
+
+\end_body
+\end_document

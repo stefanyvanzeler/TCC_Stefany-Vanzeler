@@ -1,0 +1,8328 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+%\usepackage{tabela-simbolos}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+REFERENCIAL TEÓRICO
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 18pt
+\end_inset
+
+Neste capítulo será realizada uma breve abordagem teórica dos seguintes
+ assuntos, que são necessários para o melhor desenvolvimento do presente
+ trabalho: controlador PID e seus métodos de sintonia, motores de corrente
+ contínua e sua modelagem, identificação de sistemas, sistemas microcontrolados
+ e conhecimentos referentes a circuítos elétricos (PWM, potência e consumo
+ de energia).
+ 
+\end_layout
+
+\begin_layout Section
+Classificação das Redes em relação a Pirâmide de Automação
+\end_layout
+
+\begin_layout Standard
+A pirâmide da automação industrial é um diagrama que representa, de forma
+ hierárquica, os diferentes níveis de controle e trabalho em automação industria
+l através de cinco níveis.
+ Paralelamente aos níveis da automação, as redes podem ser classificadas
+ em 
+\shape italic
+sensorbus, devicebus, fieldbus 
+\shape default
+e 
+\shape italic
+databus
+\shape default
+, de acordo com o volume de dados a ser transmitido, tempo de resposta e
+ distancia a ser percorrida como mostrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Pirâmide-da-Automação"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pirâmide da Automação
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Pirâmide-da-Automação"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename piramidedaautomacao.jpg
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:[o próprio autor]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+http://www.feng.pucrs.br/professores/tergolina/Automacao_e_Controle/APRESENTACAO_-_
+Aula_01_A_Engenharia_de_Automacao.pdf
+\end_layout
+
+\begin_layout Plain Layout
+https://www.academia.edu/4785953/Aula_4_-_Redes_Industriais
+\end_layout
+
+\begin_layout Plain Layout
+http://overpof.free.fr/schneider/CAN%20&%20CANopen/CANopen/Pr%E9sentations/Trainin
+g%20I/Glossaire/En/Com_Glossary_en.pdf
+\end_layout
+
+\begin_layout Plain Layout
+http://www.ppgel.net.br/ebento/Disciplinas/automacao/Aula_x23.pdf
+\end_layout
+
+\begin_layout Plain Layout
+http://lab.kss.aei.polsl.pl/lab_mats/lab200_1394538219.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Nível 
+\series bold
+de Campo:
+\series default
+ É o nível das máquinas, dispositivos e componentes (chão-de-fábrica), constitui
+do por sensores e atuadores.
+\end_layout
+
+\begin_layout Description
+Nível 
+\series bold
+de Controle: 
+\series default
+Nível onde se encontram os equipamentos que executam o controle automático
+ da planta, ou seja, controladores digitais, dinâmicos e lógicos, e de algum
+ tipo de supervisão associada ao processo.
+ Aqui se encontram concentradores de informações sobre o Nível 1 e as Interfaces
+ Homem-Máquina (IHM).
+\end_layout
+
+\begin_layout Description
+Nível 
+\series bold
+de Supervisão:
+\series default
+ Permite a supervisao e controle do processo produtivo da planta.
+ Constituído por banco de dados, com informação sobre índices de qualidade
+ da produção, relatórios e estatísticas de processo, índices de produtividade,
+ algoritmos de otimização da operação produtiva, sendo constituído por Sistemas
+ de Supervisão e Aquisição de Dados (SCADA), interface homem-máquina (IHM)
+ e otimizadores de processo dentro do conceito de APC (
+\shape italic
+Advanced Process Control 
+\shape default
+).
+\end_layout
+
+\begin_layout Description
+Nível 
+\series bold
+de Gerenciamento da Planta:
+\series default
+ Nível da programação e planejamento da produção, realizando o controle
+ e a logística dos suprimentos, como por exemplo: MES (
+\shape italic
+Manufacturing Execution System
+\shape default
+), PIMS (
+\shape italic
+Process Information Management System
+\shape default
+), APS( 
+\shape italic
+Advanced Planning and Scheduling 
+\shape default
+), LIMS (
+\shape italic
+Lab Information System
+\shape default
+), Sistemas de Manutenção (
+\shape italic
+MaintenanceManagement System
+\shape default
+), Sistema de Gestão de Ativos (
+\shape italic
+Asset Management System
+\shape default
+).
+\end_layout
+
+\begin_layout Description
+Nível 
+\series bold
+de Gerenciamento Corporativo: 
+\series default
+Administração dos recursos da empresa.
+ Neste nível encontram-se os softwares para gestão de vendas e financeira.
+ 
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Níveis-de-redes"
+
+\end_inset
+
+ ilustra os tipos de redes atuais de acordo com os tipos de controle.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Níveis de redes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Níveis-de-redes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename tiposdecontrole.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:[o próprio autor]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+Sensorbus
+\shape default
+: comunica com sensores analógicos e discretos e atuadores.
+ As mensagens de dados possuem tamanho de alguns bits, a frequência de comunicaç
+ão dura de dezenas de milisegundos sobre dezenas de metros com concepção
+ determinística.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+Devicebus
+\shape default
+: faz a comunicacao com periféricos controlados.
+ As mensagens de dados são de bytes ou words, a frequência de comunicação
+ tem uma duração de dezenas de milisegundos sobre centenas de metros com
+ concepção determinística.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+Fieldbus
+\shape default
+: faz a integração entre unidades inteligentes.
+ As Mensagens de dados de sao de words ou blocos, a frequência de comunicação
+ tem uma duração de centenas de milisegundos sobre centenas de metros.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+Databus
+\shape default
+: efetua transferência maciça de dados entre equipamentos.
+ As mensagens de dados sao de blocos, a frequência de comunicação tem uma
+ duração de segundos ou minutos sobre grandes distâncias (LAN / WAN / Internet).
+\end_layout
+
+\begin_layout Section
+Classificação das redes de computadores quanto à proximidade geográfica
+\end_layout
+
+\begin_layout Standard
+As redes podem ser classificadas de acordo com seu tamanho.
+ O seu tamanho pode ser expressa pela área geográfica que ocupam e o número
+ de computadores que fazem parte da rede.
+ Assim podemos classificar as redes em: PAN (
+\shape italic
+personal area network
+\shape default
+), LAN (l
+\shape italic
+ocal area network
+\shape default
+) , MAN (
+\shape italic
+metropolitan area network
+\shape default
+) e WAN (
+\shape italic
+wide area network
+\shape default
+) até chegar à rede das redes, a internet, de acordo com a Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Classificacao-das-redes"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Classificacao das redes quanto à proximidade geográfica
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Classificacao-das-redes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Distancia entre 
+\shape italic
+hosts
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Área de Abrangência
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Classificação
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Metro quadrado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PAN
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quarto
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LAN
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100 m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prédio
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 Km
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Campus
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10 Km
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cidade
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MAN
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100 Km
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+País
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+WAN
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.000 Km
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Continente
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.000 Km
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Planeta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Internet
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Tanenbaum
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Classificação das redes quanto à topologia
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Classificação-das-redes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Topologia da rede é a definição da maneira como as diferentes estações serão
+ interligadas.
+ Estão relacionadas à forma como o canal de comunicação será alocado, ou
+ seja, através de canais ponto-a-ponto ou canais de difusão.
+\end_layout
+
+\begin_layout Subsection
+Topologias com Canais Ponto-a-Ponto
+\end_layout
+
+\begin_layout Standard
+A rede é composta de diversas linhas de comunicação, cada linha sendo associada
+ à conexão de um par de estação
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Topologias-ponto-a-ponto:-estrel"
+
+\end_inset
+
+.
+ Também conhecida com 
+\shape italic
+store-and-forward
+\shape default
+.
+ As redes ponto-a-ponto podem ser concebidas segundo diferentes topologias,
+ simétricas (redes locais) e assimétricas (redes de longa distância).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Topologias-ponto-a-ponto:-estrel"
+
+\end_inset
+
+Topologias ponto-a-ponto: estrela, anel, malha regular, malha irregular
+ e árvore
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Topologias ponto-a-ponto.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Topologias das Redes em Difusão
+\end_layout
+
+\begin_layout Standard
+Redes em difusão 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Topologias-das-redes"
+
+\end_inset
+
+são caracterizadas pelo compartilhamento por todas as estações, de um único
+ canal de comunicação.
+ Neste caso, as mensagens enviadas por uma estação são recebidas por todas
+ as demais conectadas ao suporte de transmissão, sendo que um campo de endereço
+ contido na mensagem permite identificar o destinatário.
+ 
+\end_layout
+
+\begin_layout Standard
+Nas redes em difusão existe a possibilidade de uma estação enviar uma mensagem
+ às demais estações da rede, utilizando um código de endereçamento especial,
+ denominado 
+\shape italic
+broadcasting
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Na transmissão para um subconjunto de estações, o código de endereçamento
+ especial é denominado 
+\shape italic
+multicasting
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Topologias-das-redes"
+
+\end_inset
+
+Topologias das redes em difusão: barramento, satélite e anel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Topologias das redes em difusão.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tipos de comunicação serial
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Tipos-de-comunicação"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O tipo de comunicação define a conexão entre os equipamentos e a maneira
+ como é feita a troca das informações no que se diz respeito ao caminho
+ percorrido pelos dados.
+\end_layout
+
+\begin_layout Subsection
+Ponto-a-Ponto
+\end_layout
+
+\begin_layout Standard
+Ponto-a-ponto (
+\shape italic
+Peer-to-peer
+\shape default
+) 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comunicação-serial-ponto-a-ponto"
+
+\end_inset
+
+é uma arquitetura de redes onde cada um dos pontos ou nós da rede (host)
+ funciona tanto como cliente quanto como servidor, permitindo compartilhamentos
+ de serviços e dados sem a necessidade de um servidor central.
+ Sendo amplamente empregada em equipamentos autônomos, que normalmente realizam
+ suas tarefas sozinhos, mas necessitam de configuração ou dados para manipulação
+, como exemplo podemos citar: um computador e o mouse.
+ No exemplo abaixo, a comunicação ponto a ponto é utilizada por um sensor
+ que envia dados para um controlador e um analisador.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comunicação-serial-ponto-a-ponto"
+
+\end_inset
+
+Comunicação serial ponto-a-ponto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Comunicacao serial ponto-a-ponto.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Mestre-Escravo
+\end_layout
+
+\begin_layout Standard
+A comunicação mestre - escravo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comunicação-serial-mestre"
+
+\end_inset
+
+, amplamente utilizada, possui um mestre para gerenciar a comunicação, e
+ tem como função solicitar e receber os dados e comandos.
+ Os outros participantes da rede conhecidos como escravos, que nunca iniciam
+ uma comunicação e respondem com dados para o mestre, que mantém uma lista
+ de todos os escravos presentes na rede e rotineiramente solicita para cada
+ escravo a troca de dados.
+ O termo mestre é compatível com os termos cliente e 
+\shape italic
+scanner
+\shape default
+, o termo escravo é compatível com os termos servidor e adaptador.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comunicação-serial-mestre"
+
+\end_inset
+
+Comunicação serial mestre - escravo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Comunicacao serial mestre - escravo.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Multimestre
+\end_layout
+
+\begin_layout Standard
+Oferece a possibilidade de mais de um mestre utilizar o mesmo meio físico,
+ mas na prática poucos protocolos permitem a troca de dados de um escravo
+ para os dois mestres, sendo comum neste tipo de configuração que cada mestre
+ possua seu conjunto de escravos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comunicação-serial-multimestre"
+
+\end_inset
+
+Comunicação serial multimestre
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Comunicacao serial multimestre.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Produtor-Consumidor
+\end_layout
+
+\begin_layout Standard
+As redes produtor-consumidor suportam os três métodos de comunicação expostos
+ anteriormente: ponto-a-ponto, mestre-escravo e multimestre.
+ Do ponto de vista prático, esta forma de comunicação é mais flexível, pois
+ dependendo da natureza da informação a ser trocada pode-se optar pela forma
+ mais adequada, otimizando o barramento no que diz respeito ao trâfego.
+ A rede 
+\shape italic
+DeviceNet
+\shape default
+ é um exemplo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Produtor-Consumidor"
+
+\end_inset
+
+Produtor-Consumidor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Comunicacao serial produtor-consumidor.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Modelo OSI
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:ModeloOSI"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para reduzir a complexidade do projeto, a maioria das redes é organizada
+ como uma pilha de camadas ou níveis, colocadas umas sobre as outras.
+ O número de camadas, o nome, o conteúdo e a função de cada camada diferem
+ de uma rede para outra.
+ A ideia fundamental é que um determinado item de software ou hardware (camada
+ inferior) fornece um serviço a seus usuários (camada superior), mas mantém
+ ocultos os detalhes de seu estado interno e de seus algoritmos.
+\end_layout
+
+\begin_layout Standard
+A camada n de uma máquina se comunica com a camada n de outra máquina.
+ Coletivamente, as regras e convenções usadas nesse diálogo são conhecidas
+ como o protocolo da camada n.
+ Assim um serviço é um conjunto de primitivas (operações) que uma camada
+ oferece à camada situada acima dela e o protocolo é um conjunto de regras
+ que controla o formato e o significado dos pacotes ou mensagens que são
+ trocadas pelas entidades pares contidas em uma camada (TANENBAUM, 2003).
+\end_layout
+
+\begin_layout Standard
+Entre cada par de camadas adjacentes existe uma interface.
+ A interface define as operações e os serviços que a camada inferior tem
+ a oferecer à camada que se encontra acima dela (TANENBAUM, 2003).
+\end_layout
+
+\begin_layout Standard
+Um conjunto de camadas e protocolos é chamado arquitetura de rede.
+ Uma lista de protocolos usados por um determinado sistema, um protocolo
+ por camada, é chamada pilha de protocolos (TANENBAUM, 2003).
+\end_layout
+
+\begin_layout Standard
+O modelo OSI se baseia em uma proposta desenvolvida pela ISO (
+\shape italic
+International Standards Organization
+\shape default
+) como um primeiro passo em direção à padronização internacional dos protocolos
+ empregados nas diversas camadas.
+ O modelo é chamado Modelo de Referência ISO OSI (
+\shape italic
+Open Systems Interconnection
+\shape default
+), pois ele trata da interconexão de sistemas abertos — ou seja, sistemas
+ que estão abertos à comunicação com outros sistemas (TANENBAUM, 2003).
+\end_layout
+
+\begin_layout Standard
+O modelo OSI define sete camadas conforme descrito na tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:-Modelo-OSI"
+
+\end_inset
+
+: camada física, camada de enlace, camada de rede, camada de transporte,
+ camada de sessão, camada de apresentação e camada de aplicação.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:-Modelo-OSI"
+
+\end_inset
+
+ Modelo OSI
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="30" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Camada OSI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Funções
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exemplos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aplicação
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interface entre rede e 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Telnet, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+software de aplicação.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HTTP, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+WWW-Browsers
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Apresentação
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Como os dados sao apresentados, 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+JPEG, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formatação de dados e conversão 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ASCII
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+de caracteres e códigos, criptografia.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sessão
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negociação e estabelecimento 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+OS, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+de conexão com outro nó; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aplicações 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administração e sincronização de diálogos 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+de acesso.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+entre dois processos de aplicação.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transporte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entrega de dados com ou sem confiabilidade; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TCP, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multiplexação;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UDP, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controle de fluxo.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SPX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Endereçamento lógico, 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IP, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ o qual roteadores utilizam
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IPX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+para determinação da rota dos dados; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controle de fluxo.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enlace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Combinação de bits em bytes, 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ethernet 802.3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e bytes em quadros (frames);
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/ 802.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Acesso ao meio usando o endereço MAC; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sincronização; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controle de fluxo;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ Confiabilidade de dados.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Física
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transmissão de bits entre os dispositivos; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+EIA/TIA-232, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Especificação de voltagem 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+V.35
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+para representar 0 e 1;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Velocidade de transmissão;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Número de pinos do conector;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Diâmetro dos condutores.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Legend
+Fonte: o próprio autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na realidade, os dados não são transferidos diretamente da camada n de uma
+ máquina para a camada n de outra máquina.
+ Em vez disso, cada camada transfere os dados e as informações de controle
+ para a camada imediatamente abaixo dela, até ser alcançada a camada mais
+ baixa.
+ Abaixo da camada 1 encontra-se o meio físico através do qual se dá a comunicaçã
+o propriamente dita.
+ Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-de-Referência"
+
+\end_inset
+
+, a comunicação virtual é mostrada por linhas pontilhadas e a comunicação
+ física por linhas contínuas (TANENBAUM, 2003).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Modelo-de-Referência"
+
+\end_inset
+
+Modelo de Referência OSI
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename modeloOsi2.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+APDU Aplication Protocol Data unit
+\end_layout
+
+\begin_layout Plain Layout
+PPDU Presentation Protocol Data unit
+\end_layout
+
+\begin_layout Plain Layout
+SPDU Section Protocol Data unit
+\end_layout
+
+\begin_layout Plain Layout
+TPDU Transport Protocol Data unit (SEGMENTO TCP )
+\end_layout
+
+\begin_layout Plain Layout
+Pacote (DATAGRAMA IP )
+\end_layout
+
+\begin_layout Plain Layout
+Quadro
+\end_layout
+
+\begin_layout Plain Layout
+Bit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Barramento CAN
+\end_layout
+
+\begin_layout Subsection
+Definição
+\end_layout
+
+\begin_layout Standard
+O Barramento CAN (
+\shape italic
+Controller Area Network
+\shape default
+) é um sistema de barramento serial projetado para facilitar a comunicação
+ entre dispositivos, como sensores e atuadores, que diretamente interagem
+ com o processo, sendo por isso considerado um barramento de campo.
+ Ele foi desenvolvido pela empresa alemã Robert BOSCH e disponibilizado
+ em meados dos anos 80, baseado na ISO 11898, devido a crescente necessidade
+ de se interligar os componentes eletrônicos dos veículos modernos.
+ Em decorrência da sua normalização e baixo custo de produção, tornou-se
+ amplamente utilizado na indústria.
+ O CAN consiste basicamente de um padrão de hardware com diferentes tipos
+ de quadros (
+\shape italic
+frames
+\shape default
+), regras de decisão para a transmissão de mensagens e métodos para detecção
+ e correção de erros.
+ Existem três principais tipos de redes CAN em uso, conforme tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Redes-CAN"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Redes CAN
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Redes-CAN"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nomenclatura
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Padrão
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Taxa Máxima
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Identificador
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CAN baixa velocidade
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ISO 11898-3
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+125kps
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11 bits
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versão 2.0A Alta velocidade 
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ISO 11898-2
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 Mbps
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11 bits
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(formato padrão) 
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CAN FD > 1 Mbps
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versão 2.0B Alta velocidade 
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ISO 11898-2
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 Mbps
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+29 bits
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ (formato estendido)
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CAN FD > 1 Mbps
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: o própro autor
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+CAN com taxa de transmissão variável (
+\shape italic
+Flexible Data-Rate
+\shape default
+, CAN FD) é uma extensão para o protocolo CAN original, conforme especificado
+ na norma ISO 11898-1, que responde a necessidade do aumento de largura
+ de banda nas redes automotivas.
+\end_layout
+
+\begin_layout Standard
+Uma rede pode padrão está limitada a 1 Mbps, com uma carga máxima de 8 bytes
+ por quadro.
+ CAN FD aumenta a taxa efetiva de dados, permitindo campos de dados mais
+ longos - até 64 bytes por quadro - sem alterar a camada física CAN.
+ CAN FD também mantém normal a arbitragem do barramento CAN, aumentando
+ a taxa de transmissão de bits somente a partir do final do processo de
+ arbitragem e retorno à taxa de transmissão inicial depois do delimitador
+ do CRC no quadro, antes que os nós receptores no barramento transmitam
+ o 
+\shape italic
+acknowledgement
+\shape default
+ bit (confirmação de recebimento do quadro).
+\end_layout
+
+\begin_layout Subsection
+Características
+\end_layout
+
+\begin_layout Itemize
+Topologia linear
+\end_layout
+
+\begin_layout Itemize
+Atribuição de prioridade às mensagens; 
+\end_layout
+
+\begin_layout Itemize
+Multimestre, com arbitragem de barramento não destrutiva
+\end_layout
+
+\begin_layout Itemize
+Método de detecção de erros sofisticado e mecanismos de gerenciamento de
+ erros 
+\end_layout
+
+\begin_layout Itemize
+Consistência dos dados 
+\end_layout
+
+\begin_layout Itemize
+Curto tempos de latência
+\end_layout
+
+\begin_layout Itemize
+Hardware padrão.
+\end_layout
+
+\begin_layout Itemize
+Flexibilidade de configuração 
+\end_layout
+
+\begin_layout Itemize
+Regime 
+\shape italic
+multicast 
+\shape default
+devido ao filtro de mensagens
+\end_layout
+
+\begin_layout Itemize
+Distinção entre erros temporários e erros permanentes dos nós 
+\end_layout
+
+\begin_layout Itemize
+Baixo tempo de recuperação de erro 
+\end_layout
+
+\begin_layout Itemize
+Considerável imunidade ao ruído; 
+\end_layout
+
+\begin_layout Itemize
+Simplicidade; 
+\end_layout
+
+\begin_layout Itemize
+Retransmissão automática de mensagens “em espera” logo que o barramento
+ esteja livre; 
+\end_layout
+
+\begin_layout Subsection
+A arquitetura CAN
+\end_layout
+
+\begin_layout Standard
+A arquitetura de rede CAN define duas camadas das sete do modelo OSI, a
+ camada de enlace (
+\shape italic
+data-link
+\shape default
+) e a camada física 
+\shape italic
+(physical-layer
+\shape default
+) conforme Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Arquitetura-CAN"
+
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+Utilizando o protocolo CAN, a ligação entre o nível físico (nível 1 OSI)
+ e o de aplicação (nível 7 OSI) é feita utilizando vários protocolos emergentes
+ ou através de software desenvolvido pelo usuário.
+ O exemplo de um protocolo, baseado em CAN, padrão industrial ao nível de
+ aplicação é o DeviceNet da Allen-Bradley o qual é utilizado para ligar
+ em rede controladores lógicos programáveis e sensores inteligentes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquitetura CAN
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Arquitetura-CAN"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="10">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modelo OSI
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Padrão ISO
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Implementação
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aplicação
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CAN Kingdom, NMEA 2000, 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeviceNet, ISO 11783
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Microcontrolador
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CANOpen, SAE J1939, 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DIN 9684, TTCAN, SDS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enlace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LLC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ISO 11988-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controlador
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controlador
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MAC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fisica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PLS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CAN
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CAN FD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PMA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ISO 11898-2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transceptor CAN
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PMS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ISO 11988-3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meio de transmissão 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MDI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CIA-DS102
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Conectores
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: o própro autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+http://www.webopedia.com/TERM/L/Logical_Link_Control_layer.html
+\end_layout
+
+\begin_layout Plain Layout
+http://de.slideshare.net/pedrocampanacueto/can-bus-communication-protocol
+\end_layout
+
+\begin_layout Plain Layout
+http://www.can-cia.org/can-knowledge/can/can-data-link-layers/
+\end_layout
+
+\begin_layout Plain Layout
+https://elearning.vector.com/index.php?seite=vl_can_introduction_en&root=378422&wbt
+_ls_kapitel_id=489553&wbt_ls_seite_id=489557&d=yes
+\end_layout
+
+\begin_layout Plain Layout
+http://dce.felk.cvut.cz/hanzalek/_private/ref/canphy.pdf
+\end_layout
+
+\begin_layout Plain Layout
+http://ww1.microchip.com/downloads/en/AppNotes/00228a.pdf
+\end_layout
+
+\begin_layout Plain Layout
+http://cache.freescale.com/files/microcontrollers/doc/data_sheet/BCANPSV2.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+LLC 
+\shape italic
+(Logical Link Control)
+\shape default
+ gerencia o controle e notificação de sobrecarga (
+\shape italic
+overload
+\shape default
+), o filtro de mensagens e funções de gestão de recuperação.
+\end_layout
+
+\begin_layout Standard
+MAC 
+\shape italic
+(Medium Access Control)
+\shape default
+ fornece mecanismos de controle de acesso ao canal, o que torna possível
+ vários nós se comunicarem dentro de uma rede de acesso múltiplo em um barrament
+o: encapsulamento de dados / desencapsulamento, detecção e controle de erros,
+ bit 
+\shape italic
+stuffing/destuffing
+\shape default
+ e funções de serialização e desserialização.
+\end_layout
+
+\begin_layout Standard
+PLS (
+\shape italic
+Physical Layer Signalling
+\shape default
+) responsável pela codificação e decodificação de bits, 
+\shape italic
+bit-timing
+\shape default
+ (duração de um bit) e sincronização.
+\end_layout
+
+\begin_layout Standard
+PMA (
+\shape italic
+Physical Medium Attachement
+\shape default
+) determina as características do transceptor.
+\end_layout
+
+\begin_layout Standard
+PMS (
+\shape italic
+physical Medium Specification
+\shape default
+) descreve juntamente com a PMA as camadas can de alta velocidade (
+\shape italic
+high-speed CAN
+\shape default
+) e can de baixa velocidade (
+\shape italic
+low-speed CAN
+\shape default
+), diferindo em voltagem e taxas de transmissão.
+\end_layout
+
+\begin_layout Standard
+MDI (
+\shape italic
+Medium Dependent Interface
+\shape default
+) descreve o meio de transmissão juntamento com a PMS, além das conexões.
+\end_layout
+
+\begin_layout Standard
+CIA-DS 102 (
+\shape italic
+Can in Automation
+\shape default
+) Nao existe nenhuma norma para a sub-camada MDI da camada física.
+ CiA DS-102 recomenda apenas o uso de conectores muito específicos (SUB-D9),
+ bem como a descricao da pinagem do conectores.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+- NMEA 2000: baseado no CAN 2.0B e utilizado em aplicações navais e aéreas.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- SAE J1939: baseado no CAN 2.0B e utilizado em aplicações automotivas, especialm
+ente ônibus e caminhões.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- DIN 9684 – LBS: baseado no CAN 2.0A e utilizado em aplicações agrícolas.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- ISO 11783: baseado no CAN 2.0B e também utilizado em aplicações agrícolas.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- TTCan –Time Triggered Can Protocol - Permite que o bus apareça mais determinís
+tico.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- DeviceNet - Identifica a camada física mas não usa a mesma interface de
+ camada física como a ISO 11898, mas está baseado no protocolo de CAN Bus.
+ DeviceNet provê isolamento óptico para proteção adicional e não usa conectores
+ de 9- pinos tipo subD.
+ A DeviceNet só aborda três taxas de bauds: 125, 250 e 50048 Kbaud (500
+ metros) com até 64 dispositivos no bus diferencial.
+ Além disso o cabo leva 24 volts para alimentação nos dispositivos.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- CAN Kingdom - define um grupo de protocolos antigos, baseado no protocolo
+ CAN.
+ Um bus mestre é definido durante a inicialização, e então o mestre confere
+ para ver quais nós são conectados à rede.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- Smart Distributed System (SDS) – O sistema distribuído inteligente define
+ a camada física e camada de aplicação (baseado em CAN Bus).
+ Usado para sensores inteligentes e atuadores, operando em cima de um único
+ cabo de 4 fios, conectando até 64 nós com um máximo de 126 endereços.
+\end_layout
+
+\begin_layout Plain Layout
+//Requisitos Técnicos para Aplicação do Protocolo CAN - 
+\begin_inset Quotes eld
+\end_inset
+
+arquivo final
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Camada Física
+\end_layout
+
+\begin_layout Standard
+No padrão internacional ISO a camada física é definida como segue:
+\end_layout
+
+\begin_layout Itemize
+Meio de transmissão: normalmente um par de fios trancados para rejeição
+ a ruído, um do CAN
+\shape italic
+ high
+\shape default
+ e outro do CAN 
+\shape italic
+low
+\shape default
+, formando uma diferença de potencial e com uma impedância de 120 Ω se a
+ rede for de alta velocidade.
+ 
+\end_layout
+
+\begin_layout Itemize
+Topologia de barramento: topologia linear ou uma topologia física em estrela
+ com resistores na extremidade de cada barramento.
+\end_layout
+
+\begin_layout Itemize
+Número máximo de participantes (quantidade de nós): dependente do barramento.
+ O comprimento máximo do barramento depende da taxa de transmissão dados.
+ O número de nós que podem existir numa única rede é, teoricamente, ilimitado.
+ No entanto, o número de identificadores e a capacidade dos transceptores
+ existentes impõem restrições.
+ Assim, dependendo do tipo de transceptor, até 32 nós por rede é normal,
+ existindo, no entanto, transceptores que permitem ligar pelo menos 110
+ nós por rede.
+\end_layout
+
+\begin_layout Itemize
+Codificação de bit: NRZ (
+\shape italic
+Non Return to Zero
+\shape default
+), onde cada bit (0 ou 1) é transmitido por um valor de tensão específico
+ e constante, diferenciando nível dominante (nível lógico zero) e recessivo
+ (nível lógico um) com um mecanismo de fiação AND como mostrado na figura
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Lógica-AND"
+
+\end_inset
+
+.
+ De acordo com a ISO 11898-2 (can alta velocidade), atribui-se valor lógico
+ "1" para uma tensão diferencial 
+\shape italic
+diff
+\shape default
+ típica de 0 Volt (-1 Volt ≤
+\shape italic
+ diff
+\shape default
+ ≤ 0,5Volts) e valor lógico "0" para uma tensão diferencial 
+\shape italic
+diff
+\shape default
+ típica de 2 volts (0,9 Volt ≤
+\shape italic
+ diff
+\shape default
+ ≤ 5Volts).
+ Caso 0,5 Volts <
+\shape italic
+ diff
+\shape default
+ < 0,9Volts, o valor lido no barramento será considerado como uma falha.Em
+ contrapartida a ISO 11898-3 (can baixa velocidade) atribui uma tensão diferenci
+al típica de 5 volts para a lógica "1", e uma típica tensão diferencial
+ de 2 volts corresponde a lógica "0".
+ A figura
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Nível-lógico"
+
+\end_inset
+
+ retrata esses cenários.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Lógica-AND"
+
+\end_inset
+
+Lógica AND
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename logica AND NRZ.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nível lógico
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Nível-lógico"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Bus level.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Vector
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Sincronização dos bits: pós-sincronização contínua do fluxo de bits transmitidos
+ utilizando transições.
+ Devido ao fato da NRZ-codificação ser utilizada, longos períodos sem transições
+ podem ocorrer, o que deve ser gerenciado usando-se formatos de mensagens
+ adequadas.
+\end_layout
+
+\begin_layout Itemize
+Taxa de dados: para assegurar uma segura sincronização de bits o intervalo
+ de tempo de bit tem que ser maior do que o dobro do máximo atraso do grupo.
+ O que significa que quanto maior o barramento menor a taxa de transmissão
+ de dados.
+ A taxa máxima de transmissão especificada é de 1 Mbit/s, correspondendo
+ este valor a sistemas com comprimento de barramento até 40 m.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Inserir can transceiver aqui??
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Camada de Enlace
+\end_layout
+
+\begin_layout Standard
+A principal tarefa da camada de enlace é transmitir e receber dados da rede.
+ Assim todos os dados devem ser agrupados em unidades transportáveis (mensagens)
+, o acesso ao barramento deve ser definido entre os múltiplos participantes
+ prontos para enviar as mensagens, e a transmissão dos dados deve utilizar
+ mecanismos de detecção e correção de erro.
+\end_layout
+
+\begin_layout Standard
+Can transmite mensagens usando quadros (
+\shape italic
+data frames
+\shape default
+).
+ Existem quatro tipos de 
+\shape italic
+frames
+\shape default
+: 
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Frame
+\shape default
+ de Dados: é transmitida de um transmissor para receptores.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Frame
+\shape default
+ Remota (RTR): um nó pode solicitar uma 
+\shape italic
+frame
+\shape default
+ de dados com o mesmo identificador.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Frame
+\shape default
+ de Erro: é transmitida por qualquer nó quando ele detecta um erro no barramento.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\shape italic
+Frame
+\shape default
+ de Sobrecarga (
+\shape italic
+overload
+\shape default
+): é usada para dar atraso extra para 
+\shape italic
+frame
+\shape default
+ de dados ou remota e a 
+\shape italic
+frame
+\shape default
+ posterior.
+\end_layout
+
+\begin_layout Standard
+A frame de dados no formato padrão e no formato estendido possuem a mesma
+ estrutura, se diferenciando apenas nos campos de arbitragem e de controle
+ conforme figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Frame-de-dados"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Frame de dados versão padrão e estendida
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Frame-de-dados"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Formato de mensagens CAN (data frames)  22.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: o próprio autor
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A 
+\shape italic
+frame
+\shape default
+ remota é idêntica a 
+\shape italic
+frame
+\shape default
+ de dados, com exceção da inexistência do campo de dados.
+ 
+\end_layout
+
+\begin_layout Standard
+Os significados destes campos são: 
+\end_layout
+
+\begin_layout Description
+SOF – O bit dominante 
+\shape italic
+Start of Frame
+\shape default
+ (início de quadro) marca o início de uma mensagem e é usado para sincronizar
+ todos os nós.
+ Ele marca uma mudança de estado lógico do barramento de 1 para 0.
+\end_layout
+
+\begin_layout Description
+Identificador – O identificador no formato padrão possui 11 bits e no estendido
+ 29 bits e estabelece a prioridade da mensagem em vez de definir o endereço
+ do receptor.
+ Quanto menor o valor binário, maior é a prioridade.
+ O identificador também é utilizado pelo controlador CAN para filtrar quais
+ mensagens devem ser processadas pela unidade de controle.
+ 
+\end_layout
+
+\begin_layout Description
+RTR – O bit 
+\shape italic
+Remote Transmission Request
+\shape default
+ (requesicao de transmissao remota) é dominante nas 
+\shape italic
+frame 
+\shape default
+de dados e recessivo nas 
+\shape italic
+frames
+\shape default
+ remotas.
+ 
+\end_layout
+
+\begin_layout Description
+IDE – O bit 
+\shape italic
+Extended Identifier
+\shape default
+ (identificador de extensão) dominante significa que o identificador no
+ formato padrão está sendo transmitido (apenas 11 bits).
+ Um bit recessivo indica que há mais 18 bits após o IDE no campo do identificado
+r estendido, caracterizando o formado estendido de 
+\shape italic
+frame
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Description
+r, 
+\series bold
+r
+\size scriptsize
+0 
+\size default
+e r
+\size scriptsize
+1
+\series default
+\size default
+ – Bits reservados, em estado dominante.
+\end_layout
+
+\begin_layout Description
+DLC – Estes 4 bits (
+\shape italic
+Data Length Code
+\shape default
+) informam quantos bytes de dados compõem o campo de dados da 
+\shape italic
+frame
+\shape default
+, que podem ser no máximo 8 bytes.
+ É importante destacar que embora o campo de dados da 
+\shape italic
+frame
+\shape default
+ remota seja inexistente, o seu valor DLC permanece igual ao da 
+\shape italic
+frame
+\shape default
+ de dados respectiva.
+\end_layout
+
+\begin_layout Description
+Campo 
+\series bold
+de dados
+\series default
+ – o campo de dados suporta até 64 bits (8 bytes).
+ 
+\end_layout
+
+\begin_layout Description
+CRC – O 
+\shape italic
+Cyclic Redundacy Check
+\shape default
+ contém o 
+\shape italic
+checksum
+\shape default
+ para detecção de erros.
+ 
+\end_layout
+
+\begin_layout Description
+Campo
+\series bold
+ de CRC
+\series default
+ – Contém o CRC mais um bit delimitador que é sempre recessivo, indicando
+ o fim do CRC.
+\end_layout
+
+\begin_layout Description
+ACK – Se o CRC calculado por um nó receptor for igual ao CRC recebido na
+ 
+\shape italic
+frame
+\shape default
+ de dados enviada por um nó transmissor, o bit 
+\shape italic
+Aknowledgement
+\shape default
+ muda seu valor lógico de 1 para 0 no barramento, indicando que a mensagem
+ foi recebida sem erro por pelo menos um dos nós receptores.
+ Assim o valor lógico do ACK como recessivo no barramento indica erro no
+ recebimento da mensagens por todos os nós receptores ou ainda que o nó
+ de origem encontra-se sozinho no barramento.
+\end_layout
+
+\begin_layout Description
+Campo 
+\series bold
+de ACK
+\series default
+ - Constituído pelo ACK mais um bit delimitador recessivo, o qual garante
+ o tempo necessário para que todos os nós ouvintes da rede respondam com
+ o bit ACK.
+\end_layout
+
+\begin_layout Description
+EOF – 
+\shape italic
+End-of-Frame
+\shape default
+ são 7 bits recessivos indicando o final da 
+\shape italic
+frame
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Description
+ITM 
+\series bold
+ou IFS
+\series default
+– Estes 3 bits 
+\shape italic
+Intermission 
+\shape default
+(intermissão)
+\shape italic
+ ou Inter Frame Space 
+\shape default
+(espaço entre frames) contém o tempo necessário para o controlador mover
+ corretamente os dados recebidos para um 
+\shape italic
+buffer
+\shape default
+ de recepção de mensagem.
+ 
+\end_layout
+
+\begin_layout Description
+SRR – O bit 
+\shape italic
+Substitute Remote Request
+\shape default
+ é transmitido em 
+\shape italic
+frames
+\shape default
+ no formato estendido na posição que o bit RTR ocupa em 
+\shape italic
+frames
+\shape default
+ no formato padrão e é recessivo.
+\end_layout
+
+\begin_layout Description
+Bus 
+\series bold
+Idle 
+\series default
+– Representa o estado em que o barramento encontra-se livre para o envio
+ de mensagens, possuindo valor lógico recessivo.
+\end_layout
+
+\begin_layout Standard
+Após 11 consecutivos recessivos bits (DEL + EOF + ITM/IFS ou ITM/IFS+ delimitado
+r de erro/sobrecarga) o barramento é considerado livre para envio de novas
+ mensagens, permanecendo em estado recessivo (
+\shape italic
+bus idle
+\shape default
+) até nova transmissão de mensagem.
+\end_layout
+
+\begin_layout Standard
+Os 
+\shape italic
+layouts
+\shape default
+ de uma 
+\shape italic
+frame
+\shape default
+ de erro e de sobrecarga são iguais, diferindo porém significativamente
+ das 
+\shape italic
+frames
+\shape default
+ de dados e remota.
+ Elas são compostas por apenas duas partes: a 
+\shape italic
+flag
+\shape default
+ de erro/sobrecarga e o delimitador de erro/sobrecarga (8 bits recessivos)
+ conforme o caso, como mostrado na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Frame-de-Erro"
+
+\end_inset
+
+.
+ Tanto a 
+\shape italic
+flag
+\shape default
+ de erro quanto de sobrecarga podem ser divididas em duas partes, a 
+\shape italic
+flag
+\shape default
+ de erro/sobrecarga primária (6 bits dominates) e a 
+\shape italic
+flag
+\shape default
+ de erro/sobrecarga secundária (0-6 bits dominantes), devido a sobreposição
+ das 
+\shape italic
+flags
+\shape default
+ de erro/sobrecarga dos vários nós receptores do barramento.
+\end_layout
+
+\begin_layout Standard
+Uma 
+\shape italic
+frame
+\shape default
+ de sobrecarga pode ser enviada após uma 
+\shape italic
+frame 
+\shape default
+de dados ou remota ou depois de uma 
+\shape italic
+frame
+\shape default
+ de erro ou de sobrecarga, como mostrado na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Frame-de-Erro"
+
+\end_inset
+
+.
+ A
+\shape italic
+ flag
+\shape default
+ de sobrecarga consiste em seis bits “dominantes”.
+ Esta 
+\shape italic
+flag
+\shape default
+ destrói o formato fixo do campo de Intermissão (ITM/IFS) da 
+\shape italic
+frame
+\shape default
+ anterior, pelo que todos os outros nós também detectam uma condição de
+ sobrecarga e iniciam a transmissão de uma 
+\shape italic
+flag
+\shape default
+ de sobrecarga, ocorrendo assim uma sobreposição de 
+\shape italic
+flags
+\shape default
+ (
+\shape italic
+flag
+\shape default
+ secundária), seguida do delimitador de sobrecarga.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+Frame
+\shape default
+ de Erro e de Sobrecarga
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Frame-de-Erro"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Framde de erro e sobrecarga3.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: o próprio autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uma 
+\shape italic
+frame
+\shape default
+ de erro é transmitida quando o cheque de CRC falha por pelo menos um nó
+ receptor ou quando um nó encontra-se sozinho.
+ Após um nó iniciar a transmissão de uma 
+\shape italic
+frame
+\shape default
+ de erro os outros nós percebem a falha na transmissão da mensagem, pois
+ a 
+\shape italic
+frame
+\shape default
+ de erro viola o formato de uma 
+\shape italic
+frame
+\shape default
+ de dados ou remota, assim todos os nós enviam em seguida uma 
+\shape italic
+frame
+\shape default
+ de erro, acarretando na sobreposição de suas 
+\shape italic
+flags
+\shape default
+ de erro.
+ Além disso o nó emissor sempre compara o valor transmitido (T
+\shape italic
+\size scriptsize
+x
+\shape default
+\size default
+) com o valor no barramento (R
+\shape italic
+\size scriptsize
+x
+\shape default
+\size default
+), identificando dessa forma falhas de transmissão também.
+\end_layout
+
+\begin_layout Standard
+Para a detecção de erros o protocolo CAN implementa seis mecanismos não
+ mutuamente exclusivos identificados na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Mecanismos-de-Detecção"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Monitoramento de bits pelo transmissor:
+\series default
+ O transmissor compara em tempo real o valor transmitido (T
+\size scriptsize
+x
+\size default
+) com o valor lido no barramento (R
+\size scriptsize
+x
+\size default
+);
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Confirmação do ACK bit pelo transmissor:
+\series default
+ O transmissor aguarda o recebimento do bit ACK como dominante;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Verificação da regra de inserção do bit (
+\shape italic
+bit stuffing
+\shape default
+) pelos receptores:
+\series default
+ Após cinco bits iguais consecutivos no barramento, o próximo deve apresentar
+ valor inverso;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Verificação do formato da 
+\shape italic
+frame
+\shape default
+ pelo receptores: 
+\series default
+Após o primeiro nó receptor iniciar o envio de uma 
+\shape italic
+frame
+\shape default
+ de erro, o campo EOF (7 bits recessivos) será sobrescrito no barramento
+ pela 
+\shape italic
+flag
+\shape default
+ de erro primária do nó que identificou o erro (6 bits dominantes), caracterizan
+do assim uma violação no formato da 
+\shape italic
+frame
+\shape default
+ de dados ou remota;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Verificação da sequência CRC de 15 bits pelo receptores:
+\series default
+ O CRC calculado por uma expressão polinomial com os dados obtidos pelo
+ receptor desde o identificador da 
+\shape italic
+frame
+\shape default
+ até o final do campo de dados deve ser igual ao CRC enviado pelo transmissor.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Monitoramento do ACK bit pelos receptores:
+\series default
+ Se um dos nós enviar o bit ACK como recessivo (1) e outro nó enviar como
+ dominante (0), o valor predominante do ACK no barramento permanecerá como
+ dominante, porém após o bit delimitador do campo ACK, o receptor que não
+ recebeu corretamente a mensagem iniciará o envio de uma 
+\shape italic
+frame
+\shape default
+ de error.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Mecanismos-de-Detecção"
+
+\end_inset
+
+Mecanismos de Detecção de Erros
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Datensicherung2.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: o próprio autor
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para que haja uma comunicação entre os nós, sendo cada nó uma ECU, unidade
+ eletrônica de controle (
+\shape italic
+Electronic Control Uni
+\shape default
+t), é necessário que cada um deles seja munido dos seguintes componentes:
+ unidade de controle, controlador CAN e transceptor CAN.
+\end_layout
+
+\begin_layout Standard
+Cada ECU leva dentro dela um processador (unidade de controle) que tem a
+ função de receber os sinais dos sensores e processá-los.
+ Caso seja uma informação importante para outras unidades, esta informação
+ é transmitida até um controlador CAN que, por sua vez, tem a função de
+ transformar essa informação em uma mensagem (
+\shape italic
+frame
+\shape default
+ de dados).
+ Em seguida esta informação é transmitida para o transceptor, que tem como
+ função codificar esta mensagem e transformá-las em pulsos elétricos (bits)
+ que serão lançados ao barramento.
+\end_layout
+
+\begin_layout Standard
+A figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rede-CAN"
+
+\end_inset
+
+ ilustra uma rede CAN com três nós, ou seja, três ECUs.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rede-CAN"
+
+\end_inset
+
+Rede CAN
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Rede CAN.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: o própro autor
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+A frame
+\shape default
+ de dados ou remota é transmitida a todos os nós e a todas as redes de intercone
+xão, inclusive para as unidades que não necessitam do sinal em questão.
+ A 
+\shape italic
+Gateway
+\shape default
+ retransmite 
+\shape italic
+a frame
+\shape default
+ para as outras redes de interconexão (redes CAN com diferentes taxas de
+ transmissão por exemplo).
+\end_layout
+
+\begin_layout Standard
+Uma 
+\shape italic
+frame
+\shape default
+ transmite uma especifica mensagem que é caracterizada pelo seu identificador.
+ Todo participante checa o identificador da mensagem recebida para analisar
+ se esta é relevante ou não através do controlador CAN.
+ O princípio de filtro de aceitação de mensagem também possibilita que mensagens
+ sejam aceitas por todos ou por múltiplos nós ao mesmo tempo (
+\shape italic
+multicasting
+\shape default
+), o que é importante para processos de sincronização.
+\end_layout
+
+\begin_layout Standard
+Quanto menor o identificador da mensagem maior a sua prioridade.
+ Esse mecanismo é utilizado para controlar o acesso ao barramento, o qual
+ ocorre localmente de acordo com o método CSMA/CA with NDA (
+\shape italic
+Carrier Sense Multiple Access / Collision Detection with Non-Destructive
+ Arbitration
+\shape default
+).
+ Isto significa que todos os módulos (nós) verificam o estado do barramento,
+ analisando se outro módulo está ou não enviando mensagens com maior prioridade.
+ Caso isto seja percebido, o módulo cuja mensagem tiver menor prioridade
+ cessará sua transmissão e o de maior prioridade continuará enviando sua
+ mensagem deste ponto, sem ter que reiniciá-la.
+ Isto é feito comparando-se o valor lógico presente no barramento com o
+ valor enviado por cada unidade.
+\end_layout
+
+\begin_layout Standard
+Todas as ECUs que estiverem conectadas a este mesmo barramento receberão
+ essa mensagem através do transceptor (através dos dois fios – CAN 
+\shape italic
+high
+\shape default
+ e 
+\shape italic
+low
+\shape default
+), que no momento de recepção da mensagem tem o papel de decodificar a mensagem
+ (de voltagem diferencial para bits) e repassá-la para o controlador CAN.
+ Este por sua vez receberá a mensagem e filtrará a informação que está contida
+ nela.
+ Se a informação for útil e realmente importante para o processador daquela
+ unidade, o controlador CAN irá repassar a informação para o processador
+ que analisará a informação e tomará as devidas providências.
+\end_layout
+
+\begin_layout Section
+Rede DeviceNet
+\end_layout
+
+\begin_layout Subsection
+Conceito
+\end_layout
+
+\begin_layout Standard
+A rede DeviceNet é uma rede de baixo nível que proporciona comunicações
+ utilizando o mesmo meio físico entre equipamentos, desde os mais simples
+ (como sensores e atuadores), até aos mais complexos, como Controladores
+ Lógicos Programáveis (CLP) e microcomputadores.
+ Ela possui o protocolo aberto, tendo um número expressivo de fornecedores
+ de equipamentos que adotaram o protocolo.
+ 
+\end_layout
+
+\begin_layout Standard
+Apresentado em 1994 originalmente pela Allen-Bradley, o DeviceNet teve sua
+ tecnologia transferida para a ODVA em 1995.
+ A ODVA (
+\shape italic
+Open DeviceNet Vendor Association
+\shape default
+) é uma organização sem fins lucrativos composta por centenas de empresas
+ ao redor do mundo que mantém, divulga e promove o DeviceNet e outras redes
+ baseadas no protocolo CIP (
+\shape italic
+Common Industrial Protocol
+\shape default
+).
+\end_layout
+
+\begin_layout Standard
+A rede DeviceNet é classificada no nível de rede chamada 
+\shape italic
+devicebus
+\shape default
+, cuja características principais são: alta velocidade, comunicação a nível
+ de byte englobando comunicação com equipamentos discretos e analógicos
+ e alto poder de diagnostico dos dispositivos da rede.
+ 
+\end_layout
+
+\begin_layout Standard
+Essa tecnologia é um padrão aberto de automação com objetivo de transportar
+ 2 tipos principais de informação:
+\end_layout
+
+\begin_layout Itemize
+dados cíclicos de sensores e atuadores, diretamente relacionados ao controle
+ e, 
+\end_layout
+
+\begin_layout Itemize
+dados acíclicos indiretamente relacionados ao controle, como configuração
+ e diagnóstico.
+ 
+\end_layout
+
+\begin_layout Standard
+Os dados cíclicos representam informações trocadas periodicamente entre
+ o equipamento de campo e o controlador.
+ Por outro lado, os acíclicos são informações trocadas eventualmente durante
+ configuração ou diagnóstico do equipamento de campo.
+ 
+\end_layout
+
+\begin_layout Subsection
+Características
+\end_layout
+
+\begin_layout Itemize
+Topologia em barramento, linear ou arvore.
+ 
+\end_layout
+
+\begin_layout Itemize
+Comunicação serial produtor-consumidor.
+ 
+\end_layout
+
+\begin_layout Itemize
+Permite o uso de repetidores, 
+\shape italic
+bridges
+\shape default
+, roteadores e 
+\shape italic
+gateways
+\shape default
+.
+\end_layout
+
+\begin_layout Itemize
+Suporta até 64 nós, incluindo o mestre, endereçados de 0 a 63 (MAC ID).
+ 
+\end_layout
+
+\begin_layout Itemize
+Cabo com 2 pares: um para alimentação de 24V e outro para comunicação.
+ 
+\end_layout
+
+\begin_layout Itemize
+Inserção e remoção à quente, sem perturbar a rede.
+\end_layout
+
+\begin_layout Itemize
+Suporte para equipamentos alimentados pela rede em 24V ou com fonte própria.
+ 
+\end_layout
+
+\begin_layout Itemize
+Uso de conectores abertos ou selados.
+\end_layout
+
+\begin_layout Itemize
+Proteção contra inversão de ligações e curto-circuito.
+ 
+\end_layout
+
+\begin_layout Itemize
+Alta capacidade de corrente na rede (até 16 A).
+ 
+\end_layout
+
+\begin_layout Itemize
+Uso de fontes de alimentação de prateleira.
+ 
+\end_layout
+
+\begin_layout Itemize
+Diversas fontes podem ser usadas na mesma rede atendendo às necessidades
+ da aplicação em termos de carga e comprimento dos cabos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Taxa de comunicação selecionável : 125,250 e 500 kbps.
+\end_layout
+
+\begin_layout Itemize
+Comunicação baseada em conexões de E/S e modelo de pergunta e resposta.
+\end_layout
+
+\begin_layout Itemize
+Diagnóstico de cada equipamento e da rede.
+\end_layout
+
+\begin_layout Itemize
+Transporte eficiente de dados de controle discretos e analógicos.
+\end_layout
+
+\begin_layout Itemize
+Detecção de endereço duplicado na rede.
+ 
+\end_layout
+
+\begin_layout Itemize
+Mecanismo de comunicação extremamente robusto a interferências eletromagnéticas.
+\end_layout
+
+\begin_layout Subsection
+A Arquitetura DeviceNet
+\end_layout
+
+\begin_layout Standard
+A camada de enlace da rede DeviceNet é baseada no protocolo CAN e a camada
+ de aplicação no protocolo CIP, que define uma arquitetura baseada em objetos
+ e conexões entre eles e é independente das outras duas camadas.
+ Essas camadas são mostradas na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Arquitetura-DeviceNet"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquitetura DeviceNet
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Arquitetura-DeviceNet"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modelo OSI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Padrão DeviceNet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aplicação
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Biblioteca de objetos de aplicação
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CIP
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Apresentação
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Serviços de gerenciamento, 
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+mensagens de entrada e saída
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sessão
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Roteamento de Mensagens, 
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gerenciamento de conexão
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transporte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeviceNet 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+transporte
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enlace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CAN CSMA/NBA
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fisica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeviceNet camada física
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: [o próprio autor]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+http://odva.or.kr/popup/2002oct_2.htm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A rede DeviceNet identifica a camada física mas não usa a mesma interface
+ de camada física como a ISO 11898, mas está baseado no protocolo de CAN
+ Bus.
+ DeviceNet provê isolamento óptico para proteção adicional e não usa conectores
+ de 9- pinos tipo subD.
+ Ela aborda três taxas de bauds: 125, 250 e 50048 Kbaud (500 metros) com
+ até 64 dispositivos no barramento diferencial.
+ Além disso o cabo leva 24 volts para alimentação nos dispositivos, como
+ mostrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Meio-físico-do"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Meio físico do DeviceNet
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Meio-físico-do"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename meio físico DeviceNet.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:[ROSSIT (2004)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A rede pode ter 64 equipamentos ativos, que utilizam o barramento para se
+ comunicar, endereçados de 0 a 63, significando 64 equipamentos com comunicação
+ CAN ligados ao mesmo meio físico, onde sugere-se a utilização de no máximo
+ 61 equipamentos, deixando os seguintes endereços livres ao se fazer um
+ novo projeto: 
+\end_layout
+
+\begin_layout Itemize
+0 para o 
+\shape italic
+scanner
+\shape default
+; 
+\end_layout
+
+\begin_layout Itemize
+62 para a interface entre microcomputador e rede;
+\end_layout
+
+\begin_layout Itemize
+63 para novos equipamentos que venham a ser incluídos, considerando-se que
+ segundo os padrões DeviceNet, os equipamentos novos saem de fábrica com
+ o endereço 63.
+\end_layout
+
+\begin_layout Standard
+A camada de aplicação é fundamentada no protocolo CIP, que define uma arquitetur
+a baseada em objetos e conexões entre eles e é independente das outras camadas.
+ 
+\end_layout
+
+\begin_layout Standard
+O CIP tem dois objetivos principais:
+\end_layout
+
+\begin_layout Itemize
+Transporte de dados de controle dos dispositivos de I/O.
+ 
+\end_layout
+
+\begin_layout Itemize
+Transporte de informações de configuração e diagnóstico do sistema sendo
+ controlado.
+ 
+\end_layout
+
+\begin_layout Standard
+Um nó DeviceNet é então modelado por um conjunto de objetos CIP, os quais
+ encapsulam dados e serviços e determinam assim seu comportamento.
+ 
+\end_layout
+
+\begin_layout Section
+TCP/IP (
+\shape italic
+Transmission Control Protocol / Internet Protocol
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+estudar angilberto tcp-ip
+\end_layout
+
+\begin_layout Plain Layout
+novo artigo web of science
+\end_layout
+
+\begin_layout Plain Layout
+apostilaRedesComputadoresAutomacaoIndustrial
+\end_layout
+
+\begin_layout Plain Layout
+3288_redes TCP_ip
+\end_layout
+
+\begin_layout Plain Layout
+Redes industriais_parte 1
+\end_layout
+
+\begin_layout Plain Layout
+ugb_redes_I_material_de_apoio_Ethernet
+\end_layout
+
+\begin_layout Plain Layout
+redes industriais
+\end_layout
+
+\begin_layout Plain Layout
+ppt:
+\end_layout
+
+\begin_layout Plain Layout
+ethernet industrial
+\end_layout
+
+\begin_layout Plain Layout
+apresentacao padrao TCP/IP
+\end_layout
+
+\begin_layout Plain Layout
+Modelo de referencia OSI_tcp
+\end_layout
+
+\begin_layout Plain Layout
+Redes01-Modelo OSI
+\end_layout
+
+\begin_layout Plain Layout
+Redes02-Geral
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+O TCP/IP (Protocolo de Controle de Transmissão/Protocolo Internet) foi desenvolv
+ido em 1969 pelo U.S.
+ 
+\shape italic
+Departament of Defense Advanced Research Projects Agency
+\shape default
+, como um recurso para um projeto experimental chamado de ARPANET (
+\shape italic
+Advanced Research Project Agency Network
+\shape default
+) para preencher a necessidade de comunicação entre uma grande quantidade
+ de sistemas de computadores e várias organizações militares dispersas.
+ O objetivo do projeto era disponibilizar 
+\shape italic
+links
+\shape default
+ (vínculos) de comunicação com altas velocidades utilizando redes de comutação
+ de pacotes.
+\end_layout
+
+\begin_layout Standard
+O TCP/IP não é apenas um protocolo, mas uma suíte ou grupo de protocolos
+ que se tornou padrão na indústria por oferecer comunicação em ambientes
+ heterogêneos, tais como sistemas operacionais UNIX, Windows, MAC OS, minicomput
+adores e até mainframes.
+\end_layout
+
+\begin_layout Standard
+Hoje o TCP/IP se refere a uma suíte de protocolos utilizados na Internet,
+ a rede das redes.
+ Este conjunto padrão de protocolos especifica como computadores se comunicam
+ e fornece as convenções para a conexão e rota no tráfego da Internet através
+ de conexões estabelecidas por roteadores.
+\end_layout
+
+\begin_layout Standard
+Os protocolos TCP/IP são organizados em quatro camadas: camada de Interface
+ de rede, Internet, Transporte e Aplicacao.
+ Essas camadas e sua relacao com o modelo OSI podem ser comparadas na Figura
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Suíte-de-Protocolos"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Suíte de Protocolos TCP/IP
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Suíte-de-Protocolos"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename suite TCP_IP.jpg
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O termo 
+\shape italic
+host
+\shape default
+ é utilizado para se referir a qualquer parte de hardware que pode ser endereçad
+a.
+ Isto inclui estações de trabalho e servidores, como também roteadores.
+ 
+\shape italic
+Hosts
+\shape default
+ são identificados pelo endereço físico de suas placas de rede (MAC 
+\shape italic
+address
+\shape default
+).
+\end_layout
+
+\begin_layout Standard
+No 
+\shape italic
+host
+\shape default
+ de origem, os dados a serem transmitidos são gerados pela camada de aplicação
+ e passados para as camadas inferiores, até chegar ao meio de transmissão.
+ Os dados são transmitidos em forma de PDUs (
+\shape italic
+Protocol Data Unit
+\shape default
+, 
+\begin_inset Quotes eld
+\end_inset
+
+protocolo de unidade de dados
+\begin_inset Quotes erd
+\end_inset
+
+) através das camadas.
+ Cada camada define seu próprio PDU, nominalmente, Segmento (
+\shape italic
+Segment
+\shape default
+) para a camada de transporte, Pacote (ou datagrama, 
+\shape italic
+packet
+\shape default
+) para a camada de rede e Quadro (
+\shape italic
+frame
+\shape default
+) para a camada de enlace.
+ Os PDUs contém os dados recebidos da camada acima, juntamente com as informaçõe
+s de controle do protocolo em uso (cabeçalho).
+ O processo de inserção de cabeçalho é denominado de encapsulamento e o
+ de retirada de desencapsulamento.
+ Assim durante uma transmissão, os dados são encapsulados de acordo com
+ o nível de camada correspondente no 
+\shape italic
+host
+\shape default
+ de origem até atingirem o nível físico e serem transmitidos ao host de
+ destino que irá desencapsular estes dados até chegar ao nível de aplicação,
+ como mostrado na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Fluxo-de-Dados"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxo de Dados no Modelo TCP/IP
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fluxo-de-Dados"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Fluxo de dados Modelo TCPiP.jpg
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No TCP/IP, além do endereço físico existem outros dois níveis de endereçamento:
+ Nomes de Domínios e Endereços de IP
+\end_layout
+
+\begin_layout Subsection
+Camada de Interface de Rede
+\end_layout
+
+\begin_layout Standard
+A camada de interface de rede é a camada de mais baixo nível dentro do modelo.
+ Ela é responsável por colocar e retirar quadros (frames, pacotes) no meio
+ físico.
+\end_layout
+
+\begin_layout Standard
+Ethernet é um padrão de rede que compõem a suíte TCP/IP e que define as
+ camadas física e de enlace do modelo OSI, conforme Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Arquitetura-Ethernet"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquitetura Ethernet
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Arquitetura-Ethernet"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="8">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modelo OSI
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Padrão Ethernet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Implementação
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enlace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controle do Link Lógico (LLC)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IEEE 802.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controle de Acesso ao Meio (MAC)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IEEE 802.3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Física
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Meio de transmissão e
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10Base2, 10BaseT, 10Base5, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+conectores
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100BaseT4, 100BaseTX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:[o proprio autor]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uma ethernet de rede de área local (LAN) é essencialmente uma de rede de
+ difusão (
+\shape italic
+broadcasting
+\shape default
+ ou
+\shape italic
+ musticasting
+\shape default
+ com o uso de 
+\shape italic
+switchs
+\shape default
+) com lógica de barramento; embora na implementação física possa utilizar
+ 
+\shape italic
+hubs
+\shape default
+ ou 
+\shape italic
+switchs
+\shape default
+ (topologia física de estrela ).
+\end_layout
+
+\begin_layout Standard
+O mecanismo utilizado para controlar o acesso ao meio padronizado pela IEEE
+ 802.3 é o CSMA/CD (
+\shape italic
+Carrier Sense Multiple Access with Collision Detection
+\shape default
+) por meio da codificação Maschester.
+ Assim quando mais de uma estacão está pronta para emitir mensagens com
+ o meio livre, elas emitem os respectivos frames (quadros), os quais acabam
+ colidindo.
+ A primeira estacão que detectar a colisão interrompe imediatamente sua
+ transmissão, reiniciando o processo de transmissão depois de um período
+ de tempo, de forma a tornar improvável que uma nova colisão aconteça.
+\end_layout
+
+\begin_layout Standard
+O endereço de ethernet (MAC 
+\shape italic
+address
+\shape default
+) é gravado no adaptador de ethernet (cartão de rede, roteador, etc) pelo
+ fabricante, sendo fixo e não podendo ser mudado.
+ É composto por 6 bytes representados normalmente na forma hexadecimal,
+ sendo os 3 primeiros bytes usados para identificação do fabricante e os
+ próximos 3 para o número sequencial da placa em questão, por exemplo: 00-C0-3D-
+00-27-8B.
+\end_layout
+
+\begin_layout Standard
+O frame (quadro) de ethernet é dividido em campos como mostrado na Figura
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Frame-de-Ethernet"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+http://www.cooperati.com.br/2012/10/16/tecnologias-ethernet-cabeamento-utp-pt-02/
+\end_layout
+
+\begin_layout Plain Layout
+http://albt.tripod.com/anexo5.htm
+\end_layout
+
+\begin_layout Plain Layout
+http://wiki.sj.ifsc.edu.br/wiki/index.php/RCO2-2013-2
+\end_layout
+
+\begin_layout Plain Layout
+http://tiigr1214nunomartins.blogspot.com.br/p/quando-o-router-inicia.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Frame de Ethernet IEEE 802.3
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Frame-de-Ethernet"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename IEEE 802.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte [http://tiigr1214nunomartins.blogspot.com.br/p/quando-o-router-inicia.html]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os principais campos podem ser descritos da seguinte maneira:
+\end_layout
+
+\begin_layout Description
+Preâmbulo (
+\shape italic
+Preamble
+\shape default
+): Sequência alternada de 1 e 0 informando às estações receptoras que um
+ frame está começando.
+ 
+\end_layout
+
+\begin_layout Description
+SOF (
+\shape italic
+Start-of-Frame 
+\shape default
+): Campo de um byte byte que termina com 2 bits “1” consecutivos que servem
+ para sincronizar a parte de recepção de frame de todas as estações da LAN.
+ 
+\end_layout
+
+\begin_layout Description
+Endereço 
+\series bold
+de destino
+\series default
+: Contém o endereço MAC do destinatário;
+\end_layout
+
+\begin_layout Description
+Endereço 
+\series bold
+de origem
+\series default
+: Contém o endereço MAC do remetente; 
+\end_layout
+
+\begin_layout Description
+Tamanho: indica o tamanho em Bytes do campo de dados;
+\end_layout
+
+\begin_layout Description
+Cabeçalho 
+\series bold
+e dados
+\series default
+: É importante notar que o 
+\shape italic
+frame
+\shape default
+ IEEE 802.3 não seria capaz de identificar o protocolo da camada superior
+ (de rede).
+ Por esse motivo, o 
+\shape italic
+frame
+\shape default
+ IEEE 802.3 encapsula um 
+\shape italic
+frame
+\shape default
+ 802.2 LLC em seu campo de dados, que contem os cabeçalhos das camadas superiores
+), além disso esse campo também carrega os dados (mensagem) a ser transportada
+ e ele deve ter tamanho mínimo de 46 bytes e máximo de 1500 bytes.
+ Se o dado no 
+\shape italic
+frame
+\shape default
+ for insuficiente para preencher o mínimo de 64bytes (somados do endereço
+ de destino até o campo FCS), bytes de preenchimento são inseridos para
+ para garantir este número mínimo de bytes; 
+\end_layout
+
+\begin_layout Description
+FCS (Frame Check Sequence): Contém o CRC com funcionamento análogo ao CRC
+ do protocolo CAN.
+ 
+\end_layout
+
+\begin_layout Subsection
+Camada de Internet
+\end_layout
+
+\begin_layout Standard
+A camada de Internet é responsável pelas funções de endereçamento, empacotamento
+ e roteamento.
+ São definidos três protocolos principais nesta camada: IP (
+\shape italic
+Internet Protocol
+\shape default
+), ARP (
+\shape italic
+Address Resolution Protocol
+\shape default
+) e o ICMP (
+\shape italic
+Internet Control Messsage Protocol
+\shape default
+).
+\end_layout
+
+\begin_layout Subsubsection
+IP (
+\shape italic
+Internet Protocol
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+O IP é responsável pelo endereçamento de informação dos 
+\shape italic
+host
+\shape default
+ de origem e destino e possível roteamento entre as respectivas redes, se
+ diferentes.
+ Este roteamento é executado através de endereços de IP, os quais são compostos
+ de 4 octetos, que identificam logicamente origem e destino da informação,
+ constituído por duas partes: identificador de rede ou net id (
+\shape italic
+network identification
+\shape default
+, endereço de rede) e o identificador de nó ou 
+\shape italic
+host
+\shape default
+ id (
+\shape italic
+host identification
+\shape default
+, endereço de nó).
+\end_layout
+
+\begin_layout Standard
+Este protocolo, usando a parte identificador de rede do endereço, normalmente
+ designada pelos seus primeiros bytes, pode definir a melhor rota através
+ de uma tabela de roteamento mantida e atualizada pelos roteadores.
+\end_layout
+
+\begin_layout Standard
+Este protocolo recebe os dados da camada de transporte na forma de segmentos.
+ Ocorre então o processo de fragmentação e os conjuntos de dados passam
+ a ser chamar datagramas ou pacotes.
+ Um datagrama IP pode ser dividido em: cabeçalho IP e dados.
+ Os dados (tamanho livre, definido pelo tipo de rede) contém o dado que
+ está sendo comunicado em si vem logo após o cabeçalho.
+ O cabeçalho IP possui os campos retratados na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Datagrama/Pacote-IP"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Datagrama/Pacote-IP"
+
+\end_inset
+
+Cabecalho do Datagrama/Pacote IPV4 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename datagrama IP 2.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte [http://www.techtudo.com.br/artigos/noticia/2012/05/o-que-e-ip.html]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+http://penta2.ufrgs.br/Esmilda/camposip.html
+\end_layout
+
+\begin_layout Plain Layout
+http://pt.slideshare.net/verisjuliano/rede-de-computadores-aula-38-412-prova-2
+\end_layout
+
+\begin_layout Plain Layout
+http://tiigr1214nunomartins.blogspot.com.br/p/quando-o-router-inicia.html
+\end_layout
+
+\begin_layout Plain Layout
+http://www.google.com.br/imgres?imgurl=http://www.absoluta.org/tcp/tcp_hdr.gif&imgrefu
+rl=http://www.absoluta.org/tcp/tcp_quadros.htm&h=346&w=597&tbnid=4aAWnYtV6NuVsM:&do
+cid=pAEZD5S_S5tjKM&ei=13YRVtOnM4KLwgTozLfIDA&tbm=isch&ved=0CCMQMygHMAdqFQoTCJPvm
+92_qcgCFYKFkAodaOYNyQ
+\end_layout
+
+\begin_layout Plain Layout
+http://www.techtudo.com.br/artigos/noticia/2012/05/o-que-e-ip.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Versão (4 bits): Indica a versão do protocolo sendo utilizada, o que determina
+ o formato do cabeçalho.
+\end_layout
+
+\begin_layout Description
+Comprimento 
+\series bold
+do cabeçalho 
+\series default
+(4 bits): HL (
+\shape italic
+header lenght
+\shape default
+) comprimento do cabeçalho, medido em palavras de 32 bits.
+\end_layout
+
+\begin_layout Description
+Tipo 
+\series bold
+de serviço
+\series default
+ (8 bits): TOS (
+\shape italic
+type of service
+\shape default
+) informa ao roteador como o datagrama deve ser tratado e identifica algumas
+ funções de qualidade de serviço, como prioridade, atraso, vazão e confiabilidad
+e.
+\end_layout
+
+\begin_layout Description
+Comprimento 
+\series bold
+total 
+\series default
+(16 bits): Este campo proporciona o comprimento do datagrama medido em bytes,
+ incluindo cabeçalho e dados.;
+\end_layout
+
+\begin_layout Description
+Identificação (16 bits): O campo de identificação contém um único inteiro
+ que identifica o datagrama, é um campo muito importante porque quando uma
+ 
+\shape italic
+gateway
+\shape default
+ fragmenta um datagrama, ela copia a maioria dos campos do cabeçalho do
+ datagrama em cada fragmento, então a identificação também deve ser copiada,
+ com o propósito de que o destino saiba quais fragmentos pertencem a quais
+ datagramas.
+ 
+\end_layout
+
+\begin_layout Description
+Flag (3 bits): Controla a fragmentação, constituído por um bit reservado
+ valor lógico zero, um bit DF (
+\shape italic
+don´t fragment
+\shape default
+) que determina se o pacote pode ser fragmentado (=0), ou não (=1) e um
+ bit MF (
+\shape italic
+more fragments
+\shape default
+) que indica se o fragmento é o último (=0) de um pacote ou se existem mais
+ (=1).
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+(Fragment) 
+\series bold
+offset 
+\series default
+\shape default
+(13 bits): Especifica o início do datagrama original dos dados que estão
+ sendo transportados no fragmento.
+ É medido em unidades de 8 bytes.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+Time 
+\series bold
+to Live 
+\series default
+\shape default
+(8 bits): TTL informa o número de roteadores que podem redirecionar o datagrama.
+ O valor é decrementado até zero a cada roteador, quando então é descartado;
+\end_layout
+
+\begin_layout Description
+Protocolo (8bits): diz respeito a qual protocolo deverá receber o datagrama
+ na próxima camada, identificando qual protocolo que está ocupando a área
+ de dados.
+ Exemplos: ICMP=1, TCP=6, UDP=17;
+\end_layout
+
+\begin_layout Description
+CRC 
+\series bold
+do cabeçalho 
+\series default
+(16 bits): O 
+\shape italic
+checksum
+\shape default
+ seleciona qual processo será utilizado na detecção de erros (verificação
+ de redundância cíclica ou checagem na sequencia de quadros).
+ Ele assegura a integridade do cabeçalho IP (apenas).
+ É gerado na origem e conferido a cada roteador.
+ Após decrementar o valor do TTL o roteador gera um novo valor e reenvia
+ o pacote.
+\end_layout
+
+\begin_layout Description
+Opções (variável de 0 a 320 bits): É um campo opcional, se existir contém
+ informações adicionais relacionadas a roteamento, rotas, horário ou segurança.
+\end_layout
+
+\begin_layout Description
+Endereços 
+\series bold
+de origem e destino
+\series default
+ (ambos com 32bits): É o endereco de IP que caracteriza por completo toda
+ informação sobre endereçamento , necessária ao processo de roteamento.
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+http://www.inf.ufg.br/~fabrizzio/tcpip/parte06.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na passagem da camada de internet para a camada de interface de rede o pacote/da
+tagrama IP é dividido em novos pacotes IP, fragmentos do original, ocorrendo
+ novamente a fragmentação pelos roteadores, aonde cada novo pacote IP cabe
+ em um único quadro/frame de ethernet.
+ No destino final o processo é revertido, ocorrendo a remontagem do datagrama
+ original.
+\end_layout
+
+\begin_layout Subsubsection
+ARP (
+\shape italic
+Address Resolution Protocol
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+ARP é responsável por mapear um endereço IP para um endereço tipo MAC, através
+ de uma tabela que associa a localização lógica de uma determinada máquina
+ com a sua estrutura física de comunicação.
+\end_layout
+
+\begin_layout Subsubsection
+ICMP (
+\shape italic
+Internet Control Messsage Protocol
+\shape default
+)
+\end_layout
+
+\begin_layout Standard
+ICMP é responsável por enviar mensagens e relatar erros relacionados a entrega
+ de um pacote.
+\end_layout
+
+\begin_layout Subsection
+Camada de Transporte 
+\end_layout
+
+\begin_layout Standard
+O TCP é orientado à conexão, ou seja, estabelece um caminho negociado entre
+ os 
+\shape italic
+hosts
+\shape default
+ de origem e destino antes de enviar os dados, possuindo mecanismos de confirmaç
+ão de envio e recebimento de informações.
+\end_layout
+
+\begin_layout Standard
+O protocolo fragmenta os dados da camada de aplicação por meio dos roteadores
+ em segmentos e os transmite para a camada de internet.
+ No host destino, o protocolo TCP remonta os segmentos.
+ O TCP cuida também do controle de fluxo, impedindo que um transmissor rápido
+ sobrecarregue um receptor lento com um volume de mensagens muito grande.
+\end_layout
+
+\begin_layout Standard
+Todas as conexões TCP são full-duplex e ponto a ponto.
+ 
+\shape italic
+Full-duplex 
+\shape default
+quer dizer que o tráfego pode ser feito em ambas as direções ao mesmo tempo.
+ Ponto a ponto quer dizer que cada conexão possui exatamente dois pontos
+ terminais.
+\end_layout
+
+\begin_layout Standard
+O serviço TCP é obtido quando tanto o transmissor quanto o receptor criam
+ pontos terminais, denominados sockets.
+ Cada socket tem um endereço que consiste no endereço IP do host mais um
+ número de 16 bits local para esse host, chamado porta.
+ Porta é o nome usado pelo TCP para um TSAP (
+\shape italic
+transport service acess point
+\shape default
+).
+ Para que uma conexão funcione, é necessário que uma conexão seja explicitamente
+ estabelecida entre uma socket da máquina transmissora e uma socket da máquina
+ receptora.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+http://www.tcpipguide.com/free/t_TCPIPSocketsandSocketPairsProcessandConnectionIde
+n.htm
+\end_layout
+
+\begin_layout Plain Layout
+/par
+\end_layout
+
+\begin_layout Plain Layout
+What this all means is that the overall identification of an application
+ process actually uses the combination of the IP address of the host it
+ runs on—or the network interface over which it is talking, to be more precise—a
+nd the port number which has been assigned to it.
+ This combined address is called a socket.
+ Sockets are specified using the following notation:
+\end_layout
+
+\begin_layout Plain Layout
+<IP Address>:<Port Number> So, for example, if we have a Web site running
+ on IP address 41.199.222.3, the socket corresponding to the HTTP server for
+ that site would be 41.199.222.3:80.
+\end_layout
+
+\begin_layout Plain Layout
+/par
+\end_layout
+
+\begin_layout Plain Layout
+http://gnosis.cx/publish/programming/sockets.html
+\end_layout
+
+\begin_layout Plain Layout
+An IP address gets a packet to a machine, a port lets the machine decide
+ which process/service (if any) to direct it to.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assim como o IP, o TCP é dividido em dados e cabeçalho.
+ A estrutura do cabeçalho TCP é mostrada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Formato-do-Segmento"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cabecalho do Segmento TCP
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Formato-do-Segmento"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename tcp segment 2.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte[https://rapazes.wordpress.com/2010/05/27/camada-de-transporte-tcpip/]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+http://www.m8.com.br/andre/tcp.htm
+\end_layout
+
+\begin_layout Plain Layout
+http://br.ccm.net/contents/284-o-protocolo-tcp
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Porta 
+\series bold
+de origem e destino 
+\series default
+(16 bits): usa um par de 16-bit para endereçamento de portas de origem e
+ destino.
+\end_layout
+
+\begin_layout Description
+Número 
+\series bold
+de sequencia
+\series default
+: Os próximos 32 bits representam o número de sequência, que indica o segmento
+ na rede e também é utilizado para reordenar o segmento na chegada ao destino.
+\end_layout
+
+\begin_layout Description
+Número 
+\series bold
+de confirmação
+\series default
+: O campo número de confirmação (ACK) é sempre um valor acima do número
+ de sequência do segmento TCP recebido.
+\end_layout
+
+\begin_layout Description
+Tamanho 
+\series bold
+do cabeçalho
+\series default
+: Indica o número de quatro octetos presentes dentro do cabeçalho TCP.
+\end_layout
+
+\begin_layout Description
+URG: Se esta flag estiver em 1 o pacote deve ser tratado urgentemente.
+ 
+\end_layout
+
+\begin_layout Description
+ACK: Se esta flag estiver em 1 o pacote é um aviso de recepção.
+ 
+\end_layout
+
+\begin_layout Description
+PSH (
+\shape italic
+push
+\shape default
+): Se esta flag estiver em 1, indica que indica que o receptor dos dados
+ deve entregar os dados à aplicação mediante sua chegada, em vez de armazená-los
+ até que um
+\shape italic
+ buffer
+\shape default
+ completo tenha sido recebido;.
+ 
+\end_layout
+
+\begin_layout Description
+RST: Se esta flag estiver em 1, a conexão é reiniciada.
+ 
+\end_layout
+
+\begin_layout Description
+SYN: É usada para sincronizar o início de uma conexao.
+\end_layout
+
+\begin_layout Description
+FIN: Se esta flag estiver em 1, a conexão é interrompida.
+\end_layout
+
+\begin_layout Description
+Tamanho 
+\series bold
+da janela
+\series default
+: É um contador de 16 bits que é usado para indicar o número de pacotes
+ que o receptor pode receber em seu 
+\shape italic
+buffer
+\shape default
+ em um determinado período de tempo.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+Checksum
+\shape default
+: É usado para assegurar a integridade do segmento.
+\end_layout
+
+\begin_layout Description
+
+\shape italic
+Urgent 
+\series bold
+Pointer
+\series default
+\shape default
+: Indica o número de sequência do octeto final quando a flag 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+urgent
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+ está setada.
+\end_layout
+
+\begin_layout Description
+Opções (tamanho variável): Opções diversas.
+\end_layout
+
+\begin_layout Standard
+O protocolo TCP, em um nível superior, é responsável por direcionar os dados
+ para a aplicação correta.
+ Isso é feito através dos campos portas origem e destino no cabeçalho TCP.
+ O valor presente nesse campo é relacionado dinamicamente pelas aplicações.
+ A exceção são as 1024 primeiras portas, previamente definidas, que só podem
+ ser usadas por aplicações específicas.
+ 
+\end_layout
+
+\begin_layout Section
+Interfaces para Programas de Aplicação (APIs)
+\end_layout
+
+\begin_layout Standard
+APIs (
+\shape italic
+Aplication Program Interfaces
+\shape default
+) são interfaces para programadores usando diretamente os serviços da camada
+ de transporte.
+ Seu objetivo é facilitar a implementação de programas de aplicação que
+ fazem o uso de serviços de comunicação da rede.
+ APIs são usualmente oferecidas para alguns sistemas operacionais (por exemplo,
+ Unix, Linux, Windows, etc) e em algumas linguagens (por exemplo, C, C++,
+ C#, Java, etc).
+\end_layout
+
+\begin_layout Standard
+Uma das APIs bem difundida é a Berkeley Socket, API em linguagem C com TCP
+ em UNIX BSD (
+\shape italic
+UNIX Berkeley Software Distribution
+\shape default
+) e compatíveis.
+ Os serviços são acessíveis por meio das chamadas de sistema (
+\shape italic
+system calls
+\shape default
+) como nos exemplos da Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Chamadas-de-sistema"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A interface entre um programa de aplicacao e os protocolos de comunicacao
+ em um sistema operacional é conhecida como API.
+ Sockets proveem uma implementacao da abstracao SAP (service access point)
+ na camada de transporte na suite TCP/IP, a qual faz parte do BSD Unix.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Chamadas de sistema da Berkeley Socket
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Chamadas-de-sistema"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Chamada de Sistema
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Função
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+socket
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cria uma 
+\shape italic
+socket 
+\shape default
+(TSAP)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+bind
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Associa um nome ASCII a um 
+\shape italic
+socket
+\shape default
+ já existente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+listen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cria uma fila de espera para requisições de serviço
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+accept
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Remove um pedido de conexão de uma 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fila ou espera por um novo pedido
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+connect
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estabelece uma conexão com outra 
+\shape italic
+socket
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+shutdown
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Encerra uma conexão entre 
+\shape italic
+sockets
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+send
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Envia mensagem por conexão existente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+recv
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recebe mensagens por conexão existente
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+select
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Testa um grupo de 
+\shape italic
+sockets
+\shape default
+ para 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ver se tem mensagens
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte[]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

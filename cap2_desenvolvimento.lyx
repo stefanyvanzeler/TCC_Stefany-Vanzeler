@@ -1,0 +1,6248 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+%\usepackage{tabela-simbolos}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+MATERIAIS E MÉTODOS
+\end_layout
+
+\begin_layout Standard
+Neste capítulo serão abordados, de maneira detalhada, cada etapa da metodologia
+ utilizada neste projeto, e quais foram os materiais utilizados em cada
+ etapa.
+ 
+\end_layout
+
+\begin_layout Section
+Projeto e montagem do protótipo de carro elétrico 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Projeto-e-Montagem"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Projeto do protótipo de carro elétrico
+\end_layout
+
+\begin_layout Standard
+O protótipo de carro elétrico foi construído com chassi metálico feito a
+ partir de uma chapa de eletrocalha.
+ Ele possui 15 centímetros de largura e 20 centímetro de comprimento.
+ Uma segunda peça metálica foi adicionada para servir de suporte para o
+ microcontrolador.
+ A bateria fica coberta por essa segunda peça, na parte de baixo do microcontrol
+ador.
+ Nas Figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vista-superior-do-protipo"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Vista-lateral-do-protipo"
+
+\end_inset
+
+ tem-se dois croquis das vistas superior e lateral do chassi protótipo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vista-superior-do-protipo"
+
+\end_inset
+
+Vista superior do chassi do protótipo de carro elétrico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename desenho_carro_1.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Vista-lateral-do-protipo"
+
+\end_inset
+
+Vista lateral do chassi do protótipo de carro elétrico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename desenho_carro_2.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sendo:
+\end_layout
+
+\begin_layout Itemize
+(1): Distância entre os furos de fixação do suporte do motor;
+\end_layout
+
+\begin_layout Itemize
+(2): Comprimento da base do suporte do microcontrolador;
+\end_layout
+
+\begin_layout Itemize
+(3): Distância entre as bases do suporte do microcontrolador;
+\end_layout
+
+\begin_layout Itemize
+(4): Distância entre a base do suporte do microcontrolador e a lateral do
+ protótipo;
+\end_layout
+
+\begin_layout Itemize
+(5): Distância entre a base do suporte do microcontrolador e a frente do
+ protótipo;
+\end_layout
+
+\begin_layout Itemize
+(6): Distância entre o furo de fixação do suporte do motor e a frente do
+ protótipo;
+\end_layout
+
+\begin_layout Itemize
+(7): Distância entre o furo de fixação do suporte do motor e a lateral do
+ protótipo;
+\end_layout
+
+\begin_layout Itemize
+(8): Altura do suporte do microcontrolador;
+\end_layout
+
+\begin_layout Itemize
+(9): Comprimento total do protótipo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{0.6cm}
+\end_layout
+
+\end_inset
+
+No projeto todas as distância foram calculadas para que os componentes,
+ principalmente os mais pesados, como a bateria, fiquem sempre centralizados
+ com relação ao centro de massa do protótipo, evitando assim que um dos
+ motores seja sobrecarregado.
+ 
+\end_layout
+
+\begin_layout Subsection
+Rodas, motores e suportes
+\end_layout
+
+\begin_layout Standard
+As rodas utilizadas (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rodas-utilizadas-no-prototipo"
+
+\end_inset
+
+) são fabricadas pela 
+\shape italic
+Pololu Robotics & Electronics®.
+ 
+\shape default
+Sua parte externa, de borracha, tem 42 milímetros de diâmetro e 19 milímetros
+ de espessura.
+ A parte interna (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Parte-interna-da-roda"
+
+\end_inset
+
+), de plástico, tem 35 milímetros de diâmetro e 13,4 milímetros de espessura.
+ É nessa parte interna que se encontram os 12 
+\begin_inset Quotes eld
+\end_inset
+
+dentes
+\begin_inset Quotes erd
+\end_inset
+
+ que são utilizados na leitura do 
+\shape italic
+encoder
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rodas-utilizadas-no-prototipo"
+
+\end_inset
+
+Rodas utilizadas no protótipo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename roda.jpg
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Pololu Robotics & Electronics 
+\shape default
+(https://www.pololu.com/product/1090)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Parte-interna-da-roda"
+
+\end_inset
+
+Parte interna da roda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename roda_interno.jpg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Pololu Robotics & Electronics® 
+\shape default
+(https://www.pololu.com/product/1090)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os motores de corrente contínua utilizados também são fabricados pela 
+\shape italic
+Pololu Robotics & Electronics® 
+\shape default
+(Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Motor-CC-utilizados"
+
+\end_inset
+
+ e principais dimensões, em milímetros, na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Principais-dimensões-motor"
+
+\end_inset
+
+)
+\shape italic
+.
+ 
+\shape default
+Possuem uma caixa de redução de 1:100, fixada ao eixo interno do motor.
+ Ou seja, cada 100 rotações do eixo interno gera 1 rotação do eixo externo.
+ Sua rotação máxima é, no eixo externo, 300 rpm, quando aplicado em seus
+ terminais a tensão elétrica máxima de operação de 12 volts.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Motor-CC-utilizados"
+
+\end_inset
+
+Motor CC utilizados no projeto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename motor.jpg
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Pololu Robotics & Electronics® 
+\shape default
+(https://www.pololu.com/product/1101)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Principais-dimensões-motor"
+
+\end_inset
+
+Principais dimensões, em milímetros, do motor CC utilizado no projeto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename motor2.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Pololu Robotics & Electronics® 
+\shape default
+(https://www.pololu.com/product/1101)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A fixação do motor ao chassi do protótipo é realizada por meio de suportes
+ plásticos (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Suportes-utilizados-para"
+
+\end_inset
+
+ e principais dimensões, em milímetros, na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Principais-dimensões-suporte"
+
+\end_inset
+
+) que encaixam-se perfeitamente ao motor, e cuja fixação à parte inferior
+ do chassi é realizada com a utilização de parafusos e porcas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Suportes-utilizados-para"
+
+\end_inset
+
+Suportes utilizados para fixação do motor ao chassi do protótipo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename suporte.jpg
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Pololu Robotics & Electronics® 
+\shape default
+(https://www.pololu.com/product/1189)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Principais-dimensões-suporte"
+
+\end_inset
+
+Principais dimensões, em milímetros, do suporte utilizado para fixação do
+ motor ao chassi
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename suporte2.jpg
+	lyxscale 60
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Pololu Robotics & Electronics® 
+\shape default
+(https://www.pololu.com/product/1189)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\shape italic
+Encoder
+\shape default
+ ENC01A-0J1216 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Encoder-ENC01A-0J1216"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A medição da velocidade do protótipo é realizada pelo transdutor de posição
+ angular, ou 
+\shape italic
+encoder
+\shape default
+, em inglês,
+\shape italic
+ 
+\shape default
+ENC01A-0J1216 fabricado pela 
+\shape italic
+Pololu Robotics & Electronics® 
+\shape default
+(Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Encoder-ENC01A-0J1216"
+
+\end_inset
+
+)
+\shape italic
+.
+ 
+\shape default
+Ele é um 
+\shape italic
+encoder 
+\shape default
+de quadratura, ou seja, possui dois sensores infravermelhos de reflectância
+ que reconhecem o movimento dos 12 
+\begin_inset Quotes eld
+\end_inset
+
+dentes
+\begin_inset Quotes erd
+\end_inset
+
+ presentes na parte plástica da roda.
+ Os sensores são espaçados de forma a fornecer sinais defasado aproximadamente
+ em 90º, permitindo que a direção de rotação seja determinada e fornecendo
+ 48 contagens por volta da roda, com resolução de 4 contagens por dente
+ e resolução linear de menos de 3 milímetros.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Encoder-ENC01A-0J1216"
+
+\end_inset
+
+Encoder
+\shape default
+ ENC01A-0J1216
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename encoder.jpg
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Pololu Robotics & Electronics® 
+\shape default
+(https://www.pololu.com/product/1217)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O 
+\shape italic
+encoder 
+\shape default
+deve ser alimentado eletricamente nos pinos Vcc e GND com uma tensão elétrica
+ entre 4,5 e 5,5 V e os pinos OUTA e OUTB, que contém o sinal de saída,
+ devem ser conectados ao microcontrolador.
+\end_layout
+
+\begin_layout Standard
+A maneira como o 
+\shape italic
+encoder
+\shape default
+, o motor, o suporte e a roda se encaixam é ilustrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Encaixe-do-encoder"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Encaixe-do-encoder"
+
+\end_inset
+
+Encaixe do 
+\shape italic
+encoder 
+\shape default
+com o motor, o suporte e a roda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename encoder2.jpg
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Pololu Robotics & Electronics® 
+\shape default
+(https://www.pololu.com/product/1217)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\shape italic
+Drive
+\shape default
+ de motor TB6612FNG 
+\end_layout
+
+\begin_layout Standard
+Como o valor de tensão elétrica na saída PWM do Arduino tem valor máximo
+ de 5V, um interfaceamento deve ser realizado para que os motores CC sejam
+ alimentados com os 12V fornecidos pela bateria.
+ O responsável por isso é o 
+\shape italic
+drive 
+\shape default
+de motor TB6612FNG (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Drive-de-motor"
+
+\end_inset
+
+), fabricado pela 
+\shape italic
+Pololu Robotics & Electronics®.
+ 
+\shape default
+Esse dispositivo consegue controlar até dois motores ao mesmo tempo e possui
+ uma ponte H baseada em MOSFET, o que permite também controlar o sentido
+ de rotação de cada um dos motores.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Drive-de-motor"
+
+\end_inset
+
+Drive de motor TB6612FNG 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename drive_motor.jpg
+	lyxscale 50
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Pololu Robotics & Electronics® 
+\shape default
+(https://www.pololu.com/product/713)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sua ligação física com o microcontrolador, os motores e a bateria se dá
+ utilizando os pinos descritos a seguir, tendo como referencia inicial a
+ parte superior esquerda da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Drive-de-motor"
+
+\end_inset
+
+ e percorrendo-a no sentido anti-horário: 
+\end_layout
+
+\begin_layout Itemize
+GND: Conectado ao terminal terra do microcontrolador;
+\end_layout
+
+\begin_layout Itemize
+VCC: Conectado ao terminal 5V do microcontrolador;
+\end_layout
+
+\begin_layout Itemize
+AO1: Conectado ao polo negativo do motor 1;
+\end_layout
+
+\begin_layout Itemize
+AO2: Conectado ao polo positivo do motor 1;
+\end_layout
+
+\begin_layout Itemize
+BO2: Conectado ao polo positivo do motor 2;
+\end_layout
+
+\begin_layout Itemize
+BO1; Conectado ao polo negativo do motor 2;
+\end_layout
+
+\begin_layout Itemize
+VMOT: Conectado ao polo positivo da fonte de energia utilizada para alimentar
+ os motores(bateria);
+\end_layout
+
+\begin_layout Itemize
+GNG: Conectado ao polo negativo da fonte de energia utilizada para alimentar
+ os motores(bateria);
+\end_layout
+
+\begin_layout Itemize
+PWMA: Conectado a um pino PWM do microcontrolador;
+\end_layout
+
+\begin_layout Itemize
+AIN2: Conectado a um pino digital do microcontrolador;
+\end_layout
+
+\begin_layout Itemize
+AIN1: Conectado a um pino digital do microcontrolador;
+\end_layout
+
+\begin_layout Itemize
+STBY: Conectado a um pino digital do microcontrolador;
+\end_layout
+
+\begin_layout Itemize
+BIN1: Conectado a um pino digital do microcontrolador;
+\end_layout
+
+\begin_layout Itemize
+BIN2: Conectado a um pino digital do microcontrolador.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{0.6cm}
+\end_layout
+
+\end_inset
+
+São os pinos AIN2, AIN1, BIN1 e BIN2 que permitem a escolha do sentido de
+ rotação do motor, alterando-se qual pino de cada par (
+\begin_inset Quotes eld
+\end_inset
+
+A
+\begin_inset Quotes erd
+\end_inset
+
+ ou 
+\begin_inset Quotes eld
+\end_inset
+
+B
+\begin_inset Quotes erd
+\end_inset
+
+) recebe sinal lógico 
+\begin_inset Quotes eld
+\end_inset
+
+ligado
+\begin_inset Quotes erd
+\end_inset
+
+ do pino digital do microcontrolador.
+ Já o pino STBY permite, também alterando-se o sinal lógico que ele recebe
+ do microcontrolador, ligar ou desligar os dois motores que estão ligados
+ ao 
+\shape italic
+drive
+\shape default
+.
+ Como o projeto possui quatro motores são necessários dois 
+\shape italic
+drivers 
+\shape default
+para que eles funcionem.
+\end_layout
+
+\begin_layout Subsection
+Sensor de corrente ACS-712
+\end_layout
+
+\begin_layout Standard
+Para que se tenha valores do consumo de energia do protótipo é necessário
+ medir a corrente consumida pelo sistema.
+ O dispositivo usado para fazer essa medição é o sensor de corrente ajustável
+ ACS-712 (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sensor-de-corrente"
+
+\end_inset
+
+), fabricado pela 
+\shape italic
+SparkFun Electronics
+\shape default
+®.
+ Sua saída é uma tensão elétrica analógica proporcional a corrente medida,
+ e um amplificador operacional ajustável permite um ganho 4,27 a 47 vezes
+ no valor da saída, permitindo a leitura de correntes pequenas.
+ A corrente que passa pelo sensor é medida por efeito Hall.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sensor-de-corrente"
+
+\end_inset
+
+Sensor de corrente ajustável ACS-712
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename sensor_corrente.jpg
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+SparkFun Electronics® 
+\shape default
+(https://www.sparkfun.com/products/8883)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O sensor deve ser alimentado eletricamente nos pinos GND (terra) e 5V.
+ Já o pino de saída, 
+\shape italic
+Vo,
+\shape default
+ deve ser conectado a um dos pinos de entrada analógica do microcontrolador.
+\end_layout
+
+\begin_layout Standard
+A sua calibração foi realizada medindo a corrente consumida pelo sistema
+ com um amperímetro ET-2030 fabricado pela 
+\shape italic
+Minipa®
+\shape default
+ e, ao mesmo tempo, monitorando a leitura analógica
+\shape italic
+ 
+\shape default
+realizada pelo microcontrolador da saída do sensor.
+ Porém, nos testes práticos, constatou-se que a tensão elétrica na saída
+ do sensor, ao contrário do informado pelo fabricante, não aumentava proporciona
+lmente conforme a corrente que passa pelo sensor aumenta.
+ 
+\end_layout
+
+\begin_layout Standard
+Ou seja, não é possível obter apenas uma constante de proporcionalidade
+ pelo qual o valor de tensão elétrica da saída do sensor deve ser multiplicado
+ para que se obtenha um valor de corrente igual ao lido pelo amperímetro.
+ As constantes utilizadas, para cada faixa de tensão na saída do sensor,
+ encontram-se na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Constantes-de-proporcionalidade"
+
+\end_inset
+
+.
+ Na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Comparação-entre-o-sensor-amp"
+
+\end_inset
+
+ encontra-se um comparativo entre o valor de corrente lido pelo sensor e
+ pelo amperímetro, após a calibração, quando diferentes valores de tensão
+ elétrica são aplicados nos motores CC.
+ A maior variação verificada foi de 0,03A, quando o sensor de corrente mediu
+ 0,48A e o amperímetro 0,51A.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Comparação-entre-o-sensor-amp"
+
+\end_inset
+
+Comparação entre o valor de corrente lido pelo sensor e pelo amperímetro
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="27" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tensão elétrica aplicada 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sensor de 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Amperímetro 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nos motores (em volts)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Corrente (em Amperes)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(em Amperes)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,17
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,94
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,21
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,41
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,27
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,26
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1,88
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,31
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,31
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,37
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,82
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,41
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,41
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,44
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,46
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,76
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,49
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4,23
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,52
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4,7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,54
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5,17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,56
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5,64
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,57
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6,11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,57
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6,58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,57
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7,05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,54
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,56
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7,52
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,55
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,52
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8,47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,51
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8,94
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,47
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9,41
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,44
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,44
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9,88
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,39
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,40
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10,35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,35
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,36
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10,82
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,33
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11,29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,28
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Constantes-de-proporcionalidade"
+
+\end_inset
+
+Constantes de proporcionalidade calculadas na calibração do sensor de corrente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="19" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Faixa de 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Constante de 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Faixa de Corrente 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tensão elétrica (em volts)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Proporcionalidade
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Lida (em Amperes)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Menor que 2,56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,56 e 2,61
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,065134
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,16 e 0,17 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,62 a 2,64
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,072243
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,18 a 0,20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,65 a 2,67
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,082397
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,21 e 0,22
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,68 a 2,69
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,092936
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,23 a 0,25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,70 a 2,72
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,102564
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,27 e 0,28
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,73 a 2,75
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,109090
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,29 e 0,30
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,76 a 2,79
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,1151079
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,31 a 0,33
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,80 a 2,82
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,1174377
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,34 e 0,35
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,83 a 2,84
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,1245551
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,36 e 0.37
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,85 a 2,86
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,1385435
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,39 e 0,4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,87 a 2,89
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,145833
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,41 a 0,43
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,90 a 2,95
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,1535836
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,44 e 0,45
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,96 a 2,99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,161616
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,47 a 0,49
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,00 a 3,02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,169435
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,5 a 0,52
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,03 a 3,05
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,17763
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,53 a 0,55
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,06 a 3,07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,185667
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,56 a 0,58
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Programação do microcontrolador
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Programação-do-Microcontrolador"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uma programação foi implementada para que o microcontrolador Arduino possa
+ obter os dados do 
+\shape italic
+encoder 
+\shape default
+e do sensor de corrente, enviá-los, por meio de comunicação serial, para
+ o sistema supervisório, e receber dele, após a atuação do controlador PID,
+ o valor de PWM que corresponde à tensão elétrica que deve ser aplicado
+ nos motores.
+ A programação completa encontra-se no Apêndice 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Algoritmo-implementado-no-arduino"
+
+\end_inset
+
+.
+ O algoritmo foi divido em 8 partes, cujas principais características são:
+\end_layout
+
+\begin_layout Itemize
+Parte 1: CONFIGURAÇÃO DAS PORTAS DO MICROCONTROLADOR: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Determinação das portas utilizadas no Arduino: primeiro, as sete utilizadas
+ por cada 
+\shape italic
+driver
+\shape default
+ de motor (dois pares para determinar o sentido de rotação de cada motor,
+ duas para determinar o valor de PWM, também de cada motor, e uma porta
+ para determinar se os dois motores conectados àquele 
+\shape italic
+driver
+\shape default
+ estão ligados ou desligados), e depois as 2 portas utilizadas pelo 
+\shape italic
+encoder.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Parte 2: DECLARAÇÃO DAS VARIÁVEIS:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+As variáveis que vão receber o valor de PWM, da leitura do sensor de corrente
+ e do 
+\shape italic
+encoder
+\shape default
+ são declaradas.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Parte 3: CONFIGURAÇÃO DE ENTRADA E SAÍDA:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Determina-se que todas as portas utilizadas pelo 
+\shape italic
+driver 
+\shape default
+serão portas de 
+\begin_inset Quotes eld
+\end_inset
+
+saída
+\begin_inset Quotes erd
+\end_inset
+
+ de informações.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Parte 4: CONFIGURAÇÃO DA COMUNICAÇÃO SERIAL:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A comunicação serial do Arduino é iniciada com uma taxa de transmissão de
+ 9600 
+\shape italic
+bits 
+\shape default
+por segundo.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Parte 5: CONFIGURAÇÃO DO 
+\shape italic
+ENCODER:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+As portas que vão receber as informações do 
+\shape italic
+encoder 
+\shape default
+ficam prontas para receber dados a qualquer momento.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Parte 6: RECEBIMENTO DE DADOS DO 
+\shape italic
+LABVIEW
+\shape default
+®:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Como o recebimento dos dados seriais pelo Arduino se dá um 
+\shape italic
+byte
+\shape default
+ de cada vez e o valor recebido do sistema supervisório é, no máximo, um
+ número com três dígitos (por exemplo, 
+\begin_inset Quotes eld
+\end_inset
+
+123
+\begin_inset Quotes erd
+\end_inset
+
+), quando existem dados para serem recebidos, três leituras seguidas são
+ realizadas, uma para cada dígito do número: o primeiro recebido é a unidade,
+ o segundo é a dezena e o terceiro é a centena (para que os dígitos cheguem
+ dessa maneira no Arduino, eles devem ser enviados dessa maneira pelo sistema
+ supervisório).
+ Para juntá-los, a centena é multiplicada por cem, a dezena multiplicada
+ por dez, e as duas são somadas com a unidade.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Parte 7: DADOS ENVIADOS PARA AS PORTAS DO MICROCONTROLADOR:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+É determinado o nível lógico das portas conectadas aos 
+\shape italic
+drivers.
+ 
+\shape default
+Uma das portas de cada um dos pares que determinam a rotação dos motores
+ recebe nível lógico 
+\begin_inset Quotes eld
+\end_inset
+
+alto
+\begin_inset Quotes erd
+\end_inset
+
+ e a outra nível lógico 
+\begin_inset Quotes eld
+\end_inset
+
+baixo
+\begin_inset Quotes erd
+\end_inset
+
+.
+ O valor de PWM que foi recebido do sistema supervisório é enviado para
+ os quatro motores do protótipo, para que todos tenham a mesma rotação.
+ O valor de PWM, na programação, varia entre 0 e 255, representando um valor
+ de 0 a 5V na saída do microcontrolador.
+ Após o envio dos dados, é realizada uma leitura do 
+\shape italic
+encoder
+\shape default
+ e seu valor é zerado para a próxima leitura.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Parte 8: LEITURA DO SENSOR DE CORRENTE:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O valor de tensão elétrica do pino de saída do sensor de corrente é lido,
+ e as constantes de proporcionalidade da Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Constantes-de-proporcionalidade"
+
+\end_inset
+
+ são implementadas.
+ Com isso, obtém-se a corrente consumida pelo sistema.
+ Esse valor é multiplicado por cem para ser enviado para o sistema supervisório
+ sem casas decimais.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Parte 9: ENVIO DE DADOS PARA O 
+\shape italic
+LABVIEW
+\shape default
+®:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Os valores da contagem do 
+\shape italic
+encoder 
+\shape default
+e da corrente são enviados pela porta serial.
+ Como eles são enviados por comunicação serial, e em uma única mensagem,
+ eles são delimitados pelas letras 
+\begin_inset Quotes eld
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+b
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Elas serão utilizadas pelo sistema supervisório para determinar em que
+ ponto da mensagem encontra-se cada valor.
+ Por fim, um atraso de 90 milissegundos ocorre até a próxima execução do
+ programa, para que o sistema supervisório realize suas operações e envie
+ novos valores para o microcontrolador.
+ Logo, a quantidade de troca de informações entre o sistema supervisório
+ e o microcontrolador depende diretamente desse tempo.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Identificação da função de transferência do motor CC 
+\end_layout
+
+\begin_layout Standard
+De acordo com a teoria abordada na seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Identificação-de-Sistemas"
+
+\end_inset
+
+, três informações devem ser previamente conhecidas para que seja possível
+ realizar a identificação de um sistema: o modelo do sistema real, o método
+ de identificação mais apropriado e os dados do sistema real.
+ 
+\end_layout
+
+\begin_layout Standard
+O modelo é a função de transferência de um motor CC presente na Equação
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ft_motor"
+
+\end_inset
+
+.
+ É necessário que se determine, por meio de técnicas de identificação de
+ sistemas, os valores de 
+\begin_inset Formula $R_{a}$
+\end_inset
+
+, 
+\begin_inset Formula $L_{a}$
+\end_inset
+
+, 
+\begin_inset Formula $J$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ e 
+\begin_inset Formula $K$
+\end_inset
+
+, que caracterizam o motor.
+\end_layout
+
+\begin_layout Standard
+O método utilizado consiste em simular, por meio do 
+\shape italic
+Simulink
+\shape default
+®, um motor CC (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Motor-CC-simulado"
+
+\end_inset
+
+), cujos valores característicos 
+\begin_inset Formula $R_{a}$
+\end_inset
+
+, 
+\begin_inset Formula $L_{a}$
+\end_inset
+
+, 
+\begin_inset Formula $J$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ e 
+\begin_inset Formula $K$
+\end_inset
+
+ podem ser alterados, e cuja ligação elétrica seja idêntica ao do motor
+ real (com uma fonte de energia que alterne sua saída por meio de uma técnica
+ PWM) e alterar seus valores característicos até que a resposta simulada
+ se aproxime da resposta do motor real.
+ As alterações são feitas por uma ferramenta de estimação de parâmetros
+ (
+\shape italic
+Parameter Estimation
+\shape default
+)
+\shape italic
+, 
+\shape default
+que realizada diversas iterações até aproximar as duas respostas
+\shape italic
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "mathworks"
+
+\end_inset
+
+.
+
+\shape default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Motor-CC-simulado"
+
+\end_inset
+
+Motor CC simulado no Simulink
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename janela_motor.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os dados do motor real foram obtidos da seguinte maneira: a tensão elétrica
+ aplicada em seus terminais foi alternada, a cada segundo, entre +12V e
+ -12V, durante quatro segundos, e sua rotação, em rpm, foi obtida por meio
+ das leituras do 
+\shape italic
+encoder
+\shape default
+, obtendo-se valores entre +300 rpm e -300 rpm.
+ 
+\end_layout
+
+\begin_layout Standard
+Essa aquisição de dados foi realizada cinco vezes, e uma média dos valores
+ de rpm foi cálculada, obtendo-se os dados que foram utilizados na estimação.
+ 
+\end_layout
+
+\begin_layout Standard
+O motor simulado teve, aplicado em seus terminais, as mesmas tensões no
+ mesmo intervalo de tempo.
+ 
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Resposta-do-motor-simulado-real-inicio"
+
+\end_inset
+
+ pode-se observar o comportamento do motor real e do motor simulado, antes
+ do início da estimação dos parâmetros característicos, e como suas respostas
+ estão diferentes.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resposta-do-motor-simulado-real-inicio"
+
+\end_inset
+
+Resposta do motor real e do motor simulado antes do início da estimação
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename resp_real_simulada_1.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com o início da estimação pela função 
+\shape italic
+Parameter Estimation, 
+\shape default
+os valores de 
+\begin_inset Formula $R_{a}$
+\end_inset
+
+, 
+\begin_inset Formula $L_{a}$
+\end_inset
+
+, 
+\begin_inset Formula $J$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ e 
+\begin_inset Formula $K$
+\end_inset
+
+ começam a ser alterados.
+ Após 6 iterações as respostas ficam como ilustrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Resposta-do-motor-6it"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resposta-do-motor-6it"
+
+\end_inset
+
+Resposta do motor real e do motor simulado após 6 iterações
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename resp_real_simulada_6it.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A estimação terminou após a 12ª iteração, obtendo-se a resposta presente
+ da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Resposta-do-motor-12it"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resposta-do-motor-12it"
+
+\end_inset
+
+Resposta do motor real e do motor simulado após 12 iterações
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename resp_real_simulada_12it.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com a aproximação das duas respostas, a estimação gerou os seguintes valores
+ para 
+\begin_inset Formula $R_{a}$
+\end_inset
+
+, 
+\begin_inset Formula $L_{a}$
+\end_inset
+
+, 
+\begin_inset Formula $J$
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ e 
+\begin_inset Formula $K$
+\end_inset
+
+, finalizando a identificação do sistema.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Valores-gerados-pela-identificacao"
+
+\end_inset
+
+Valores gerados pela identificação
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Parâmetro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Resistência da Armadura (
+\begin_inset Formula $R_{a}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,009 Ω
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Indutância da Armadura (
+\begin_inset Formula $L_{a}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,348 
+\shape italic
+H
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Momento de Inércia Total (
+\begin_inset Formula $J$
+\end_inset
+
+ ) 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,000070029 kg·m²
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Coeficiente de Atrito Viscoso (
+\begin_inset Formula $B$
+\end_inset
+
+ )
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,0023 N.m/rpm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Constante do Motor (
+\begin_inset Formula $K$
+\end_inset
+
+ )
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0,039
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Implementação do controlador PID
+\end_layout
+
+\begin_layout Standard
+Na seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Controlador-PID"
+
+\end_inset
+
+ definiu-se quais informações fundamentais que o controlador PID necessita
+ para funcionar: o valor da variável do processo, o valor do 
+\shape italic
+setpoint 
+\shape default
+e o valor de seus ganhos (
+\begin_inset Formula $K_{P,\,}T_{i}$
+\end_inset
+
+e 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+)
+\shape italic
+.
+ 
+\shape default
+O controlador PID foi implementado por meio do 
+\shape italic
+LabVIEW®
+\shape default
+, junto com o sistema supervisório.
+ As ligações do controlador PID do 
+\shape italic
+LabVIEW® 
+\shape default
+(Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Controlador-PID-do-labview"
+
+\end_inset
+
+) e suas funções são:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Controlador-PID-do-labview"
+
+\end_inset
+
+Controlador PID do 
+\shape italic
+LabVIEW®
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pid_labview.jpg
+	scale 130
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+LabVIEW®
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Output range
+\shape default
+: determinar o valor máximo e mínimo que a saída do controlador pode assumir;
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Setpoint: 
+\shape default
+determinar o valor no qual deseja-se que o processo atue;
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Process variable
+\shape default
+: resposta real obtida do processo.
+ Determina o comportamento atual do processo;
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+PID gains
+\shape default
+: ganhos 
+\begin_inset Formula $K_{P,\,}T_{i}$
+\end_inset
+
+ e 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+ do controlador PID;
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+dt (s): 
+\shape default
+determinar, quando necessário, o intervalo de tempo que o controlador deve
+ atuar;
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Reinitialize
+\shape default
+: reinicar o controlador, quando necessário;
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+Output
+\shape default
+: valor que deve ser enviado de volta ao processo, após a atuação do controlador
+, para realizar a compensação necessária,;
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+dt out (s)
+\shape default
+: caso o 
+\shape italic
+dt (s) 
+\shape default
+não seja determinado, contém o intervalo de tempo entre as atuações do controlad
+or.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{0.6cm}
+\end_layout
+
+\end_inset
+
+O valor da saída do controlador PID foi limitada entre 0 e 255, por representar
+ o valor PWM que será enviado para o microcontrolador.
+ O valor da velocidade desejada (
+\shape italic
+setpoint
+\shape default
+)
+\shape italic
+ 
+\shape default
+é determinado pelo usuário no sistema supervisório.
+ O valor da variável do processo é o valor da velocidade atual do protótipo,
+ em centímetros por segundo (cm/s).
+ 
+\end_layout
+
+\begin_layout Standard
+Como o sistema supervisório recebe a quantidade de contagens do 
+\shape italic
+encoder, 
+\shape default
+esse valor deve ser transformado matematicamente para representar a velocidade.
+ De acordo com os dados do tamanho da roda do protótipo (42 milímetros de
+ diâmetro) e das características do 
+\shape italic
+encoder
+\shape default
+ (48 contagens por volta), é possível calcular quantos centímetros cada
+ leitura do 
+\shape italic
+encoder
+\shape default
+ representa, a partir dos seguintes cálculos:
+\end_layout
+
+\begin_layout Itemize
+Comprimento total da roda (C):
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+C=2\,\centerdot\,\pi\,\centerdot\, R
+\end{equation}
+
+\end_inset
+
+onde 
+\shape italic
+R 
+\shape default
+representa o raio da roda.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Logo, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+C=2\,\centerdot\,3,14\,\centerdot\,21\, mm=131,88\, mm
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Valor, em centímetros, de cada contagem do 
+\shape italic
+encoder
+\shape default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{131,88\, mm}{48}=2,74\, mm/contagem
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{2,74\, mm}{10}=0,274\, cm/contagem
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para se obter a velocidade, portanto, multiplica-se a quantidade de contagens
+ do 
+\shape italic
+encoder
+\shape default
+ por 0,274 cm, obtendo-se a distância percorrida, e divide-se esse valor
+ por 0,09 segundos (tempo entre as leituras do 
+\shape italic
+encoder
+\shape default
+, que ocorrem a cada troca de informações entre o microcontrolador e o sistema
+ supervisório).
+ 
+\end_layout
+
+\begin_layout Section
+Criação do sistema supervisório
+\end_layout
+
+\begin_layout Standard
+O sistema supervisório foi implementado junto com o controlador PID descrito
+ no item anterior, por meio do 
+\shape italic
+software LabVIEW
+\shape default
+®, onde a criação é realizada em duas janelas: a do diagrama de blocos (
+\shape italic
+Block Diagram
+\shape default
+), onde toda a programação é implementada, e a que será utilizada pelo usuário
+ (
+\shape italic
+Front Panel
+\shape default
+), onde se encontram os objetos utilizados para inserir e monitorar as variáveis
+ de teste.
+ Todas as informações que serão inseridas ou monitoradas pelo usuário, no
+ 
+\shape italic
+Front Panel, 
+\shape default
+possuem uma programação específica no diagrama de blocos.
+\end_layout
+
+\begin_layout Standard
+O sistema supervisório completo encontra-se no Apêndice 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Sistema-supervisório-implementadado-labview"
+
+\end_inset
+
+.
+ Cada parte do sistema supervisório e suas principais características são:
+\end_layout
+
+\begin_layout Itemize
+Comunicação serial (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Configuração-da-comunicação-serial"
+
+\end_inset
+
+): o usuário deve selecionar por qual porta serial a comunicação com o protótipo
+ será realizada, para que seja possível realizar a conexão.
+ Esse valor não pode ser alterado quando o sistema supervisório está conectado
+ com o protótipo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Configuração-da-comunicação-serial"
+
+\end_inset
+
+Configuração da comunicação serial no sistema supervisório
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename serial.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Parâmetros do PID (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Escolha-dos-parâmetros-pid"
+
+\end_inset
+
+): o usuário deve inserir os valores de 
+\begin_inset Formula $K_{P,}\, T_{i}$
+\end_inset
+
+ e 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+.
+ Esses valores podem ser alterado a qualquer momento durante o teste.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Escolha-dos-parâmetros-pid"
+
+\end_inset
+
+Escolha dos parâmetros do controlador PID no sistema supervisório
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pid_config.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Nome do arquivo externo (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Escolha-do-nome-arq-ext"
+
+\end_inset
+
+): o usuário deve digitar, antes de iniciar a conexão com o protótipo, o
+ nome e o formato do arquivo externo no qual os dados do teste serão salvos
+ (por exemplo, 
+\begin_inset Quotes eld
+\end_inset
+
+Teste1.xls
+\begin_inset Quotes erd
+\end_inset
+
+ para salvar em uma planilha ou 
+\begin_inset Quotes eld
+\end_inset
+
+Teste2.txt
+\begin_inset Quotes erd
+\end_inset
+
+ para salvar como documento de texto).
+ O nome do arquivo e seu formato não podem ser alterados durante o teste.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Escolha-do-nome-arq-ext"
+
+\end_inset
+
+Escolha do nome e formato do arquivo externo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename arquivo_externo.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Botões para iniciar e parar o teste (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Botões-para-iniciar"
+
+\end_inset
+
+): o usuário deve utilizar esses botões para iniciar, e quando necessário,
+ parar o teste.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Botões-para-iniciar"
+
+\end_inset
+
+Botões para iniciar e parar o teste
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename botao_iniciar_parar.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Indicador da situação do teste (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Indicador-da-situação"
+
+\end_inset
+
+): são exibidas as mensagens 
+\begin_inset Quotes eld
+\end_inset
+
+TESTE EM EXECUÇÃO
+\begin_inset Quotes erd
+\end_inset
+
+ ou 
+\begin_inset Quotes eld
+\end_inset
+
+TESTE INTERROMPIDO OU FINALIZADO
+\begin_inset Quotes erd
+\end_inset
+
+, de acordo com a situação atual do teste.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Indicador-da-situação"
+
+\end_inset
+
+Indicador da situação do teste
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename situacao_teste.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Botão para ativar e desativar o protótipo (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Botão-para-ativar-prot"
+
+\end_inset
+
+): botão de segurança, que deve ser acionado autorizando o protótipo a se
+ movimentar.
+ Pode ser acionado novamente, a qualquer momento, fazendo o protótipo parar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Botão-para-ativar-prot"
+
+\end_inset
+
+Botão para ativar e desativar o protótipo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ativar_desativar_carro.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Botão para parar a execução do programa (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Botão-para-parar-programa"
+
+\end_inset
+
+): interrompe a execução do sistema supervisório e a conexão com o protótipo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Botão-para-parar-programa"
+
+\end_inset
+
+Botão para parar a execução do programa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename parar_programa.jpg
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Escolha dos percursos (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Seleção-da-distância-perc"
+
+\end_inset
+
+): o usuário deve escolher, em cada aba, a distância (em centímetros) e
+ a velocidade (em centímetros por segundo) que o protótipo deve percorrer
+ em cada um dos quatro percursos.
+ As distâncias e as velocidades podem ser alteradas a qualquer momento durante
+ o teste.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Seleção-da-distância-perc"
+
+\end_inset
+
+Seleção da distância e velocidade dos percursos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename percursos.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Informações do percurso atual (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Informações-sobre-o-perc-atual"
+
+\end_inset
+
+): exibe informações sobre qual percurso o protótipo está naquele momento,
+ a distância percorrida no percurso, a distância total que deve ser percorrida
+ e a velocidade esperada daquele percurso, além do tempo total que o protótipo
+ levou para percorrer cada um dos percursos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Informações-sobre-o-perc-atual"
+
+\end_inset
+
+Informações sobre o percurso atual
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename info_percursos.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Informações gerais do teste (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Informações-gerais-do-teste"
+
+\end_inset
+
+): exibe a distância total percorrida naquele teste, o tempo decorrido e
+ possui um botão que zera todos os contadores, para que um novo teste possa
+ ser realizado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Informações-gerais-do-teste"
+
+\end_inset
+
+Informações gerais do teste
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename info_gerais.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Velocidade (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Informações-sobre-a-velocidade"
+
+\end_inset
+
+): um gráfico e um velocímetro exibem o 
+\shape italic
+setpoint 
+\shape default
+(velocidade esperada) e a velocidade atual do protótipo, podendo ser possível
+ visualizar como ele se comporta nas mudanças de velocidade.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Informações-sobre-a-velocidade"
+
+\end_inset
+
+Informações sobre a velocidade
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename velocidade.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Consumo de energia (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Informações-sobre-o-consumo"
+
+\end_inset
+
+): dois gráficos exibem os valores atuais da corrente consumida pelo protótipo
+ e a tensão elétrica aplicada nos motores.
+ A corrente consumida é obtida a partir do sensor de corrente e a tensão
+ elétrica aplicada aos motores a partir do valor do PWM proveniente do controlad
+or PID, uma vez que esse valor representa o valor final da tensão elétrica
+ aplicada nos motores.
+ É a partir da multiplicação da tensão elétrica, da corrente consumida e
+ do tempo, em horas, que o consumo de energia é obtido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Informações-sobre-o-consumo"
+
+\end_inset
+
+Informações sobre o consumo de energia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename consumo.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nas partes 6 e 9 da programação do microcontrolador, presente na Seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Programação-do-Microcontrolador"
+
+\end_inset
+
+, foram abordadas a maneira pelo qual os dados são recebidos pelo microcontrolad
+or e enviados para o sistema supervisório, respectivamente.
+\end_layout
+
+\begin_layout Standard
+O sistema supervisório, ao receber os dados do microcontrolador, deve identifica
+r em que ponto da mensagem se encontram as letras 
+\begin_inset Quotes eld
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+b
+\begin_inset Quotes erd
+\end_inset
+
+, e considerar apenas o valor numérico que encontra-se entre as letras (o
+ valor da leitura do 
+\shape italic
+encoder 
+\shape default
+entre as letras 
+\begin_inset Quotes eld
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ e da corrente entre as letras 
+\begin_inset Quotes eld
+\end_inset
+
+b
+\begin_inset Quotes erd
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Para isso, utilizou-se na programação o bloco 
+\shape italic
+Match Pattern 
+\shape default
+(Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bloco-Match-Pattern"
+
+\end_inset
+
+)
+\shape italic
+.
+ 
+\shape default
+Sua função é procurar em uma frase (
+\shape italic
+string
+\shape default
+) uma determinada letra ou palavra (
+\shape italic
+regular expression
+\shape default
+) definida pelo usuário.
+ Quando essa letra ou palavra é encontrada, o bloco divide a frase em três
+ partes: o que está antes (
+\shape italic
+before substring
+\shape default
+) da letra ou palavra, a própria letra ou palavra (
+\shape italic
+match substring
+\shape default
+) e o que está depois dela (
+\shape italic
+after substring
+\shape default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bloco-Match-Pattern"
+
+\end_inset
+
+Bloco 
+\shape italic
+Match Pattern
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename matche_pattern.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+LabVIEW®
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na programação implementada (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Programação-implementada-para"
+
+\end_inset
+
+), o bloco 
+\shape italic
+Match Pattern 
+\shape default
+1 procura o primeiro 
+\begin_inset Quotes eld
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ ou o primeiro 
+\begin_inset Quotes eld
+\end_inset
+
+b
+\begin_inset Quotes erd
+\end_inset
+
+ e envia para o segundo bloco toda a mensagem que vem depois da letra.
+ O bloco 2, por sua vez, retorna como resultado final o que vem antes da
+ próxima letra 
+\begin_inset Quotes eld
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ ou 
+\begin_inset Quotes eld
+\end_inset
+
+b
+\begin_inset Quotes erd
+\end_inset
+
+, que já é o valor numérico desejado, mas ainda como uma frase (
+\shape italic
+string
+\shape default
+).
+ Eles são convertidos para números que podem ser utilizados pelo sistema
+ supervisório.
+ 
+\end_layout
+
+\begin_layout Standard
+Já no envio de informações, apenas um dado é enviado do sistema supervisório
+ para o microcontrolador: o valor de PWM, que representa a tensão elétrica
+ que deve ser aplicado nos motores.
+ Para ser enviado, esse valor precisa ser separado em três partes: centena,
+ dezena e unidade.
+ Na programação em diagrama de blocos (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Programacão-para-dividir"
+
+\end_inset
+
+), o número é divido por 100, obtendo-se no cociente a centena.
+ O resto dessa divisão é dividido por 10, obtendo-se no cociente a dezena
+ e no resto a unidade.
+ Após a separação, cada parte é transformada para frase (
+\shape italic
+string
+\shape default
+), para poder ser enviado pela comunicação serial para o microcontrolador.
+ O envio se dá na seguinte ordem: o primeiro é a unidade, o segundo é a
+ dezena e o terceiro a centena.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Programação-implementada-para"
+
+\end_inset
+
+Programação implementada para identificar na mensagem valores desejados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prog_str.jpg
+	scale 95
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Programacão-para-dividir"
+
+\end_inset
+
+Programação para dividir um número inteiro em centena, dezena e unidade
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename prog_divisao_numero.jpg
+	scale 95
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Comunicação entre o sistema supervisório e o protótipo
+\end_layout
+
+\begin_layout Standard
+A comunicação serial entre o microcontrolador presente no protótipo de carro
+ elétrico e o sistema supervisório se dá com a utilização de dois módulos
+ 
+\shape italic
+XBee® Series 1
+\shape default
+ (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:XBee®-Series-1"
+
+\end_inset
+
+), fabricados pela 
+\shape italic
+Digi International Inc.
+\shape default
+, que utilizam o protocolo de comunicação 802.15.4
+\shape italic
+ 
+\shape default
+(padrão
+\shape italic
+ ZigBee
+\shape default
+, que efetua o controle de acesso para redes sem fios pessoais de baixas
+ taxas de transmissão)
+\shape italic
+.
+ 
+\shape default
+As suas principais características encontram-se na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Principais-característica-do-xbee"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:XBee®-Series-1"
+
+\end_inset
+
+XBee® Series 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename xbee_s1.jpg
+	scale 130
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Digi International Inc.®
+\shape default
+ (http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules
+/point-multipoint-rfmodules/xbee-series1-module#overview) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Principais-característica-do-xbee"
+
+\end_inset
+
+Principais característica do 
+\shape italic
+XBee® Series 1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Característica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Potência de saída
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 mW (+0dBm)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alcance em uso interno/urbano
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30 metros
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alcance em uso externo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+90 metros
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Taxa máxima de transmissão
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+250 Kbps
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Frequência de operação
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2,4 GHz
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+Digi International Inc.®
+\shape default
+ (http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules
+/point-multipoint-rfmodules/xbee-series1-module#overview) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Um dos módulos é conectado ao microcontrolador Arduino por meio de um 
+\shape italic
+shield 
+\shape default
+(dispositivo que se encaixa no microcontrolador e que lhe fornece alguma
+ função específica) e o outro a um 
+\shape italic
+explorer 
+\shape default
+(dispositivo que é conectado ao computador por meio de uma porta USB).
+ Ambos são fabricados pela 
+\shape italic
+SparkFun Electronics
+\shape default
+®, e encontram-se ilustrados nas Figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Shield-para-o"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Explorer-para-o"
+
+\end_inset
+
+, respectivamente.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Shield-para-o"
+
+\end_inset
+
+Shield
+\shape default
+ para o 
+\shape italic
+Xbee Series 1®
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename shield.jpg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\shape italic
+SparkFun Electronics
+\shape default
+® (https://www.sparkfun.com/products/12847)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\shape italic
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Explorer-para-o"
+
+\end_inset
+
+Explorer
+\shape default
+ para o 
+\shape italic
+Xbee Series 1®
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename explorer.jpg
+	lyxscale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+\shape italic
+ SparkFun Electronics
+\shape default
+® (https://www.sparkfun.com/products/11812)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sintonia do controlador PID
+\end_layout
+
+\begin_layout Standard
+As fórmulas presentes nas Tabelas 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:1zn"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Parâmetros-do-PID-cc"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:p-ise-iae-itae"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:pi-ise-iae-itae"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:pid-ise-iae-itae"
+
+\end_inset
+
+ foram implementadas por meio de um algoritmo no 
+\shape italic
+MATLAB®.
+ 
+\shape default
+O usuário deve inserir os valores de 
+\begin_inset Formula $K,$
+\end_inset
+
+ 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+ e 
+\begin_inset Formula $\tau$
+\end_inset
+
+ e os valores de 
+\begin_inset Formula $K_{P,\,}T_{i}$
+\end_inset
+
+e 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+ são calculados para os métodos de sintonia abordados.
+ O algoritmo implementado encontra-se no Apêndice 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Algorítmo-implementado-no-matlab"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Testes de consumo de energia
+\end_layout
+
+\begin_layout Standard
+Em cada teste o protótipo percorre quatro percursos seguidos, cada um com
+ uma distância e uma velocidade, conforme Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Percursos-do-teste"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Percursos-do-teste"
+
+\end_inset
+
+Percursos do teste de consumo de energia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Percurso
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Distância
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Velocidade
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1000 cm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10 cm/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3000 cm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30 cm/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2000 cm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20 cm/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4000 cm
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+40 cm/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No total, 15 testes foram realizados, sempre com os percursos da Tabela
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Percursos-do-teste"
+
+\end_inset
+
+, conforme Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Testes-realizados"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Testes-realizados"
+
+\end_inset
+
+Testes realizados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="16" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Teste
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controlador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sintonia
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Proporcional (P)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ISE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IAE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ITAE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cohen-Coon
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ziegler-Nichols
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Proporcional-Integrativo (PI)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ISE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IAE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ITAE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cohen-Coon
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ziegler-Nichols
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Proporcional-Integral-Derivativo (PID)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ISE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IAE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ITAE
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Cohen-Coon
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ziegler-Nichols
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para cada percurso, de cada um dos testes, o consumo de energia foi obtido
+ para o regime transitório (antes de atingir a velocidade desejada) e para
+ o regime permanente (quando a velocidade se mantém em uma variação de 5%
+ do valor desejado) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "castrucci2011"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+O cálculo do consumo de energia ocorreu utilizando-se a média da tensão
+ elétrica aplicada aos motores, a média da corrente consumida pelo sistema
+ e o tempo, em horas, de cada regime.
+ 
+\end_layout
+
+\begin_layout Standard
+O regime transitório é considerado o intervalo de dados do início do percurso
+ até o último valor antes da velocidade atingir 95% do valor esperado.
+ 
+\end_layout
+
+\begin_layout Standard
+No regime permanente, considera-se o intervalo de dados da primeira vez
+ que a velocidade atingiu 95% do valor esperado até o fim do percurso e,
+ para fins de comparação, foi calculado a porcentagem média de desvio da
+ velocidade com relação ao valor esperado.
+ 
+\end_layout
+
+\begin_layout Standard
+Assim, pode-se estabelecer uma relação entre o consumo de energia e o quanto
+ a velocidade se manteve próxima do valor esperado.
+\end_layout
+
+\end_body
+\end_document

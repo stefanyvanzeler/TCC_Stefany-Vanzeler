@@ -1,0 +1,41 @@
+% This file was created with JabRef 2.9.2.
+% Encoding: Cp1252
+
+@ARTICLE{NETOartigofinal,
+  author = {Dario Almudi Neto},
+  title = {Requisitos Técnicos para Aplicação do Protocolo CAN},
+  journal = {UNIMEP – Universidade Metodista de Piracicaba},
+  pages = {5},
+  owner = {Stefany},
+  timestamp = {2015.09.28},
+  url = {http://www.ebah.com.br/content/ABAAAAPckAB/requisitos-tecnicos-aplicacao-can}
+}
+
+@MANUAL{DeviceNet_1,
+  title = {Curso Redes Industriais DeviceNet},
+  author = {Ricardo Rossit},
+  organization = {SENSE, Sensores e Instrumentos},
+  address = {Rua: Tuiuti , 1237 - Tatuapé - São Paulo - S.P},
+  edition = {3},
+  year = {2002},
+  owner = {Stefany},
+  timestamp = {2015.09.28}
+}
+
+@BOOK{TANENBAUM,
+  title = {REDES DE COMPUTADORES},
+  publisher = {CAMPUS ELSEVIER (UNIVERSITÁRIOS)},
+  year = {2003},
+  author = {Andrew S. Tanenbaum},
+  edition = {4ª EDIÇÃO},
+  owner = {Stefany},
+  timestamp = {2015.09.28}
+}
+
+@ARTICLE{IRC,
+  title = {Basics of TCP/IP, Switching, Routing and Firewalling},
+  owner = {Stefany},
+  timestamp = {2015.09.28},
+  url = {http://www.ircbeginner.com/ircinfo/Routing_Article.pdf}
+}
+

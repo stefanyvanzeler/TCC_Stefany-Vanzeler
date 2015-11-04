@@ -1,0 +1,414 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+%\usepackage{tabela-simbolos}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+INTRODUÇÃO
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:INTRODUÇÃO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As redes industriais surgiram com a necessidade da integração dos equipamentos
+ e dispositivos em todos os níveis de automação.
+ Elas vêm sendo cada vez mais utilizadas devido ao desenvolvimento da informátic
+a e a constante redução dos custos de componentes microcontrolados, o que
+ possibilitou o desenvolvimento dos sistemas com comunicação serial em larga
+ escala aplicados às redes de comunicação e ao desenvolvimento de vários
+ protocolos de comunicação digital.
+ Elas apresentam como grande vantagem à redução significativa de cabos de
+ controle e seus acessórios que interligam os diversos dispositivos presentes
+ em um sistema automatizado para transmitir informações, que podem ser de
+ Input/Output (I/O), parâmetros e diagnósticos, proporcionando assim aumento
+ da eficiência, qualidade e segurança no sistema produtivo, além de maior
+ facilidade na instalação, manutenção e configuração dos equipamentos, fornecime
+nto de diagnósticos rápidos e redução de custos.
+ 
+\end_layout
+
+\begin_layout Standard
+O barramento Controller Area Network (CAN) é um sistema de barramento serial
+ projetado para facilitar a comunicação entre dispositivos, como sensores
+ e atuadores, que diretamente interagem com o processo.
+ Ele foi desenvolvido pela empresa alemã Robert BOSCH e disponibilizado
+ em meados dos anos 80 baseado na ISO 11898, voltado inicialmente para a
+ indústria automobilística.
+ Em decorrência das suas características, normalização e baixo custo de
+ produção, tornou-se amplamente utilizado na indústria.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+O presente projeto tem como objetivo o desenvolvimento e implementação de
+ um protótipo para barramento CAN, capaz de tratar adequadamente as mensagens
+ do protocolo CAN, utilizando microcontroladores de baixo custo com a arquitetur
+a ARM, e de se comunicar com um PC via protocolo TCP/IP, servindo como modelo
+ para a futura integração de dispositivos de campo com uma rede DeviceNet
+ no laboratório de automação industrial da EST.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O presente projeto tem como objetivo o desenvolvimento de um sistema de
+ monitoramento de barramento CAN, aonde possa-se observar o fluxo de dados
+ entre as ECUs (unidades eletrônicas de controle) e se transmitir mensagens,
+ por meio da implementação de um protótipo, que funcione como um 
+\shape italic
+gateway
+\shape default
+ entre os protocolos TCP/IP e CAN em um sistema linux embarcado com arquitetura
+ ARM de baixo custo e um computador pessoal com sistema operacional Windows,
+ utilizando-se as linguagens C/C++ e C# a partir do conceito de sockets,
+ servindo como modelo para integração futura de dispositivos de campo com
+ a rede DeviceNet do laboratório de automacao industrial da EST (Escola
+ Superior de Tecnologia).
+\end_layout
+
+\begin_layout Section
+Formulação do problema
+\end_layout
+
+\begin_layout Standard
+A inexistência de um dispositivo compatível com o barramento CAN, o qual
+ permita simplificar a rede de comunicação do laboratório de automação industria
+l da EST, que possui múltiplas interfaces e protocolos incompatíveis, e
+ que sirva de base para a comunicação futura entre o CLP DeviceNet com novos
+ dispositivos.
+\end_layout
+
+\begin_layout Section
+Justificativa
+\end_layout
+
+\begin_layout Standard
+O desenvolvimento do sistema de monitoramento e implantação do protótipo
+ podem servir como base para novos projetos nas áreas de: redes indústrias,
+ sistemas distribuídos, controle, automação, supervisão de processos e sistemas
+ supervisórios.
+ Além de poder ser utilizado em aulas práticas no laboratório de automação
+ industrial da EST.
+ 
+\end_layout
+
+\begin_layout Standard
+Academicamente, o presente trabalho contribui para a consolidação e aprofundamen
+to nos conteúdos das disciplinas estudadas na EST de Redes Industriais de
+ Comunicação, Redes de Computadores I e II, Microprocessadores e Microcontrolado
+res, Sistemas Microprocessados, Interface entre Usuários e Sistemas Computaciona
+is, Sistemas Supervisório e Automação e Supervisão de Processos.
+ 
+\end_layout
+
+\begin_layout Section
+Motivação
+\end_layout
+
+\begin_layout Standard
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+\end_layout
+
+\begin_layout Section
+Objetivos
+\end_layout
+
+\begin_layout Standard
+Desenvolver um sistema de monitoramento de barramento CAN e implementar
+ um protótipo, que funcione como um 
+\shape italic
+gateway
+\shape default
+ entre os protocolos TCP/IP e CAN em um sistema linux embarcado com arquitetura
+ ARM de baixo custo, servindo de interface entre o sistema de monitoramento
+ em um computador pessoal com sistema operacional Windows e o barramento
+ CAN.
+ Este objetivo geral será alcançado quando todos seguintes objetivos específicos
+ forem atingidos:
+\end_layout
+
+\begin_layout Itemize
+Realizar revisão bibliográfica que confere embasamento teórico para realização
+ do trabalho;
+\end_layout
+
+\begin_layout Itemize
+Fazer um comparativo entre as arquiteturas Raspberry Pi e Beaglebone e escolher
+ uma dessas plataformas ARM para a implementacao do protótipo;
+\end_layout
+
+\begin_layout Itemize
+Determinar o controlador CAN e receptor CAN;
+\end_layout
+
+\begin_layout Itemize
+Implementar uma interface entre os protocolos CAN e TCP/IP;
+\end_layout
+
+\begin_layout Itemize
+Desenvolver um sistema de monitoramento para barramento CAN com C#;
+\end_layout
+
+\begin_layout Itemize
+Testar o recebimento e envio de mensagens por meio do protótipo, monitorando
+ em tempo real o barramento CAN.
+\end_layout
+
+\begin_layout Section
+Metodologia
+\end_layout
+
+\begin_layout Standard
+Inicialmente, pesquisas foram realizadas para identificar, no mundo científico,
+ o que existe relacionado com o tema proposto, e em que pontos o presente
+ projeto se assemelha e se diferencia dos trabalhos já existentes.
+\end_layout
+
+\begin_layout Standard
+Um referencial teórico foi criado, abordando os seguintes temas: controladores
+ PID e sua sintonia, motores de corrente contínua, identificação e modelagem
+ de sistemas, sistemas microcontrolados e conhecimentos referentes a circuitos
+ elétricos (PWM, potência e consumo de energia).
+\end_layout
+
+\begin_layout Standard
+Em seguida, foi realizada a construção e montagem do protótipo de carro
+ elétrico, com quatro motores de corrente contínua.
+ O protótipo é microcontrolado com um Arduino Mega 2560 e alimentado por
+ uma bateria de 12 volts.
+ A medição de velocidade do protótipo é realizada com um 
+\shape italic
+encoder 
+\shape default
+ENC01A-0J1216
+\shape italic
+.
+ 
+\shape default
+O interfaceamento entre o sinal PWM do Arduino, a tensão elétrica fornecida
+ pela bateria e os motores é realizado pelo 
+\shape italic
+drive 
+\shape default
+TB6612FNG.
+ Foi implementado o sensor de corrente ACS-712 para medir a corrente elétrica
+ consumida pelo sistema.
+ Uma programação foi implementada no Arduino para que, tanto a informação
+ lida dos sensores presente no protótipo como os dados provenientes do sistema
+ supervisório sejam enviados e recebidos de maneira correta.
+ 
+\end_layout
+
+\begin_layout Standard
+A identificação da função de transferência do motor de corrente contínua
+ (que é o 
+\begin_inset Quotes eld
+\end_inset
+
+processo a controlar
+\begin_inset Quotes erd
+\end_inset
+
+ presente na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama de blocos com controlador PID"
+
+\end_inset
+
+) foi realizada simulando um motor de corrente contínua no 
+\shape italic
+Simulink
+\shape default
+® e utilizando uma ferramenta de estimação de parâmetros para que o 
+\shape italic
+software 
+\shape default
+aproxime a resposta do motor simulado com resposta do motor real.
+ Após a aproximação, as características do motor real são estimadas e sua
+ função de transferência encontrada.
+\end_layout
+
+\begin_layout Standard
+O controlador PID foi implementado por meio do 
+\shape italic
+software LabVIEW
+\shape default
+® e durante os testes práticos, a variável controlada foi a velocidade do
+ protótipo.
+ A sintonia dos parâmetros do controlador utilizará os métodos Ziegler-Nichols,
+ ISE, IAE, ITAE e Cohen-Coon.
+\end_layout
+
+\begin_layout Standard
+Para que o usuário possa determinar as velocidades, os pontos em que as
+ mudanças ocorrem, assim como monitorar as variáveis do protótipo (como
+ a velocidade, consumo de energia elétrica, etc.) um sistema supervisório
+ foi criado no 
+\shape italic
+LabVIEW
+\shape default
+®.
+ 
+\end_layout
+
+\begin_layout Standard
+Com o sistema supervisório em funcionamento pode-se, então, controlar e
+ monitorar todas as variáveis necessárias para a realização dos testes,
+ e salvá-las para que uma comparação possa ser feita entre os dados coletados.
+ A comunicação do protótipo com o sistema supervisório é realizada com um
+ módulo de comunicação sem fio 
+\shape italic
+XBee
+\shape default
+®, por meio de comunicação serial.
+ 
+\end_layout
+
+\begin_layout Standard
+Os testes foram realizados da seguinte maneira: o protótipo de carro elétrico
+ percorre trajetos padronizados com mudanças de velocidade em pontos previamente
+ estabelecidos (por exemplo, 100 metros no total, com sub-trajetos de 10
+ metros, 30 metros, 20 metros e 40 metros e velocidades em cada sub-trajeto
+ de 10 cm/s, 20 cm/s, 15 cm/s e 40 cm/s, respectivamente), e para um mesmo
+ trajeto, diferentes variações do controlador PID (P, PI e PID) e diferentes
+ métodos de sintonia desses controladores foram utilizados, um de cada vez.
+ Assim, as condições de teste são sempre as mesmas, possibilitando uma comparaçã
+o mais exata.
+\end_layout
+
+\begin_layout Section
+Organização do trabalho 
+\end_layout
+
+\begin_layout Standard
+Este trabalho está dividido em seis capítulos para seu melhor entendimento.
+ 
+\end_layout
+
+\begin_layout Standard
+O capítulo 1 aborda uma breve introdução sobre sistemas de controle e consumo
+ de energia, e conceitua o projeto por meio da justificativa e motivação.
+ Também traz objetivos a serem alcançados e a metodologia que foi utilizada.
+\end_layout
+
+\begin_layout Standard
+Já no capítulo 2 se dá a apresentação de trabalhos relacionados a essa monografi
+a, encaixando-a no contexto científico, descrevendo as principais semelhanças
+ e diferenças com os trabalhos já publicados.
+\end_layout
+
+\begin_layout Standard
+Um referencial teórico, direto e aplicado, necessário ao desenvolvimento
+ do projeto, é realizado no capítulo 3.
+ Isso ocorre apresentando os tópicos relevantes por meio da visão de autores
+ de obras consultadas e de trabalhos de pesquisa voltados para teorias e
+ tecnologias aplicadas nesta monografia.
+\end_layout
+
+\begin_layout Standard
+Em seguida, o capítulo 4 descreve como foi realizado o processo do desenvolvimen
+to e construção do protótipo de carro elétrico, citando os materiais utilizados.
+ Além disso, todas as etapas da metodologia são detalhadas, descrevendo-se
+ o que foi necessário implementar para a realização dos testes e obtenção
+ de dados de consumo de energia.
+ 
+\end_layout
+
+\begin_layout Standard
+No capítulo 5 os resultados obtidos são apresentados e discutidos.
+\end_layout
+
+\begin_layout Standard
+Por fim, no capítulo 6, os resultados são comparados, e uma conclusão é
+ formulada, de acordo com o tema proposto, buscando-se determinar o método
+ de sintonia de controlador PID mais eficiente, levando em consideração
+ o consumo de energia obtidos nos testes.
+\end_layout
+
+\end_body
+\end_document

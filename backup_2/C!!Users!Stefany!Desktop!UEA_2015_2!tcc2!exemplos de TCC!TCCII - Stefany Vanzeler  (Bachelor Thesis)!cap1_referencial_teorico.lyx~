@@ -1,0 +1,2387 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+%\usepackage{tabela-simbolos}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+REFERENCIAL TEÓRICO
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 18pt
+\end_inset
+
+Neste capítulo será realizada uma breve abordagem teórica dos seguintes
+ assuntos, que são necessários para o melhor desenvolvimento do presente
+ trabalho: controlador PID e seus métodos de sintonia, motores de corrente
+ contínua e sua modelagem, identificação de sistemas, sistemas microcontrolados
+ e conhecimentos referentes a circuítos elétricos (PWM, potência e consumo
+ de energia).
+ 
+\end_layout
+
+\begin_layout Section
+Modelo OSI
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:ModeloOSI"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para reduzir a complexidade do projeto, a maioria das redes é organizada
+ como uma pilha de camadas ou níveis, colocadas umas sobre as outras.
+ O número de camadas, o nome, o conteúdo e a função de cada camada diferem
+ de uma rede para outra.
+ A ideia fundamental é que um determinado item de software ou hardware (camada
+ inferior) fornece um serviço a seus usuários (camada superior), mas mantém
+ ocultos os detalhes de seu estado interno e de seus algoritmos.
+\end_layout
+
+\begin_layout Standard
+A camada n de uma máquina se comunica com a camada n de outra máquina.
+ Coletivamente, as regras e convenções usadas nesse diálogo são conhecidas
+ como o protocolo da camada n.
+ Assim um serviço é um conjunto de primitivas (operações) que uma camada
+ oferece à camada situada acima dela e o protocolo é um conjunto de regras
+ que controla o formato e o significado dos pacotes ou mensagens que são
+ trocadas pelas entidades pares contidas em uma camada (TANENBAUM, 2003).
+\end_layout
+
+\begin_layout Standard
+Entre cada par de camadas adjacentes existe uma interface.
+ A interface define as operações e os serviços que a camada inferior tem
+ a oferecer à camada que se encontra acima dela (TANENBAUM, 2003).
+\end_layout
+
+\begin_layout Standard
+Um conjunto de camadas e protocolos é chamado arquitetura de rede.
+ Uma lista de protocolos usados por um determinado sistema, um protocolo
+ por camada, é chamada pilha de protocolos (TANENBAUM, 2003).
+\end_layout
+
+\begin_layout Standard
+O modelo OSI se baseia em uma proposta desenvolvida pela ISO (International
+ Standards Organization) como um primeiro passo em direção à padronização
+ internacional dos protocolos empregados nas diversas camadas.
+ O modelo é chamado Modelo de Referência ISO OSI (Open Systems Interconnection),
+ pois ele trata da interconexão de sistemas abertos — ou seja, sistemas
+ que estão abertos à comunicação com outros sistemas (TANENBAUM, 2003).
+\end_layout
+
+\begin_layout Standard
+O modelo OSI define sete camadas conforme descrito na tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:-Modelo-OSI"
+
+\end_inset
+
+: camada física, camada de enlace, camada de rede, camada de transporte,
+ camada de sessão, camada de apresentação e camada de aplicação.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:-Modelo-OSI"
+
+\end_inset
+
+ Modelo OSI
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="30" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Camada OSI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Funções
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exemplos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aplicação
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interface entre rede e 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Telnet, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+software de aplicação.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HTTP, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+WWW-Browsers
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Apresentação
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Como os dados sao apresentados, 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+JPEG, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Formatação de dados e conversão 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ASCII
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+de caracteres e códigos, criptografia.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sessão
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Negociação e estabelecimento 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+OS, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+de conexão com outro nó; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aplicações 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administração e sincronização de diálogos 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+de acesso.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+entre dois processos de aplicação.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transporte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Entrega de dados com ou sem confiabilidade; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TCP, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multiplexação;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UDP, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controle de fluxo.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SPX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rede
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Endereçamento lógico, 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IP, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ o qual roteadores utilizam
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+IPX
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+para determinação da rota dos dados; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controle de fluxo.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enlace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Combinação de bits em bytes, 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ethernet 802.3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+e bytes em quadros (frames);
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/ 802.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Acesso ao meio usando o endereço MAC; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sincronização; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Controle de fluxo;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ Confiabilidade de dados.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Física
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transmissão de bits entre os dispositivos; 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+EIA/TIA-232, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Especificação de voltagem 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+V.35
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+para representar 0 e 1;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Velocidade de transmissão;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Número de pinos do conector;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Diâmetro dos condutores.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Legend
+Fonte:[o próprio autor]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na realidade, os dados não são transferidos diretamente da camada n de uma
+ máquina para a camada n de outra máquina.
+ Em vez disso, cada camada transfere os dados e as informações de controle
+ para a camada imediatamente abaixo dela, até ser alcançada a camada mais
+ baixa.
+ Abaixo da camada 1 encontra-se o meio físico através do qual se dá a comunicaçã
+o propriamente dita.
+ Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Modelo-de-Referência"
+
+\end_inset
+
+, a comunicação virtual é mostrada por linhas pontilhadas e a comunicação
+ física por linhas contínuas (TANENBAUM, 2003).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Modelo-de-Referência"
+
+\end_inset
+
+Modelo de Referência OSI
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename modeloOsi2.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Fonte:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Classificação das redes quanto à topologia
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Classificação-das-redes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Topologia da rede é a definição da maneira como as diferentes estações serão
+ interligadas.
+ Estão relacionadas à forma como o canal de comunicação será alocado, ou
+ seja, através de canais ponto-a-ponto ou canais de difusão.
+\end_layout
+
+\begin_layout Subsection
+Topologias com Canais Ponto-a-Ponto
+\end_layout
+
+\begin_layout Standard
+A rede é composta de diversas linhas de comunicação, cada linha sendo associada
+ à conexão de um par de estação
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Topologias-ponto-a-ponto:-estrel"
+
+\end_inset
+
+.
+ Também conhecida com store-and-forward.
+ As redes ponto-a-ponto podem ser concebidas segundo diferentes topologias,
+ simétricas (redes locais) e assimétricas (redes de longa distância).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Topologias-ponto-a-ponto:-estrel"
+
+\end_inset
+
+Topologias ponto-a-ponto: estrela, anel, malha regular, malha irregular
+ e árvore
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Topologias ponto-a-ponto.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Fonte
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Topologias das Redes em Difusão
+\end_layout
+
+\begin_layout Standard
+Redes em difusão 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Topologias-das-redes"
+
+\end_inset
+
+são caracterizadas pelo compartilhamento por todas as estações, de um único
+ canal de comunicação.
+ Neste caso, as mensagens enviadas por uma estação são recebidas por todas
+ as demais conectadas ao suporte de transmissão, sendo que um campo de endereço
+ contido na mensagem permite identificar o destinatário.
+ 
+\end_layout
+
+\begin_layout Standard
+Nas redes em difusão existe a possibilidade de uma estação enviar uma mensagem
+ às demais estações da rede, utilizando um código de endereçamento especial,
+ denominado broadcasting.
+ 
+\end_layout
+
+\begin_layout Standard
+Na transmissão para um subconjunto de estações, o código de endereçamento
+ especial é denominado multicasting.
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Topologias-das-redes"
+
+\end_inset
+
+Topologias das redes em difusão: barramento, satélite e anel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Topologias das redes em difusão.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Fonte
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tipos de comunicação serial
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Tipos-de-comunicação"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O tipo de comunicação define a conexão entre os equipamentos e a maneira
+ como é feita a troca das informações no que se diz respeito ao caminho
+ percorrido pelos dados.
+\end_layout
+
+\begin_layout Subsection
+Ponto-a-Ponto
+\end_layout
+
+\begin_layout Standard
+Ponto-a-ponto (Peer-to-peer) 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comunicação-serial-ponto-a-ponto"
+
+\end_inset
+
+é uma arquitetura de redes onde cada um dos pontos ou nós da rede (host)
+ funciona tanto como cliente quanto como servidor, permitindo compartilhamentos
+ de serviços e dados sem a necessidade de um servidor central.
+ Sendo amplamente empregada em equipamentos autônomos, que normalmente realizam
+ suas tarefas sozinhos, mas necessitam de configuração ou dados para manipulação
+, como exemplo podemos citar: um computador e o mouse.
+ No exemplo abaixo, a comunicação ponto a ponto é utilizada por um sensor
+ que envia dados para um controlador e um analisador.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comunicação-serial-ponto-a-ponto"
+
+\end_inset
+
+Comunicação serial ponto-a-ponto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Comunicacao serial ponto-a-ponto.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Mestre-Escravo
+\end_layout
+
+\begin_layout Standard
+A comunicação mestre - escravo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comunicação-serial-mestre"
+
+\end_inset
+
+, amplamente utilizada, possui um mestre para gerenciar a comunicação, e
+ tem como função solicitar e receber os dados e comandos.
+ Os outros participantes da rede conhecidos como escravos, que nunca iniciam
+ uma comunicação e respondem com dados para o mestre, que mantém uma lista
+ de todos os escravos presentes na rede e rotineiramente solicita para cada
+ escravo a troca de dados.
+ O termo mestre é compatível com os termos cliente e scanner, o termo escravo
+ é compatível com os termos servidor e adaptador.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comunicação-serial-mestre"
+
+\end_inset
+
+Comunicação serial mestre - escravo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Comunicacao serial mestre - escravo.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Multimestre
+\end_layout
+
+\begin_layout Standard
+Oferece a possibilidade de mais de um mestre utilizar o mesmo meio físico,
+ mas na prática poucos protocolos permitem a troca de dados de um escravo
+ para os dois mestres, sendo comum neste tipo de configuração que cada mestre
+ possua seu conjunto de escravos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comunicação-serial-multimestre"
+
+\end_inset
+
+Comunicação serial multimestre
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Comunicacao serial multimestre.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Produtor-Consumidor
+\end_layout
+
+\begin_layout Standard
+As redes produtor-consumidor suportam os três métodos de comunicação expostos
+ anteriormente: ponto-a-ponto, mestre-escravo e multimestre.
+ Do ponto de vista prático, esta forma de comunicação é mais flexível, pois
+ dependendo da natureza da informação a ser trocada pode-se optar pela forma
+ mais adequada, otimizando o barramento no que diz respeito ao trâfego.
+ A redeDeviceNet é um exemplo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Produtor-Consumidor"
+
+\end_inset
+
+Produtor-Consumidor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Comunicacao serial produtor-consumidor.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sistemas microcontrolados
+\end_layout
+
+\begin_layout Standard
+Sistemas microcontrolados são comumente utilizados embarcados no produto
+ que vão controlar ou acionar, e possuem em sua memória um programa compostos
+ de algoritmos dedicados à aplicação em questão.
+ Os microcontroladores atuais possuem, além da unidade de processamento
+ (CPU), memória e circuítos auxiliares de entrada e saída (E/S) com funções
+ específicas, como conversão analógico-digital e saídas digitais moduladas
+ por largura de pulso (PWM) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "stephan2008"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+O microcontrolador utilizado neste projeto foi o Arduino Mega 2560 (Figura
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Arduino-Mega-2560"
+
+\end_inset
+
+), cujas principais características encontram-se descritas na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Características-do-Arduino"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Arduino-Mega-2560"
+
+\end_inset
+
+Arduino Mega 2560
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ArduinoMega2560_R3_Front_450px.jpg
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: http://www.arduino.cc/en/Main/ArduinoBoardMega2560
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Características-do-Arduino"
+
+\end_inset
+
+Características principais do Arduino Mega 2560
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Descrição
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Característica
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Microcontrolador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ATmega2560
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tensão Elétrica de Operação
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5V
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tensão Elétrica de Entrada
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7-12V
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pinos Digitais de E/S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+54 (15 com função PWM disponível)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Portas Analógicas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: http://www.arduino.cc/en/Main/ArduinoBoardMega2560
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A linguagem de programação do Arduino é essencialmente C/C++, com algumas
+ alterações específicas para aplicações do microcontrolador.
+\end_layout
+
+\begin_layout Section
+Conhecimentos referentes a circuítos elétricos
+\end_layout
+
+\begin_layout Standard
+Dois conceitos fundamentais sobre circuitos elétricos serão abordados: PWM
+ (
+\shape italic
+Pulse Width Modulation
+\shape default
+, em inglês e modulação por largura de pulso, em português) e consumo de
+ energia.
+\end_layout
+
+\begin_layout Subsection
+
+\shape italic
+\size normal
+Pulse Width Modulation
+\shape default
+\size default
+ (PWM)
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Pulse Width Modulation 
+\shape default
+(PWM) é uma técnica para controlar digitalmente o nível de um sinal analógico
+ (como uma fonte de energia, por exemplo).
+ Com a alteração do tempo de ciclo por um chaveamento de alta resolução
+ (em que a transição entre os estados 
+\begin_inset Quotes eld
+\end_inset
+
+ligado
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+desligado
+\begin_inset Quotes erd
+\end_inset
+
+ pode ocorrer de maneira muito rápida) o tamanho de uma onda quadrada é
+ modulada para o nível de sinal analógico desejado 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pwm"
+
+\end_inset
+
+.
+ Um exemplo é ilustrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:pwm"
+
+\end_inset
+
+, onde um sinal analógico de 5V é modulado por uma chave que permanece 0%,
+ 25%, 50%, 75% e 100% do tempo ativada, gerando uma tensão elétrica de saída
+ resultante de 0V, 1,25V, 2,5V, 3,75V e 5V.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:pwm"
+
+\end_inset
+
+Exemplo de funcionamento da técnica PWM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pwm.jpg
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pwm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nas saídas PWM do microcontrolador Arduino, o valor pode assumir valores
+ de 0 a 5 volts, quando se varia, de 0 a 255 o valor presente na função
+ utilizada na programação que ativa a saída PWM (
+\shape italic
+
+\begin_inset Quotes eld
+\end_inset
+
+analogWrite(255)
+\begin_inset Quotes erd
+\end_inset
+
+
+\shape default
+, por exemplo).
+ Ou seja, 0 na função resulta em uma tensão elétrica de 0V na porta (0%
+ de ciclo), 127 em 2,5V (50% de ciclo) e 255 em 5V (100% de ciclo).
+\end_layout
+
+\begin_layout Subsection
+Potência e consumo de energia
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{nilsson2008circuitos}
+\end_layout
+
+\end_inset
+
+ definem potência como a taxa de variação temporal do gasto ou absorção
+ de energia, conforme a Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:potencia"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P=\frac{dw}{dt}\label{eq:potencia}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+onde 
+\begin_inset Formula $P$
+\end_inset
+
+ é a potência em 
+\shape italic
+Watts, 
+\begin_inset Formula $w$
+\end_inset
+
+ 
+\shape default
+a energia em 
+\shape italic
+Joules 
+\shape default
+e 
+\begin_inset Formula $t$
+\end_inset
+
+ o tempo em segundos.
+ logo, 1W equivale a 1 Joule/segundo.
+\end_layout
+
+\begin_layout Standard
+A potência também é definida como o produto entre a corrente em um elemento
+ qualquer e a tensão elétrica em seus terminais, conforme a Equação 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:potencia2"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P=v.i\label{eq:potencia2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O consumo de energia é uma relação entre a potência consumida e o tempo,
+ em horas, que determinado sistema foi utilizado, de acordo com a Equação
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:consumo_energia"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E=P.\triangle t\label{eq:consumo_energia}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A unidade é o Wh (
+\shape italic
+Watt
+\shape default
+-hora) ou kWh (
+\shape italic
+Kilowatt
+\shape default
+-hora).
+\end_layout
+
+\end_body
+\end_document

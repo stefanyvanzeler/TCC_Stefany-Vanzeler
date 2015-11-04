@@ -1,0 +1,1561 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Artigo Acadêmico em conformidade com
+% ABNT NBR 6022:2003: Informação e documentação - Artigo em publicação 
+% periódica científica impressa - Apresentação
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+% oneside = apenas frente
+% twocolumn = artigo em duas colunas
+%\documentclass[article,12pt,oneside,a4paper,english,brazil]{abntex2}	
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais
+% ---
+\usepackage{cmap}
+\usepackage{lmodern}	% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}	% Selecao de codigos de fonte.
+%\usepackage[utf8]{inputenc}	% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}	% Indenta o primeiro parágrafo de cada seção.
+\usepackage{nomencl} % Lista de simbolos
+\usepackage{color}	% Controle das cores
+\usepackage{graphicx}	% Inclusão de gráficos
+%\usepackage{microtype} % para melhorias de justificação
+%\usepackage{titling}
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	% Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+\ifcase #1 %
+Nenhuma citação no texto.%
+\or
+Citado na página #2.%
+\else
+Citado #1 vezes nas páginas #2.%
+\fi}%
+% ---
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+\pretitle{%
+\begin{center}
+\LARGE
+\vspace{-2cm}
+\hspace{-14cm}
+\includegraphics[scale=0.12]{Figuras/simbGovAM1} \\
+\vspace{-2cm}
+{\small{} Universidade do Estado do Amazonas \\
+Escola Superior de Tecnologia \\
+Engenharia de Controle e Automação \\
+\vspace{-2.5mm}
+Manaus - Amazonas - 2015} \\ %
+\vspace{2cm}
+}
+\posttitle{\end{center}}
+%\centering
+% ---
+\titulo{\bfseries SISTEMA SCADA PARA OS EQUIPAMENTOS UTILIZADOS EM ATIVIDADES PRÁTICAS INSTALADOS NOS LABORATÓRIOS DE CONTROLE E AUTOMAÇÃO DA EST} \autor{Anderson Barbosa Serique\thanks{Universidade do Estado do Amazonas - UEA, Discente de Eng. de Cont. e Aut., Manaus, Amazonas, Brasil. \url{andersonserique@hotmail.com}} \hspace{1\textwidth}  \and Luis Delfin Rojas Purón\thanks{Universidade do Estado do Amazonas - UEA, Docente de Eng. de Cont. e Aut., Manaus, Amazonas, Brasil, Eng. Eletromecânico, Doutor em Eng. Elét. - CUJAE, Cuba. \url{ lrpuron487@yahoo.es}} \hspace{1\textwidth} \and Walter Andrés Vermehren Valenzuela\thanks{Universidade do Estado do Amazonas - UEA, Coordenador de Eng. de Cont. e Aut., Manaus, Amazonas, Brasil, Eng. Indl. Mec., Doutor em Inst. e Cont. - UFCG.  \url{ wvalenzuela7@gmail.com}}}
+%\local{Brasil}
+\data{}
+\preauthor{\begin{flushleft}
+\large \lineskip 1mm%
+\begin{tabular}[t]{l}}
+\postauthor{\end{tabular}\par\end{flushleft}}
+%\renewcommand{\thefootnote}{\fnsymbol{asterisk}}
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+%pagebackref=true,
+pdftitle={\@title},
+pdfauthor={\@author},
+pdfsubject={Modelo de artigo científico com abnTeX2},
+pdfcreator={LaTeX with abnTeX2},
+pdfkeywords={abnt}{latex}{abntex}{abntex2}{atigo científico},
+colorlinks=true, % false: boxed links; true: colored links
+linkcolor=blue, % color of internal links
+citecolor=black, % color of links to bibliography
+filecolor=magenta, % color of file links
+urlcolor=blue,
+bookmarksdepth=4
+}
+\makeatother
+% ---
+% Altera as margens padrões
+% ---
+%\setlrmarginsandblock{3cm}{2cm}{*}
+%\setulmarginsandblock{2cm}{2cm}{*}
+\checkandfixthelayout
+% ---
+% Espaçamentos entre linhas e parágrafos
+% ---
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm} % tente também \onelineskip
+% Espaçamento simples
+\SingleSpacing
+% ----
+% Início do documento
+\end_preamble
+\options article,12pt,oneside,a4paper,brazil
+\use_default_options false
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%página de titulo
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+onecolumn[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+emptythanks
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+begin{resumoumacoluna}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Resumo
+\paragraph_spacing single
+O termo SCADA, na automação, refere-se à sistemas de supervisão, controle
+ e aquisição de dados compostos por um ou mais computadores, monitorando
+ e controlando um processo.
+ Será apresentado um sistema de controle de supervisão e aquisição de dados
+ para os equipamentos utilizados nos laboratórios de controle e automação
+ da Escola Superior de Tecnologia (EST), permitindo o controle remoto dos
+ mesmos, aumentando a segurança dos usuários.
+ Para tal, foram escolhidos os processos físicos, que estão nos laboratórios,
+ para simular e implementar o sistema SCADA, criando, assim, a interface
+ para o acesso remoto dos mesmos, melhorando o aprendizado dos discentes,
+ podendo-se comparar a teoria com a prática, sem riscos a eles, e a qualquer
+ momento.
+\end_layout
+
+\begin_layout Resumo
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{
+\backslash
+onelineskip}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Palavras-chave}: Sistema SCADA, laboratórios, processos físicos.
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+end{resumoumacoluna}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textual
+\end_layout
+
+\begin_layout Plain Layout
+
+%]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Introdução
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Num ambiente industrial cada vez mais complexo e competitivo, os fatores
+ relacionados com a disponibilidade e segurança da informação assumem elevada
+ relevância, tornando-se necessário garantir que a informação está disponível
+ e segura quando necessária, independentemente da localização geográfica,
+ tornando-se necessário projetar mecanismos de acessibilidade, mecanismos
+ de segurança e mecanismos de tolerância a falhas.
+ Os sistemas SCADA (
+\shape italic
+Supervisory Control and Data Aquisition
+\shape default
+) melhoram a eficiência do processo de monitorização e controle, disponibilizand
+o em tempo útil o estado atual do sistema, através de um conjunto de previsões,
+ gráficos e relatórios, de modo a permitir a tomada de decisões operacionais
+ apropriadas, quer automaticamente, quer por iniciativa do operador.
+ A problemática é a ausência de um sistema de controle de supervisão e aquisição
+ de dados para os equipamentos utilizados em atividades práticas instalados
+ nos laboratórios de controle e automação da EST.
+ Com isso, o projeto tem como objetivo simular e implementar um sistema
+ SCADA para esses equipamentos, utilizando um computador como unidade central
+ de processamento, os 
+\shape italic
+softwares
+\shape default
+ Matlab (
+\shape italic
+Matrx Laboratory
+\shape default
+) e LabVIEW (
+\shape italic
+Laboratory Virtual Instrument Engineering Workbench
+\shape default
+) para receberem os dados e representarem o SCADA e a plataforma 
+\shape italic
+Web
+\shape default
+ para oferecer acesso à distância do mesmo.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+O artigo é dividido em cinco seções.
+ Na primeira, será falado sobre o sistema SCADA, explicitando seu conceito,
+ componentes e funcionamento.
+ Também será falado sobre o conceito e visão geral de um laboratório remoto.
+ Na segunda, será falado sobre o processo existente no Laboratório de Simulação
+ e Projetos.
+ Na terceira, será falado sobre o processo existente no Laboratório de Automação
+ III.
+ Em seguida, será falado sobre resultados e discussão dos mesmos.
+ Por fim, haverá as conclusões existentes sobre o projeto, em andamento.
+ 
+\end_layout
+
+\begin_layout Section
+Sistema SCADA 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+O sistema SCADA permite que sejam monitoradas e rastreadas informações de
+ um processo produtivo ou instalação física, que são coletadas através de
+ equipamentos de aquisição de dados e, em seguida, manipuladas, analisadas
+ e, posteriormente, apresentadas ao usuário.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "silva11sao"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Os componentes físicos de um sistema de supervisão são: sensores e atuadores,
+ estações remotas (aquisição/controle), rede de comunicação e estações de
+ monitoramento central.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+A regra geral para o funcionamento de um sistema SCADA parte dos processos
+ de comunicação para os equipamentos de campo, cujas informações são enviadas
+ para o núcleo principal do 
+\shape italic
+software
+\shape default
+.
+ O núcleo é responsável por distribuir e coordenar o fluxo dessas informações
+ para os demais módulos, até chegarem na forma esperada para o operador
+ do sistema, na interface gráfica ou console de operação com o processo,
+ geralmente acompanhadas de gráficos, animações, relatórios, etc, de modo
+ a exibir a evolução do estado dos dispositivos e do processo controlado,
+ permitindo informar anomalias, sugerir medidas a serem tomadas ou reagir
+ automaticamente.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "silva11sao"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Laboratório Remoto
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Uma aplicação do SCADA está no projeto de laboratório remoto.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Laboratório remoto é um protótipo de um processo físico real onde são realizadas
+ experiências de controle pelos discentes.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "antoniolprojeto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Segundo Gruber et al (apud ANTONIOL, 2014), a visão geral da estrutura de
+ um laboratório remoto é formada por quatro camadas.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+A Primeira camada, também chamada de 
+\shape italic
+rig
+\shape default
+, é considerada base da estrutura geral.
+ Envolve os equipamentos de aquisição de dados e o processo físico.
+ Com os equipamentos previstos para as experiências é possível controlar
+ o processo, obter dados e configurações essenciais para identificação em
+ bases de dados disponíveis na Internet.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+A Segunda camada compreende o pacote de mídia e o pacote de interação.
+ O pacote de mídia contém materiais digitais que contextualizam o 
+\shape italic
+rig
+\shape default
+ e as práticas laboratoriais.
+ Este pacote pode ser utilizado por diversos alunos simultaneamente, não
+ estando sob o domínio de agendamento, diferentemente do pacote de interação.
+ O pacote de interação permite o controle do equipamento e do processo de
+ forma remota através da Internet.
+ Contém parâmetros que possibilitam o uso do mesmo 
+\shape italic
+rig
+\shape default
+ por práticas didáticas (experiências) diferentes, sendo usado por um único
+ acesso de cada vez.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+A Terceira camada tem objetivos pedagógicos individuais, que são implementados
+ no 
+\shape italic
+rig
+\shape default
+ com grupos de atividades experimentais através do pacote de interação.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+A Última camada contém a disciplina e aulas com diferentes tarefas, os materiais
+ do pacote de mídia, fóruns para debates sobre os experimentos etc.
+ Esta camada prevê o uso de interatividade entre disciplinas e conteúdos
+ acadêmicos.
+ Parte desta pode estar contida no LMS – 
+\shape italic
+Learning Management System
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Na figura 1, a seguir, é mostrado um exemplo de arquitetura de um laboratório
+ remoto.
+ Os equipamentos utilizados para o seu funcionamento são: dois CLPs, um
+ microcomputador funcionando como servidor SCADA; um roteador wireless,
+ para permitir acesso por dispositivos móveis e um switch para encaminhar
+ os sinais para o acesso externo por meio de internet.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "durao2011proposta"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquitetura de um laboratório remoto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/Arquitetura de um laboratório Remoto.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\series bold
+Fonte:
+\series default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "durao2011proposta"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Na figura 2, a seguir, é mostrado a tela principal do SCADA.
+ Na tela principal, elaborada à partir da ferramenta GUI, do Matlab, é mostrado
+ o que se pretende supervisionar.
+ Ao clicar no botão 
+\begin_inset Quotes eld
+\end_inset
+
+Banco de dados
+\begin_inset Quotes erd
+\end_inset
+
+, é aberta uma tela em que são armazenados os dados à partir de simulações
+ e medições reais do sistema.
+ Clicando-se em 
+\begin_inset Quotes eld
+\end_inset
+
+Tutorial
+\begin_inset Quotes erd
+\end_inset
+
+, abre-se o guia da prática de laboratório escolhido.
+ Clicando-se em 
+\begin_inset Quotes eld
+\end_inset
+
+Monitoramento
+\begin_inset Quotes erd
+\end_inset
+
+, abrem-se telas secundárias que mostram as configurações do sistema e supervisã
+o.
+ No botão 
+\begin_inset Quotes eld
+\end_inset
+
+Laboratorios
+\begin_inset Quotes erd
+\end_inset
+
+, abre-se uma tela em que é escolhido o laboratório que se quer acessar.
+ No seguinte, é mostrado os dados adquiridos.
+ Em 
+\begin_inset Quotes eld
+\end_inset
+
+Comunicação
+\begin_inset Quotes erd
+\end_inset
+
+, abre-se uma tela onde é escolhido o tipo de comunicação.
+ Em 
+\begin_inset Quotes eld
+\end_inset
+
+Equipamentos
+\begin_inset Quotes erd
+\end_inset
+
+, mostra-se os materiais necessários para a montagem do experimento.
+ Por fim, ao clicar em 
+\begin_inset Quotes eld
+\end_inset
+
+Fechar
+\begin_inset Quotes erd
+\end_inset
+
+, a referida tela é fechada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela principal do SCADA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/SCADA Geral.png.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\series bold
+Fonte:
+\series default
+ Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Foram escolhidos dois laboratórios: Simulação e Projetos (1) e Automação
+ III (2).
+ A seguir, será falado sobre cada um.
+\end_layout
+
+\begin_layout Section
+Laboratório de Simulação e Projetos
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+No Laboratório de Simulação e Projetos, localizado na sala A40-F, o processo
+ existente é: Acionamento de motor de indução com inversor de frequência
+ 
+\shape italic
+Mitsubishi.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Essa prática de laboratório tem como objetivo trazer o conhecimento sobre
+ a configuração de um inversor de frequência 
+\shape italic
+Mitsubishi, 
+\shape default
+mostrando as características de um inversor com componentes semicondutores
+ tipo IGBT com modulação PWM.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Para a concretização dessa prática, os materiais necessários são:
+\end_layout
+
+\begin_layout Standard
+Inversor de frequência 
+\shape italic
+MITSUBISHI FREQROL
+\shape default
+ S500;
+\end_layout
+
+\begin_layout Standard
+Osciloscópio;
+\end_layout
+
+\begin_layout Standard
+Multímetro digital;
+\end_layout
+
+\begin_layout Standard
+Arduíno UNO.
+\end_layout
+
+\begin_layout Standard
+O procedimento para a configuração de um inversor de frequência 
+\shape italic
+Mitsubishi 
+\shape default
+é:
+\end_layout
+
+\begin_layout Standard
+Inicialmente, deve-se definir o modo de operação do inversor.
+ No caso, são dois: O PU (modo de operação de painel de controle) e o EXT
+ (modo de operação externa, podendo ser alterado para inverter e executar
+ com configurações de parâmetro).
+\end_layout
+
+\begin_layout Standard
+Acionando-se os botões 
+\begin_inset Quotes eld
+\end_inset
+
+MODE
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+SET
+\begin_inset Quotes erd
+\end_inset
+
+, são definidos os parâmetros e a configuração de frequência, mostrando-se
+ o estado de operação.
+\end_layout
+
+\begin_layout Standard
+Em seguida, deve-se acionar o botão 
+\begin_inset Quotes eld
+\end_inset
+
+RUN
+\begin_inset Quotes erd
+\end_inset
+
+ para inicionar a operação e o 
+\begin_inset Quotes eld
+\end_inset
+
+STOP/RESET
+\begin_inset Quotes erd
+\end_inset
+
+ para interromper a mesma.
+\end_layout
+
+\begin_layout Standard
+Na figura 3, abaixo, é mostrado o painel do Inversor de frequência 
+\shape italic
+MITSUBISHI FREQROL
+\shape default
+ S500.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inversor de frequência 
+\shape italic
+MITSUBISHI FREQROL
+\shape default
+ S500
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/Inversor de frequência.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\series bold
+Fonte:
+\series default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "inversor"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+O arduíno UNO serve como meio de comunicação entre o SCADA e o sistema físico
+ e para fazer o controle de variador de velocidade do motor.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+Para essa prática, pretende-se simular e implementar o SCADA.
+ Na tela principal, é mostrado um circuito para representar o sistema.
+ Ao clicar no botão 
+\begin_inset Quotes eld
+\end_inset
+
+Tutorial
+\begin_inset Quotes erd
+\end_inset
+
+, abre-se o guia da prática de laboratório.
+ Clicando-se em 
+\begin_inset Quotes eld
+\end_inset
+
+Monitoramento
+\begin_inset Quotes erd
+\end_inset
+
+, abrem-se telas secundárias que mostram as configurações do inversor, monitoram
+ento do motor de indução, medição das variáveis e supervisão.
+ Por fim, ao clicar em 
+\begin_inset Quotes eld
+\end_inset
+
+Fechar
+\begin_inset Quotes erd
+\end_inset
+
+, a referida tela é fechada.
+ Na figura 4, abaixo, é mostrado a tela principal referente ao Laboratório
+ de Simulação e Projetos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Laboratório de Simulação e Projetos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/SCADA.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\series bold
+Fonte:
+\series default
+ Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Laboratório de Automação III 
+\end_layout
+
+\begin_layout Standard
+No Laboratório de Automação III, localizado na sala A40-C, o processo existente
+ é: Controle de nível de tanque.
+\end_layout
+
+\begin_layout Standard
+Essa prática tem como objetivo trazer o conhecimento sobre o desenho de
+ sensores virtuais usando os recursos que oferecem o 
+\shape italic
+Toolbox
+\shape default
+ de Matlab, Simulink e LabVIEW.
+\end_layout
+
+\begin_layout Standard
+Para a concretização dessa prática, os materiais necessários são:
+\end_layout
+
+\begin_layout Standard
+Computador;
+\end_layout
+
+\begin_layout Standard
+Matlab;
+\end_layout
+
+\begin_layout Standard
+LabVIEW.
+\end_layout
+
+\begin_layout Standard
+O procedimento para o controle do nível é:
+\end_layout
+
+\begin_layout Standard
+Inicialmente, usando os modelos do sistema, deve-se colocar os valores de
+ fluxo no bloco de função S-
+\shape italic
+function
+\shape default
+ de Simulink, para desenho do sensor virtual de densidade.
+\end_layout
+
+\begin_layout Standard
+Em seguida, deve-se incluir, nesse bloco, a expressão da densidade à partir
+ da potência da bomba para o fluxo do tanque, que é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{b}=\frac{(\rho.Q.H)}{(\eta_{b}.\eta_{inst})}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde:
+\end_layout
+
+\begin_layout Standard
+ρ - densidade de fluxo [kg/m³];
+\end_layout
+
+\begin_layout Standard
+Q - vazão do fluxo [m³/h];
+\end_layout
+
+\begin_layout Standard
+H - altura de carga do fluxo no tanque [m];
+\end_layout
+
+\begin_layout Standard
+N
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+b
+\end_layout
+
+\end_inset
+
+- potência desenvolvida pela bomba [kW]
+\end_layout
+
+\begin_layout Standard
+η
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+b 
+\end_layout
+
+\end_inset
+
+e η
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+inst 
+\end_layout
+
+\end_inset
+
+- eficiências da bomba e instalação [%]
+\end_layout
+
+\begin_layout Standard
+Para essa prática, pretende-se simular o SCADA.
+ Na figura 5, abaixo, é mostrado sua tela principal.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Janela do supervisor do sensor virtual de densidade
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/SCADA Tanque inicial.PNG
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\series bold
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nivel"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para a criação da interface, em LabVIEW, que é aberta ao clicar o botão
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Simulação
+\begin_inset Quotes erd
+\end_inset
+
+, da tela principal, há as seguintes especificações:
+\end_layout
+
+\begin_layout Standard
+Reservatórios: deverá apresentar animação correspondente ao nível dos produtos
+ em seu interior (em porcentagem), definindo-se a tag de simulação do nível
+ com variação entre 0 e 100.
+\end_layout
+
+\begin_layout Standard
+Válvulas: quando fechadas, devem ser exibidas na cor vermelha; quando abertas,
+ na cor verde.
+\end_layout
+
+\begin_layout Standard
+Indicação visual do modo atual de operação (“automático” ou “manual”): mostrar
+ um texto que muda de acordo com o valor da variável 
+\begin_inset Quotes eld
+\end_inset
+
+modo
+\begin_inset Quotes erd
+\end_inset
+
+, que deverá ser uma tag booleana, criando-se, também, um botão para mudança
+ de modo, que modificará o valor dessa tag.
+ 
+\end_layout
+
+\begin_layout Standard
+Botões para abrir ou fechar as válvulas de entrada de insumo ou saída de
+ mistura que comandarão as variáveis booleanas referentes às válvulas.
+ Esses botões devem ser agrupados em um painel (quadro) na lateral superior
+ direita do supervisório.
+ 
+\end_layout
+
+\begin_layout Standard
+Janela com um gráfico de tendência em tempo real apresentando os valores
+ dos níveis dos reservatórios.
+ 
+\end_layout
+
+\begin_layout Standard
+Deverá existir um botão para abrir cada uma das janelas – a dos alarmes
+ e a do gráfico.
+\end_layout
+
+\begin_layout Standard
+A figura 6, abaixo, representa a interface do tanque.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Interface do tanque
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/Labview tanque.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\series bold
+Fonte:
+\series default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "nivel"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para a criação da página 
+\shape italic
+web, 
+\shape default
+no LabVIEW, é usado a ferramenta 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+Web Publishing Tool
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Depois de selecionada a VI, as opções de visualização e a saída HTML, a
+ página criada fica conforme a figura 7, abaixo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página 
+\shape italic
+Web
+\shape default
+ do tanque
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/Web 2.PNG
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\series bold
+Fonte:
+\series default
+ Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Resultados e Discussão dos Resultados
+\end_layout
+
+\begin_layout Standard
+Como o projeto está em andamento, segue os resultados esperados.
+\end_layout
+
+\begin_layout Standard
+O sistema SCADA proporciona uma melhor acessibilidade, visto que os laboratórios
+ remotos ficam disponíveis ininterruptamente, através da 
+\shape italic
+Internet
+\shape default
+, sem requerer supervisão, maior segurança, não colocando em risco a vida
+ dos usuários e melhor gestão, pois, como a sua arquitetura de rede é do
+ tipo cliente-servidor, com a criação de chave de licença para acesso, pode-se
+ impedir que pessoas indesejadas tenham contato com o processo, e, atribuindo-se
+ um tempo limite de utilização, todos os usuários terão o mesmo tempo de
+ uso do laboratório.
+\end_layout
+
+\begin_layout Standard
+Com isso, é possível monitorar o processo 
+\shape italic
+on-line, 
+\shape default
+visualizando, em tempo real, as ações de controle e enviar comandos, sendo
+ executados no processo físico.
+\end_layout
+
+\begin_layout Standard
+Vale salientar que, para a segunda prática, a do controle de nível, como
+ o objetivo é só a simulação, a priori, não haverá o monitoramento 
+\shape italic
+on-line
+\shape default
+ do processo.
+ A página 
+\shape italic
+web
+\shape default
+, no estágio atual, para o mesmo, só exibe os valores da simulação, de modo
+ que ainda não executa comandos à interface em LabVIEW.
+ 
+\end_layout
+
+\begin_layout Section
+Conclusões
+\end_layout
+
+\begin_layout Standard
+À partir dos resultados esperados, pode-se inferir que é possível implementar
+ um sistema supervisório que seja capaz de simular e monitorar os processos
+ existentes nos laboratórios de controle e automação da EST.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{
+\backslash
+onelineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibliografia_Anderson"
+options "abntex2-alf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibliografia_stefany"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+titulo{
+\backslash
+bfseries SCADA SYSTEM FOR IN USED EQUIPMENT ACTIVITIES PRACTICES INSTALLED
+ IN CONTROL AND AUTOMATION LABORATORIES FROM EST}
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+onecolumn[
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+emptythanks
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+maketitle
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+resumoname}{Abstract}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{resumoumacoluna}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{otherlanguage*}{english}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The term SCADA, in automation, refers to monitoring, control and data acquisitio
+n systems composed of one or more computers, monitoring and controlling
+ a process.
+ It will be presented a supervisory control and data acquisition system
+ for equipment used in laboratories of control and automation of the School
+ of Technology (EST), allowing remote control of them, increasing the safety
+ of users.
+ To do this, the physical processes were chosen, who are in the labs to
+ simulate and implement the SCADA system, thus creating the interface for
+ remote access thereof, improving the learning of students it can compare
+ theory with practice, without risks of them, and at any time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{
+\backslash
+onelineskip}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+noindent
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Key-words}: SCADA system, laboratories, physical processes
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{otherlanguage*}%{english}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{resumoumacoluna}
+\end_layout
+
+\begin_layout Plain Layout
+
+%]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,770 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+%\usepackage{tabela-simbolos}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+INTRODUÇÃO
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:INTRODUÇÃO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Um problema de controle consiste, basicamente, em encontrar uma forma de
+ afetar o funcionamento do sistema a fim de que ele se comporte de uma maneira
+ esperada, conhecido na literatura como 
+\shape italic
+setpoint
+\shape default
+.
+ Um sistema com realimentação e controlador é exemplificado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama de blocos com controlador PID"
+
+\end_inset
+
+.
+ Os sistemas são montados dessa maneira porque, geralmente, não é possível
+ mudar a estrutura funcional do processo a controlar.
+ Assim, os controladores atuam antes do processo, como compensadores, onde
+ recebem o valor do sinal de erro (diferença entre o valor da saída do sistema
+ e o valor que deseja-se que ele opere), realizam operações matemáticas
+ e enviam para a planta um valor que visa compensar o seu funcionamento,
+ para que sua saída chegue cada vez mais próxima do valor desejado 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "araujo2007"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama de blocos com controlador PID"
+
+\end_inset
+
+Diagrama de blocos com controlador PID
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename planta_controle.jpg
+	lyxscale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dorf2013"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Um sistema possui, portanto, as entradas manipuladas (onde o controlador
+ atua), as entradas exógenas (relativas ao ambiente que o sistema está presente)
+, as saídas observadas (um sistema pode possuir diversos fatores que caracteriza
+m seu comportamento) e as saídas de interesse (aquelas que são de fato monitorad
+as e utilizadas pelo controlador, para que ele atue nas entradas manipuladas),
+ como exemplificado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sistema de Controle no Universo"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{dorf2013}
+\end_layout
+
+\end_inset
+
+, um dos controladores utilizados em muitos processos industriais é o do
+ tipo proporcional-integral-derivativo (PID), e atribui sua popularidade,
+ de modo geral, a dois fatores: seu bom desempenho em uma ampla faixa de
+ operações e sua simplicidade funcional, que permite aos engenheiros operá-los
+ de modo simples e direto.
+\end_layout
+
+\begin_layout Standard
+Os três termos do controlador PID satisfazem a maioria das necessidades
+ dos sistemas de controle, e o número de termos é suficientemente pequeno
+ para permitir a sintonização manual por um operador, ou uso de controle
+ adaptativo, métodos determinísticos ou o uso de heurísticas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "knospe2006pid"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sistema de Controle no Universo"
+
+\end_inset
+
+Sistema de controle no universo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename sistema_universo.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "araujo2007"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Formulação do problema
+\end_layout
+
+\begin_layout Standard
+Nas últimas décadas, existem inúmeros estudos sobre os métodos de sintonia
+ (processo de escolha dos ganhos) dos controladores PID.
+ Uma das principais questões nesses estudos é como se comparar os diferentes
+ métodos.
+ De modo geral, aplica-se um degrau na entrada e compara-se fatores como
+ o sobressinal (
+\shape italic
+overshoot
+\shape default
+), tempo de subida (
+\shape italic
+rise time
+\shape default
+) e tempo de acomodação (
+\shape italic
+settling time
+\shape default
+).
+ Em estudos mais avançados, considera-se também a robustez do sistema 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tan2006comparison"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Porém, na vasta pesquisa bibliográfica realizada, não foi encontrado um
+ estudo que compare a taxa de variação em torno do 
+\shape italic
+setpoint 
+\shape default
+que diferentes métodos de sintonia de controladores PID podem ter, e como
+ isso pode influenciar em outros fatores do sistema, como o seu consumo
+ de energia.
+\end_layout
+
+\begin_layout Section
+Justificativa
+\end_layout
+
+\begin_layout Standard
+Na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sistema de Controle no Universo"
+
+\end_inset
+
+ observa-se que existem diversos fatores que podem influenciar no comportamento
+ de um sistema.
+ Em simulações computacionais, muitas vezes alguns desses fatores não são
+ considerados, principalmente os fatores exógenos ao sistema.
+ Esses fatores fazem com que o comportamento de um sistema simulado computaciona
+lmente seja diferente de um sistema real, onde a estabilidade perfeita dificilme
+nte é alcançada.
+ Essa diferença é exemplificada na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comparação entre um sistema simulado e um experimento com Controlador PID"
+
+\end_inset
+
+, onde observa-se a diferença entre um sistema de controle de temperatura
+ de um forno elétrico simulado e real 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "temporeal1"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparação entre um sistema simulado e um experimento com Controlador PID
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comparação entre um sistema simulado e um experimento com Controlador PID"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename temporeal1.jpg
+	lyxscale 50
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "temporeal1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{temporeal1}
+\end_layout
+
+\end_inset
+
+ as variações em torno do 
+\shape italic
+setpoint 
+\shape default
+são consideradas normais e aceitáveis.
+ uma vez que um sistema com controlador PID como o da Figura 3, 
+\begin_inset Quotes eld
+\end_inset
+
+apresentou um desempenho compatível com os índices de desempenho como tempo
+ de acomodação, tempo de subida e nível de sobressinal estabelecidos
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+O presente projeto pretende, portanto, verificar se a utilização de diferentes
+ métodos de sintonia de controladores PID, para um mesmo sistema e mesma
+ aplicação, pode influenciar para que as variações em torno do 
+\shape italic
+setpoint 
+\shape default
+sejam maiores ou menores e verificar como isso pode influenciar em outros
+ fatores do sistema, que não se restrinjam apenas ao tempo de acomodação,
+ tempo de subida e sobressinal.
+ 
+\end_layout
+
+\begin_layout Standard
+O consumo de energia será o parâmetro de comparação, procurando encontrar
+ um método de sintonia de controladores PID mais eficiente nesse quesito.
+\end_layout
+
+\begin_layout Section
+Motivação
+\end_layout
+
+\begin_layout Standard
+Em 2013, o Balanço Energético do Rio Grande do Sul informou que o consumo
+ de energia mundial, em 2010, atingiu 13.205 bilhões de toneladas equivalentes
+ de petróleo (tep).
+ De acordo com as projeções do 
+\shape italic
+International Energy Outlook
+\shape default
+ - IEO (2013), que espera um aumento no consumo de energia de 1,5% ao ano,
+ no período de 2010 a 2040, a demanda de energia no mundo deve aumentar
+ 56,44% nesse período, chegando a 20.656 milhões de tep em 2040 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "balancoRS2013"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Considerando-se apenas o cenário nacional, ainda de acordo com o Balanço
+ Energético do Rio Grande do Sul, o consumo de energia do Brasil atingiu
+ em 2012 a marca de 253.422 milhões de tep.
+ Também de acordo com as projeções do IEO (2013), o consumo de energia brasileir
+o deve aumentar cerca de 2,1% ao ano, no período de 2010 a 2040, chegando
+ a 453.490 milhões de tep no final desse período.
+ O cenário se torna preocupante quando o consumo de energia do Brasil em
+ 2012 já correspondia a 89,36% da Oferta Interna de Energia - OIE.
+ Ou seja, é possível que se chegue a um gargalo entre o consumo e geração
+ de energia nos próximos anos, caso a Oferta Interna de Energia não acompanhe
+ o crescimento do consumo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "balancoRS2013"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Levando em consideração essas projeções, toda e qualquer alternativa de
+ diminuição do consumo de energia é válida.
+ Levando em consideração também a grande utilização dos controladores PID
+ (cerca de 90% dos problemas de controle, segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{acharya2013stability}
+\end_layout
+
+\end_inset
+
+), tem-se como motivação determinar um método de sintonia de controladores
+ PID que proporcione um consumo de energia mais eficiente, para um mesmo
+ sistema e mesma aplicação.
+\end_layout
+
+\begin_layout Section
+Objetivos
+\end_layout
+
+\begin_layout Standard
+Construir um protótipo de carro elétrico, em laboratório, cuja velocidade
+ será controlada por controlador PID, que terá motores de corrente contínua,
+ microcontrolador, módulo de comunicação sem fio, um transdutor de posição
+ angular
+\shape italic
+ 
+\shape default
+(
+\shape italic
+encoder
+\shape default
+, em inglês),
+\shape italic
+ 
+\shape default
+para medição de velocidade e um sensor de corrente.
+ O protótipo será utilizado para realizar os testes, obter os dados necessários
+ e fazer uma análise de como o método de sintonia do controlador PID influencia
+ no seu consumo de energia.
+ Este objetivo geral será alcançado quando todos seguintes objetivos específicos
+ forem atingidos:
+\end_layout
+
+\begin_layout Itemize
+Construção e montagem de um protótipo de carro elétrico;
+\end_layout
+
+\begin_layout Itemize
+Identificação da função de transferência do sistema;
+\end_layout
+
+\begin_layout Itemize
+Implementação de um controlador PID para que a velocidade do protótipo seja
+ controlada;
+\end_layout
+
+\begin_layout Itemize
+Realizar a sintonia do controlador PID pelos principais métodos de sintonia
+ presentes na literatura;
+\end_layout
+
+\begin_layout Itemize
+Criação do sistema supervisório;
+\end_layout
+
+\begin_layout Itemize
+Comunicação do protótipo de carro elétrico com o sistema supervisório;
+\end_layout
+
+\begin_layout Itemize
+Realizar os testes e medições do consumo de energia com o protótipo em operação;
+\end_layout
+
+\begin_layout Itemize
+Realizar a aquisição de dados das variáveis do protótipo;
+\end_layout
+
+\begin_layout Itemize
+Comparação dos dados obtidos.
+\end_layout
+
+\begin_layout Section
+Metodologia
+\end_layout
+
+\begin_layout Standard
+Inicialmente, pesquisas foram realizadas para identificar, no mundo científico,
+ o que existe relacionado com o tema proposto, e em que pontos o presente
+ projeto se assemelha e se diferencia dos trabalhos já existentes.
+\end_layout
+
+\begin_layout Standard
+Um referencial teórico foi criado, abordando os seguintes temas: controladores
+ PID e sua sintonia, motores de corrente contínua, identificação e modelagem
+ de sistemas, sistemas microcontrolados e conhecimentos referentes a circuitos
+ elétricos (PWM, potência e consumo de energia).
+\end_layout
+
+\begin_layout Standard
+Em seguida, foi realizada a construção e montagem do protótipo de carro
+ elétrico, com quatro motores de corrente contínua.
+ O protótipo é microcontrolado com um Arduino Mega 2560 e alimentado por
+ uma bateria de 12 volts.
+ A medição de velocidade do protótipo é realizada com um 
+\shape italic
+encoder 
+\shape default
+ENC01A-0J1216
+\shape italic
+.
+ 
+\shape default
+O interfaceamento entre o sinal PWM do Arduino, a tensão elétrica fornecida
+ pela bateria e os motores é realizado pelo 
+\shape italic
+drive 
+\shape default
+TB6612FNG.
+ Foi implementado o sensor de corrente ACS-712 para medir a corrente elétrica
+ consumida pelo sistema.
+ Uma programação foi implementada no Arduino para que, tanto a informação
+ lida dos sensores presente no protótipo como os dados provenientes do sistema
+ supervisório sejam enviados e recebidos de maneira correta.
+ 
+\end_layout
+
+\begin_layout Standard
+A identificação da função de transferência do motor de corrente contínua
+ (que é o 
+\begin_inset Quotes eld
+\end_inset
+
+processo a controlar
+\begin_inset Quotes erd
+\end_inset
+
+ presente na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama de blocos com controlador PID"
+
+\end_inset
+
+) foi realizada simulando um motor de corrente contínua no 
+\shape italic
+Simulink
+\shape default
+® e utilizando uma ferramenta de estimação de parâmetros para que o 
+\shape italic
+software 
+\shape default
+aproxime a resposta do motor simulado com resposta do motor real.
+ Após a aproximação, as características do motor real são estimadas e sua
+ função de transferência encontrada.
+\end_layout
+
+\begin_layout Standard
+O controlador PID foi implementado por meio do 
+\shape italic
+software LabVIEW
+\shape default
+® e durante os testes práticos, a variável controlada foi a velocidade do
+ protótipo.
+ A sintonia dos parâmetros do controlador utilizará os métodos Ziegler-Nichols,
+ ISE, IAE, ITAE e Cohen-Coon.
+\end_layout
+
+\begin_layout Standard
+Para que o usuário possa determinar as velocidades, os pontos em que as
+ mudanças ocorrem, assim como monitorar as variáveis do protótipo (como
+ a velocidade, consumo de energia elétrica, etc.) um sistema supervisório
+ foi criado no 
+\shape italic
+LabVIEW
+\shape default
+®.
+ 
+\end_layout
+
+\begin_layout Standard
+Com o sistema supervisório em funcionamento pode-se, então, controlar e
+ monitorar todas as variáveis necessárias para a realização dos testes,
+ e salvá-las para que uma comparação possa ser feita entre os dados coletados.
+ A comunicação do protótipo com o sistema supervisório é realizada com um
+ módulo de comunicação sem fio 
+\shape italic
+XBee
+\shape default
+®, por meio de comunicação serial.
+ 
+\end_layout
+
+\begin_layout Standard
+Os testes foram realizados da seguinte maneira: o protótipo de carro elétrico
+ percorre trajetos padronizados com mudanças de velocidade em pontos previamente
+ estabelecidos (por exemplo, 100 metros no total, com sub-trajetos de 10
+ metros, 30 metros, 20 metros e 40 metros e velocidades em cada sub-trajeto
+ de 10 cm/s, 20 cm/s, 15 cm/s e 40 cm/s, respectivamente), e para um mesmo
+ trajeto, diferentes variações do controlador PID (P, PI e PID) e diferentes
+ métodos de sintonia desses controladores foram utilizados, um de cada vez.
+ Assim, as condições de teste são sempre as mesmas, possibilitando uma comparaçã
+o mais exata.
+\end_layout
+
+\begin_layout Section
+Organização do trabalho 
+\end_layout
+
+\begin_layout Standard
+Este trabalho está dividido em seis capítulos para seu melhor entendimento.
+ 
+\end_layout
+
+\begin_layout Standard
+O capítulo 1 aborda uma breve introdução sobre sistemas de controle e consumo
+ de energia, e conceitua o projeto por meio da justificativa e motivação.
+ Também traz objetivos a serem alcançados e a metodologia que foi utilizada.
+\end_layout
+
+\begin_layout Standard
+Já no capítulo 2 se dá a apresentação de trabalhos relacionados a essa monografi
+a, encaixando-a no contexto científico, descrevendo as principais semelhanças
+ e diferenças com os trabalhos já publicados.
+\end_layout
+
+\begin_layout Standard
+Um referencial teórico, direto e aplicado, necessário ao desenvolvimento
+ do projeto, é realizado no capítulo 3.
+ Isso ocorre apresentando os tópicos relevantes por meio da visão de autores
+ de obras consultadas e de trabalhos de pesquisa voltados para teorias e
+ tecnologias aplicadas nesta monografia.
+\end_layout
+
+\begin_layout Standard
+Em seguida, o capítulo 4 descreve como foi realizado o processo do desenvolvimen
+to e construção do protótipo de carro elétrico, citando os materiais utilizados.
+ Além disso, todas as etapas da metodologia são detalhadas, descrevendo-se
+ o que foi necessário implementar para a realização dos testes e obtenção
+ de dados de consumo de energia.
+ 
+\end_layout
+
+\begin_layout Standard
+No capítulo 5 os resultados obtidos são apresentados e discutidos.
+\end_layout
+
+\begin_layout Standard
+Por fim, no capítulo 6, os resultados são comparados, e uma conclusão é
+ formulada, de acordo com o tema proposto, buscando-se determinar o método
+ de sintonia de controlador PID mais eficiente, levando em consideração
+ o consumo de energia obtidos nos testes.
+\end_layout
+
+\end_body
+\end_document

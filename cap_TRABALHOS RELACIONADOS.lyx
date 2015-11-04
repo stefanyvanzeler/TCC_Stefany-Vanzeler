@@ -1,0 +1,479 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+%\usepackage{tabela-simbolos}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+TRABALHOS RELACIONADOS
+\end_layout
+
+\begin_layout Standard
+Neste capítulo serão abordados alguns trabalhos científicos que, de alguma
+ maneira, se assemelham com o tema desta monografia.
+ O objetivo é encaixá-la no contexto científico, descrevendo as semelhanças
+ e diferenças com os trabalhos já publicados.
+\end_layout
+
+\begin_layout Section
+
+\shape italic
+Comparison of some well-known PID tuning formulas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Comparação de algumas fórmulas de sintonia PID conhecidas
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tan2006comparison"
+
+\end_inset
+
+, em língua portuguesa.
+\end_layout
+
+\begin_layout Standard
+Neste trabalho, as fórmulas de sintonia de controladores PID e seu desempenho
+ são comparadas por meio de critérios baseados na rejeição de pertubações
+ e robustez do sistema.
+ Uma medida simples da robustez é definida e os ganhos integrais dos controlador
+es PID mostraram-se uma boa medida para a rejeição de perturbações.
+ A análise entre as fórmulas conhecidas de sintonia de controladores PID
+ revela que a robustez deve situar-se entre 3 e 5 para ter um bom compromisso
+ entre desempenho e performance.
+\end_layout
+
+\begin_layout Standard
+Segundo o autor, um dos questionamentos que surge ao se analisar os trabalhos
+ que abordam a sintonia de controladores PID é como comparar os métodos
+ de sintonia.
+ Uma resposta simples é usar a resposta ao degrau para sistemas de malha
+ fechada e comparar o sobressinal, o tempo de subida, e o tempo de acomodação.
+\end_layout
+
+\begin_layout Standard
+O objetivo final é encontrar um método de medir a robustez do sistema, para
+ então comparar os diferentes métodos de sintonia de controladores PID.
+ Os métodos considerados são Ziegler-Nichols, Cohen-Coon, controle de modelo
+ interno (
+\shape italic
+internal medol control
+\shape default
+, IMC, em inglês), margem de ganho de fase (
+\shape italic
+gain-phase margin
+\shape default
+, G-P, em inglês) e modelos baseados em integrais do erro (IAE, ITAE, ISE
+ e ITSE).
+ 
+\end_layout
+
+\begin_layout Standard
+A semelhança entre o trabalho de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{tan2006comparison}
+\end_layout
+
+\end_inset
+
+ e o aqui proposto é a comparação entre as fórmulas de sintonia de controladores
+ PID e a diferença é a utilização da robustez como critério de comparação,
+ e não o consumo de energia.
+\end_layout
+
+\begin_layout Section
+
+\shape italic
+Maximum Sensitivity based PID Controller Tuning: A survey and comparison
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\shape italic
+VER
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Sintonia de controladores PID baseados na sensibilidade máxima: uma pesquisa
+ e comparação
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "jones2006maximum"
+
+\end_inset
+
+, em língua portuguesa.
+\end_layout
+
+\begin_layout Standard
+O artigo considera a sensibilidade máxima, 
+\begin_inset Formula $M_{S}$
+\end_inset
+
+, como uma das especificações de sistemas em malha fechada que satisfazem
+ várias exigências de um método de sintonia de controladores PID útil e
+ prático.
+ Uma variedade de métodos de sintonia de controladores PID que usam essa
+ especificação foram desenvolvidos, sendo a maioria para fins de sintonia
+ automática.
+ Logo, o trabalho de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{jones2006maximum}
+\end_layout
+
+\end_inset
+
+ examina a aplicabilidade geral dos métodos de sintonia comparando sua performan
+ce em uma planta de referência.
+\end_layout
+
+\begin_layout Standard
+Para o autor, a sensibilidade máxima, 
+\begin_inset Formula $M_{S}$
+\end_inset
+
+, que representa o inverso da distância mínima entre a função de transferência
+ e seu ponto crítico, no diagrama de Nyquist, se mostrou robusta quando
+ utilizada como um parâmetro de sintonia.
+ Logo, são criados novos métodos de sintonia baseados na sensibilidade máxima,
+ dentre eles: métodos baseados na correlação, abordagens analíticas aproximadas,
+ sintonia por iterações e otimização não-convexa.
+\end_layout
+
+\begin_layout Standard
+A semelhança entre o trabalho de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{jones2006maximum}
+\end_layout
+
+\end_inset
+
+ e o aqui proposto é a utilização de apenas um critério (a sensibilidade
+ máxima) para realizar a comparação entre os métodos sintonia do controlador
+ PID e a utilização de apenas uma planta de referência.
+ A diferença é que neste projeto, o critério de comparação será o consumo
+ de energia.
+\end_layout
+
+\begin_layout Section
+
+\shape italic
+Refine PID Tuning Rule Using ITAE Criteria
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Refinando a sintonia de controladores PID usando o critério ITAE
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "awouda2010refine"
+
+\end_inset
+
+, em língua portuguesa.
+\end_layout
+
+\begin_layout Standard
+Este artigo discute uma abordagem para sintonizar os controladores PID utilizand
+o o método de otimização, calculando analiticamente os ganhos proporcional
+ 
+\begin_inset Formula $K_{P,}$
+\end_inset
+
+ o tempo integral 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+ e tempo derivativo 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+ para sistemas de primeira ordem com tempo morto (FOPDT, 
+\shape italic
+first order plus dead time
+\shape default
+).
+ Um algoritmo é implementado no MATLAB
+\shape italic
+® 
+\shape default
+para encontrar os valores ideais dos ganhos que fazem o sistema atingir
+ a maioria de seus requisitos, como reduzir o sobressinal, manter o sistema
+ com uma resposta rápida, uma boa rejeição a distúrbios e manter a robustez.
+ Os métodos de sintonia tradicionais são alterados, melhorando seus parâmetros,
+ e tendo como objetivo final minimizar a integral do tempo multiplicado
+ pelo erro absoluto (ITAE).
+ Uma comparação entre os métodos de sintonia tradicionais e os métodos de
+ sintonia propostos por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{awouda2010refine}
+\end_layout
+
+\end_inset
+
+ é realizada no MATLAB
+\shape italic
+®.
+\end_layout
+
+\begin_layout Standard
+Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{awouda2010refine}
+\end_layout
+
+\end_inset
+
+, existem na literatura 219 métodos de sintonia para controladores PI e
+ 381 métodos de sintomia para controladores PID, porém, pesquisas recentes
+ indicam que 30% dos controladores instalados ainda são sintonizados de
+ maneira manual, 30% dos sistemas mudam de comportamento durante o uso,
+ 25% usam as definições de fábrica e 30% dos sistemas possuem algum tipo
+ de problema.
+ Os métodos de sintonia tradicionais utilizados foram Ziegler-Nichols e
+ o AMIGO (
+\shape italic
+aproximate M-constrained integral gain optimization
+\shape default
+), proposto por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{aastrom2006advanced}
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+O autor conclui que o método de sintonia proposto tem comportamento melhor
+ ou parecido com o método AMIGO e muito melhor que o método Ziegler-Nichols.
+\end_layout
+
+\begin_layout Standard
+A semelhança entre o trabalho de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{awouda2010refine}
+\end_layout
+
+\end_inset
+
+ e esta monografia é a importância que ele dá aos métodos de sintonia, sua
+ comparação e como a escolha do melhor método pode influenciar diretamente
+ no comportamento do sistema.
+ A diferença é a criação de um novo método de sintonia baseado nos métodos
+ tradicionais.
+ Nesta monografia os métodos tradicionais serão comparados sem alterações
+ em sua estrutura, tendo como critério de comparação o consumo de energia.
+\end_layout
+
+\begin_layout Section
+
+\shape italic
+PID Controller Tuning for Glycerin Bleaching Process Using Well-Known Tuning
+ Formulas - A Simulation Study
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes eld
+\end_inset
+
+Sintonia de controladores PID para o processo de branqueamento de glicerina
+ usando fórmulas de sintonia conhecidas - um estudo-simulação
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kamaruddin2009pid"
+
+\end_inset
+
+, em língua portuguesa.
+\end_layout
+
+\begin_layout Standard
+O artigo aborda um estudo e simulação sobre os métodos de sintonia de controlado
+res PID em um processo de branqueamento de glicerina.
+ Os métodos utilizados foram Ziegler-Nichols, Cohen-Coon, IAE, ISE, ITAE.
+ Em cada métodos os parâmetros analisados foram o sobressinal, tempo de
+ subida e tempo de acomodação.
+ Os parâmetros simulados foram testados na planta, que se comunica com o
+ LabVIEW
+\shape italic
+® 
+\shape default
+e os resultados revelaram que o melhor método foi o ITAE.
+\end_layout
+
+\begin_layout Standard
+O autor define o controlador PID como um controlador que considera o presente
+ (com o elemento proporcional), o passado (com o elemento integrativo) e
+ o futuro (com o elemento derivativo) do erro do sistema.
+\end_layout
+
+\begin_layout Standard
+As semelhanças entre o trabalho de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{kamaruddin2009pid}
+\end_layout
+
+\end_inset
+
+ e o aqui proposto é a utilização e comparação dos métodos de sintonia ISE,
+ ITAE, IAE, Ziegler-Nichols e Cohen-Coon, além da utilização de técnicas
+ de identificação de sistemas para encontrar a planta do processo de branqueamen
+to de glicerina.
+ A diferença é que o autor utiliza parâmetros como o sobressinal, tempo
+ de subida e tempo de acomodação como fatores de comparação, e não utiliza
+ o consumo de energia, utilizado neste trabalho.
+\end_layout
+
+\end_body
+\end_document
