@@ -115,13 +115,37 @@ O barramento Controller Area Network (CAN) é um sistema de barramento serial
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
 O presente projeto tem como objetivo o desenvolvimento e implementação de
  um protótipo para barramento CAN, capaz de tratar adequadamente as mensagens
  do protocolo CAN, utilizando microcontroladores de baixo custo com a arquitetur
 a ARM, e de se comunicar com um PC via protocolo TCP/IP, servindo como modelo
  para a futura integração de dispositivos de campo com uma rede DeviceNet
  no laboratório de automação industrial da EST.
- 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O presente projeto tem como objetivo o desenvolvimento de um sistema de
+ monitoramento de barramento CAN, aonde possa-se observar o fluxo de dados
+ entre as ECUs (unidades eletrônicas de controle) e se transmitir mensagens,
+ por meio da implementação de um protótipo, que funcione como um 
+\shape italic
+gateway
+\shape default
+ entre os protocolos TCP/IP e CAN em um sistema linux embarcado com arquitetura
+ ARM de baixo custo e um computador pessoal com sistema operacional Windows,
+ utilizando-se as linguagens C/C++ e C# a partir do conceito de sockets,
+ servindo como modelo para integração futura de dispositivos de campo com
+ a rede DeviceNet do laboratório de automacao industrial da EST (Escola
+ Superior de Tecnologia).
 \end_layout
 
 \begin_layout Section
@@ -141,10 +165,10 @@ Justificativa
 \end_layout
 
 \begin_layout Standard
-O desenvolvimento e implantação do protótipo no laboratório de automação
- industrial da EST podem servir como base para novos projetos nas áreas
- de: redes indústrias, sistemas distribuídos, controle, automação, supervisão
- de processos e sistemas supervisórios.
+O desenvolvimento do sistema de monitoramento e implantação do protótipo
+ podem servir como base para novos projetos nas áreas de: redes indústrias,
+ sistemas distribuídos, controle, automação, supervisão de processos e sistemas
+ supervisórios.
  Além de poder ser utilizado em aulas práticas no laboratório de automação
  industrial da EST.
  
@@ -174,26 +198,53 @@ Objetivos
 \end_layout
 
 \begin_layout Standard
-Desenvolver e implementar um protótipo para barramento CAN, capaz de tratar
- adequadamente as mensagens do protocolo CAN, utilizando microcontroladores
- de baixo custo com a arquitetura ARM, e de se comunicar com um PC via protocolo
- TCP/IP no laboratório de automação industrial da EST.
+Desenvolver um sistema de monitoramento de barramento CAN e implementar
+ um protótipo, que funcione como um 
+\shape italic
+gateway
+\shape default
+ entre os protocolos TCP/IP e CAN em um sistema linux embarcado com arquitetura
+ ARM de baixo custo, servindo de interface entre o sistema de monitoramento
+ em um computador pessoal com sistema operacional Windows e o barramento
+ CAN.
  Este objetivo geral será alcançado quando todos seguintes objetivos específicos
  forem atingidos:
 \end_layout
 
 \begin_layout Itemize
-Fazer um comparativo entre as arquiteturas Raspberry Pi, Beaglebone e Arduino;
+Realizar revisão bibliográfica que confere embasamento teórico para realização
+ do trabalho;
 \end_layout
 
 \begin_layout Itemize
-Implementar uma interface entre os protocolos CAN e TCP/IP;
+Fazer um comparativo entre as arquiteturas Raspberry Pi B+ e Beaglebone
+ Black e escolher uma dessas plataformas ARM para a implementacao do protótipo;
 \end_layout
 
 \begin_layout Itemize
-Testar o recebimento e envio de mensagens através do protótipo, monitorando
- em tempo real o barramento CAN da rede DeviceNet existente no laboratório
- de automação industrial da EST.
+Determinar o controlador CAN e receptor CAN;
+\end_layout
+
+\begin_layout Itemize
+Implementar um 
+\shape italic
+gateway
+\shape default
+ entre os protocolos CAN e TCP/IP;
+\end_layout
+
+\begin_layout Itemize
+Desenvolver um sistema de monitoramento para barramento CAN com interface
+ TCP/IP;
+\end_layout
+
+\begin_layout Itemize
+Montar uma rede CAN para testes;
+\end_layout
+
+\begin_layout Itemize
+Testar o recebimento e envio de mensagens por meio do protótipo, monitorando
+ em tempo real o barramento CAN com o sistema de monitoramento criado.
 \end_layout
 
 \begin_layout Section
@@ -207,10 +258,22 @@ Inicialmente, pesquisas foram realizadas para identificar, no mundo científico,
 \end_layout
 
 \begin_layout Standard
-Um referencial teórico foi criado, abordando os seguintes temas: controladores
- PID e sua sintonia, motores de corrente contínua, identificação e modelagem
- de sistemas, sistemas microcontrolados e conhecimentos referentes a circuitos
- elétricos (PWM, potência e consumo de energia).
+Um referencial teórico foi criado, abordando os seguintes temas: classificacao
+ das redes, modelo OSI, barramento CAN, Rede DeviceNet, suite de protocolos
+ TCP/IP e interfaces para programas de aplicação.
+\end_layout
+
+\begin_layout Standard
+Em seguida, foi realizado um comparativo entre as arquiteturas Raspberry
+ Pi e Beaglebone, adotando-se critérios para a escolha de uma dessas plataformas
+ para a implementacao do protótipo, a compra de materiais e montagem da
+ arquitetura de hardware a ser utilizada.
+\end_layout
+
+\begin_layout Standard
+Após definicao da arquitetura de hardware do protótipo, foi criada a arquitetura
+ de software e feita a implementacao da gateway TCP/IP na plataforma ARM
+ escolhida.
 \end_layout
 
 \begin_layout Standard

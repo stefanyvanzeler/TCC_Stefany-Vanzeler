@@ -254,48 +254,6 @@ reference "fig:Resposta-da-aplicação"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Resposta-da-aplicação"
-
-\end_inset
-
-Resposta da aplicação de um degrau de magnitude 12 na função de transferência
- do motor
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename step2.JPG
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-Fonte: Autor
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -511,7 +469,7 @@ reference "chap:Algorítmo-implementado-no-matlab"
 \end_inset
 
 , obteve-se os valores de 
-\begin_inset Formula $K_{P,}\, T_{i}$
+\begin_inset Formula $K_{P,}\,T_{i}$
 \end_inset
 
  e 
@@ -1353,7 +1311,7 @@ name "tab:Valores-de-e-Kp-Ti-Td"
 \end_inset
 
 Valores de 
-\begin_inset Formula $K_{P,}\, T_{i}$
+\begin_inset Formula $K_{P,}\,T_{i}$
 \end_inset
 
  e 

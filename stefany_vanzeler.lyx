@@ -2550,12 +2550,6 @@ name "chap:Sistema-supervisório-implementadado-labview"
 
 \begin_layout Standard
 \align center
-\begin_inset Graphics
-	filename supervirorio.jpg
-	scale 60
-
-\end_inset
-
 
 \end_layout
 
@@ -3405,18 +3399,6 @@ status open
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename esquema_eletrico_bb.jpg
-	lyxscale 50
-	scale 80
-
-\end_inset
-
-
-\end_layout
-
 \end_inset
 
 
@@ -3439,30 +3421,6 @@ placement H
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename prot1.jpg
-	lyxscale 5
-	scale 60
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename prot2_1.jpg
-	lyxscale 5
-	scale 26
-
-\end_inset
-
-
-\end_layout
 
 \begin_layout Plain Layout
 

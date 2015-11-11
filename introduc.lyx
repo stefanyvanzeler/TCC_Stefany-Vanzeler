@@ -204,23 +204,48 @@ Desenvolver um sistema de monitoramento de barramento CAN e implementar
 gateway
 \shape default
  entre os protocolos TCP/IP e CAN em um sistema linux embarcado com arquitetura
- ARM de baixo custo e um computador pessoal.
+ ARM de baixo custo, servindo de interface entre o sistema de monitoramento
+ em um computador pessoal com sistema operacional Windows e o barramento
+ CAN.
  Este objetivo geral será alcançado quando todos seguintes objetivos específicos
  forem atingidos:
 \end_layout
 
 \begin_layout Itemize
-Fazer um comparativo entre as arquiteturas Raspberry Pi, Beaglebone;
+Realizar revisão bibliográfica que confere embasamento teórico para realização
+ do trabalho;
 \end_layout
 
 \begin_layout Itemize
-Implementar uma interface entre os protocolos CAN e TCP/IP;
+Fazer um comparativo entre as arquiteturas Raspberry Pi B+ e Beaglebone
+ Black e escolher uma dessas plataformas ARM para a implementacao do protótipo;
 \end_layout
 
 \begin_layout Itemize
-Testar o recebimento e envio de mensagens através do protótipo, monitorando
- em tempo real o barramento CAN da rede DeviceNet existente no laboratório
- de automação industrial da EST.
+Determinar o controlador CAN e receptor CAN;
+\end_layout
+
+\begin_layout Itemize
+Implementar um 
+\shape italic
+gateway
+\shape default
+ entre os protocolos CAN e TCP/IP;
+\end_layout
+
+\begin_layout Itemize
+Desenvolver um sistema de monitoramento para barramento CAN com interface
+ TCP/IP;
+\end_layout
+
+\begin_layout Itemize
+Montar uma rede CAN para testes;
+\end_layout
+
+\begin_layout Itemize
+Testar o recebimento e envio de mensagens por meio do protótipo, monitorando
+ em tempo real o barramento CAN da rede montada para testes com o sistema
+ de monitoramento criado.
 \end_layout
 
 \begin_layout Section
@@ -234,10 +259,22 @@ Inicialmente, pesquisas foram realizadas para identificar, no mundo científico,
 \end_layout
 
 \begin_layout Standard
-Um referencial teórico foi criado, abordando os seguintes temas: controladores
- PID e sua sintonia, motores de corrente contínua, identificação e modelagem
- de sistemas, sistemas microcontrolados e conhecimentos referentes a circuitos
- elétricos (PWM, potência e consumo de energia).
+Um referencial teórico foi criado, abordando os seguintes temas: classificacao
+ das redes, modelo OSI, barramento CAN, Rede DeviceNet, suite de protocolos
+ TCP/IP e interfaces para programas de aplicação.
+\end_layout
+
+\begin_layout Standard
+Em seguida, foi realizado um comparativo entre as arquiteturas Raspberry
+ Pi e Beaglebone, adotando-se critérios para a escolha de uma dessas plataformas
+ para a implementacao do protótipo, a compra de materiais e montagem da
+ arquitetura de hardware a ser utilizada.
+\end_layout
+
+\begin_layout Standard
+Após definicao da arquitetura de hardware do protótipo, foi criada a arquitetura
+ de software e feita a implementacao da gateway TCP/IP na plataforma ARM
+ escolhida.
 \end_layout
 
 \begin_layout Standard
