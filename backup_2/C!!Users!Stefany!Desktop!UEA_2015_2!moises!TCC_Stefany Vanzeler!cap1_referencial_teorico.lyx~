@@ -1,0 +1,2354 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+%\usepackage{tabela-simbolos}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+REFERENCIAL TEÓRICO
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:REFERENCIAL-TEÓRICO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste capítulo será realizada uma breve abordagem teórica dos seguintes
+ assuntos, que são necessários para o melhor desenvolvimento do presente
+ trabalho: Sistema supervisório, supervisórios, automação, definição geral
+ do; CLP, Arduíno, sensores, Lógica difusa e conhecimentos referentes a
+ energia solar incidente na terra.
+\end_layout
+
+\begin_layout Section
+SISTEMA GESTOR 
+\end_layout
+
+\begin_layout Standard
+Entende-se por sistema de gestão energética o conjunto de estratégias, táticas,
+ ações e controles destinados a converter recursos em resultados e por uso
+ eficiente de energia a implementação de um conjunto integrado de ações
+ que possibilite a melhoria do processo de utilização e consumo de energia,
+ transformando resultados em lucro.
+ 
+\end_layout
+
+\begin_layout Section
+SISTEMAS SUPERVISÓRIO
+\end_layout
+
+\begin_layout Standard
+Na indústria tem-se a necessidade de centralizar as informações de forma
+ a termos o máximo possível de informações com o menor tempo possível.
+\end_layout
+
+\begin_layout Standard
+O Sistema Supervisório veio para reduzir a dimensão dos painéis e melhorar
+ a interface homem/máquina.
+\end_layout
+
+\begin_layout Standard
+São baseados em computadores executando softwares específicos de supervisão
+ de processo industrial.
+\end_layout
+
+\begin_layout Subsection
+Supervisórios
+\end_layout
+
+\begin_layout Standard
+É um software destinado a promover a interface homem/máquina, a fim de proporcio
+nar uma supervisão plena do processo através de telas devidamente configuradas.
+\end_layout
+
+\begin_layout Standard
+As telas que representam o processo podem ser animadas em função das informações
+ recebidas pelo CLP.
+ Quando falamos em supervisão temos a ideia de dirigir, orientar ou inspecionar
+ em um plano superior.
+\end_layout
+
+\begin_layout Standard
+Permitem uma visualização gráfica com informações do processo por cores
+ e animações.
+ Dão ao projetista uma ampla gama de comunicação com os mais diversos tipos
+ de marcas e modelos de equipamentos disponíveis no mercado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sistema supervisório
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/02.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte2 : ( Cicero Couto & Plinio de Lauto-2007)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+AUTOMAÇÃO
+\end_layout
+
+\begin_layout Standard
+Automação vem do latim 
+\shape italic
+automatus
+\shape default
+, que significa mover-se por si, é um sistema automático de controle pelo
+ qual os mecanismos verificam seu próprio funcionamento, efetuando medições
+ e introduzindo correções, sem a necessidade da interferência do homem no
+ local.
+\end_layout
+
+\begin_layout Standard
+Automação é a aplicação de técnicas computadorizadas ou mecânicas para diminuir
+ o uso de mão-de-obra em qualquer processo, especialmente o uso de robôs
+ nas linhas de produção.
+ A automação diminui os custos e aumenta a velocidade da produção
+\series bold
+\shape italic
+, (Lacombe 2004).
+\end_layout
+
+\begin_layout Standard
+Atualmente, a automação está presente em diversos níveis de atividades do
+ homem, desde as residências, no trânsito, através de sistemas de controle
+ de tráfego e sinalização, nos edifícios comerciais, processos de compra,
+ venda e transporte de bens, processos industriais primários e secundários,
+ e até nas jornadas espaciais.
+\end_layout
+
+\begin_layout Standard
+A influência da tecnologia gerou nos últimos anos um novo modelo de sociedade
+ e modificou enormemente a maneira como vivemos, trabalhamos e ocupamos
+ o nosso tempo.
+ Os métodos de trabalho, atividades de lazer e o acesso à informação são
+ exemplos evidentes da mudança verificada na última década.
+ As necessidades que há uns anos eram convenientes, agora são consideradas
+ básicas.
+ As novas tendências da arquitetura, construção e instalação têm modificado
+ esse conceito fazendo-o evoluir.
+ O grande objetivo da automação de luminárias é satisfazer essas necessidades
+ básicas dos ocupantes de um local, seja qual for o ambiente.
+\end_layout
+
+\begin_layout Subsection
+Sistema de Automação
+\end_layout
+
+\begin_layout Standard
+Os blocos são realimentados e o controlador (CLP) verifica os estados do
+ processo através dos sensores, toma a decisão que foi programada e interfere
+ no processo através dos atuadores, além de receber e enviar informações
+ para o sistema de supervisão.
+\end_layout
+
+\begin_layout Standard
+É um software destinado a promover a interface homem/máquina, a fim de proporcio
+nar uma supervisão plena do processo através de telas devidamente configuradas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sistema de automação
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/03.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte 3:( Cicero Couto & Plinio de Lauto-2007)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+DEFINIÇÃO GERAL DO CLP
+\end_layout
+
+\begin_layout Standard
+Um controlador lógico programável (CLP) é um dispositivo capaz de executar
+ uma sequência de operações definidas um programa aplicativo definido pelo
+ usuário.
+ Estas operações estão condicionadas à ocorrência de estímulos externos
+ ou entradas.
+\end_layout
+
+\begin_layout Standard
+Dada uma determinada combinação de entradas, o CLP vai processar essa combinação
+ e aplicar aos dispositivos conectados a suas interfaces de saída o sinal
+ ou sinais associados àquela combinação de entrada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CLP Siemens S7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/04.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (Cicero Couto & Plinio de Lauto-2007) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CLP FX3u-32M
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/05.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (Cicero Couto & Plinio de Lauto-2007)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Atualmente, é impossível falar de automação em controle de processos sem
+ mencionar os controladores lógicos programáveis (CLPs).
+ Devido à grande evolução dos microprocessadores, os CLP’s apresentam hoje
+ uma enorme variedade de recursos, podendo ser aplicados nas mais diversas
+ situações, desde aplicações de controle discreto onde estão envolvidos
+ apenas sinais digitais (0 ou 1) até aplicações de controle contínuo onde
+ há a aquisição e emissão de sinais analógicos.
+\end_layout
+
+\begin_layout Standard
+Além disso, podemos destacar outras características positivas dos CLP’s,
+ tais como: 
+\end_layout
+
+\begin_layout Itemize
+gerenciamento remoto através de rede de dados,
+\end_layout
+
+\begin_layout Itemize
+ferramentas de supervisão e diagnóstico,
+\end_layout
+
+\begin_layout Itemize
+durabilidade,
+\end_layout
+
+\begin_layout Itemize
+flexibilidade.
+ 
+\end_layout
+
+\begin_layout Standard
+Todas essas características fizeram dos CLP’s equipamentos indispensáveis
+ no controle de processos industriais.
+\end_layout
+
+\begin_layout Subsection
+Partes dos CLPs
+\end_layout
+
+\begin_layout Standard
+O sistema que constitui um CLP é constituído basicamente das seguintes partes:
+ 
+\end_layout
+
+\begin_layout Itemize
+Fonte de alimentação;
+\end_layout
+
+\begin_layout Itemize
+Unidade central de processamento (UCP);
+\end_layout
+
+\begin_layout Itemize
+Dispositivos de entrada e saída;
+\end_layout
+
+\begin_layout Itemize
+Memórias do tipo volátil e não volátil;
+\end_layout
+
+\begin_layout Itemize
+Computador ou terminal de programação.
+ 
+\end_layout
+
+\begin_layout Subsection
+Diagrama dos blocos do CLP
+\end_layout
+
+\begin_layout Standard
+Um CLP é constituído basicamente de: Fonte de alimentação; Unidade Centra
+ de Processamento (UCP ou CPU); Memórias dos tipos fixos e volátil; Módulos
+ de entrada e saída; terminal de programação.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramas de blocos do CLP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/06.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (Cicero Couto & Plinio de Lauto-2007)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+DEFINIÇÃO GERAL DO ARDUÍNO UNO
+\end_layout
+
+\begin_layout Standard
+Arduíno é uma placa fabricada na Itália utilizada como plataforma de prototipage
+m eletrônica que torna a robótica mais acessível a todos.
+ Projeto italiano iniciado em 2005 tinha primeiramente cunho educacional
+ e interagia com aplicações escolares.
+ É uma placa que permite a automação de projetos eletrônicos e robóticos
+ por profissionais e amadores, fácil de usar, extremamente poderosa e que
+ vem ganhando espaço considerável junto a entusiastas, acadêmicos e profissionai
+s do ramo.
+ Ele é baseado em uma simples placa microcontroladora, e um ambiente para
+ desenvolver o código para a placa.
+ A placa Arduíno não possui recursos de rede, mas pode ser combinada com
+ um modulo 
+\shape italic
+ethernet
+\shape default
+ criando extensões.
+ O hardware do 
+\shape italic
+Arduíno
+\shape default
+ é de código aberto e suas placas podem ser montadas a um custo baixíssimo
+ ou compradas.
+ O código do ambiente de desenvolvimento também é de código aberto e sua
+ utilização é regida sob a licença GPL (
+\shape italic
+General Public Licens
+\shape default
+e), as bibliotecas microcontroladoras C/C++ sob LGPL (
+\shape italic
+Library General Public License
+\shape default
+), e os esquemas e arquivos CAD (
+\shape italic
+Computer-aided design
+\shape default
+) sob 
+\shape italic
+Creative Commons Attribution Share Alike
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+O software de 
+\shape italic
+Arduíno
+\shape default
+ roda em sistemas operacionais 
+\shape italic
+Microsoft Windows, Apple Macintosh OSX
+\shape default
+ e 
+\shape italic
+GNU (GNU’s Not Unix) /Linux
+\shape default
+.
+ A maioria dos sistemas microcontroladores está limitada ao sistema operacional
+ 
+\shape italic
+Microsoft Windows
+\shape default
+.
+ Outra característica importante do 
+\shape italic
+Arduíno
+\shape default
+ é que você pode carregar um programa nele através do computador central
+ via 
+\shape italic
+USB (Universal Serial Bus)
+\shape default
+, desconectá-lo do computador e desligá-lo.
+ Ao ligar o Arduíno novamente, ele irá rodar o último programa carregado
+ sem necessidade de que o mesmo seja novamente carregado através do computador
+ via USB.
+ Isso significa que só há necessidade de plugar o Arduíno ao computador
+ central quando for desenvolver e eliminar erros do programa.
+ Concluindo, caso queira apenas rodar o programa inserido dentro do Arduíno
+ não há necessidade de plugá-lo ao computador, pois o código já estará na
+ plataforma independentemente da quantidade de tempo que o 
+\shape italic
+Arduíno
+\shape default
+ esteja desligado.
+\end_layout
+
+\begin_layout Standard
+A versão Uno é diferente de todas as placas anteriores, como o 
+\shape italic
+duemilanove
+\shape default
+ por exemplo, pois não utiliza o chip 
+\shape italic
+FTDI USB-to-Serial
+\shape default
+.
+ Em vez disso, ele apresenta o 
+\shape italic
+Atmega16U2
+\shape default
+ programado com um conversor 
+\shape italic
+USB-to-Serial
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+O ambiente de programação do 
+\shape italic
+Arduíno
+\shape default
+ é fácil de usar para principiantes e suficiente flexível para que usuários
+ avançados possam aproveitá-lo ao máximo.
+ Segue na figura , um
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Comunicação-serial-multimestre"
+
+\end_inset
+
+a imagem da plataforma.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Comunicação-serial-multimestre"
+
+\end_inset
+
+Plataforma Arduíno Uno
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/07.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+DEFINIÇÃO GERAL DO SENSOR
+\end_layout
+
+\begin_layout Standard
+Um sensor é um dispositivo que responde a um estímulo físico/químico de
+ maneira específica e mensurável analogicamente.
+\end_layout
+
+\begin_layout Standard
+O desenho inteligente do sensor, com bordas arredondadas e uma ampla zona
+ ativa de imagem maximiza tanto o conforto do paciente como a qualidade
+ de impacto.
+ Alguns sensores respondem com sinal elétrico a um estímulo positivo, isto
+ é, convertem a energia recebida em um sinal elétrico.
+ Nesse caso, podem ser chamados de transdutores.
+ O transdutor converte um tipo de energia em outro.
+ É geralmente composto por um elemento sensor, normalmente piezoelétrico,
+ e uma parte que converte a energia proveniente dele em sinal elétrico.
+ O conjunto formado por um transdutor tensómetro, um condicionador de sinal
+ (amplificador) e um indicador é chamado de sistema de medição em malha
+ fechada.
+\end_layout
+
+\begin_layout Standard
+Quando o sinal é disponibilizado não por um indicador, mas na forma de corrente
+ ou tensão já condicionado - (4 a 20) mA, (0 a 10) V ou (0 a 5) V, geralmente
+ o dispositivo é chamado de transmissor ou transdutor.
+ Entre outras aplicações, os sensores são largamente usados na medicina,
+ indústria e robótica.
+\end_layout
+
+\begin_layout Subsection
+Sensores de temperatura 
+\end_layout
+
+\begin_layout Standard
+A temperatura exerce uma função vital em muitos processos industriais e
+ por isso uma medição precisa é uma necessidade.
+ Temperaturas imprecisas podem causar grandes consequências fatais, como
+ reduzir a vida útil do seu equipamento com superaquecimento de apenas alguns
+ graus.
+ Princípios de função - sensores de temperatura.
+\end_layout
+
+\begin_layout Standard
+O sensor LM35 é um sensor de precisão que apresenta uma saída de tensão
+ linear proporcional à temperatura em que ele se encontrar no momento, tendo
+ em sua saída um sinal de 10mV para cada Grau Célsius de temperatura.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+LM 35
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/08.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esse sensor não necessita de qualquer calibração externa para fornecer com
+ exatidão, valores temperatura com variações de ¼ºC ou até mesmo ¾ºC dentro
+ da faixa de temperatura entre –55ºC e 150ºC.
+\end_layout
+
+\begin_layout Standard
+Ele pode ser usado de duas formas, com alimentação simples ou simétrica,
+ dependendo do que se desejar como sinal de saída, mas independentemente
+ disso, a saída continuará sendo de 10mV/ºC.
+ Em cada uma dessas duas formas de alimentação, o range de temperatura,
+ ou seja, a temperatura máxima e mínima medida com exatidão, é diferente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modo escala completa (55ºC a 150ºC)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/09.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+http://blog.vidadesilicio.com.br/, 2015
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modo básico (2 ºC a 150 ºC)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/10.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+http://blog.vidadesilicio.com.br/, 2015
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uma vantagem é o fato de esse sensor drenar apenas 60μA para estas alimentações.
+ Dessa forma, seu auto aquecimento é de aproximadamente 0.1ºC ao ar livre.
+\end_layout
+
+\begin_layout Standard
+O sensor LM35 é apresentado com vários tipos de encapsulamentos, sendo o
+ mais comum o TO-92, que mais se parece com um transistor, e oferece ótima
+ relação custo benefício, por ser o encapsulamento mais barato sem diferenças
+ em seu uso ou exatidão.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+LM35
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/11.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+http://blog.vidadesilicio.com.br/, 2015
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Um sensor de temperatura está fornecendo saída contínua seguindo a temperatura
+ real no sistema, possibilitando o controle rígido do processo.
+ O sinal de saída do sensor pode ser: 
+\end_layout
+
+\begin_layout Itemize
+Ohm, RTD, NTC/PTC;
+\end_layout
+
+\begin_layout Itemize
+Tensão, termopares;
+\end_layout
+
+\begin_layout Itemize
+mA/tensão, transmissores.
+ 
+\end_layout
+
+\begin_layout Subsection
+Radiação
+\end_layout
+
+\begin_layout Standard
+Em física, radiação é a propagação da energia em uma onda eletromagnética
+ ou partícula.
+ É a direção que cai em uma superfície, irradiação ou organismos situados
+ na superfície solar.
+ É especialmente importante quando você quer saber o seu comportamento a
+ ser refletida.
+ A incidência solar direção do feixe refletido para fora dependem do incidente.
+ As radiações podem ser emitidas tanto artificialmente em procedimentos
+ médicos ou atividades industriais, quanto naturalmente como à luz solar.
+\end_layout
+
+\begin_layout Standard
+A radiação tem seus benefícios, a solar, por exemplo, que é um meio natural
+ de emissão, é primordial para a vida na terra, sem ela não existiria vida
+ como conhecemos hoje.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Radiação solar vinda de todas as direções
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/a.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (www.ecopotencia.com)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Radiação solar direta é a que atinge o corpo a partir da direção do Sol.
+\end_layout
+
+\begin_layout Standard
+Incidência solar difusa Solar irradiação é aquele cuja direção foi alterada
+ por várias razões (partículas de densidade atmosférica ou objetos que colidem,
+ reedita corpos, etc.).
+ Devido às suas características dessa luz.
+ 
+\end_layout
+
+\begin_layout Standard
+A sua soma é a radiação incidente total.
+ A superfície do planeta é exposta a radiação do sol.
+ A taxa de irradiação depende em cada momento de o ângulo entre a normal
+ à superfície no ponto considerado e a direção de incidência de luz solar.
+ Claro que, dada a distância do sol com relação ao nosso planeta, podemos
+ supor, com boa aproximação, que os raios do sol impacto essencialmente
+ paralelo no planeta.
+ No entanto, em cada ponto da mesma, consideradas localmente, a inclinação
+ da superfície com relação ao dito raios depende da latitude e da hora do
+ dia para uma determinada localização de comprimento.
+ A referida inclinação pode ser definida pelo ângulo entre o vector normal
+ à superfície nesse ponto e o vector paralelo à direção de incidência da
+ radiação solar.
+\end_layout
+
+\begin_layout Standard
+Depois de analisar os fatores envolvidos na geração de energia elétrica
+ sobre a incidência da energia solar pode então falar a uma área específica
+ tem uma produção de eletricidade solar medida em watts por metro quadrado
+ (W/m2).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Radiação solar com angulação
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/12.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (www.ecopotencia.com)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luz solar viaja em uma linha reta desde o Sol para a Terra.
+ Para penetrar na atmosfera da Terra, alguns se encontram disperso e outros
+ caem sobre a superfície em uma linha reta.
+ Finalmente, uma última parte é absorvida pela atmosfera.
+ A luz do sol espalhados é chamado radiação difusa ou luz difusa.
+ A luz solar que cai na superfície sem ser absorvida ou dispersada é, naturalmen
+te, a radiação direta.
+ Como todos têm encontrado através de banhos de sol e trabalho ao ar livre,
+ a radiação direta é mais intensa.
+\end_layout
+
+\begin_layout Standard
+Um painel solar gera eletricidade, mesmo na ausência da luz solar direta.
+ Portanto, um sistema de energia solar irá gerar ainda com céu nublado.
+ No entanto, as condições de funcionamento óptimas envolvem: a presença
+ de luz solar e melhor orientada para o sol, a fim de maximizar o painel
+ de luz solar direta.
+ No hemisfério norte, o painel deve ser orientado para o sul e no hemisfério
+ sul para o norte.
+ Portanto, na prática, os painéis solares devem ser colocados num ângulo
+ em relação ao plano horizontal (inclinada).
+ Perto Equador, o painel solar deve ser colocado ligeiramente inclinado
+ (quase horizontal) para permitir chuva para limpar a poeira.
+ Um pequeno desvio na orientação não influencia significativamente a geração
+ de eletricidade, porque durante o dia a translada sol no céu de leste a
+ oeste.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+A orientação crucial quando se avalia a incidência solar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/13.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (www.ecopotencia.com)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As sombras são um verdadeiro objeto de estudo no momento de qualquer instalação
+ solar para estar motivado para qualquer obstáculo varejo que pareça dificultar
+ a produção de energia eléctrica de uma ou mais células solares, que dramaticame
+nte baixo módulo de desempenho e painel solar.
+\end_layout
+
+\begin_layout Standard
+Existem vários tipos de sombras causadas por nuvens ou dias nublados, árvores,
+ edifícios, paredes ou qualquer outro elemento, que devem ser considerados
+ quando se proceder à localização.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sombra causada por uma parede
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/14.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (www.ecopotencia.com)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Energia solar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/15.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (http://www.electronica-pt.com/energia-solar)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A Terra recebe energia radiante do Sol, emitindo uma quantidade idêntica.
+ A emissão depende da temperatura da Terra, ou seja, a temperatura do planeta
+ Terra é a temperatura de equilíbrio na qual a absorção é igual à emissão
+ de radiação.
+ Assim, se a absorção mudar, a temperatura de equilíbrio também se modificará.
+\end_layout
+
+\begin_layout Standard
+A energia radiante recebida pela Terra (173 x 1015W =173.000.000.000.000.000
+ Watts)(*) 30% é refletida (albedo), 19% absorvida pela atmosfera e radiada
+ posteriormente, 19% é absorvida.
+ Os 19% de energia absorvida penetrante servem de força motriz para as correntes
+ marítimas, ondas, força motriz dos ventos.
+ Os restantes 51% são absorvidos pela superfície.
+\end_layout
+
+\begin_layout Itemize
+Constante solar = 1395 W/m 2 
+\end_layout
+
+\begin_layout Itemize
+da Terra - (6,3x106)2x 3,14m2 
+\end_layout
+
+\begin_layout Itemize
+Energia recebida - 124x1012x 1395 = 173x1015 
+\end_layout
+
+\begin_layout Itemize
+Para determinar a energia solar extraterrestre, é necessário saber a distância
+ atual.
+ Este fator é calculado através de dia do ano, dia esse expresso em dia
+ Juliano.
+ O dia Juliano é feito em função do dia do ano, tem o valor de 1 para o
+ dia 1 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/F01.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+de Janeiro e de 365 para 31 de Dezembro.
+ A expressão utilizada foi formulada por 
+\shape italic
+Duffi
+\shape default
+e e 
+\shape italic
+Beckman
+\shape default
+ em 1980.
+\end_layout
+
+\begin_layout Standard
+A radiação solar extraterrestre pode ser calculada pela seguinte expressão:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/F02.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde: Isc = 1367 Wm-2é a constante solar;
+\end_layout
+
+\begin_layout Standard
+Θ é o ângulo solar cenital.
+ 
+\end_layout
+
+\begin_layout Standard
+Por exemplo, no dia 1 de Janeiro teremos: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/F03.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A transformação de energia solar em energia elétrica pode ocorrer através
+ de dois processos: Conversão Termoelétrica, Conversão Fotoelétrica.
+\end_layout
+
+\begin_layout Standard
+Quando se aquece um elétrodo, alguns dos elétrons adquirem energia para
+ escapar.
+ Converte-se em um emissor de elétrons, um cátodo.
+ Outro elétrodo colocado próximo a este cátodo se está suficientemente frio,
+ receberá os elétrons emitidos, convertendo-se num ânodo.
+ Se entre o ânodo e o cátodo existe uma carga, circulará uma corrente.
+ Uma corrente elétrica significativa, no entanto, só se podem produzir as
+ temperaturas muito altas.
+\end_layout
+
+\begin_layout Standard
+Em circuitos que consistam de dois condutores diferentes, se as duas uniões
+ se mantém a temperaturas diferentes, também será gerada uma corrente elétrica,
+ ou uma diferença de potencial, quando uma das uniões permanece aberta.
+ Estes "Termopares" podem igualmente ser utilizados para produzir corrente.
+ Quando vários deles são ligados em série, forma-se a chamada pilha termoelétric
+a.
+ A união quente pode ser aquecida através de um coletor solar de placa plana.
+\end_layout
+
+\begin_layout Standard
+O Sol é uma fonte inesgotável de energia, a utilização de energia elétrica
+ fotovoltaica possibilita uma redução significativa dos custos energéticos,
+ os sistemas podem ser complementados por outros circuitos, energia eólica
+ por exemplo.
+ O efeito fotovoltaico foi descoberto em 1839 pelo físico A.
+ Becquerel.
+\end_layout
+
+\begin_layout Standard
+Este fenómeno engloba 3 fenómenos físicos intimamente ligados e simultâneos:
+\end_layout
+
+\begin_layout Itemize
+A absorção da luz pelo material;
+\end_layout
+
+\begin_layout Itemize
+A transferência de energia dos fotões para as cargas elétricas;
+\end_layout
+
+\begin_layout Itemize
+A criação de corrente elétrica.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/16.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte 14: (http://www.electronica-pt.com/energia-solar)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O sol que chega aos módulos solares produz a eletricidade em Corrente Contínua,
+ ou a C.C.
+ A tensão dos painéis solares são maioritariamente de 12 volts CC, o padrão
+ usado nos carros.
+ Os sistemas maiores podem ser projetados para 24V C.C., ou uma C.C.
+ de 48 volts.
+ Isto significa que os módulos são combinados em pares para 24 volts, ou
+ grupos de quatro para 48 volts.
+\end_layout
+
+\begin_layout Standard
+Esta alimentação de DC é armazenada nas BATERIAS, que vão acumulando energia
+ quando não existe consumo energético.
+\end_layout
+
+\begin_layout Standard
+O INVERSOR é um componente principal que converte a corrente contínua de
+ 12, 24, ou 48 volts da bateria numa corrente de uma C.A.
+ de 220 volts, a mesma que rede pública fornece para luzes, tomadas e dispositiv
+as.
+ As maiorias dos circuitos domésticos solares usam uma C.A.
+ de 220 volts produzida pelo inversor.
+ Alguns circuitos da C.C.
+ são adicionados geralmente onde usando dispositivos de CC podem ser diretamente
+ utilizados, regas automáticas, bombas de água, sistemas de iluminação.
+\end_layout
+
+\begin_layout Standard
+Quando aparece uma fase de um número de dias consecutivos sem luz do sol,
+ o proprietário deve verificar as suas baterias.
+ Se o nível da carga for baixo, um motor - ou gerador dirigido deve recarregar
+ as baterias a fim manter o funcionamento óptimo do sistema.
+ Verifique os erros comuns na instalação de sistemas de energia alternativos.
+\end_layout
+
+\begin_layout Standard
+Módulos Solares (PV) são instalados em grupos de 1 a 12 módulos numa montagem
+ solar, por sua vez a um edifício, ao telhado de um edifício, ou sobre um
+ suporte (pé) metálico.
+ Os custos do sistema e o cálculo das células são fundamentais para que
+ a eficiência do sistema seja elevada.
+\end_layout
+
+\begin_layout Standard
+Controlador de Carga ou regulador da carga, tem como finalidade controlar
+ a carga das baterias, evitando que sobrecarreguem, o controle da carga
+ corta automaticamente a carga quando as baterias ficam com carga completa.
+ Um controle da carga pode ter interruptores de controle manual e pode ter
+ medidores ou luzes para mostrar o estado das baterias no processo carga.
+ Esquema eletrônico de um controlador de carga.
+\end_layout
+
+\begin_layout Standard
+As Baterias recebem e armazenam a energia elétrica da C.C., e podem imediatamente
+ fornecer eletricidade armazenada segundo as necessidades.
+\end_layout
+
+\begin_layout Standard
+O Inversor é o componente eletrônico principal de um sistema de potência.
+ Converte a alimentação de DC Armazenada nas baterias para C.A.
+ de 220 volts.
+ Os cabos curtos, pesados com um fusível de potência ou um disjuntor de
+ circuito leva a energia das baterias para inversor.
+ Depois da conversão para C.A., o inversor ligado ao disjuntor coloca energia
+ da instalação solar diretamente no circuito elétrico em vez das linhas
+ de serviço público.
+ Os inversores para o a versão doméstica vêm com potências na ordem dos
+ 50 a 5500 watts.
+\end_layout
+
+\begin_layout Standard
+Um Inversor/Carregador é um inversor que tem também um carregador de bateria
+ e um relé de transferência interno.
+ Quando os terminais da entrada de um inversor/carregador recebem energia
+ de uma fonte exterior de C.A.
+ Verificam se existe carga disponível nas baterias, se não existir carga
+ suficiente passam diretamente a energia da rede publica carregando simultaneame
+nte as baterias.
+ Esquema de Inversor 12V CC -220V AC.
+\end_layout
+
+\begin_layout Standard
+O painel Sunlink 130w monocristalino é o painel de 12v mais potente de Sunlink.
+ Costuma-se utilizar em instalações isoladas ou para consumo próprio.
+ A grande quantidade de instalações que usam este painel e as suas certificações
+, demonstram a sua grande qualidade.
+ Dispõem de garantia até 25 anos no seu funcionamento, e de 5 anos contra
+ defeitos de fabrico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tipos de painéis solares
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/17.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (http://www.electronica-pt.com/energia-solar)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ângulo de incidência
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/18.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (http://www.electronica-pt.com/energia-solar)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A radiação direta que incide num coletor solar em função da orientação do
+ coletor e da posição do Sol no hemisfério, que se pode traduzir no ângulo
+ formado pelo plano normal do coletor com a direção dos raios solares θ,
+ ou também designado θcol por .
+ O co-seno de θ para colectores plano estacionário é:
+\end_layout
+
+\begin_layout Itemize
+cos θ= s1cos δ cosω s2 cos δ sinω s3sin δ 
+\end_layout
+
+\begin_layout Itemize
+onde s1, s2 e s3 
+\end_layout
+
+\begin_layout Itemize
+cos θ= s1cos δ cosω s2 cos δ sinω 
+\end_layout
+
+\begin_layout Itemize
+s1=cos β cos φ sin φsin β cos γ - s2=sin γ sin β 
+\end_layout
+
+\begin_layout Itemize
+s3=sin φcos β cos φsin β cos γ 
+\end_layout
+
+\begin_layout Standard
+Onde: 
+\end_layout
+
+\begin_layout Itemize
+φ- Latitude do local; 
+\end_layout
+
+\begin_layout Itemize
+β- Inclinação do coletor; 
+\end_layout
+
+\begin_layout Itemize
+γ- Azimute do coletor; 
+\end_layout
+
+\begin_layout Itemize
+δ- Declinação solar; 
+\end_layout
+
+\begin_layout Itemize
+ω- Ângulo horário.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Reflexão e absorção de energia solar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/19.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (http://pt.slideshare.net/NiepsonArruda/a-biosfera)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A energia solar fotovoltaica é uma alternativa viável e renovável para locais
+ onde a energia elétrica é escassa e também para residências e fábricas
+ que almejam o uso dessa fonte, uma vez que o sol atinge todo o Brasil durante
+ o ano inteiro.
+\end_layout
+
+\begin_layout Standard
+Apesar de seu "alto custo", é viável para grandes demandas como para indústrias,
+ fábricas, supermercados e grandes instalações.
+\end_layout
+
+\begin_layout Standard
+O sistema fotovoltaico se baseia na transformação direta da radiação solar
+ em eletricidade.
+ Apesar de o efeito fotovoltaico ter sido observado pela primeira vez em
+ 1839, por Becquerel, a tecnologia é relativamente recente, iniciando se
+ com a revolução dos semicondutores, por volta de 1950, apresentando um
+ alto grau de confiabilidade, eficiência e vida útil dos equipamentos.
+ Segundo o site solenerg.com.br, um sistema fotovoltaico de energia funcionando
+ isoladamente é composto por um conjunto de módulos fotovoltaicos e por
+ um conjunto de equipamentos complementares, incluindo baterias, controladores
+ de carga e inversores.
+ Esses componentes variam de acordo com a aplicação do sistema fotovoltaico.
+ Os módulos fotovoltaicos geram eletricidade em corrente contínua.
+ As baterias armazenam a eletricidade obtida de a luz solar durante o dia,
+ possibilitando o funcionamento das lâmpadas e dos aparelhos elétricos à
+ noite ou em períodos nublados.
+ O controlador de carga é instalado entre os módulos e as baterias para
+ gerenciar o processo de carga e descarga das baterias, evitando que as
+ mesmas sejam sobrecarregadas ou descarregadas além de limites predeterminados,
+ aumentando assim sua vida útil.
+ O inversor é necessário em um sistema fotovoltaico quando necessitamos
+ alimentar carga em corrente alternada.
+ O inversor transforma a corrente contínua em corrente alternada, podendo,
+ portanto, alimentar os aparelhos eletroeletrônicos convencionais.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sistema fotovoltaico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/20.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte 17: (Coeptum)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os sistemas fotovoltaicos podem ser classificados em autônomos e interligados
+ à rede.
+ Os autônomos podem se dividir naqueles que só fornecem corrente continua,
+ aqueles que fornecem corrente alternadas e ainda existem aqueles que fornecem
+ ambas as correntes.
+ Os sistemas autônomos produzem eletricidade independentemente de outras
+ fontes de energia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sistema fotovoltaico conectado ao gestor energético inteligente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/21.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte 18: (AUTOR - 2015)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As células de silício monocristalino, na maioria das vezes, apresentam cores
+ azuis escuras ou pretas.
+ São rígidas e quebradiças, além disso, são as mais eficientes produzidas
+ em nível comercial.
+ No entanto, os custos de produção são maiores que outros tipos de células
+ (VILLALVA; GAZOLI, 2012).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fluxograma do gestor energético de painéis solares
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/22.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte 19: (Autor - 2015)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+LÓGICA DIFUSA
+\end_layout
+
+\begin_layout Standard
+A fim de permitir o desenvolvimento de um sistema de controle utilizando
+ lógica difusa é também a realização de estudo de caso onde se pretende
+ propor sua implementação prática, faz-se necessário apresentar alguns aspectos
+ teóricos fundamentais a respeito desta lógica não convencional.
+\end_layout
+
+\begin_layout Standard
+A lógica fuzzy, também conhecida como lógica nebulosa, lógica difusa, ou
+ ainda como teoria das possibilidades, tem como base a Teoria dos Conjuntos
+ Fuzzy introduzida pelo Professor Zadeh em seu artigo “Fuzzy Sets” publicado
+ no ano de 1965.
+ Trata-se de um tipo de lógica multivalente (KANDEL, 1986).
+ Este conceito contrapõe-se ao da lógica clássica, bivalente, fundada por
+ Aristóteles, segundo a qual uma determinada proposição somente pode assumir
+ os valores: Verdadeiro ou Falso, representados respectivamente pelos números
+ 0 e 1, excluindo-se definitivamente qualquer possibilidade de ocorrerem
+ valores intermediários.
+ Trata-se do Princípio do Meio Excluído (BOYER, 1996).
+\end_layout
+
+\begin_layout Standard
+A lógica fuzzy admite, portanto que uma determinada proposição pode assumir
+ qualquer valor no intervalo entre 0 e 1.
+ Assim, os valores assumidos representam os graus de verdade desta proposição.
+ Uma proposição é totalmente verdadeira se o seu grau de verdade é 1, e
+ totalmente falsa se o seu grau de verdade é 0, admitindo-se como possível
+ a ocorrência de quaisquer valores intermediários de graus de verdade.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuração de um controlador “Fuzzi”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/23.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (Azevedo - 1999 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Devido à dualidade observada nos fenômenos da natureza, a lógica bivalente
+ proporciona a criação de modelos matemáticos que em certos casos são de
+ indiscutível utilidade.
+ Porém há limitações quando se deseja obter modelos de fenômenos ou fatos
+ que dependeriam da análise simultânea de muitas variáveis.
+ Dois principais complicadores para a modelagem matemática, baseada na lógica
+ bivalente, surgem quando ZIMMERMANN (1985) afirma que: 
+\end_layout
+
+\begin_layout Itemize
+Situações reais muito frequentemente não são determinísticas e não podem
+ ser precisamente descritas.
+\end_layout
+
+\begin_layout Itemize
+A descrição completa de um sistema real frequentemente requereria mais dados
+ detalhados do que os que um ser humano poderia sempre reconhecer simultaneament
+e, processar e entender.
+ (ZIMMERMANN, 1985).
+\end_layout
+
+\begin_layout Standard
+A lógica fuzzy incorpora a forma como o ser humano realiza inferências,
+ através de regras de raciocínio e atribuição de valores fuzzy às variáveis
+ que observa.
+ Valores dotados de incertezas e representados por expressões muitas vezes
+ vagas e imprecisas.
+ Estas variáveis, presentes no pensamento e comunicação humanos, são considerada
+s válidas para a lógica fuzzy, haja vista que um termo linguístico pode
+ ser representado por um conjunto fuzzy.
+ Segundo SHAW, SIMÕES (1999), a habilidade de se manipular conjuntos e números
+ fuzzy é uma das atividades mais importantes do cérebro humano, e este processo
+ de decisões fuzzy requer um tempo de processamento computacional mínimo
+ por não existir modelo matemático a ser seguido.
+ Os autores realizam a seguinte afirmação: 
+\end_layout
+
+\begin_layout Standard
+Provavelmente essa habilidade humana desenvolveu-se através das gerações,
+ já que o fato de se trocar precisão por velocidade é decisivo para a sobrevivên
+cia biológica em situações críticas, ou de perigos naturais.
+ (SHAW, SIMÕES, 1999).
+\end_layout
+
+\begin_layout Standard
+A lógica fuzzy possibilita a implementação de implicações lógicas semelhantes
+ às utilizadas pelo indivíduo.
+ Busca modelos capazes de representar sua percepção da realidade, incluindo
+ assim suas características na realização de inferências e tomadas de decisões.
+ Diferentemente, a abordagem convencional propõe a criação de modelos da
+ própria realidade.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Síntese sobre lógica fuzzi.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/24.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (www.scielo.br - 2015 )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nesses sistemas, são fornecidas entradas precisas para um módulo codificador
+ (fuzzificador), que, por sua vez, fornece parâmetros nebulosos para uma
+ máquina de inferência, o qual processa a aplicação de uma regra do tipo,
+ SE-ENTÃO, constituída de proposições, envolvendo termos de variáveis linguístic
+as.
+ Após o processamento de uma regra, o valor nebuloso, obtido como resposta
+ da inferência, é decodificado (defuzzificado), obtendo-se, desta forma,
+ a saída precisa do sistema.
+\end_layout
+
+\begin_layout Subsection
+Conjuntos Fuzzy
+\end_layout
+
+\begin_layout Standard
+Partindo do princípio de que a teoria clássica de conjuntos é completamente
+ conhecida, serão apresentados os principais tópicos, aspectos e propriedades
+ da teoria de conjuntos fuzzy.
+ 
+\end_layout
+
+\begin_layout Standard
+A teoria dos conjuntos fuzzy representa uma generalização da teoria clássica
+ dos conjuntos.
+ Percebe-se tal fato pois os conjuntos crisp somente incluem os valores
+ extremos de pertinência {0, 1}, enquanto os conjuntos fuzzy, além deste
+ valores, incluídos como valores limites, inclui também todos os valores
+ do intervalo [0, 1] .
+ Por causa desta generalização, a teoria de conjuntos fuzzy apresenta maior
+ campo de aplicabilidade na solução de problemas que envolvam algum grau
+ de avaliação subjetiva, em comparação à clássica teoria de conjuntos (KANDEL,
+ 1986).
+ 
+\end_layout
+
+\begin_layout Standard
+A teoria fuzzy admite que um elemento seja parcialmente pertinente a um
+ determinado conjunto.
+ Um conjunto fuzzy denominado conjunto A, onde A é um subconjunto de um
+ universo U, deve ser descrito como um conjunto de pares ordenados, onde
+ o primeiro termo do par é o próprio elemento do conjunto (x), e o segundo
+ termo é um número entre 0 e 1, que representa o grau de pertinência (µ(x))
+ deste elemento em relação ao conjunto A.
+\end_layout
+
+\begin_layout Standard
+Um conjunto fuzzy pode ser considerado uma classe cujos limites não são
+ claramente definidos.
+ (ZADEH, 1965).
+ Os conjuntos fuzzy também podem ser chamados de conjuntos difusos ou nebulosos.
+ A Figura 1 traz uma representação do conjunto nebuloso A através de um
+ diagrama, comparando com um conjunto crisp, onde todos os pontos internos
+ ao diagrama têm o mesmo valor unitário de grau de pertinência, e os pontos
+ externos tem grau de pertinência nulo.
+ No conjunto nebuloso, quanto mais próximo do centro do diagrama, maior
+ é o grau de pertinência do elemento, sendo este valor igual a 1 somente
+ quando localizado no centro do conjunto.
+ Na parte externa do diagrama, o grau de pertinência é nulo.
+ 
+\end_layout
+
+\begin_layout Subsection
+Aplicações de sistemas de controle fuzzy
+\end_layout
+
+\begin_layout Standard
+A aplicação da lógica fuzzy em sistemas de controle deve ocorrer em situações
+ onde haja benefícios esperados por sua utilização, podendo haver situações
+ em que seu uso não seja o mais indicado.
+ De forma geral, a indicação de uso de lógica fuzzy ocorre quando se deseja
+ incorporar ao sistema a experiência de operadores humanos a respeito do
+ processo a ser controlado.
+ (ZIMMERMANN, 1985).
+ Os sistemas fuzzy podem ser aplicados quando se pretende: (TERANO et al,
+ 1991).
+\end_layout
+
+\begin_layout Itemize
+Expressar experiência humana, senso comum, etc., de forma utilizável por
+ máquinas;
+\end_layout
+
+\begin_layout Itemize
+Produzir modelos dos sentimentos ou linguagem humanos; 
+\end_layout
+
+\begin_layout Itemize
+Imitar comportamentos humanos em reconhecimento de padrões, julgamento ou
+ compreensão geral;
+\end_layout
+
+\begin_layout Itemize
+Converter informações para uma forma em que pessoas possam compreendê-las
+ facilmente; 
+\end_layout
+
+\begin_layout Itemize
+Comprimir grandes quantidades de informações; 
+\end_layout
+
+\begin_layout Itemize
+Produzir modelos da psicologia ou comportamento humanos; 
+\end_layout
+
+\begin_layout Itemize
+Produzir modelos de sistemas sociais.
+\end_layout
+
+\begin_layout Standard
+Os sistemas de controle fuzzy vêm encontrando aplicações em vários campos
+ da ciência e da técnica.
+ Segundo TERANO et al (1991), as primeiras aplicações comerciais de sistemas
+ de controle fuzzy ocorreram em 1980, e os produtos do campo da engenharia
+ de controle são os que possuem maior valor de mercado.
+ A Tabela 1 contém uma visão geral das aplicações da teoria de sistemas
+ fuzzy: (TERANO et al, 1991)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aplicações da Teoria de Sistemas FUZZY
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/25.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: (TERANO - 1991)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

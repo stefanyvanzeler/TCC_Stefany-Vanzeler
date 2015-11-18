@@ -94,67 +94,68 @@ name "cha:conclusões"
 \end_layout
 
 \begin_layout Standard
-Nos testes com controlador PI, tem-se que o considerado o método de sintonia
- mais eficiente, tendo como critério o consumo de energia, é o Ziegler-Nichols
- com controlador PI, uma vez que teve o regime transitório mais rápido (1,85
- a 4,68 segundos) e com consumo baixo, o regime permanente mais demorado
- e com menor taxa de veriação percentual com relação ao 
-\shape italic
-setpoint 
-\shape default
-(menos de 1%) 
-\shape italic
-, 
-\shape default
-assim como o menor tempo total (395,23 segundos) e o menor consumo de energia
- total (0,2393 Wh).
+As redes industriais vêm sendo cada vez mais utilizadas devido ao desenvolviment
+o da informática e a constante redução dos custos de componentes microcontrolado
+s, o que possibilitou o desenvolvimento dos sistemas com comunicação serial
+ em larga escala aplicados às redes de comunicação e ao desenvolvimento
+ de vários protocolos de comunicação digital.
+ Elas apresentam como grande vantagem à redução significativa de cabos de
+ controle e seus acessórios que interligam os diversos dispositivos presentes
+ em um sistema automatizado para transmitir informações, que podem ser de
+ Input/Output (I/O), parâmetros e diagnósticos, proporcionando assim aumento
+ da eficiência, qualidade e segurança no sistema produtivo, além de maior
+ facilidade na instalação, manutenção e configuração dos equipamentos, fornecime
+nto de diagnósticos rápidos e redução de custos.
+ 
 \end_layout
 
 \begin_layout Standard
-O menos eficiente com controlador PI foi o método de sintonia ITAE, por
- ter o regime transitório mais demorado (51,01 a 81,13 segundos) e com maior
- consumo, regime permanente mais rápido e com maior taxa de variação percentual
- com relação ao 
+A utilização da arquitetura CAN torna-se uma alternativa econômica de rede
+ de dados para muitas aplicações industriais por prover um acondicionamento
+ entre sensores e atuadores e toda a distribuição de controle em tempo real
+ de dados através do barramento, além de possuir um sistema de gerenciamento
+ de erros confiável.
+ Aliado a esses fatos, é importante também existir uma interface entre a
+ rede CAN e as outras redes, proporcionando o seu controle e monitoramento
+ remoto.
+ A rede Ethernet TCP/IP tem sido amplamente também utilizada na indústria,
+ por poder carregar grande quantidade de dados e ser adequada para o nível
+ de gerenciamento na automação industrial, porém não sendo adequada para
+ sistemas em tempo real.
+ Diante deste cenário, este trabalho possibilitou a implementação de uma
+ 
 \shape italic
-setpoint, 
+gateway
 \shape default
-além do maior tempo total (453,95 segundos) e maior consumo de energia total
- (0,2538 Wh).
+ entre esses dois protocolos e o desenvolvimento de um sistema de monitoramento
+ de barramento CAN, promovendo uma interface educativa e de controle de
+ rede CAN.
 \end_layout
 
 \begin_layout Standard
-Já nos controladores PID, o método de sintonia mais eficiente é o ISE, uma
- vez que teve o regime transitório mais rápido (15,83 a 26,43 segundos)
- e com consumo baixo, o regime permanente mais demorado e com menor taxa
- de veriação percentual com relação ao 
-\shape italic
-setpoint 
-\shape default
-(1,1852% na média) 
-\shape italic
-, 
-\shape default
-assim como o menor tempo total (410,9 segundos).
- O seu consumo de energia foi numericamente parecido com o dos métodos de
- sintonia IAE e ITAE.
- Porém, ele foi considerado o mais eficiente por ter o menor tempo total
- e a menor taxa de variação percentual com relação ao 
-\shape italic
-setpoint
-\shape default
-.
+Os resultados obtidos durantes os testes segundo especificado no Capítulo
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:RESULTADOS-E-DISCUSSÕES"
+
+\end_inset
+
+ validaram as arquiteturas de hardware e software propostas na metodologia
+ adotada no desenvolvimento do trabalho.
 \end_layout
 
 \begin_layout Standard
-O menor e
+A pesquisa também proporcionou ao aluno a consolidacao de 
+\end_layout
+
+\begin_layout Section
+Dificuldades encontradas
 \end_layout
 
 \begin_layout Standard
-Com exceção do teste com controlador PI e método de sintonia Ziegler-Nichols,
- todos os testes com controlador PID mostraram-se mais eficiente que os
- testes com controlador PI.
- Por isso, como segundo melhor tem-se o controlador PID com método de sintonia
- ISE.
+A principal dificuldade encontrada foi a compra dos materiais, que são importado
+s.
 \end_layout
 
 \begin_layout Section
@@ -166,38 +167,29 @@ Tem-se como trabalhos futuros
 \end_layout
 
 \begin_layout Itemize
-Verificação da autonomia da bateria, quando o controlador PID é sintonizado
- de maneiras diferentes;
+Conectar o protótipo como servidor na internet;
 \end_layout
 
 \begin_layout Itemize
-Realização dos testes em ambientes no qual o protótipo esteja sujeito a
- disturbios previamente estabelecidos, como uma rampa ou um peso extra;
+Adicionar ECUs à rede, como sensores inteligentes e o CLP DeviceNET do laboratór
+io de automação industrial da EST;
 \end_layout
 
 \begin_layout Itemize
-Testes de consumo de energia com mais métodos de sintonia de controladores
- PID;
+Criar um sistema supervisório para a rede CAN utilizando o protótipo;
 \end_layout
 
 \begin_layout Itemize
-Testes de consumo de energia com outros tipos de controladores, como os
- que envolvem controle robusto, inteligência artificial e controle adaptativo;
+Implementar um módulo dentro do sistema de monitoramento para adicionar
+ ECUs virtuais na rede CAN;
 \end_layout
 
 \begin_layout Itemize
-Realizar os testes com diferentes tipos de sistemas (térmicos, controle
- de nível, entre outros), verificando-se se a diferença de consumo de energia
- entre os diferentes métodos de sintonia de controlador PID também existe
- nesses sistemas;
-\end_layout
-
-\begin_layout Itemize
-Melhorar a 
+Implementar outras 
 \shape italic
-interface 
+gateways
 \shape default
-do sistema supervirsório, exibindo as informações em diferentes janelas.
+ utilizando o protótipo.
 \end_layout
 
 \end_body

@@ -188,9 +188,25 @@ Motivação
 \end_layout
 
 \begin_layout Standard
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+A utilização da arquitetura CAN torna-se uma alternativa econômica de rede
+ de dados para muitas aplicações industriais por prover um acondicionamento
+ entre sensores e atuadores e toda a distribuição de controle em tempo real
+ de dados através do barramento, além de possuir um sistema de gerenciamento
+ de erros confiável.
+ Aliado a esses fatos, é importante também existir uma interface entre a
+ rede CAN e as outras redes, proporcionando o seu controle e monitoramento
+ remoto.
+ A rede Ethernet TCP/IP tem sido amplamente também utilizada na indústria,
+ por poder carregar grande quantidade de dados e ser adequada para o nível
+ de gerenciamento na automação industrial, porém não sendo adequada para
+ sistemas em tempo real.
+ Assim surge-se a necessidade da implementação de uma 
+\shape italic
+gateway
+\shape default
+ entre esses dois protocolos no laboratório de automação industrial da EST
+ e o desenvolvimento de um sistema de monitoramento de barramento CAN, promovend
+o uma interface educativa e de controle da rede CAN.
 \end_layout
 
 \begin_layout Section
@@ -244,7 +260,8 @@ Montar uma rede CAN para testes;
 
 \begin_layout Itemize
 Testar o recebimento e envio de mensagens por meio do protótipo, monitorando
- em tempo real o barramento CAN com o sistema de monitoramento criado.
+ em tempo real o barramento CAN da rede montada para testes com o sistema
+ de monitoramento criado.
 \end_layout
 
 \begin_layout Section
@@ -252,134 +269,91 @@ Metodologia
 \end_layout
 
 \begin_layout Standard
-Inicialmente, pesquisas foram realizadas para identificar, no mundo científico,
- o que existe relacionado com o tema proposto, e em que pontos o presente
- projeto se assemelha e se diferencia dos trabalhos já existentes.
-\end_layout
-
-\begin_layout Standard
-Um referencial teórico foi criado, abordando os seguintes temas: classificacao
- das redes, modelo OSI, barramento CAN, Rede DeviceNet, suite de protocolos
- TCP/IP e interfaces para programas de aplicação.
-\end_layout
-
-\begin_layout Standard
-Em seguida, foi realizado um comparativo entre as arquiteturas Raspberry
- Pi e Beaglebone, adotando-se critérios para a escolha de uma dessas plataformas
- para a implementacao do protótipo, a compra de materiais e montagem da
- arquitetura de hardware a ser utilizada.
-\end_layout
-
-\begin_layout Standard
-Após definicao da arquitetura de hardware do protótipo, foi criada a arquitetura
- de software e feita a implementacao da gateway TCP/IP na plataforma ARM
- escolhida.
-\end_layout
-
-\begin_layout Standard
-Em seguida, foi realizada a construção e montagem do protótipo de carro
- elétrico, com quatro motores de corrente contínua.
- O protótipo é microcontrolado com um Arduino Mega 2560 e alimentado por
- uma bateria de 12 volts.
- A medição de velocidade do protótipo é realizada com um 
-\shape italic
-encoder 
-\shape default
-ENC01A-0J1216
-\shape italic
-.
- 
-\shape default
-O interfaceamento entre o sinal PWM do Arduino, a tensão elétrica fornecida
- pela bateria e os motores é realizado pelo 
-\shape italic
-drive 
-\shape default
-TB6612FNG.
- Foi implementado o sensor de corrente ACS-712 para medir a corrente elétrica
- consumida pelo sistema.
- Uma programação foi implementada no Arduino para que, tanto a informação
- lida dos sensores presente no protótipo como os dados provenientes do sistema
- supervisório sejam enviados e recebidos de maneira correta.
- 
-\end_layout
-
-\begin_layout Standard
-A identificação da função de transferência do motor de corrente contínua
- (que é o 
-\begin_inset Quotes eld
-\end_inset
-
-processo a controlar
-\begin_inset Quotes erd
-\end_inset
-
- presente na Figura 
+Inicialmente foi realizada uma revisão bibliográfica conferindo embasamento
+ teórico para realização do trabalho, em seguida o projeto foi dividido
+ em 4 fases: definição, design, implementação e integração e validação,
+ figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Diagrama de blocos com controlador PID"
+reference "fig:Metodologia"
 
 \end_inset
 
-) foi realizada simulando um motor de corrente contínua no 
-\shape italic
-Simulink
-\shape default
-® e utilizando uma ferramenta de estimação de parâmetros para que o 
-\shape italic
-software 
-\shape default
-aproxime a resposta do motor simulado com resposta do motor real.
- Após a aproximação, as características do motor real são estimadas e sua
- função de transferência encontrada.
+.
 \end_layout
 
 \begin_layout Standard
-O controlador PID foi implementado por meio do 
-\shape italic
-software LabVIEW
-\shape default
-® e durante os testes práticos, a variável controlada foi a velocidade do
- protótipo.
- A sintonia dos parâmetros do controlador utilizará os métodos Ziegler-Nichols,
- ISE, IAE, ITAE e Cohen-Coon.
+Na primeira fase foram definidos os requisitos do sistema a partir dos objetivos
+ e criado um modelo geral do sistema.
 \end_layout
 
 \begin_layout Standard
-Para que o usuário possa determinar as velocidades, os pontos em que as
- mudanças ocorrem, assim como monitorar as variáveis do protótipo (como
- a velocidade, consumo de energia elétrica, etc.) um sistema supervisório
- foi criado no 
+Na fase de design foi realizado um comparativo entre os minicomputadores
 \shape italic
-LabVIEW
+ Raspberry Pi +
 \shape default
-®.
+ e 
+\shape italic
+Beaglebone
+\shape default
+, adotando-se critérios para a escolha de uma dessas plataformas para a
+ implementação do protótipo, a compra de materiais e montagem da arquitetura
+ de hardware e especificação dos componentes.
  
 \end_layout
 
 \begin_layout Standard
-Com o sistema supervisório em funcionamento pode-se, então, controlar e
- monitorar todas as variáveis necessárias para a realização dos testes,
- e salvá-las para que uma comparação possa ser feita entre os dados coletados.
- A comunicação do protótipo com o sistema supervisório é realizada com um
- módulo de comunicação sem fio 
-\shape italic
-XBee
-\shape default
-®, por meio de comunicação serial.
- 
+Após o design foi feita a implementação e de cada componente.
+ Por último foi feita a integração desses componentes e validação do sistema
+ desenvolvido, sendo confeccionado um manual do usuário, explicando o funcioname
+nto do sistema de monitoramento CAN com o protótipo.
 \end_layout
 
 \begin_layout Standard
-Os testes foram realizados da seguinte maneira: o protótipo de carro elétrico
- percorre trajetos padronizados com mudanças de velocidade em pontos previamente
- estabelecidos (por exemplo, 100 metros no total, com sub-trajetos de 10
- metros, 30 metros, 20 metros e 40 metros e velocidades em cada sub-trajeto
- de 10 cm/s, 20 cm/s, 15 cm/s e 40 cm/s, respectivamente), e para um mesmo
- trajeto, diferentes variações do controlador PID (P, PI e PID) e diferentes
- métodos de sintonia desses controladores foram utilizados, um de cada vez.
- Assim, as condições de teste são sempre as mesmas, possibilitando uma comparaçã
-o mais exata.
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Metodologia
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Metodologia"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename metodologia.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+fonte: Autora
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -387,48 +361,63 @@ Organização do trabalho
 \end_layout
 
 \begin_layout Standard
-Este trabalho está dividido em seis capítulos para seu melhor entendimento.
+Este trabalho está dividido em cinco capítulos para seu melhor entendimento.
+\end_layout
+
+\begin_layout Standard
+O Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:INTRODUÇÃO"
+
+\end_inset
+
+ contém uma breve introdução sobre o assunto a ser explanado no trabalho,
+ sua motivação, justificativa para estudar as áreas mencionadas e um resumo
+ da metodologia empregada no desenvolvimento do projeto.
+\end_layout
+
+\begin_layout Standard
+O Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:REFERENCIAL-TEÓRICO"
+
+\end_inset
+
+contém um referencial teórico apresentando os tópicos relevantes por meio
+ da visão de autores de obras consultadas e de trabalhos de pesquisa voltados
+ para teorias e tecnologias aplicadas nesta monografia.
+\end_layout
+
+\begin_layout Standard
+O Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:MATERIAIS-E-MÉTODOS"
+
+\end_inset
+
+ detalha os materiais e técnicas empregados no desenvolvimento do sistema
+ de monitoramento CAN e a implementação do protótipo, citando os materiais
+ utilizados.
  
 \end_layout
 
 \begin_layout Standard
-O capítulo 1 aborda uma breve introdução sobre sistemas de controle e consumo
- de energia, e conceitua o projeto por meio da justificativa e motivação.
- Também traz objetivos a serem alcançados e a metodologia que foi utilizada.
+O Capítulo 4 contém a análise dos resultados obtidos após execução da metodologi
+a e o manual de usuário do sistema de monitoramento CAN.
 \end_layout
 
 \begin_layout Standard
-Já no capítulo 2 se dá a apresentação de trabalhos relacionados a essa monografi
-a, encaixando-a no contexto científico, descrevendo as principais semelhanças
- e diferenças com os trabalhos já publicados.
+O Capítulo 5 contém as conclusões que podem ser afirmadas após execução
+ do projeto, fazendo análise de qualidade dos resultados obtidos e os confronta
+ com os objetivos propostos pelo projeto.
 \end_layout
 
 \begin_layout Standard
-Um referencial teórico, direto e aplicado, necessário ao desenvolvimento
- do projeto, é realizado no capítulo 3.
- Isso ocorre apresentando os tópicos relevantes por meio da visão de autores
- de obras consultadas e de trabalhos de pesquisa voltados para teorias e
- tecnologias aplicadas nesta monografia.
-\end_layout
-
-\begin_layout Standard
-Em seguida, o capítulo 4 descreve como foi realizado o processo do desenvolvimen
-to e construção do protótipo de carro elétrico, citando os materiais utilizados.
- Além disso, todas as etapas da metodologia são detalhadas, descrevendo-se
- o que foi necessário implementar para a realização dos testes e obtenção
- de dados de consumo de energia.
- 
-\end_layout
-
-\begin_layout Standard
-No capítulo 5 os resultados obtidos são apresentados e discutidos.
-\end_layout
-
-\begin_layout Standard
-Por fim, no capítulo 6, os resultados são comparados, e uma conclusão é
- formulada, de acordo com o tema proposto, buscando-se determinar o método
- de sintonia de controlador PID mais eficiente, levando em consideração
- o consumo de energia obtidos nos testes.
+Ao final do trabalho estão incluídos o Apêndice (A) e Anexo (A) com código
+ fonte de alguns módulos de software produzidos.
 \end_layout
 
 \end_body

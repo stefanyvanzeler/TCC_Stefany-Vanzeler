@@ -1,0 +1,1966 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Trabalho Academico (tese de doutorado, dissertacao de
+% mestrado e trabalhos monograficos em geral) em conformidade com 
+% ABNT NBR 14724:2011: Informacao e documentacao - Trabalhos academicos -
+% Apresentacao
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+% ---
+% Pacotes básicos 
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern		
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+%\usepackage[utf8]{inputenc}	% Codificacao do documento (conversão automática dos acentos)
+%\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}			% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\RequirePackage{url}	% deve ser carregado para tratar url de forma correta e usado pelo abntex2cite
+\usepackage{hyperref}
+\RequirePackage{breakurl}			% trata de forma correta a quebra de url entre linhas% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl	
+\usepackage[alf]{abntex2cite} % se for usar citações autor-ano % Citações padrão ABNT
+%\usepackage[num]{abntex2cite} % se for usar citações numéricas
+%---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+%Ordem da CAPA ABNT NBR 14724:2011
+%a) nome da instituição (opcional);
+%b) nome do autor;
+%c) título e/ou subtítulo: se houver, deve ser precedido de dois pontos;
+%d) local (cidade) da instituição onde deve ser apresentado;
+%e) ano de depósito (da entrega).
+%Ordem da  FOLHA DE ROSTO ABNT NBR 14724:2011
+%a) nome do autor;
+%b) título e/ou subtítulo: se houver, deve ser precedido de dois pontos;
+%c) natureza: tipo do trabalho (tese, dissertação, trabalho de conclusão de curso e outros) e objetivo (aprovação em disciplina, grau pretendido e outros); nome da instituição a que é submetido; área de concentração;
+%f) nome do orientador e, se houver, do coorientador;
+%f) local (cidade) da instituição onde deve ser apresentado;
+%g) ano de depósito (da entrega).
+% ---
+\titulo{GESTOR ENERGÉTICO INTELIGÊNTE PARA INSTALAÇÃO DE PAINES SOLARES }
+\autor{MOISÉS DOS SANTOS LEVY}
+\local{Manaus}
+\data{2015}%\data{\today }
+\orientador[Orientador]{Dr. Luis Delfin Rojas Purón}
+%\coorientador{Dr. Melequinha}
+\instituicao{%
+ Universidade do Estado do Amazonas
+  \par
+  Escola Superior de Tecnologia
+  \par
+  Engenharia Mecatrônica}
+\tipotrabalho{Trabalho de Conclusão de Curso}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{\imprimirtipotrabalho ~ submetido à Coordenação do curso de Engenharia Mecatrônica da Universidade do Estado do Amazonas como parte dos requisítos necessários para a obtenção do grau de Engenheiro.}
+% ---
+% Impressão da Capa
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+\includegraphics[scale=0.12]{logouea}\\    
+\center
+      \hspace{-14cm}
+       \vspace{-3.5cm} 
+      \begin{SingleSpace}% 
+      {\ABNTEXfontereduzida \MakeUppercase \imprimirinstituicao} \\ 
+      \end{SingleSpace}%
+      \vspace{2cm}  
+    {\ABNTEXchapterfont\large\imprimirautor}\\
+       \vspace{6.5cm}
+%      \vspace*{\fill}
+      {\ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo}\\
+      \vspace*{\fill}
+      {\large\imprimirlocal}
+      \par
+      {\large\imprimirdata}
+      \vspace*{1cm}
+  \end{capa}
+}
+% ---
+% Conteudo padrao da FOLHA DE ROSTO
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+  \begin{center}
+
+    %\vspace*{1cm}
+    {\ABNTEXchapterfont\large\imprimirautor}\\
+    \vspace*{9cm}
+    %\vspace*{\fill}\vspace*{\fill}
+    {\ABNTEXchapterfont\bfseries\LARGE\imprimirtitulo}
+    \vspace*{\fill}
+
+    \abntex@ifnotempty{\imprimirpreambulo}{%
+      \hspace{.45\textwidth}
+      \begin{minipage}{.5\textwidth}
+      	\SingleSpacing
+         \imprimirpreambulo \par
+         \vspace{18pt}
+         {\small\imprimirorientadorRotulo~\imprimirorientador\par}
+        \abntex@ifnotempty{\imprimircoorientador}{%
+        {\small\imprimircoorientadorRotulo~\imprimircoorientador}}
+       \end{minipage}%
+       \vspace*{\fill}
+    }%
+    \vspace*{\fill}
+
+    {\large\imprimirlocal}
+    \par
+    {\large\imprimirdata}
+    \vspace*{1cm}
+
+  \end{center}
+}
+\makeatother
+%---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+ unicode=true,
+    backref=true,
+    pagebackref=true,
+    bookmarks=true,         		% show bookmarks bar?
+%	    pdftitle={\titulocompleto}, 
+%	    pdfauthor={\nomecompletoautor},
+%	    pdfsubject={\imprimirpreambulo},
+%	    pdfkeywords={\palavrachaveum}{\palavrachavedois}{\palavrachavetres},
+    pdfproducer={LaTeX with abnTeX2}, 	% producer of the document
+%	    pdfcreator={\nomecompletoautor},
+    colorlinks=false,       		% false: boxed links; true: colored links
+    linkcolor=black,          	        % color of internal links
+    citecolor=black,        		% color of links to bibliography
+    filecolor=black,      		% color of file links
+    urlcolor=black,			% color of url links
+    bookmarksdepth=4,
+    breaklinks=true		% deve ser usado com o pacote breakurl, sem ele não fuciona
+}
+\makeatother
+%% --- 
+
+%\usepackage{lscape}
+\addto\captionsbrazil{
+%% ajusta nomes padroes do babel
+\renewcommand{\ABNTEXchapterfont}{\fontfamily{cmr}\fontseries{b}\selectfont}
+\renewcommand{\ABNTEXchapterfontsize}{\Large}
+}
+\end_preamble
+\options 12pt,oneside,a4paper,brazil
+\use_default_options false
+\maintain_unincluded_children false
+\begin_local_layout
+#% Não apague a linha abaixo. a configuração depende disto
+#  \DeclareLaTeXClass[abntex2]{abntex2}
+#############################################
+# Definição da classe padrão abntex2
+# Autor: Silvio Cesar Garcia Granja <sggranja@gmail.com>
+#
+# Versão: Alpha 0.1 r 1
+# Última revisão em 28/02/2013
+#
+#
+#############################################
+###############################
+# Parametros globais da classe
+# Original ao memoir.layout
+###############################
+Format 35
+Columns            1
+Sides              2
+SecNumDepth        1
+TocDepth           1
+DefaultStyle       Standard
+PageStyle          Headings
+Provides makeidx   1
+Provides framed    1
+Provides subscript 1
+# Memoir has support for line spacing, but uses different names from
+# what setspace.sty does.
+Provides SetSpace  1
+ClassOptions
+FontSize             9|10|11|12|14|17
+PageStyle            empty|plain|headings|myheadings|ruled|Ruled|companion
+Other                oldfontcommands
+End
+DefaultFont
+Family		Roman
+Series		Medium
+Shape			Up
+Size			Normal
+Color			None
+EndFont
+Style Standard
+Margin                Static
+LatexType             Paragraph
+LatexName             dummy
+ParIndent             MM
+ParSkip               0.4
+Align                 Block
+AlignPossible         Block, Left, Right, Center
+LabelType             No_Label
+End
+#####################################
+# Elementos comuns a layouts do LyX
+#####################################
+Input stdclass.inc
+Input numreport.inc
+NoStyle Title
+NoStyle Date
+NoStyle Author
+NoStyle Address
+NoStyle Right_Address
+####################################
+# Espacamentos
+####################################
+Style Espaco_Simples
+Category	ABNTEspacos
+LatexType	Environment
+LatexName	SingleSpace
+Spacing		single
+ParSkip		1
+ParSep		1.2
+BottomSep	1.3
+End
+Style Espaco_1_1/2
+Category	ABNTEspacos
+LatexType	Environment
+LatexName	OnehalfSpace
+Spacing		onehalf
+ParSkip		1.35
+ParSep		1.2
+BottomSep	1.3
+End
+Style Espaco_Duplo
+Category	ABNTEspacos
+LatexType	Environment
+LatexName	DoubleSpace
+Spacing		double
+ParSkip		1.7
+ParSep		1.2
+BottomSep	1.3
+End
+#########################################
+# Citacoes
+#########################################
+Style Citacao
+Category	ABNTCitacao
+LatexType	Environment
+LatexName	citacao
+#	LeftMargin	MMMMMMMMMMMMMMM
+Align		Right
+AlignPossible	Block, Right
+BottomSep	2
+TopSep		2
+Font
+Size	Small
+EndFont
+End
+###################################################
+# Comandos pré-textuais
+###################################################
+Style Titulo
+Category	ABNTPreTextual
+LatexType	Command
+LatexName	titulo
+Margin		Dynamic
+Font
+Series	Bold
+Size	Large
+EndFont
+Align		Center
+AlignPossible	Center
+BottomSep	1.4
+End
+Style Autor
+Category	ABNTPreTextual
+LatexType	Command
+LatexName	autor
+Margin		Static
+Font
+Series	Bold
+# Color	Blue
+EndFont
+Align		Left
+AlignPossible	Left
+BottomSep	1.4
+LabelType	Top_Environment
+LabelString	"Autor :"
+End
+Style Orientador
+Category	ABNTPreTextual
+LatexType	Command
+LatexName	orientador
+Margin		Static
+Font
+Series	Bold
+EndFont
+Align		Left
+AlignPossible	Left
+BottomSep	1.4
+LabelType	Top_Environment
+LabelString	"Orientador :"
+LabelBottomSep   0.3
+LabelFont
+Series	Bold
+EndFont
+End
+Style Orientadora
+Category	ABNTPreTextual
+CopyStyle	Orientador
+LatexParam	[Orientadora]
+LabelString	"Orientadora :"
+End
+Style Orientadores
+Category	ABNTPreTextual
+CopyStyle	Orientador
+LatexParam	[Orientadores]
+LabelString	"Orientadores :"
+End
+Style Co-Orientador
+Category	ABNTPreTextual
+CopyStyle	Orientador
+LatexName	coorientador
+LabelString	"Co-orientador :"
+End
+Style Co-Orientadora
+Category	ABNTPreTextual
+CopyStyle	Co-Orientador
+LatexParam	[Co-Orientadora]
+LabelString	"Co-orientadora :"
+End
+Style Co-Orientadores
+Category	ABNTPreTextual
+CopyStyle	Co-Orientador
+LatexParam	[Co-Orientadores]
+LabelString	"Co-orientadores :"
+End
+Style Tipo-trabalho
+Category	ABNTPreTextual
+CopyStyle	Co-Orientador
+LatexName	tipotrabalho
+LabelString	"Tipo de Trabalho :"
+End
+Style Preambulo
+Category	ABNTPreTextual
+LatexType	Command
+LatexName	preambulo
+Margin		Dynamic
+LeftMargin	MMM
+RightMargin	MMM
+#Align		Block
+#AlignPossible	Block
+Align		Right
+AlignPossible	RightLeft
+BottomSep	1.4
+LabelString	"Preambulo :"
+LabelType	Centered_Top_Environment
+Font
+Size	Small
+#Color	Red
+EndFont
+End
+Style Instituicao
+Category	ABNTPreTextual
+LatexType	Command
+LatexName	instituicao
+Align		Left
+AlignPossible	Left
+Font
+Series	Bold
+EndFont
+BottomSep	1.4
+LabelString	"Instituicao :"
+LabelType	Top_Environment
+End
+Style Local
+Category	ABNTPreTextual
+LatexType	Command
+LatexName	local
+Align		Center
+AlignPossible	Center
+Font
+Series	Bold
+EndFont
+BottomSep	1.4
+LabelString	"Local :"
+LabelType	Top_Environment
+End
+Style Data
+Category	ABNTPreTextual
+LatexType	Command
+LatexName	data
+Align		Center
+AlignPossible	Center
+Font
+Series	Bold
+EndFont
+BottomSep	1.4
+LabelString	"Data :"
+LabelType	Top_Environment
+End
+Style Folha_de_Aprovacao
+Category	ABNTPreTextual
+LatexType	Environment
+LatexName	folhadeaprovacao
+End
+Style Assinatura
+Category	ABNTPreTextual
+LatexType	Command
+LatexName	assinatura*
+Margin		Static
+Align		Center
+AlignPossible	Left, Center
+LabelFont
+Series	Bold
+EndFont
+LabelString	"Assinatura : "
+LabelType	Static
+End
+Style Capitulo_Pre-Textual
+Category	ABNTPreTextual
+Margin		Dynamic
+LatexType	Command
+LatexName	pretextualchapter
+NeedProtect	1
+NextNoIndent	0
+LabelSep	xxx
+ParSkip		0.4
+TopSep		1.3
+BottomSep	0.7
+ParSep		0.7
+Align		Block
+AlignPossible	Block, Left
+LabelType	Static
+LabelString	"Pré-textual capítulo: "
+LabelFont
+Series	Bold
+EndFont
+End
+#####################################################
+# Resumo e Abstract
+#####################################################
+Style Resumo
+CopyStyle	Abstract
+LabelString	"Resumo"
+LatexName	"resumo"
+End
+#####################################################
+# Alineas, Subalineas, Incisos, siglas, simbolos
+#####################################################
+Style Alineas
+CopyStyle	Enumerate
+LabelString	"alineas"
+LatexName	"alineas"
+End
+Style Subalineas
+CopyStyle	Enumerate
+LabelString	"subalineas"
+LatexName	"subalineas"
+End
+Style Incisos
+CopyStyle	Enumerate
+LabelString	"incisos"
+LatexName	"incisos"
+End
+Style Siglas
+CopyStyle	Itemize
+LabelString	"siglas"
+LatexName	"siglas"
+End
+Style Simbolos
+CopyStyle	Itemize
+LabelString	"simbolos"
+LatexName	"simbolos"
+End
+\end_local_layout
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Retira espaço extra obsoleto entre as frases.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frenchspacing 
+\end_layout
+
+\begin_layout Plain Layout
+
+% ----------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+% ELEMENTOS PRÉ-TEXTUAIS
+\end_layout
+
+\begin_layout Plain Layout
+
+% ----------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pretextual
+\end_layout
+
+\begin_layout Plain Layout
+
+% --- 
+\end_layout
+
+\begin_layout Plain Layout
+
+% Capa
+\end_layout
+
+\begin_layout Plain Layout
+
+% ---
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+imprimircapa
+\end_layout
+
+\begin_layout Plain Layout
+
+% ---
+\end_layout
+
+\begin_layout Plain Layout
+
+% Folha de rosto
+\end_layout
+
+\begin_layout Plain Layout
+
+% (o * indica que haverá a ficha bibliográfica)
+\end_layout
+
+\begin_layout Plain Layout
+
+% ---
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+imprimirfolhaderosto%*
+\end_layout
+
+\begin_layout Plain Layout
+
+% ---
+\end_layout
+
+\begin_layout Plain Layout
+
+% --- % Inserir a ficha bibliografica % ---
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{folhadeaprovacao}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+     {
+\backslash
+ABNTEXchapterfont
+\backslash
+large
+\backslash
+imprimirautor}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+vspace*{
+\backslash
+fill}
+\backslash
+vspace*{
+\backslash
+fill}
+\end_layout
+
+\begin_layout Plain Layout
+
+     {
+\backslash
+ABNTEXchapterfont
+\backslash
+bfseries
+\backslash
+Large
+\backslash
+imprimirtitulo}
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+vspace*{
+\backslash
+fill}
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+hspace{.45
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+begin{flushright}
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+begin{minipage}{.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+           
+\backslash
+imprimirpreambulo
+\end_layout
+
+\begin_layout Plain Layout
+
+        
+\backslash
+end{minipage}%
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+end{flushright}
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+vspace*{
+\backslash
+fill}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{center}   
+\end_layout
+
+\begin_layout Plain Layout
+
+     Aprovado em 21 de novembro  de 2015.
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+vspace*{
+\backslash
+fill}
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+MakeUppercase{Banca Examinadora}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+assinatura{
+\backslash
+textbf{
+\backslash
+imprimirorientador}
+\backslash
+
+\backslash
+ Orientador}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+assinatura{
+\backslash
+textbf{Dr.
+ Walter Andrés Vermehren Valenzuela} 
+\backslash
+
+\backslash
+ Presidente da Banca}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+assinatura{
+\backslash
+textbf{Dr.
+ Israel Francisco Benitez Pina} 
+\backslash
+
+\backslash
+ Convidado 1}
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+assinatura{
+\backslash
+textbf{Me.
+ Charles Luiz Silva De Melo} 
+\backslash
+
+\backslash
+ Convidado 2}
+\end_layout
+
+\begin_layout Plain Layout
+
+  %% 
+\backslash
+assinatura{
+\backslash
+textbf{Professor} 
+\backslash
+
+\backslash
+ Convidado 4}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+begin{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+vspace*{0.5cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+     {
+\backslash
+large
+\backslash
+imprimirlocal}
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+par 
+\end_layout
+
+\begin_layout Plain Layout
+
+     {
+\backslash
+large
+\backslash
+imprimirdata}
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+vspace*{1cm} 
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+end{center} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{folhadeaprovacao}
+\end_layout
+
+\begin_layout Plain Layout
+
+% ---
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% ---
+\end_layout
+
+\begin_layout Plain Layout
+
+% Agradecimentos
+\end_layout
+
+\begin_layout Plain Layout
+
+% ---
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{agradecimentos}
+\end_layout
+
+\begin_layout Plain Layout
+
+Primeiramente a Deus; 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+par Aos meus pais, mãe Rosineide pelo o incentivo aos estudos e ao meu pai
+ Abraão pela paciência aos meus momentos de stress e tensão da graduação.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+par A Toda equipe da EST, pelo apoio, carinho, atenção e pela super paciência
+ devido aos meus momentos de stress vivido aos longos destes anos.
+ Aos meus irmãos e Irmãs, Marcos, Adriano, Abraão Junior, Rosiene, Daniela,
+ Maguina e família pela admiração a minha dedicação aos estudos e pela força
+ cedida a mim nessa jornada de acadêmico de engenharia.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+Aos professores Dr.
+ Walter Andrés Vermehren Valenzuela, Dr.
+ Charles Luiz Silva De Melo e Dr.
+ Israel Francisco Benitez Pina, componentes da banca examinadora, pelas
+ importantes observações apresentadas.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+par Agradecimentos especiais são direcionados ao D.F Roberto Higino Pereira
+ da Silva, ao Dr.
+ Carlos Mauricio Seródio de Figueiredo que contribuíram para a evolução
+ da monografia.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{agradecimentos}
+\end_layout
+
+\begin_layout Plain Layout
+
+% ---
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% resumo em português
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{resumo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este trabalho apresenta um sistema de gerenciamento de gestão energética
+ nos painéis solares que ficam na EST/UEA.
+ Neste sistemas são muito importante por que aproveitam a energia solar
+ fotovoltaica.
+ Para isto desenha-se um programa gestor que dirige as funções de monitoramento,
+ coleta de dados, supervisão e controle da energia gerada.
+ As telas criadas para o sistema podem olhar-se desde rede usando protocolo
+ TCP/IP.
+ O gestor tem qualidades inteligentes, com a utilização pela técnica de
+ logica difusa.
+ Para isto descreve o processo existente nosso caso a interface para adequação
+ das medições de supervisão e função do gestor com Arduino, simulink e CLP
+ Mitsubishi.
+ No capítulo 3 é apresentado um software desenvolvido para monitoramento
+ de radiação solar e temperatura ambiente para efeitos de estudo da influência
+ climática sobre a produção de eletricidade em painéis solares fotovoltaicos.
+ Resultados experimentais são apresentados para ilustrar o comportamento
+ da produção de energia elétrica no sistema solar fotovoltaico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{
+\backslash
+onelineskip}
+\end_layout
+
+\begin_layout Plain Layout
+
+      
+\backslash
+noindent  
+\backslash
+textbf{Palavras-chaves}: Supervisão.
+ Gestor energético inteligente.
+ Energia solar.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{resumo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% resumo em inglês
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{resumo}[Abstract]
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+begin{otherlanguage*}{english}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This paper presents an energy management management system on solar panels
+ which are in the EST / UEA.
+ In this systems are very important for that harness solar PV.
+ For it draws up a management program that addresses the monitoring functions,
+ data collection, supervision and control of the energy generated.
+ The screens created for the system can look up from the network using TCP
+ / IP protocol.
+ The manager is intelligent qualities, using the technique of fuzzy logic.
+ For this describes the existing process our case the interface to adequacy
+ of supervision and measurement function manager with Arduino, Simulink
+ PLC and Mitsubishi.
+ Chapter 3 presents a software developed for monitoring solar radiation
+ and room temperature to study the effects of climate influence on the productio
+n of electricity by photovoltaic solar panels.
+ Experimental results are presented to illustrate the behavior of the electricit
+y production in photovoltaic solar system.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{
+\backslash
+onelineskip}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+noindent 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Key-words}:Supervisio.
+ Energy Smart Manager.
+ Solar Energy.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{otherlanguage*}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{resumo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% inserir lista de ilustrações
+\end_layout
+
+\begin_layout Plain Layout
+
+% ---
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[0]{
+\backslash
+listfigurename}{lof}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+listoffigures*
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage
+\end_layout
+
+\begin_layout Plain Layout
+
+% ---
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[0]{
+\backslash
+listfigurename}{lof}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+listoffigures*
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[0]{
+\backslash
+listtablename}{lot} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+listoftables*
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[0]{
+\backslash
+contentsname}{toc} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontents*
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% ELEMENTOS TEXTUAIS
+\end_layout
+
+\begin_layout Plain Layout
+
+% ----------------------------------------------------------
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textual
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "introduc.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "cap1_referencial_teorico.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "cap2_desenvolvimento.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "cap3_resultados obtidos.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Conclus_tese.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "moises"
+options "abntex2-alf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+% Apêndices 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{apendicesenv} % Inicia os apêndices
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+SOFTWARE DESENVOLVIDO PARA A PLATAFORMA ARDUÍNO UNO
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+byte labview;
+\end_layout
+
+\begin_layout Plain Layout
+
+void setup()
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+Serial.begin(9600); 
+\end_layout
+
+\begin_layout Plain Layout
+
+pinMode(7,OUTPUT); 
+\end_layout
+
+\begin_layout Plain Layout
+
+pinMode(8,OUTPUT);
+\end_layout
+
+\begin_layout Plain Layout
+
+8 pinMode(9,OUTPUT); 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+void loop(){ 
+\end_layout
+
+\begin_layout Plain Layout
+
+start: if (Serial.available()) { 
+\end_layout
+
+\begin_layout Plain Layout
+
+labview = Serial.read(); 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+if(labview=='0'){  
+\end_layout
+
+\begin_layout Plain Layout
+
+digitalWrite(7,LOW);  
+\end_layout
+
+\begin_layout Plain Layout
+
+ digitalWrite(8,LOW);   
+\end_layout
+
+\begin_layout Plain Layout
+
+digitalWrite(9,LOW);  
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+if(labview=='1'||labview=='3'||labview=='5'||labview=='7'){   
+\end_layout
+
+\begin_layout Plain Layout
+
+digitalWrite(7,HIGH);   
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+if(labview=='2'||labview=='4'||labview=='6'){   
+\end_layout
+
+\begin_layout Plain Layout
+
+digitalWrite(7,LOW);   
+\end_layout
+
+\begin_layout Plain Layout
+
+} if(labview=='2'||labview=='3'||labview=='6'||labview=='7'){   
+\end_layout
+
+\begin_layout Plain Layout
+
+digitalWrite(8,HIGH);   
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+if(labview=='1'||labview=='4'||labview=='5'){
+\end_layout
+
+\begin_layout Plain Layout
+
+  digitalWrite(8,LOW);   
+\end_layout
+
+\begin_layout Plain Layout
+
+} if(labview=='4'||labview=='5'||labview=='6'||labview=='7'){ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ digitalWrite 
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+if(labview=='1'||labview=='2'||labview=='3'){  
+\end_layout
+
+\begin_layout Plain Layout
+
+digitalWrite(9,LOW);   
+\end_layout
+
+\begin_layout Plain Layout
+
+} 
+\end_layout
+
+\begin_layout Plain Layout
+
+delay(50);
+\end_layout
+
+\begin_layout Plain Layout
+
+}   
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+AQUISIÇÃO DE DADOS POR USB USANDO 
+\shape italic
+ARDUINO
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+a = arduino('COM3'); 
+\end_layout
+
+\begin_layout Plain Layout
+
+interv = 1000; 
+\end_layout
+
+\begin_layout Plain Layout
+
+passo = 1; 
+\end_layout
+
+\begin_layout Plain Layout
+
+t=1; 
+\end_layout
+
+\begin_layout Plain Layout
+
+x=0; 
+\end_layout
+
+\begin_layout Plain Layout
+
+while(t<interv) 
+\end_layout
+
+\begin_layout Plain Layout
+
+b=a.analogRead(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+x=[x,b];
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(x); 
+\end_layout
+
+\begin_layout Plain Layout
+
+axis([0,interv,0,1024]); 
+\end_layout
+
+\begin_layout Plain Layout
+
+grid 
+\end_layout
+
+\begin_layout Plain Layout
+
+t=t+passo; 
+\end_layout
+
+\begin_layout Plain Layout
+
+drawnow; 
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+CÓDIGO PARA O BOTÃO “FECHAR”	
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+% — Executes on button press in pushbutton”número”.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+function pushbutton’número’_Callback(hObject, eventdata, handles)
+\end_layout
+
+\begin_layout Plain Layout
+
+% hObject handle to pushbutton1 (see GCBO) 
+\end_layout
+
+\begin_layout Plain Layout
+
+% eventdata reserved - to be defined in a future version of MATLAB 
+\end_layout
+
+\begin_layout Plain Layout
+
+% handles structure with handles and user data (see GUIDATA) fechar=questdlg(’Co
+nfirma fechar’,’Deseja fechar agora’, ‘Aceitar’, ‘Cancelar’, ‘Aceitar’);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+switch fechar 
+\end_layout
+
+\begin_layout Plain Layout
+
+case ’Aceitar’ 
+\end_layout
+
+\begin_layout Plain Layout
+
+close; 
+\end_layout
+
+\begin_layout Plain Layout
+
+case ’Cancelar’ 
+\end_layout
+
+\begin_layout Plain Layout
+
+end 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+% Imprime uma página indicando o início dos apêndices 
+\backslash
+partapendices
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{apendicesenv}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+% Anexos 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+begin{anexosenv} % Inicia os anexos 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+% Imprime uma página indicando o início dos anexos 
+\backslash
+partanexos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+end{anexosenv}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

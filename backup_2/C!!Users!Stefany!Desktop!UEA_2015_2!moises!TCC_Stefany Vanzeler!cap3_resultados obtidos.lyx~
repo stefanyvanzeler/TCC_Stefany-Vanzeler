@@ -1,0 +1,652 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+%\usepackage{tabela-simbolos}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+RESULTADOS E DISCUSSÕES
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:RESULTADOS-E-DISCUSSÕES"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste capítulo serão abordados e discutidos todos os resultados obtidos
+ no projeto, a partir da metodologia abordada no capítulo anterior.
+\end_layout
+
+\begin_layout Section
+Sistema de Monitoramento CAN
+\end_layout
+
+\begin_layout Standard
+Depois do desenvolvimento dos módulos de software e hardware, esses componentes
+ foram integrados formando o sistema final e foram submetidos em conjunto
+ a testes para aprimoramento e validação do sistema como um todo.
+\end_layout
+
+\begin_layout Standard
+Assim após montagem da rede CAN, configuração da redes Ethernet e CAN e
+ da 
+\shape italic
+Socketcand
+\shape default
+* e execução dos módulos Teste no 
+\shape italic
+Beaglebone
+\shape default
+ 
+\shape italic
+Black
+\shape default
+ e TesteStatus no 
+\shape italic
+Funduino
+\shape default
+ 
+\shape italic
+UNO, 
+\shape default
+o Sistema de monitoramento CAN (módulo Monitoramento CAN BUS), foi testado
+ em conjunto com os outros módulos desenvolvidos e capaz de receber, transmitir
+ e filtrar as mensagens CAN por meio do protótipo implementado, sendo assim
+ alcançados os objetivos do trabalho.
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+, sendo assim alcançados os objetivos do trabalho
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Manual do Usuário do Módulo Monitoramento CAN BUS
+\end_layout
+
+\begin_layout Standard
+Após a execução deste módulo, a interface gráfica da figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Monitoramento-CAN-BUS"
+
+\end_inset
+
+ é exibida ao usuário, por meio da qual ele pode interagir com o barramento
+ CAN.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Monitoramento CAN BUS
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Monitoramento-CAN-BUS"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename sistema de monitoramento CAN Bus.jpg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+installation and user manual
+\end_layout
+
+\begin_layout Plain Layout
+start up
+\end_layout
+
+\begin_layout Plain Layout
+overwiew of the control elements
+\end_layout
+
+\begin_layout Plain Layout
+functions
+\end_layout
+
+\begin_layout Plain Layout
+execution of special operations
+\end_layout
+
+\begin_layout Plain Layout
+Inicializacao
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O Monitoramento CAN BUS funciona de acordo com a máquina de estados da 
+\shape italic
+Socketcand
+\shape default
+*.
+ Dessa forma para visualização, transmissão e filtro de mensagens, o usuário
+ deve primeiro conectar com o servidor, que neste caso é o protótipo, inserindo
+ o IP do servidor no campo IP, que por 
+\shape italic
+default
+\shape default
+ é o 192.168.7.2 (
+\shape italic
+Beaglebone
+\shape default
+ 
+\shape italic
+Black
+\shape default
+), e a porta da 
+\shape italic
+socket
+\shape default
+ no campo Porta, sendo por 
+\shape italic
+default
+\shape default
+ igual à porta 
+\shape italic
+default
+\shape default
+ da 
+\shape italic
+Socketcand
+\shape default
+* (29536).
+\end_layout
+
+\begin_layout Standard
+Depois da configuração dos campos IP e Porta, a conexão com o protótipo
+ é estabelecida pelo botão Conectar.
+ Se a conexão TCP/IP for bem sucedida, o servidor manda uma mensagem <hi>
+ para o cliente, podendo esta ser visualizada no campo Log de Transmissão.
+ Em seguida o usuário deve abrir uma rede CAN selecionando uma das opções
+ do menu Rede (vcan0 ou can0) e apertando o botão Abrir, considerando que
+ a rede selecionada já foi previamente configurada no protótipo via interface
+ 
+\shape italic
+netlink
+\shape default
+ como explicado no Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:MATERIAIS-E-MÉTODOS"
+
+\end_inset
+
+.
+ Se o cliente tiver acesso ao barramento escolhido, o servidor enviará uma
+ mensagem <ok> e a 
+\shape italic
+socketcand
+\shape default
+* entra no estado BCM, senão uma mensagem de erro será enviada para o cliente,
+ podendo esta ser visualizada no campo Log de Transmissão e a conexão é
+ terminada.
+\end_layout
+
+\begin_layout Standard
+No estado BCM, o usuário pode enviar mensagens cíclicas e acíclicas e filtrar
+ mensagens.
+\end_layout
+
+\begin_layout Standard
+Para enviar mensagens cíclicas, basta preencher os campos ID, DLC e Dados
+ com valores válidos, selecionar um intervalo no menu Cíclico (1s, 20ms,
+ 10μs) e marcar a 
+\shape italic
+checkbox
+\shape default
+ do mesmo campo.
+ Desmarcando a 
+\shape italic
+checkbox
+\shape default
+ as mensagens deixam de ser enviadas.
+ Para enviar mensagens acíclicas no estado BCM, basta preencher os campos
+ ID, DLC e Dados com valores válidos e apertar o botão Enviar Frame.
+\end_layout
+
+\begin_layout Standard
+Para filtrar mensagens o usuário precisa preencher o campo Filtrar ID com
+ um ID válido e marcar 
+\shape italic
+a checkbox
+\shape default
+ correspondente, figura .
+ Desmarcando essa 
+\shape italic
+checkbox
+\shape default
+ as mensagens deixam de ser filtradas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Filtro no estado BCM
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename filtro BCM.jpg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para entrar no estado RAW, o usuário precisa apertar o botão RAW.
+ Este estado permite visualizar todas as 
+\shape italic
+frames
+\shape default
+ de dados recebidas por 
+\shape italic
+default
+\shape default
+, figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Estado-RAW"
+
+\end_inset
+
+, com exceção das 
+\shape italic
+frames
+\shape default
+ de erro e das 
+\shape italic
+frames
+\shape default
+ enviadas pela mesma ECU como explicado no Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:MATERIAIS-E-MÉTODOS"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estado RAW
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Estado-RAW"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename can RAW.jpg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No estado RAW é possível enviar mensagens acíclicas pelos mesmos procedimentos
+ anteriormente explicados para mensagens acíclicas BCM.
+\end_layout
+
+\begin_layout Standard
+Para entrar no estado ISO-TP, basta apertar o botão ISO-TP.
+\end_layout
+
+\begin_layout Standard
+O botão Limpar Dados limpa todas as 
+\shape italic
+frames
+\shape default
+ recebidas do campo Visualização.
+\end_layout
+
+\begin_layout Standard
+O botão Desconectar termina a conexão TCP/IP com o servidor.
+\end_layout
+
+\begin_layout Standard
+O botão Fechar, fecha o programa.
+\end_layout
+
+\begin_layout Standard
+O botão Enviar, envia os comando inseridos no campo Enviar via TCP/IP do
+ módulo Monitoramento CAN BUS para a 
+\shape italic
+Socketcand
+\shape default
+*.
+\end_layout
+
+\begin_layout Standard
+O botão Limpar Log, limpa todos os dados do campo Log de Transmissão.
+\end_layout
+
+\begin_layout Section
+Discussão dos Resultados
+\end_layout
+
+\begin_layout Standard
+Ficou comprovado que a 
+\shape italic
+Socketcand
+\shape default
+* integrada aos outros módulos permite o monitoramento de diferentes redes
+ CAN por meio de apenas uma conexão TCP/IP, baseando-se na 
+\shape italic
+SocketCAN
+\shape default
+.
+ As 
+\shape italic
+frames
+\shape default
+ de dados enviadas pela ECU do 
+\shape italic
+Funduino UNO
+\shape default
+ e respondidas pelo protótipo de acordo com a lógica da rede CAN montada
+ e explicada no Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:MATERIAIS-E-MÉTODOS"
+
+\end_inset
+
+ puderam ser visualizadas no sistema de monitoramento CAN, assim como a
+ própria resposta dos atuadores ligados ao 
+\shape italic
+Funduino UNO 
+\shape default
+às 
+\shape italic
+frames
+\shape default
+ recebidas, tanto do usuário, quanto das ECUs da rede, validaram o sistema
+ desenvolvido.
+ As 
+\shape italic
+frames
+\shape default
+ de dados também puderam ser filtradas pelo protótipo e visualizadas no
+ sistema de monitoramento CAN.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Envio cíclico da mensagem 0x02
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename envio ciclico de mensagens.jpg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Led azul acende com a mensagem cíclica ID: 0x02 DLC: 4 Dados: 00 00 00 01
+ ou com o pressionar do botão
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ledazulLiga.jpg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

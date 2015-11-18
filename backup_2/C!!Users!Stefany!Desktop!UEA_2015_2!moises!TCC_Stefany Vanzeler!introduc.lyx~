@@ -1,0 +1,442 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+%\usepackage{tabela-simbolos}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options true
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+INTRODUÇÃO
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:INTRODUÇÃO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O gestor energético inteligente é um sistema computacional para registro
+ e processamento de informações provenientes de um módulo de aquisição de
+ dados de sensores ou transdutores de variáveis ambientais como temperatura
+ e umidade.
+ Os dados são guardados e processados localmente em um computador, ou em
+ um sistema microcontrolado e apresentados em display LCD ou impresso.
+ As variáveis que serão monitoradas são temperatura, radiação solar, tensão
+ e corrente contínua do arranjo ou painel solar fotovoltaico.
+\end_layout
+
+\begin_layout Standard
+Este trabalho apresenta uma ferramenta computacional para monitorar e registrar
+ informações de dados dos painéis solar fotovoltaica da EST/UEA, denominado
+ de gestor energético inteligente.
+ Este software é um sistema desenvolvido em linguagem nativa do 
+\shape italic
+Arduino
+\shape default
+ uno e CLP 
+\shape italic
+Mitsubishi
+\shape default
+, para funcionar em ambiente 
+\shape italic
+Windows
+\shape default
+ utilizando um módulo de aquisição de dados da 
+\shape italic
+National
+\shape default
+ 
+\shape italic
+Instruments
+\shape default
+, conectado ao computador através da porta de comunicação USB.
+\end_layout
+
+\begin_layout Standard
+Visando melhorar e racionalizar o consumo elétrico por fontes renováveis
+ , observa-se o crescimento da demanda por implantação de painéis solar
+ para a geração da energia do sistema de iluminação de forma computadorizada.
+ É possível encontrar diversas empresas atuando neste segmento.
+ A maioria dessas empresas oferece solução completa de automação residencial,
+ empresarial indo além do sistema de iluminação.
+\end_layout
+
+\begin_layout Standard
+O potencial deste tipo de sistemas é amplo, bastando considerar as vantagens
+ de benefícios como o conforto, a segurança e a economia, referentes à utilizaçã
+o dessa tecnologia.
+\end_layout
+
+\begin_layout Standard
+Este trabalho utiliza um dispositivo físico inteligente, o 
+\shape italic
+Arduino
+\shape default
+ e o CLP em conjunto com as placas solar, computador e um conjunto de sensor.
+ Dessa maneira, torna-se possível programar as atividades do sistema de
+ acordo que as ações ocorram de forma automática.
+ Teremos o controle da energia solar através de uma interface para sistema
+ de medição e para controle de potência.
+ Esta interface ira adequar as medições de controle e funções de gestor,
+ seja ele uma supervisão, um monitoramento, predição, tarefas inteligentes
+ ou fazer um histórico do comportamento dessa energia entre outras funções.
+ O Arduíno irá receber estas informações de medição dos painéis e, através
+ das portas analógicas, mandar as variáveis para o 
+\shape italic
+Simulink
+\shape default
+ e 
+\shape italic
+Matlab
+\shape default
+ do servidor, que mostra as funções de tempo e clima para saber a energia
+ do sistema, no nosso caso os painéis solares.
+ Para maior conforto do usuário, o mesmo poderá ter acesso ao controle das
+ potências por uma comunicação protocolo USB com CLP 
+\shape italic
+Mitsubishi
+\shape default
+.
+ O gestor inteligente tem funções de avaliação e predição de tarefas de
+ sistemas supervisório, assim é possível melhora a eficiência do processo
+ de controle, disponibilizando em tempo útil o estado atual do sistema,
+ através de um conjunto de funções, de modo a permitir a tomada de decisões
+ operacionais apropriadas e futuras.
+\end_layout
+
+\begin_layout Standard
+O curso de Engenharia Mecatrônica possui diversas disciplinas que tratam
+ de assuntos correlatos à automação e isso faz com que o aluno se sinta
+ compelido a acompanhar as inovações na área.
+ Dentre as inovações tecnológicas mais recentes nos últimos anos, é possível
+ afirmar que a plataforma de computação física microcontrolada 
+\shape italic
+Arduino
+\shape default
+ certamente esteja entre as mais revolucionárias, devido ao seu alto grau
+ de facilidade de aprendizado, implementação e disponibilidade de recursos,
+ que permite que entusiastas e profissionais gabaritados desenvolvam os
+ mais variados dispositivos de automação.
+\end_layout
+
+\begin_layout Standard
+Na figura 1, a seguir, é mostrado um exemplo de arquitetura de um gestor
+ energético inteligente.
+ Os equipamentos utilizados para o seu funcionamento são: Um 
+\shape italic
+Arduino
+\shape default
+ para o sistema de medição, um CLP 
+\shape italic
+Mitsubshi
+\shape default
+ para controle de potências, um computador funcionando como servidor central;
+ Gerenciador energético, para adequar as informações de controle e funções
+ de gestor.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gestor energético inteligente para instalação de painéis solares
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Figuras/01.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Formulação do problema
+\end_layout
+
+\begin_layout Standard
+Ausência de um sistema para gerenciamento inteligente e a supervisão e aquisição
+ de dados para a gestão da energia utilizada que provem dos painéis solares.
+\end_layout
+
+\begin_layout Section
+Justificativa
+\end_layout
+
+\begin_layout Standard
+Poderá permitir, ao operador, as funções do tempo e clima o controle de
+ potência dos painéis solares, eliminando o não conhecimento da radiação
+ solar e temperatura ambiente sobre a produção de eletricidade em painéis
+ solares fotovoltaicos, possibilitará o aumento da qualidade dessa energia
+ com segurança e na identificação de eventuais problemas com a mesma, se
+ implementado.
+ O gestor energético inteligente para os painéis solares utilizados em atividade
+s práticas instalados na EST se utiliza dos conhecimentos das disciplinas
+ de Controle: Automação e Supervisão de Processos, Redes Industriais de
+ Comunicação, Instrumentação Industrial, Modelagem e Simulação de Sistemas
+ Discretos.
+\end_layout
+
+\begin_layout Section
+Motivação
+\end_layout
+
+\begin_layout Standard
+Esse trabalho constitui uma ferramenta para criar oportunidade e desenvolver
+ um projeto de gerenciamento baseado no supervisão e gestão da energia,
+ desde a simulação até a possibilidade de aperfeiçoar os parâmetros do processo
+ e do desempenho, de modo que o estudante pode saber como é elaborar um
+ projeto de Engenharia de Controle, conhecendo as intempéries que envolvem
+ um projeto prático e verificar se, no projeto físico, ocorre como o esperado
+ na teoria ou não.
+\end_layout
+
+\begin_layout Standard
+Como se trata de um gestor energético inteligente de painéis solares pode
+ ser deixado para a Universidade, podendo ser aproveitado (ou até mesmo
+ aperfeiçoado) por alunos em matérias relacionadas a Controle e por professores
+ que poderão elaborar atividades de para ilustrar o comportamento da produção
+ de energia elétrica nos painéis com base no sistema.
+\end_layout
+
+\begin_layout Section
+Objetivos
+\end_layout
+
+\begin_layout Standard
+Obter a simulação e implementação mediante um gestor energético inteligente
+ para os sistemas de medição e controle de potência de painéis solares utilizado
+s em atividades práticas instalados na EST, utilizando um computador (PC)
+ como unidade central de processamento (CPU), o Arduíno UNO para realizar
+ a comunicação do PC com essas placas, o CLP 
+\shape italic
+Mitsubishi
+\shape default
+ para controle da potência, o protocolo de comunicação TCP-IP (
+\shape italic
+Transmission Control Protocol/Internet Protocol
+\shape default
+), os softwares 
+\shape italic
+Matlab
+\shape default
+ para receberem os dados e representarem o gestor energético inteligente
+ e a plataforma Web (
+\shape italic
+World Wide Web
+\shape default
+) para oferecer acesso à distância do mesmo.
+ Este objetivo geral será alcançado quando todos seguintes objetivos específicos
+ forem atingidos:
+\end_layout
+
+\begin_layout Itemize
+Simular e implementar o gestor energético inteligente de monitoramento de
+ energia de um conjunto de painéis solares;
+\end_layout
+
+\begin_layout Itemize
+Simular o gestor energético inteligente para sistema de medição com o Arduino
+ e controle da potência com CLP com uma interface para adequa as medições
+ de controle e funções de gestor;
+\end_layout
+
+\begin_layout Itemize
+Obter acesso Web para o gestor energético inteligente de cada qualquer local
+ do ambiente.
+\end_layout
+
+\begin_layout Section
+Metodologia
+\end_layout
+
+\begin_layout Standard
+Inicialmente, serão feitas pesquisas bibliográficas nas áreas de Automação
+ e Supervisão de Processos, Redes Industriais de Comunicação com CLP e Arduino,
+ Radiação solar, Energia sola, Modelagem do módulos inteligentes usando
+ lógica difusa.
+\end_layout
+
+\begin_layout Standard
+O projeto do gestor energético inteligente será feito em cinco principais
+ etapas.
+\end_layout
+
+\begin_layout Standard
+A primeira será a medição dos painéis solares.
+ Nela, haverá o levantamento da temperatura, radiação, tensão e corrente
+ dos painéis instalados na EST, juntamente com os sensores responsáveis
+ pela medição das variáveis que envolvem cada uma.
+\end_layout
+
+\begin_layout Standard
+Em seguida, haverá o estudo da interface do sistema.
+ Nela, será analisado a logica difusa para funções do gestor, identificando
+ o tempo e clima para saber a energia existente.
+\end_layout
+
+\begin_layout Standard
+Depois, será elaborado o gestor energético inteligente.
+ Com base nos dados adquiridos nas etapas anteriores, utilizando a ferramenta
+ GUI do Matlab, obtidos por licença estudantil, serão elaboradas telas principai
+s e secundárias que representarão o gestor energético inteligente dos painéis
+ solares.
+\end_layout
+
+\begin_layout Standard
+Na sequência, haverá a comunicação com os painéis.
+ Nela, através do protocolo TCP-IP, a CPU se comunicará com o CLP Mitsubishi,
+ o Arduíno UNO e o mesmo com os painéis.
+\end_layout
+
+\begin_layout Standard
+Por fim, será implementado o gestor energético inteligente.
+ Depois de simulado o sistema e concluída a comunicação, será implementado
+ o gestor energético inteligente, com acesso à plataforma Web, fazendo testes
+ do comportamento da produção de energia elétrica proveniente dos painéis
+ solares.
+\end_layout
+
+\begin_layout Section
+Organização do trabalho 
+\end_layout
+
+\begin_layout Standard
+A monografia é dividida em cinco capítulos.
+\end_layout
+
+\begin_layout Standard
+O capítulo 1 oferece uma visão geral do escopo do trabalho, com a introdução
+ do ambiente tecnológico, apresentação de objetivos, motivação, justificativa
+ e metodologia do trabalho.
+ A última seção oferece uma visão do tempo de desenvolvimento do trabalho,
+ descriminado a partir de cada tarefa necessária à conclusão do projeto.
+\end_layout
+
+\begin_layout Standard
+O capítulo 2 apresenta o gestor energético inteligente, explicitando seu
+ conceito, componentes e funcionamento, o conceito e visão geral de Sistema
+ supervisório, CLP, Arduino, Sensor, Radiação solar e Lógica difusa.
+\end_layout
+
+\begin_layout Standard
+O capítulo 3 apresenta o gestor energético inteligente construído no laboratório
+ para monitorar a produção de eletricidade nas placas solares em função
+ das condições climáticas (temperatura e radiação solar), juntamente com
+ as telas do GUI, explicitando as situações para a elaboração dos mesmos.
+\end_layout
+
+\begin_layout Standard
+O capítulo 4 apresenta os resultados do projeto.
+ 
+\end_layout
+
+\begin_layout Standard
+O último explicita as conclusões existentes sobre o trabalho.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

@@ -75,6 +75,13 @@
 
 \begin_layout Chapter
 MATERIAIS E MÉTODOS
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:MATERIAIS-E-MÉTODOS"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -85,93 +92,35 @@ Neste capítulo serão abordados, de maneira detalhada, cada etapa da metodologi
 \end_layout
 
 \begin_layout Section
-Metodologia
-\end_layout
-
-\begin_layout Standard
-O projeto foi dividido em 4 fases Definição, Design, Implementacao e Integração
- e Validação.
-\end_layout
-
-\begin_layout Standard
-Inicialmente foram definidos os requisitos do sistema e criado um modelo
- geral do sistema, a partir do qual se criou a arquitetura do sistema e
- especificação dos componentes.
- Após o design foi feita a implementacao de cada componente.
- Por último foi feita a integracao desses componentes e validacao do sistema
- desenvolvido, sendo confeccionado um manual do usuário, explicando o funcioname
-nto do sistema de monitoramento CAN com o protótipo.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Metodologia
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename metodologia.jpg
-	scale 70
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-fonte: autora
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
 Modelo do Sistema
 \end_layout
 
 \begin_layout Subsection
-Especificação dos requerimentos do sistema
+Especificação dos Requerimentos do Sistema
+\end_layout
+
+\begin_layout Standard
+Os requerimentos do sistema são o desdobramento dos objetivos do trabalho:
 \end_layout
 
 \begin_layout Itemize
-A implementação do gateway TCP/IP-CAN por meio do protótipo deve ser feita
- em uma plataforma com arquitetura ARM de baixo custo;
+A implementação do 
+\shape italic
+gateway
+\shape default
+ TCP/IP-CAN por meio do protótipo deve ser feita em uma plataforma com arquitetu
+ra ARM de baixo custo;
 \end_layout
 
 \begin_layout Itemize
-Caso a plataforma ARM escolhida venha desprovida de controlador e tranceptor
+Caso a plataforma ARM escolhida venha desprovida de controlador e transceptor
  CAN, um adaptador CAN deverá ser construído ou comprado;
 \end_layout
 
 \begin_layout Itemize
 O protótipo deve ser capaz de receber todas as mensagens CAN do barramento
  da rede e retransmiti-las via TCP/IP para um computador pessoal por uma
- conexão ethernet;
+ conexão Ethernet;
 \end_layout
 
 \begin_layout Itemize
@@ -201,7 +150,7 @@ Uma rede CAN deve ser montada para testes, com no mínimo duas ECUs, considerand
 
 \begin_layout Itemize
 A integração e validação do sistema serão alcançadas com a inserção do protótipo
- na rede CAN monatada e monitoramento em tempo real do barramento CAN com
+ na rede CAN montada e monitoramento em tempo real do barramento CAN com
  o sistema de monitoramento desenvolvido.
 \end_layout
 
@@ -218,18 +167,14 @@ reference "fig:Modelo-de-Hardware"
 
 \end_inset
 
-, sendo constituído por uma unidade de software denominada 
-\begin_inset Quotes eld
-\end_inset
-
-Monitoramento CAN BUS
-\begin_inset Quotes erd
-\end_inset
-
- - representando o sistema de monitoramento de barramento CAN - em um PC
- e o protótipo, formado por uma unidade de software (gateway) e hardware
- constituída por uma plataforma com processador ARM e uma unidade de hardware
- adicional para fazer o interfaceamento com o barramento CAN.
+, sendo constituído por uma unidade de software denominada Monitoramento
+ CAN BUS - representando o sistema de monitoramento de barramento CAN -
+ em um PC e o protótipo, formado por uma unidade de software (
+\shape italic
+gateway
+\shape default
+) e hardware constituída por uma plataforma com processador ARM e uma unidade
+ de hardware adicional para fazer o interfaceamento com o barramento CAN.
 \end_layout
 
 \begin_layout Standard
@@ -262,7 +207,7 @@ name "fig:Modelo-de-Hardware"
 \align center
 \begin_inset Graphics
 	filename modelo de hardware.jpg
-	scale 60
+	scale 40
 
 \end_inset
 
@@ -271,7 +216,7 @@ name "fig:Modelo-de-Hardware"
 
 \begin_layout Plain Layout
 \align center
-fonte: autora
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -308,7 +253,7 @@ reference "fig:Modelo-de-Software"
 
 \end_inset
 
- ilustra a relacao entre o usuário, o sistema de monitoramento de barramento
+ ilustra a relação entre o usuário, o sistema de monitoramento de barramento
  CAN, o protótipo e outras ECUs conectadas à rede CAN de testes, além de
  representar os objetivos de cada um dentro do sistema, configurando-se
  assim como modelo de software para o sistema.
@@ -348,7 +293,7 @@ name "fig:Modelo-de-Software"
 \align center
 \begin_inset Graphics
 	filename modelo de software.jpg
-	scale 70
+	scale 53
 
 \end_inset
 
@@ -357,7 +302,7 @@ name "fig:Modelo-de-Software"
 
 \begin_layout Plain Layout
 \align center
-fonte: autora
+Fonte: Autora
 \end_layout
 
 \begin_layout Plain Layout
@@ -374,7 +319,13 @@ Arquitetura do Sistema
 \end_layout
 
 \begin_layout Subsection
-Comparativo entre as arquiteturas Raspberry Pi e Beaglebone Black
+Comparativo entre as Arquiteturas 
+\shape italic
+Raspberry Pi
+\shape default
+ e 
+\shape italic
+Beaglebone Black
 \end_layout
 
 \begin_layout Standard
@@ -385,14 +336,53 @@ reference "tab:Raspeberry-PI-B+"
 
 \end_inset
 
-,entre as arquiteturas Raspberry PI B+ e Beaglebone Black.
- Ambos sao computadores de baixo custo baseado em linux e na arquitetura
- ARM do tamanho de um cartão de crédito.
- O Raspberry PI B+ é desenvolvido pela fundação de caridade Raspberry Pi
+,entre as arquiteturas 
+\shape italic
+Raspberry PI B+
+\shape default
+ e 
+\shape italic
+Beaglebone Black
+\shape default
+.
+ Ambos são computadores de baixo custo baseado em 
+\shape italic
+Linux
+\shape default
+ e na arquitetura ARM do tamanho de um cartão de crédito.
+ O 
+\shape italic
+Raspberry PI B+
+\shape default
+ é desenvolvido pela fundação de caridade 
+\shape italic
+Raspberry Pi
+\shape default
  no Reino Unido, cujo principal objetivo é promover o ensino em ciência
- da computação básica em escolas enquanto que o Beaglebone Black é open
- hardware, sendo suportada por uma comunidade de desenvolvedores e produzido
- por terceiros.
+ da computação básica em escolas enquanto que o 
+\shape italic
+Beaglebone Black
+\shape default
+ é
+\shape italic
+ open hardware
+\shape default
+, sendo suportada por uma comunidade de desenvolvedores e produzido por
+ terceiros, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RASPBERRY"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BeagleBone"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -598,7 +588,11 @@ Processador
 \begin_inset Text
 
 \begin_layout Plain Layout
-Broadcom BCM2835, 700 MHz 
+
+\shape italic
+Broadcom BCM2835
+\shape default
+, 700 MHz 
 \end_layout
 
 \end_inset
@@ -607,7 +601,11 @@ Broadcom BCM2835, 700 MHz
 \begin_inset Text
 
 \begin_layout Plain Layout
-Sitara AM3358BZCZ100, 1GHz
+
+\shape italic
+Sitara AM3358BZCZ100
+\shape default
+, 1GHz
 \end_layout
 
 \end_inset
@@ -743,7 +741,11 @@ Gráfico
 \begin_inset Text
 
 \begin_layout Plain Layout
-HDMI, Dual Core VideoCore IV® 
+HDMI, 
+\shape italic
+Dual Core VideoCore IV®
+\shape default
+ 
 \end_layout
 
 \end_inset
@@ -772,6 +774,8 @@ HDMI, Dual Core VideoCore IV®
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\shape italic
 Multimedia Co-Processor
 \end_layout
 
@@ -925,6 +929,8 @@ Tipo de Hardware
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\shape italic
 Closed Hardware
 \end_layout
 
@@ -934,6 +940,8 @@ Closed Hardware
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\shape italic
 Open Hardware
 \end_layout
 
@@ -958,11 +966,18 @@ Fonte: Autora
 \end_layout
 
 \begin_layout Standard
-Após comparacao entre essas plataformas, optou-se pelo 
+Após comparação entre essas plataformas, optou-se pelo 
 \shape italic
 BeagleBone Black rev C - Element14 Commercial Edition
 \shape default
- para o para desenvolvimento do protótipo, figura 
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "element14"
+
+\end_inset
+
+, para o para desenvolvimento do protótipo, figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Beaglebone-Black"
@@ -971,8 +986,15 @@ reference "fig:Beaglebone-Black"
 
 , que apesar de ter um preço um pouco mais alto, apresenta maior velocidade
  de processamento, arquitetura ARM Cortex mais recente, maior número de
- GPIOs, e já apresenta incorporado no SoC Sitara AM3358BZCZ100 o controlador
- CAN, figura 
+ GPIOs, e já apresenta incorporado no SoC (
+\shape italic
+System on a chip
+\shape default
+) 
+\shape italic
+Sitara AM3358BZCZ100
+\shape default
+ o controlador CAN, figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-Blocos"
@@ -980,6 +1002,9 @@ reference "fig:Diagrama-de-Blocos"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -1017,6 +1042,7 @@ name "fig:Beaglebone-Black"
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 Fonte: Autora
 \end_layout
 
@@ -1062,11 +1088,8 @@ name "fig:Diagrama-de-Blocos"
 \end_layout
 
 \begin_layout Plain Layout
-http://www.ti.com/lit/ds/symlink/am3358.pdf
-\end_layout
-
-\begin_layout Plain Layout
-datasheet
+\align center
+Fonte: http://www.ti.com/lit/ds/symlink/am3358.pdf
 \end_layout
 
 \end_inset
@@ -1089,9 +1112,16 @@ reference "tab:Adaptadores-Raspeberry"
 
 \end_inset
 
- apresentam os principais adaptadores CAN para o Raspberry PI B+ e Beaglebone
- Black atualmente existentes no mercado.
- Importante salientar que nao foi encontrado nenhum fornecedor nacional.
+ apresentam os principais adaptadores CAN para o 
+\shape italic
+Raspberry PI B+
+\shape default
+ e 
+\shape italic
+Beaglebone Black
+\shape default
+ atualmente existentes no mercado.
+ Importante salientar que não foi encontrado nenhum fornecedor nacional.
 \end_layout
 
 \begin_layout Standard
@@ -1123,7 +1153,7 @@ name "tab:Adaptadores-Beagle"
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="9" columns="3">
+<lyxtabular version="3" rows="11" columns="3">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -1180,7 +1210,7 @@ GNUBLIN
 \begin_inset Text
 
 \begin_layout Plain Layout
-http://shop.embedded-projects.net/embedded-projects
+http://shop.embedded-projects.net
 \end_layout
 
 \end_inset
@@ -1209,7 +1239,36 @@ Module-CAN
 \begin_inset Text
 
 \begin_layout Plain Layout
--gmbh/gnublin-module-gnubo-fr-beagle-bone.html
+/embedded-projects-gmbh/gnublin-module-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gnubo-fr-beagle-bone.html
 \end_layout
 
 \end_inset
@@ -1238,7 +1297,7 @@ Module-CAN
 \begin_inset Text
 
 \begin_layout Plain Layout
-http://shop.embedded-projects.net/embedded-projects
+http://shop.embedded-projects.net/
 \end_layout
 
 \end_inset
@@ -1267,7 +1326,36 @@ http://shop.embedded-projects.net/embedded-projects
 \begin_inset Text
 
 \begin_layout Plain Layout
--gmbh/gnublin-module-can-3.3v-transceiver.html
+embedded-projects-gmbh/gnublin-module-
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+can-3.3v-transceiver.html
 \end_layout
 
 \end_inset
@@ -1296,7 +1384,7 @@ TT3201 CAN Cape
 \begin_inset Text
 
 \begin_layout Plain Layout
-http://www.towertech.it/en/products/hardware
+http://www.towertech.it/en/products/
 \end_layout
 
 \end_inset
@@ -1325,7 +1413,7 @@ http://www.towertech.it/en/products/hardware
 \begin_inset Text
 
 \begin_layout Plain Layout
-/tt3201-can-cape/
+hardware/tt3201-can-cape/
 \end_layout
 
 \end_inset
@@ -1394,6 +1482,11 @@ Serial Cape
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -1678,15 +1771,31 @@ for Raspberry Pi
 
 \end_layout
 
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Entre os adaptadores CAN para o Beaglebone Black, optou-se pelo 
+Entre os adaptadores CAN para o 
 \shape italic
-BeagleBone Serial CAN RS485 RS232 Cape, 
+Beaglebone Black
+\shape default
+, optou-se pelo 
+\shape italic
+BeagleBone Serial CAN RS485 RS232 Cape 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Serialcape"
+
+\end_inset
+
+, 
 \shape default
 figura
 \shape italic
@@ -1703,13 +1812,19 @@ reference "fig:BeagleBone-Serial-Cape"
 \shape italic
  
 \shape default
-que apesar de mais caro que o GNUBLIN Module-CAN, permite simultaneamente
- o uso de até duas portas RS232 e interface para o barramento CAN ou a operação
- simultânea de uma porta RS232, uma interface RS485 e uma para o barramento
- CAN, enquanto que o GNUBLIN Module-CAN garante interface apenas para o
- barramento CAN além de fazer entrega apenas na Europa, tendo em vista a
- futura expansão do protótipo para interfaceamento com outras redes no laboratór
-io de automação da EST.
+que apesar de mais caro que o 
+\shape italic
+GNUBLIN Module-CAN
+\shape default
+, permite simultaneamente o uso de até duas portas RS232 e interface para
+ o barramento CAN ou a operação simultânea de uma porta RS232, uma interface
+ RS485 e uma para o barramento CAN, enquanto que o 
+\shape italic
+GNUBLIN Module-CAN
+\shape default
+ garante interface apenas para o barramento CAN além de fazer entrega apenas
+ na Europa, tendo em vista a futura expansão do protótipo para interfaceamento
+ com outras redes no laboratório de automação da EST.
 \end_layout
 
 \begin_layout Standard
@@ -1754,7 +1869,8 @@ name "fig:BeagleBone-Serial-Cape"
 \end_layout
 
 \begin_layout Plain Layout
-http://www.logicsupply.com/cbb-serial/
+\align center
+Fonte: http://www.logicsupply.com/cbb-serial/
 \end_layout
 
 \begin_layout Plain Layout
@@ -1771,11 +1887,28 @@ O
 \shape italic
 BeagleBone Serial Cape
 \shape default
- é open hardware e utiliza o transceptor galvânico isolado ISO1050DW, que
- atende às especificações da ISO11898-2, com conexoes para uma fonte de
- 5V DC, GND, CAN HIGH e LOW.
+ é 
+\shape italic
+open hardware
+\shape default
+ e utiliza o transceptor galvânico isolado ISO1050DW 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Transceiver"
+
+\end_inset
+
+, que atende às especificações da ISO11898-2, com conexões para uma fonte
+ de 5V DC, GND, CAN HIGH e LOW.
  O resistor R4 garante mínimo carregamento exigido pelo conversor DC-DC
- MSLU102, figura 
+ MSLU102 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MINMAX"
+
+\end_inset
+
+, figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Circuito-CAN-do"
@@ -1827,7 +1960,8 @@ name "fig:Circuito-CAN-do"
 \end_layout
 
 \begin_layout Plain Layout
-fonte
+\align center
+Fonte: https://github.com/lgxlogic/CBB-Serial
 \end_layout
 
 \end_inset
@@ -1836,9 +1970,15 @@ fonte
 \end_layout
 
 \begin_layout Standard
-Ele também possui uma memória EEPROM-I2CSMD para carregar o Beaglebone Black
- com a configuração apropriada e um buffer, SN74AHC1G126, para a recepção
- de dados CAN .
+Ele também possui uma memória EEPROM-I2CSMD para carregar o 
+\shape italic
+Beaglebone Black
+\shape default
+ com a configuração apropriada e um 
+\shape italic
+buffer
+\shape default
+, SN74AHC1G126, para a recepção de dados CAN .
 \end_layout
 
 \begin_layout Standard
@@ -1871,7 +2011,7 @@ name "fig:Buffer-de-Dados"
 \align center
 \begin_inset Graphics
 	filename canBuffer.jpg
-	scale 65
+	scale 60
 
 \end_inset
 
@@ -1879,7 +2019,8 @@ name "fig:Buffer-de-Dados"
 \end_layout
 
 \begin_layout Plain Layout
-fonte
+\align center
+Fonte: https://github.com/lgxlogic/CBB-Serial
 \end_layout
 
 \end_inset
@@ -1909,18 +2050,29 @@ https://pt.wikipedia.org/wiki/Arduino
 \end_layout
 
 \begin_layout Subsection
-Unidade Eletronica de Controle Complementar
+Unidade Eletrônica de Controle Complementar
 \end_layout
 
 \begin_layout Standard
-Para montagem da rede CAN de teste foi escolhido o Funduino UNO como unidade
- microcontroladora, o qual é uma placa compatível com o Arduino UNO, devido
- a facilidade de operacao e aquisicao e grande quantidade e variedade de
- fontes de consulta.
+Para montagem da rede CAN de teste foi escolhido o 
+\shape italic
+Funduino UNO
+\shape default
+ como unidade microcontroladora, o qual é uma placa compatível com o Arduino
+ UNO, devido a facilidade de operação e aquisição e grande quantidade e
+ variedade de fontes de consulta.
  O Arduino UNO é uma plataforma de prototipagem eletrônica de hardware livre
  e de placa única criada na Itália, projetada com o microcontrolador ATmega328P
  com suporte de entrada/saída embutido, uma linguagem de programação típica
- com um ambiente de desenvolvimento, podendo ser também programado em C/C++.
+ com um ambiente de desenvolvimento, podendo ser também programado em C/C++,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "arduino"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -1955,7 +2107,8 @@ Funduino UNO
 \end_layout
 
 \begin_layout Plain Layout
-fonte [http://www.arduino123.com/a/peijian/arduinokaifaban/2013/0729/26370.html]
+\align center
+Fonte: http://www.arduino123.com/a/peijian/arduinokaifaban/2013/0729/26370.html
 \end_layout
 
 \end_inset
@@ -1964,10 +2117,21 @@ fonte [http://www.arduino123.com/a/peijian/arduinokaifaban/2013/0729/26370.html]
 \end_layout
 
 \begin_layout Standard
-O Funduino UNO nao possui inteface para o barramento CAN, assim foi necessário
- a compra de um adaptador CAN também.
- O adaptador escolhido para o Funduino UNO foi o CAN BUS shield da APTO,
- mostrado na figura 
+O 
+\shape italic
+Funduino UNO
+\shape default
+ não possui interface para o barramento CAN, assim foi necessário a compra
+ de um adaptador CAN também.
+ O adaptador escolhido para o 
+\shape italic
+Funduino UNO
+\shape default
+ foi o 
+\shape italic
+CAN BUS shield
+\shape default
+ da APTO, mostrado na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Apto-CAN-Bus"
@@ -2016,7 +2180,8 @@ name "fig:Apto-CAN-Bus"
 \end_layout
 
 \begin_layout Plain Layout
-fonte: http://www.amazon.de/Apto%C2%AE-CAN-BUS-Shield-f%C3%BCr-Arduino-Schwarz/dp/
+\align center
+Fonte: http://www.amazon.de/Apto%C2%AE-CAN-BUS-Shield-f%C3%BCr-Arduino-Schwarz/dp/
 B00XQ4HGH2
 \end_layout
 
@@ -2026,10 +2191,17 @@ B00XQ4HGH2
 \end_layout
 
 \begin_layout Standard
-O CAN BUS shield da Apto implementa o transceptor MCP 2551 e o controlador
- CAN MCP 2515, promovendo interface para o CAN versao 2.0 B velocidade alta,
- com taxa de transmmissao de até 1Mb/s, interface SPI de até 10 MHz e dois
- buffers para recepcao de mensagens.
+O 
+\shape italic
+CAN BUS shield
+\shape default
+ da Apto implementa o transceptor MCP 2551 e o controlador CAN MCP 2515,
+ promovendo interface para o CAN versão 2.0 B velocidade alta, com taxa de
+ transmissão de até 1Mb/s, interface SPI de até 10 MHz e dois 
+\shape italic
+buffers
+\shape default
+ para recepção de mensagens.
 \end_layout
 
 \begin_layout Subsection
@@ -2037,10 +2209,17 @@ Arquitetura de Hardware
 \end_layout
 
 \begin_layout Standard
-A arquitetura de hardware é composta por uma rede ethernet TCP/IP entre
- o protótipo e a unidadade de monitoramento de barramento CAN, e uma rede
- CAN entre o protótipo e uma ECU formada pelo Funduino UNO e a shield CAN
- conectados à sensores e atuadores, criada para aplicacao de testes e valiacao
+A arquitetura de hardware é composta por uma rede Ethernet TCP/IP entre
+ o protótipo e a unidade de monitoramento de barramento CAN, e uma rede
+ CAN entre o protótipo e uma ECU formada pelo 
+\shape italic
+Funduino UNO
+\shape default
+ e a 
+\shape italic
+shield CAN
+\shape default
+ conectados à sensores e atuadores, criada para aplicação de testes e validação
  do sistema desenvolvido, como na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2053,8 +2232,11 @@ reference "fig:Arquitetura-de-Hardware"
 
 \begin_layout Standard
 A rede CAN montada serve como uma rede modelo, aonde novas ECUs podem ser
- adicionadas, como o CLP DeviceNet do laboratório de automacao industrial
- da EST.
+ adicionadas, como o CLP 
+\shape italic
+DeviceNet
+\shape default
+ do laboratório de automação industrial da EST.
 \end_layout
 
 \begin_layout Standard
@@ -2091,7 +2273,7 @@ name "fig:Arquitetura-de-Hardware"
 \align center
 \begin_inset Graphics
 	filename arquitetura de hardware.jpg
-	scale 65
+	scale 40
 
 \end_inset
 
@@ -2099,7 +2281,8 @@ name "fig:Arquitetura-de-Hardware"
 \end_layout
 
 \begin_layout Plain Layout
-fonte: autora
+\align center
+Fonte: Autora
 \end_layout
 
 \begin_layout Plain Layout
@@ -2120,60 +2303,71 @@ A arquitetura de software é subdividida em 4 módulos:
 \end_layout
 
 \begin_layout Itemize
-O módulo 
-\begin_inset Quotes eld
-\end_inset
-
-Monitoramento CAN BUS
-\begin_inset Quotes erd
-\end_inset
-
-, um módulo cliente TCP/IP em C#, responsável por receber e transmitir dados
- do/para o módulo socketcand;
-\end_layout
-
-\begin_layout Itemize
-O módulo 
-\begin_inset Quotes eld
-\end_inset
-
+O módulo Monitoramento CAN BUS, um módulo cliente TCP/IP em C#, responsável
+ por receber e transmitir dados do/para o módulo 
+\shape italic
 Socketcand
-\begin_inset Quotes erd
-\end_inset
-
- em C que funciona como uma gateway entre os protocolos TCP/IP e CAN;
+\shape default
+*, com interface gráfica por meio da qual o usuário pode interagir com o
+ barramento CAN;
 \end_layout
 
 \begin_layout Itemize
 O módulo 
-\begin_inset Quotes eld
+\shape italic
+Socketcand*
+\shape default
+ em C que funciona como uma 
+\shape italic
+gateway
+\shape default
+ entre os protocolos TCP/IP e CAN, baseado no 
+\shape italic
+open source Socketcand
+\shape default
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "socketcand"
+
 \end_inset
 
-Teste
-\begin_inset Quotes erd
-\end_inset
-
- em C que interpreta as mensagens CAN recebidas pelo protótipo da ECU do
- Funduino UNO e que também é responsável pelo envio de mensagens CAN do
- protótipo para a ECU do Funduino UNO de acordo com a lógica da rede CAN
- criada;
+;
 \end_layout
 
 \begin_layout Itemize
-O módulo 
-\begin_inset Quotes eld
+O módulo Teste em C que interpreta as mensagens CAN recebidas pelo protótipo
+ da ECU do 
+\shape italic
+Funduino UNO
+\shape default
+ e que também é responsável pelo envio de mensagens CAN do protótipo para
+ a ECU do 
+\shape italic
+Funduino UNO
+\shape default
+ de acordo com a lógica da rede CAN criada, baseado na biblioteca, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "seeed"
+
 \end_inset
 
-TesteStatus
-\begin_inset Quotes erd
-\end_inset
+;
+\end_layout
 
- em C++ que faz a leitura dos sinais recebidos dos sensores e escrita dos
- sinais enviados aos atuadores pelo Funduino UNO à ele conectados, de acordo
- com a lógica da rede CAN criada, além de codificar esses dados em menagens
- CAN e transmití-los ao protótipo.
- Esse módulo também é responsável pela recepcao e tratamento das mensagens
- CAN que chegam na ECU do Funduino UNO.
+\begin_layout Itemize
+O módulo TesteStatus em C++ que faz a leitura dos sinais recebidos dos sensores
+ e escrita dos sinais enviados aos atuadores pelo 
+\shape italic
+Funduino UNO
+\shape default
+ à ele conectados, de acordo com a lógica da rede CAN criada, além de codificar
+ esses dados em menagens CAN e transmiti-los ao protótipo.
+ Esse módulo também é responsável pela recepção e tratamento das mensagens
+ CAN que chegam na ECU do 
+\shape italic
+Funduino UNO.
 \end_layout
 
 \begin_layout Standard
@@ -2184,7 +2378,7 @@ reference "fig:Arquitetura-de-Software"
 
 \end_inset
 
- mostra a arquitetura de software do sistema, assim como a comunicacao entre
+ mostra a arquitetura de software do sistema, assim como a comunicação entre
  desses módulos é realizada dentro da arquitetura de hardware.
 \end_layout
 
@@ -2222,7 +2416,7 @@ name "fig:Arquitetura-de-Software"
 \align center
 \begin_inset Graphics
 	filename arquitetura de software.jpg
-	scale 60
+	scale 50
 
 \end_inset
 
@@ -2230,7 +2424,8 @@ name "fig:Arquitetura-de-Software"
 \end_layout
 
 \begin_layout Plain Layout
-fonte: autora
+\align center
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -2240,52 +2435,50 @@ fonte: autora
 
 \begin_layout Standard
 Os módulos 
-\begin_inset Quotes eld
+\shape italic
+Socketcand*
+\shape default
+ e Teste são baseados na 
+\shape italic
+SocketCAN
+\shape default
+, que é um conjunto 
+\shape italic
+open source
+\shape default
+ de 
+\shape italic
+drivers
+\shape default
+ CAN e 
+\shape italic
+stack
+\shape default
+ de rede CAN contribuído pelo grupo de pesquisa 
+\shape italic
+Wolkswagen
+\shape default
+ ao 
+\shape italic
+kernel
+\shape default
+ do sistema operacional 
+\shape italic
+Linux
+\shape default
+, formalmente conhecido como LLCF (
+\shape italic
+Low Level CAN Framework
+\shape default
+), 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Elinux"
+
 \end_inset
 
-Socketcand
-\begin_inset Quotes erd
-\end_inset
-
- e 
-\begin_inset Quotes eld
-\end_inset
-
-Teste
-\begin_inset Quotes erd
-\end_inset
-
- sao baseados na SocketCAN, que é um conjunto open source de dirvers CAN
- e stack de rede CAN contribuído pelo grupo de pesquisa Wolkswagen ao kernel
- do sistema operacional Linux, formalmente conhecido como LLCF (Low Level
- CAN Framework).
+.
  
-\end_layout
-
-\begin_layout Standard
-Tradicionalmente CAN drivers para Linux sao baseados no modelo de dispositivos
- de caracteres, isto é envia/recebe um fluxo de caracteres (bytes, octetos),
- sem considerar qualquer estrutura de blocos, não sendo endereçável e não
- dispondo de qualquer operação de posicionamentosomente, assim permitindo
- normalmente somente o envio e recebimento de dados direto do controlador
- CAN e o acesso do dispositivo apenas por um processo de cada vez.
- Além disso, cada um desses drivers apresentam uma interface diferente para
- a aplicacao, dificultando a portabilidade.
- O conceito de SocketCAN por outro lado utiliza o modelo de dispositivos
- de rede, o que permite que multiplas aplicacoes acessem um dispositivo
- CAN simultaneamente.
- Assim, uma unica aplicacao é capaz de acessar multiplas redes CAN em paralelo.
-\end_layout
-
-\begin_layout Standard
-A SocketCAN estende o conceito das Berkeley Socket APIs no Linux, introduzindo
- uma nova família de protocolos, o PF_CAN, que coexiste com outras famílias
- de protocolo como o PF_INET para o protocolo de internet.
- Assim a comunicacao com o barramento CAN é feita analogamente ao uso do
- protocolo de internet via sockets.
- Os componentes fundamentais da socketCAN sao os drivers dos dispositivos
- de rede para diferentes controladores CAN e a implementacao da familia
- de protocolos CAN (CAN stack).
 \end_layout
 
 \begin_layout Standard
@@ -2310,12 +2503,1319 @@ https://pt.wikiversity.org/wiki/Introdu%C3%A7%C3%A3o_aos_Sistemas_Operacionais/G
 
 \end_layout
 
+\begin_layout Standard
+Tradicionalmente CAN 
+\shape italic
+drivers
+\shape default
+ para 
+\shape italic
+Linux
+\shape default
+ são baseados no modelo de dispositivos de caracteres, isto é envia/recebe
+ um fluxo de caracteres (bytes, octetos), sem considerar qualquer estrutura
+ de blocos, não sendo endereçável e não dispondo de qualquer operação de
+ posicionamento somente, assim permitindo normalmente somente o envio e
+ recebimento de dados direto do controlador CAN e o acesso do dispositivo
+ apenas por um processo de cada vez.
+ Além disso, cada um desses 
+\shape italic
+drivers
+\shape default
+ apresentam uma interface diferente para a aplicação, dificultando a portabilida
+de.
+ O conceito de 
+\shape italic
+SocketCAN
+\shape default
+ por outro lado utiliza o modelo de dispositivos de rede, o que permite
+ que múltiplas aplicações acessem um dispositivo CAN simultaneamente.
+ Assim, uma única aplicação é capaz de acessar múltiplas redes CAN em paralelo,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SocketCAN"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A 
+\shape italic
+SocketCAN
+\shape default
+ estende o conceito das 
+\shape italic
+Berkeley Socket APIs
+\shape default
+ no 
+\shape italic
+Linux
+\shape default
+, introduzindo uma nova família de protocolos, o PF_CAN, que coexiste com
+ outras famílias de protocolo como o PF_INET para o protocolo de internet.
+ Assim a comunicação com o barramento CAN é feita analogamente ao uso do
+ protocolo de internet via 
+\shape italic
+sockets
+\shape default
+.
+ Os componentes fundamentais da 
+\shape italic
+SocketCAN
+\shape default
+ são os 
+\shape italic
+drivers
+\shape default
+ dos dispositivos de rede para diferentes controladores CAN e a implementação
+ da família de protocolos CAN (CAN stack).
+\end_layout
+
+\begin_layout Standard
+Um 
+\shape italic
+driver
+\shape default
+ de dispositivo para hardware de controlador CAN se registra com a camada
+ de rede do 
+\shape italic
+Linux
+\shape default
+ como um dispositivo de rede, de forma que frames CAN do controlador possam
+ ser passadas para a camada de rede e para o 
+\shape italic
+stack
+\shape default
+ CAN e vice-versa.
+ Assim, o módulo de protocolo da família CAN provê uma API para os módulos
+ de protocolo de transporte para se registrar, de maneira que qualquer protocolo
+s de transporte podem ser carregados e descarregados dinamicamente.
+ Uma aplicação desejando se comunicar utilizando um protocolo específico,
+ por exemplo o ISO-TP, precisa somente selecionar esse protocolo quando
+ abrindo a 
+\shape italic
+socket
+\shape default
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "cantxt"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A 
+\shape italic
+SocketCAN
+\shape default
+ implementa dois protocolos CAN, o 
+\shape italic
+raw
+\shape default
+ e o 
+\shape italic
+broadcast manager
+\shape default
+ (BCM).
+\end_layout
+
+\begin_layout Standard
+Após a conexão da 
+\shape italic
+socket raw
+\shape default
+, algumas configurações iniciais são preestabelecidas (
+\shape italic
+defaults
+\shape default
+), podendo ser previamente à conexão serem reconfiguradas:
+\end_layout
+
+\begin_layout Itemize
+Os filtros são configurados para apenas um filtro recebendo todas as 
+\shape italic
+frames
+\shape default
+ de dados, com exceção das 
+\shape italic
+frames
+\shape default
+ de erro e das 
+\shape italic
+frames
+\shape default
+ enviadas pela mesma ECU;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+4.1.4 RAW socket option CAN_RAW_RECV_OWN_MSGS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+O 
+\shape italic
+loopback
+\shape default
+ das 
+\shape italic
+frames
+\shape default
+ enviadas é habilitado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+open a socket
+\end_layout
+
+\begin_layout Plain Layout
+bind the socket
+\end_layout
+
+\begin_layout Plain Layout
+read(2) and write(2) from/to the socket
+\end_layout
+
+\begin_layout Plain Layout
+send(2), sendto(2), sendmsg(2) and the recv*
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O protocolo de gerenciamento de transmissão 
+\shape italic
+broadcast
+\shape default
+ (BCM) fornece uma interface de configuração baseada em comandos para filtrar
+ e e enviar mensagens CAN no 
+\shape italic
+kernel
+\shape default
+ do 
+\shape italic
+Linux
+\shape default
+.
+ Filtros podem ser usados para mostrar mensagens frequentes, detectar eventos,
+ como mudança no conteúdo e tamanho das mensagens.
+ Periódicas tarefas de transmissão de 
+\shape italic
+frames
+\shape default
+ CAN ou uma sequência de 
+\shape italic
+frames
+\shape default
+ podem ser criadas e modificadas no tempo de execução (
+\shape italic
+runtime
+\shape default
+); ambos os conteúdos de mensagem e o intervalo de transmissão podem ser
+ alterados.
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Socketcand*
+\shape default
+ faz uso do protocolo ISO-TP, que é a ISO 15765-2, padrão internacional
+ para o envio de pacotes de dados CAN, cobrindo as camadas de rede e transporte
+ do Modelo OSI.
+ Um canal ISO-TP consiste de dois identificadores CAN exclusivos, um para
+ transmitir dados e outro para receber dados.
+\end_layout
+
+\begin_layout Standard
+A 
+\shape italic
+Socketcand*
+\shape default
+ funciona de acordo com a máquina de estados da figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Máquina-de-estados"
+
+\end_inset
+
+, possuindo cinco estados:
+\end_layout
+
+\begin_layout Itemize
+Desconectado: o cliente não está conectado ao protótipo pela 
+\shape italic
+socketcand
+\shape default
+*;
+\end_layout
+
+\begin_layout Itemize
+Conectado: o cliente está conectado ao protótipo pela 
+\shape italic
+Socketcand
+\shape default
+*;
+\end_layout
+
+\begin_layout Itemize
+BCM: apresenta as funcionalidades do protocolo BCM da 
+\shape italic
+SocketCAN
+\shape default
+;
+\end_layout
+
+\begin_layout Itemize
+RAW: apresenta as funcionalidades do protocolo RAW da 
+\shape italic
+SocketCAN
+\shape default
+;
+\end_layout
+
+\begin_layout Itemize
+ISO-TP: permite a configuração do canal ISO-TP.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+http://www.sparxsystems.com/resources/uml2_tutorial/uml2_statediagram.html
+\end_layout
+
+\begin_layout Plain Layout
+http://stackoverflow.com/questions/24343629/if-condition-in-uml-state-machine-dia
+gram
+\end_layout
+
+\begin_layout Plain Layout
+https://social.msdn.microsoft.com/Forums/en-US/937bef3b-58cf-4280-b276-07b3fd83a526
+/while-loop-in-state-machine?forum=sharepointcustomizationlegacy
+\end_layout
+
+\begin_layout Plain Layout
+https://en.wikipedia.org/wiki/ISO_15765-2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Máquina de estados 
+\shape italic
+Socketcand
+\shape default
+*
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Máquina-de-estados"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename maquina de estados socketcand.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
-Implementacao
+Implementação 
 \end_layout
 
 \begin_layout Subsection
-Montagem da Rede CAN
+Ferramentas de Conexão Remota
+\end_layout
+
+\begin_layout Standard
+O desenvolvimentos dos softwares embarcados foram desenvolvidos por meio
+ de conexão remota entre o 
+\shape italic
+Beaglebone Black
+\shape default
+ e um computador pessoal, utilizando-se as ferramentas 
+\shape italic
+PuTTy
+\shape default
+, 
+\shape italic
+WinSCP
+\shape default
+, 
+\shape italic
+TightVNC
+\shape default
+ 
+\shape italic
+Viewer
+\shape default
+ e 
+\shape italic
+Eclipse
+\shape default
+ 
+\shape italic
+Luna
+\shape default
+.
+ O IP do 
+\shape italic
+beaglebone black
+\shape default
+ por 
+\shape italic
+default
+\shape default
+ é o 192.168.7.2.
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+PuTTy
+\shape default
+ é um cliente SSH e 
+\shape italic
+telnet
+\shape default
+, desenvolvido por Simon Tathan para a plataforma 
+\shape italic
+Windows
+\shape default
+.
+ Ele é 
+\shape italic
+open source
+\shape default
+ software, disponível com código fonte e desenvolvido por um grupo de voluntário
+s, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PuTTY"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PuTTy Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Putty_gui.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PuTTy Terminal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename putty_console.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+WinSCP
+\shape default
+ é uma aplicação de software livre.
+ Ele é um cliente SFTP gráfico para 
+\shape italic
+Windows
+\shape default
+ que utiliza SSH.
+ Sua principal função é facilitar a transferência segura de arquivos entre
+ dois sistemas de computador, um local e remoto que oferece serviços de
+ SSH, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WinSCP"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+WinSCP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename WinSCP.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na fase de implementação dos softwares, os módulos desenvolvidos eram escritos
+ em bloco de texto (
+\shape italic
+Notepad
+\shape default
+) no computador local, transferidos para o 
+\shape italic
+Beaglebone Black
+\shape default
+ via 
+\shape italic
+WinSCP
+\shape default
+, compilados com o GCC (
+\shape italic
+GNU compiler collection
+\shape default
+) e executados via terminal 
+\shape italic
+PuTTy 
+\shape default
+do 
+\shape italic
+Linux
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+http://www.computerhope.com/unix/ucc.htm
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O 
+\shape italic
+TightVNC Viewer
+\shape default
+ é um software de área de trabalho remota, o que permite o ambiente de um
+ computador ser executado remotamente em um servidor e exibido em um dispositivo
+ cliente separado, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TightVNC"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TightVNC Viewer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename TightVNC Viewer.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O 
+\shape italic
+Eclipse
+\shape default
+ é uma plataforma 
+\shape italic
+cross-compiler
+\shape default
+, sendo possível criar executáveis para uma plataforma diferente da plataforma
+ em que o compilador é executável.
+ Assim ele foi utilizado para desenvolvimento e debug dos módulos de software
+ e posterior transferência dos arquivos pela conexão remota SSH para o 
+\shape italic
+Beaglebone Black
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+O 
+\shape italic
+Eclipse
+\shape default
+ 
+\shape italic
+Luna
+\shape default
+ é a versão de junho de 2014 da plataforma 
+\shape italic
+Eclipse
+\shape default
+, sendo sucedida pela
+\shape italic
+ Mars
+\shape default
+ de junho de 2015.
+ A conexão e implementação remota utilizando-se o 
+\shape italic
+Eclipse
+\shape default
+ 
+\shape italic
+Luna
+\shape default
+ foi feita como explicado no tutorial em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "eclipseremote"
+
+\end_inset
+
+, utilizando-se o compilador gcc-linaro-arm-linux-gnueabihf-4.9-2014.09_win32.zip,
+ o 
+\begin_inset Quotes eld
+\end_inset
+
+make.exe
+\begin_inset Quotes erd
+\end_inset
+
+ e as bibliotecas "libiconv2.dll" e "libintl3.dll" contidas no make-3.81-bin.zip
+ e make-3.81-dep.zip respectivamente do 
+\shape italic
+GnuWin
+\shape default
+ disponíveis em 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gnuwin"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Conexão Remota SSH Usando 
+\shape italic
+Eclipse
+\shape default
+ 
+\shape italic
+Luna
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Eclipse Luna SSH.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Configuração da Rede Ethernet TCP/IP 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+http://www.mathworks.com/help/supportpkg/beagleboard/ug/getting-the-beagleboard-ip
+-address.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+http://www.ofitselfso.com/Beagle/NetworkingSetupConnectingTheBeagleboneBlack.php
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A conexão Ethernet TCP/IP entre o 
+\shape italic
+Beaglebone Black
+\shape default
+ e o computador pessoal pode ser feita pela porta usb0 que encapsula uma
+ conexão Ethernet, com as seguintes configurações por 
+\shape italic
+default
+\shape default
+:
+\end_layout
+
+\begin_layout Itemize
+IP estático 192.168.7.2 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+netmask
+\shape default
+ 255.255.255.0 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+network
+\shape default
+ 192.168.7.0 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+gateway
+\shape default
+ 192.168.7.1 
+\end_layout
+
+\begin_layout Standard
+Tal configuração pode ser visualizada com o comando 
+\shape italic
+cat /etc/network/interfaces
+\shape default
+ por meio de um terminal remoto.
+ Dessa forma, quando acessamos o 
+\shape italic
+Beaglebone Black
+\shape default
+ por uma conexão remota SSH, o computador cliente recebe o IP 192.168.7.1.
+ 
+\end_layout
+
+\begin_layout Standard
+Outra forma de conexão Ethernet entre o 
+\shape italic
+Beaglebone black
+\shape default
+ e um computador cliente é por meio de um cabo Ethernet, configurando-se
+ o IP do computador local como estático e como interface aonde um servidor
+ DHCP irá ouvir, para se atribuir um IP pré-definido ao 
+\shape italic
+Beaglebone black
+\shape default
+.
+ Foram escolhidos arbitrariamente os IP 192.168.8.1 para o computador local
+ e o IP 192.168.8.200 para o 
+\shape italic
+Beaglebone black
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuração do IPv4 do computador local
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename IPV4.jpg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O 
+\shape italic
+Open DHCP Server
+\shape default
+ foi utilizado como servidor DHCP.
+ Ele é um 
+\shape italic
+open source Freeware
+\shape default
+ para 
+\shape italic
+Windows
+\shape default
+ e 
+\shape italic
+Linux
+\shape default
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DHCP"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Servidor DHCP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Open DHCP server.jpg
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Configuração da Rede CAN
+\end_layout
+
+\begin_layout Standard
+A 
+\shape italic
+SocketCAN
+\shape default
+ apresenta suporte para 
+\shape italic
+driver
+\shape default
+ CAN virtual, que pode ser manipulado no 
+\shape italic
+Linux
+\shape default
+ pelos comandos descritos abaixo em um terminal, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "cantxt"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+modprobe vcan, para poder acessar a interface virtual CAN;
+\end_layout
+
+\begin_layout Itemize
+ip link add type vcan, para criar uma interface CAN virtual de rede;
+\end_layout
+
+\begin_layout Itemize
+ip link add dev vcan0 type vcan, para criar uma interface CAN virtual de
+ rede com o nome 'vcan0';
+\end_layout
+
+\begin_layout Itemize
+ip link set up vcan0, para ativar a interface 
+\begin_inset Quotes eld
+\end_inset
+
+vcan0
+\begin_inset Quotes erd
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+ip link del vcan0, para remover a interface 
+\begin_inset Quotes eld
+\end_inset
+
+vcan0
+\begin_inset Quotes erd
+\end_inset
+
+ opcao 1;
+\end_layout
+
+\begin_layout Itemize
+ip link set down vcan0, para parar a interface 
+\begin_inset Quotes eld
+\end_inset
+
+vcan0
+\begin_inset Quotes erd
+\end_inset
+
+ opcao 2.
+\end_layout
+
+\begin_layout Standard
+Exemplo de sequência de comandos para a criação e carregamento do CAN virtual:
+\end_layout
+
+\begin_layout Enumerate
+modprobe can;
+\end_layout
+
+\begin_layout Enumerate
+modprobe can_raw;
+\end_layout
+
+\begin_layout Enumerate
+modprobe vcan;
+\end_layout
+
+\begin_layout Enumerate
+sudo ip link add dev vcan0 type vcan;
+\end_layout
+
+\begin_layout Enumerate
+sudo ip link set up vcan0;
+\end_layout
+
+\begin_layout Enumerate
+ip link show vcan0.
+\end_layout
+
+\begin_layout Standard
+Para acessar o CAN, o 
+\shape italic
+Beablegone Black
+\shape default
+ precisa estar necessariamente conectado com um adaptador CAN, neste caso
+ a 
+\shape italic
+Serial CAN Cape
+\shape default
+, e também precisa de uma fonte 5VDC de alimentação externa.
+\end_layout
+
+\begin_layout Standard
+O dispositivo CAN deve ser configurado via interface 
+\shape italic
+netlink
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+Exemplo de comando para criação e ativação de uma rede CAN com nome 'can0'
+ e taxa de transmissão de dados igual a 500kb/s:
+\end_layout
+
+\begin_layout Itemize
+ip link set can0 up type can bitrate 500000.
+\end_layout
+
+\begin_layout Standard
+Para começar ou terminar uma rede CAN o comando abaixo é utilizado:
+\end_layout
+
+\begin_layout Itemize
+ip link set canX up/down, com 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+up
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+ para começar e o 
+\begin_inset Quotes eld
+\end_inset
+
+
+\shape italic
+down
+\shape default
+
+\begin_inset Quotes erd
+\end_inset
+
+ para terminar.
+ 
+\end_layout
+
+\begin_layout Standard
+Ainda um pacote de ferramentas 
+\shape italic
+open software
+\shape default
+, o 
+\shape italic
+Can-utils
+\shape default
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "can-utils"
+
+\end_inset
+
+, pode ser utilizado, oferecendo alguns utilitários do espaço do usuário
+ para o subsistema 
+\shape italic
+Linux
+\shape default
+ 
+\shape italic
+SocketCAN
+\shape default
+, como geração de 
+\shape italic
+frames
+\shape default
+ e monitoramento no terminal.
+\end_layout
+
+\begin_layout Standard
+Exemplos de alguns comandos do 
+\shape italic
+Can-utils
+\shape default
+:
+\end_layout
+
+\begin_layout Itemize
+cangen can0/vcan0, para gerar 
+\shape italic
+frames
+\shape default
+ aleatoriamente na rede CAN ou com o CAN virtual;
+\end_layout
+
+\begin_layout Itemize
+candump can0/vcan0; para monitorar a rede CAN ou o CAN virtual com o terminal.
+\end_layout
+
+\begin_layout Subsection
+Montagem da Rede CAN e TCP/IP
+\end_layout
+
+\begin_layout Standard
+Para validação e testes do sistema uma rede CAN entre o protótipo e a ECU
+ do 
+\shape italic
+Funduino UNO
+\shape default
+ foi criada.
+ Os atuadores e sensores da rede foram ligados ao 
+\shape italic
+Funduino UNO
+\shape default
+ de acordo com as tabelas 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Atuadores-Rede-CAN"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Sensores-Rede-CAN"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2330,6 +3830,13 @@ status open
 
 \begin_layout Plain Layout
 Atuadores Rede CAN
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Atuadores-Rede-CAN"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2340,8 +3847,9 @@ Atuadores Rede CAN
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="5">
+<lyxtabular version="3" rows="7" columns="6">
 <features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2379,7 +3887,18 @@ Estado
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\shape italic
 Funduino
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sigla
 \end_layout
 
 \end_inset
@@ -2440,13 +3959,22 @@ Portas
 
 \end_inset
 </cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-botao
+Botão
 \end_layout
 
 \end_inset
@@ -2474,6 +4002,15 @@ botao
 
 \begin_layout Plain Layout
 4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bt
 \end_layout
 
 \end_inset
@@ -2535,6 +4072,15 @@ Led azul
 \begin_inset Text
 
 \begin_layout Plain Layout
+LAzul
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename ledblau.jpg
 	scale 30
@@ -2580,6 +4126,15 @@ Led vermelho
 
 \begin_layout Plain Layout
 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LVerm
 \end_layout
 
 \end_inset
@@ -2641,6 +4196,15 @@ Led verde
 \begin_inset Text
 
 \begin_layout Plain Layout
+LVerd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename ledgrun.jpg
 	scale 30
@@ -2694,6 +4258,15 @@ Buzina
 \begin_inset Text
 
 \begin_layout Plain Layout
+Bz
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename buzina.jpg
 	scale 30
@@ -2714,7 +4287,8 @@ Buzina
 \end_layout
 
 \begin_layout Plain Layout
-fonte: autora
+\align center
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -2734,6 +4308,13 @@ status open
 
 \begin_layout Plain Layout
 Sensores Rede CAN
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Sensores-Rede-CAN"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2744,8 +4325,9 @@ Sensores Rede CAN
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="4">
+<lyxtabular version="3" rows="5" columns="5">
 <features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -2773,7 +4355,18 @@ Grandeza
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\shape italic
 Funduino
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sigla
 \end_layout
 
 \end_inset
@@ -2816,6 +4409,15 @@ Portas
 
 \end_inset
 </cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 <cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -2831,7 +4433,7 @@ Portas
 \begin_inset Text
 
 \begin_layout Plain Layout
-sensor ultrassônico HC-SR04
+Sensor ultrassônico HC-SR04
 \end_layout
 
 \end_inset
@@ -2850,6 +4452,15 @@ distância
 
 \begin_layout Plain Layout
 6, 7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+d
 \end_layout
 
 \end_inset
@@ -2877,7 +4488,7 @@ distância
 \begin_inset Text
 
 \begin_layout Plain Layout
-fotocélula 1K Ohm 
+Fotocélula 1K Ohm 
 \end_layout
 
 \end_inset
@@ -2896,6 +4507,15 @@ luminosidade
 
 \begin_layout Plain Layout
 A2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+l
 \end_layout
 
 \end_inset
@@ -2950,6 +4570,15 @@ A1
 \begin_inset Text
 
 \begin_layout Plain Layout
+t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename tmp36.jpg
 	scale 25
@@ -2972,12 +4601,54 @@ A1
 \end_layout
 
 \begin_layout Plain Layout
-fonte: autora
+\align center
+Fonte: Autora
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Em contraste com a rede Ethernet TCP / IP, a rede CAN possui um meio físico
+ que funciona em regime 
+\shape italic
+broadcast
+\shape default
+, não apresentando nenhum endereçamento na camada MAC.
+ O identificador CAN é utilizado para arbitração no barramento CAN.
+ Assim quando se projeta uma rede CAN os identificadores devem ser mapeados
+ para serem mandados para uma específica ECU, dessa forma o identificador
+ pode ser visto como um tipo de fonte de endereçamento.
+\end_layout
+
+\begin_layout Standard
+Para a rede CAN construída foram definidas duas mensagens CAN, cada uma
+ com 4 bytes de dados, conforme a tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Mensagens-CAN"
+
+\end_inset
+
+.
+ O 
+\shape italic
+Funduino UNO
+\shape default
+ adquire os sinais dos sensores e transporta essa informação na mensagem
+ de identificador 0x01, por sua vez o protótipo recebe essa mensagem e responde
+ à ECU do 
+\shape italic
+Funduino UNO
+\shape default
+ com a mensagens de identificador 0x02, passando novos parâmetros para o
+ 
+\shape italic
+Funduino UNO
+\shape default
+.
 \end_layout
 
 \begin_layout Standard
@@ -2990,6 +4661,704 @@ status open
 \begin_layout Plain Layout
 
 \end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Mensagens CAN
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Mensagens-CAN"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="7">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transmissor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Id
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DLC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 Byte
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 Byte
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ECU 
+\shape italic
+Funduino
+\shape default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x01
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+d
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ 
+\begin_inset Quotes eld
+\end_inset
+
+t
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+l
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Bt
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\shape italic
+Uno
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Protótipo
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x02
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+se 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+se 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+se 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+se 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+d
+\begin_inset Quotes erd
+\end_inset
+
+ > 0x38,
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+t
+\begin_inset Quotes erd
+\end_inset
+
+ > 0x2A,
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+l
+\begin_inset Quotes erd
+\end_inset
+
+ > 0xD5,
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Bt
+\begin_inset Quotes erd
+\end_inset
+
+ = 1,
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Bz
+\begin_inset Quotes erd
+\end_inset
+
+ = 1,
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+LVerm
+\begin_inset Quotes erd
+\end_inset
+
+ = 1,
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+LVerd
+\begin_inset Quotes erd
+\end_inset
+
+ = 1,
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+LAzul
+\begin_inset Quotes erd
+\end_inset
+
+ = 1,
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+senão 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+senão 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+senão
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+senão
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+Bz
+\begin_inset Quotes erd
+\end_inset
+
+= 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+LVerm
+\begin_inset Quotes erd
+\end_inset
+
+= 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+LVerd
+\begin_inset Quotes erd
+\end_inset
+
+= 0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+LAzul
+\begin_inset Quotes erd
+\end_inset
+
+ = 0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3799,7 +6168,206 @@ led verde = 0
 \end_layout
 
 \begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\begin_layout Plain Layout
 fonte: autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Após definição da estrutura física e lógica da rede CAN, ela foi montada
+ conforme apresentado na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rede-CAN-1"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Rede CAN
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rede-CAN-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename rede CAN montada.jpg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Configuração da 
+\shape italic
+Socketcand
+\shape default
+*
+\end_layout
+
+\begin_layout Standard
+A 
+\shape italic
+Socketcand
+\shape default
+* é inicializada no protótipo a partir do comando:
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+socketcand
+\shape default
+ [-v | --verbose] [-i interfaces | --interfaces] [-p porta | --porta] [-l
+ IP | --interface para se ouvir]
+\end_layout
+
+\begin_layout Standard
+Principais opções: 
+\end_layout
+
+\begin_layout Itemize
+-v ativa 
+\shape italic
+verbose
+\shape default
+;
+\end_layout
+
+\begin_layout Itemize
+-i lista de interfaces separada por vírgulas que a 
+\shape italic
+Socketcand
+\shape default
+* fornece acesso (por exemplo: -i can0,vcan1); 
+\end_layout
+
+\begin_layout Itemize
+-p muda a porta que o servidor 
+\shape italic
+Socketcand
+\shape default
+* está ouvindo, (
+\shape italic
+default
+\shape default
+ 29536);
+\end_layout
+
+\begin_layout Itemize
+-l escolhe a interface para a conexão da 
+\shape italic
+Socketcand
+\shape default
+*, por exemplo eth0 ou usb0; 
+\end_layout
+
+\begin_layout Itemize
+-n desativa o UDP 
+\shape italic
+broadcast
+\shape default
+ 
+\shape italic
+beacon
+\shape default
+ para a porta 42000, que fornece informações sobre todas as redes CAN conectadas
+ à 
+\shape italic
+Socketcand
+\shape default
+* (por exemplo vcan0 e can0) acessíveis pelo do servidor BCM.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Configuração da 
+\shape italic
+Socketcand
+\shape default
+*
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socketcandLogin.jpg
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+Fonte: Autora
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset

@@ -75,29 +75,70 @@
 
 \begin_layout Chapter
 REFERENCIAL TEÓRICO
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:REFERENCIAL-TEÓRICO"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 18pt
-\end_inset
-
 Neste capítulo será realizada uma breve abordagem teórica dos seguintes
- assuntos, que são necessários para o melhor desenvolvimento do presente
- trabalho: controlador PID e seus métodos de sintonia, motores de corrente
- contínua e sua modelagem, identificação de sistemas, sistemas microcontrolados
- e conhecimentos referentes a circuítos elétricos (PWM, potência e consumo
- de energia).
+ assuntos, que são necessários para o desenvolvimento do presente trabalho:
+ classificação das redes em relação a pirâmide de automação, classificação
+ das redes de computadores quanto à proximidade geográfica, classificação
+ das redes quanto à topologia, tipos de comunicação serial, modelo OSI,
+ barramento CAN, Rede DeviceNet, suíte de protocolos TCP/IP (
+\shape italic
+Transmission Control Protocol / Internet Protocol
+\shape default
+) e interfaces para programas de aplicação (APIs).
  
 \end_layout
 
 \begin_layout Section
-Classificação das Redes em relação a Pirâmide de Automação
+Classificação das Redes em Relação à Pirâmide de Automação
 \end_layout
 
 \begin_layout Standard
-A pirâmide da automação industrial é um diagrama que representa, de forma
+Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {piramideSenai}
+\end_layout
+
+\end_inset
+
+ e 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {PiramideSul}
+\end_layout
+
+\end_inset
+
+ a pirâmide da automação industrial é um diagrama que representa, de forma
  hierárquica, os diferentes níveis de controle e trabalho em automação industria
-l através de cinco níveis.
+l em cinco níveis como mostrado na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Pirâmide-da-Automação"
+
+\end_inset
+
+.
  Paralelamente aos níveis da automação, as redes podem ser classificadas
  em 
 \shape italic
@@ -108,14 +149,7 @@ e
 databus
 \shape default
 , de acordo com o volume de dados a ser transmitido, tempo de resposta e
- distancia a ser percorrida como mostrado na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Pirâmide-da-Automação"
-
-\end_inset
-
-.
+ distância a ser percorrida.
 \end_layout
 
 \begin_layout Standard
@@ -148,7 +182,7 @@ name "fig:Pirâmide-da-Automação"
 \align center
 \begin_inset Graphics
 	filename piramidedaautomacao.jpg
-	scale 80
+	scale 60
 
 \end_inset
 
@@ -157,7 +191,7 @@ name "fig:Pirâmide-da-Automação"
 
 \begin_layout Plain Layout
 \align center
-Fonte:[o próprio autor]
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -201,7 +235,7 @@ Nível
 \series bold
 de Campo:
 \series default
- É o nível das máquinas, dispositivos e componentes (chão-de-fábrica), constitui
+ É o nível das máquinas, dispositivos e componentes (chão de fábrica), constituí
 do por sensores e atuadores.
 \end_layout
 
@@ -213,8 +247,8 @@ de Controle:
 Nível onde se encontram os equipamentos que executam o controle automático
  da planta, ou seja, controladores digitais, dinâmicos e lógicos, e de algum
  tipo de supervisão associada ao processo.
- Aqui se encontram concentradores de informações sobre o Nível 1 e as Interfaces
- Homem-Máquina (IHM).
+ Aqui se encontram concentradores de informações sobre o nível de campo
+ e as Interfaces Homem-Máquina (IHM).
 \end_layout
 
 \begin_layout Description
@@ -225,9 +259,9 @@ de Supervisão:
  Permite a supervisao e controle do processo produtivo da planta.
  Constituído por banco de dados, com informação sobre índices de qualidade
  da produção, relatórios e estatísticas de processo, índices de produtividade,
- algoritmos de otimização da operação produtiva, sendo constituído por Sistemas
- de Supervisão e Aquisição de Dados (SCADA), interface homem-máquina (IHM)
- e otimizadores de processo dentro do conceito de APC (
+ algoritmos de otimização da operação produtiva, sendo constituído por sistemas
+ de Supervisão e Aquisição de Dados (SCADA), IHM e otimizadores de processo
+ dentro do conceito de APC (
 \shape italic
 Advanced Process Control 
 \shape default
@@ -278,14 +312,41 @@ Administração dos recursos da empresa.
 \end_layout
 
 \begin_layout Standard
-A Figura 
+A figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Níveis-de-redes"
 
 \end_inset
 
- ilustra os tipos de redes atuais de acordo com os tipos de controle.
+ ilustra os tipos de redes atuais de acordo com os tipos de controle segundo
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {Schneider}
+\end_layout
+
+\end_inset
+
+ e 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {Pacheco}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -315,7 +376,7 @@ name "fig:Níveis-de-redes"
 
 \begin_inset Graphics
 	filename tiposdecontrole.jpg
-	scale 60
+	scale 40
 
 \end_inset
 
@@ -324,7 +385,7 @@ name "fig:Níveis-de-redes"
 
 \begin_layout Plain Layout
 \align center
-Fonte:[o próprio autor]
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -339,7 +400,7 @@ Sensorbus
 \shape default
 : comunica com sensores analógicos e discretos e atuadores.
  As mensagens de dados possuem tamanho de alguns bits, a frequência de comunicaç
-ão dura de dezenas de milisegundos sobre dezenas de metros com concepção
+ão dura de dezenas de milissegundos sobre dezenas de metros com concepção
  determinística.
 \end_layout
 
@@ -348,10 +409,13 @@ Sensorbus
 \shape italic
 Devicebus
 \shape default
-: faz a comunicacao com periféricos controlados.
- As mensagens de dados são de bytes ou words, a frequência de comunicação
- tem uma duração de dezenas de milisegundos sobre centenas de metros com
- concepção determinística.
+: faz a comunicação com periféricos controlados.
+ As mensagens de dados são de bytes ou 
+\shape italic
+words
+\shape default
+, a frequência de comunicação tem uma duração de dezenas de milissegundos
+ sobre centenas de metros com concepção determinística.
 \end_layout
 
 \begin_layout Description
@@ -360,8 +424,12 @@ Devicebus
 Fieldbus
 \shape default
 : faz a integração entre unidades inteligentes.
- As Mensagens de dados de sao de words ou blocos, a frequência de comunicação
- tem uma duração de centenas de milisegundos sobre centenas de metros.
+ As Mensagens de dados de são de 
+\shape italic
+words
+\shape default
+ ou blocos, a frequência de comunicação tem uma duração de centenas de milissegu
+ndos sobre centenas de metros.
 \end_layout
 
 \begin_layout Description
@@ -370,12 +438,12 @@ Fieldbus
 Databus
 \shape default
 : efetua transferência maciça de dados entre equipamentos.
- As mensagens de dados sao de blocos, a frequência de comunicação tem uma
+ As mensagens de dados são de blocos, a frequência de comunicação tem uma
  duração de segundos ou minutos sobre grandes distâncias (LAN / WAN / Internet).
 \end_layout
 
 \begin_layout Section
-Classificação das redes de computadores quanto à proximidade geográfica
+Classificação das Redes de Computadores Quanto à Proximidade Geográfica
 \end_layout
 
 \begin_layout Standard
@@ -398,7 +466,7 @@ metropolitan area network
 \shape italic
 wide area network
 \shape default
-) até chegar à rede das redes, a internet, de acordo com a Tabela 
+) até chegar à rede das redes, a internet, de acordo com a tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Classificacao-das-redes"
@@ -714,7 +782,14 @@ Internet
 
 \begin_layout Plain Layout
 \align center
-Fonte: Tanenbaum
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TANENBAUM"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -723,7 +798,7 @@ Fonte: Tanenbaum
 \end_layout
 
 \begin_layout Section
-Classificação das redes quanto à topologia
+Classificação das Redes Quanto à Topologia
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Classificação-das-redes"
@@ -737,7 +812,14 @@ name "sec:Classificação-das-redes"
 Topologia da rede é a definição da maneira como as diferentes estações serão
  interligadas.
  Estão relacionadas à forma como o canal de comunicação será alocado, ou
- seja, através de canais ponto-a-ponto ou canais de difusão.
+ seja, através de canais ponto-a-ponto ou canais de difusão, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TANENBAUM"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -746,7 +828,7 @@ Topologias com Canais Ponto-a-Ponto
 
 \begin_layout Standard
 A rede é composta de diversas linhas de comunicação, cada linha sendo associada
- à conexão de um par de estação
+ à conexão de um par de estação 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Topologias-ponto-a-ponto:-estrel"
@@ -803,6 +885,13 @@ Topologias ponto-a-ponto: estrela, anel, malha regular, malha irregular
 \begin_layout Plain Layout
 \align center
 Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Moises"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -822,7 +911,7 @@ reference "fig:Topologias-das-redes"
 
 \end_inset
 
-são caracterizadas pelo compartilhamento por todas as estações, de um único
+ são caracterizadas pelo compartilhamento por todas as estações, de um único
  canal de comunicação.
  Neste caso, as mensagens enviadas por uma estação são recebidas por todas
  as demais conectadas ao suporte de transmissão, sendo que um campo de endereço
@@ -894,6 +983,13 @@ Topologias das redes em difusão: barramento, satélite e anel
 \begin_layout Plain Layout
 \align center
 Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Moises"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -902,7 +998,7 @@ Fonte:
 \end_layout
 
 \begin_layout Section
-Tipos de comunicação serial
+Tipos de Comunicação Serial
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Tipos-de-comunicação"
@@ -915,7 +1011,14 @@ name "sec:Tipos-de-comunicação"
 \begin_layout Standard
 O tipo de comunicação define a conexão entre os equipamentos e a maneira
  como é feita a troca das informações no que se diz respeito ao caminho
- percorrido pelos dados.
+ percorrido pelos dados, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rossit"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -934,8 +1037,11 @@ reference "fig:Comunicação-serial-ponto-a-ponto"
 
 \end_inset
 
-é uma arquitetura de redes onde cada um dos pontos ou nós da rede (host)
- funciona tanto como cliente quanto como servidor, permitindo compartilhamentos
+ é uma arquitetura de redes onde cada um dos pontos ou nós da rede (
+\shape italic
+host
+\shape default
+) funciona tanto como cliente quanto como servidor, permitindo compartilhamentos
  de serviços e dados sem a necessidade de um servidor central.
  Sendo amplamente empregada em equipamentos autônomos, que normalmente realizam
  suas tarefas sozinhos, mas necessitam de configuração ou dados para manipulação
@@ -985,7 +1091,14 @@ Comunicação serial ponto-a-ponto
 
 \begin_layout Plain Layout
 \align center
-Fonte:
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rossit"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1056,7 +1169,14 @@ Comunicação serial mestre - escravo
 
 \begin_layout Plain Layout
 \align center
-Fonte:
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rossit"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1113,6 +1233,13 @@ Comunicação serial multimestre
 \begin_layout Plain Layout
 \align center
 Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rossit"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1174,7 +1301,14 @@ Produtor-Consumidor
 
 \begin_layout Plain Layout
 \align center
-Fonte:
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rossit"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1210,19 +1344,33 @@ A camada n de uma máquina se comunica com a camada n de outra máquina.
  Assim um serviço é um conjunto de primitivas (operações) que uma camada
  oferece à camada situada acima dela e o protocolo é um conjunto de regras
  que controla o formato e o significado dos pacotes ou mensagens que são
- trocadas pelas entidades pares contidas em uma camada (TANENBAUM, 2003).
+ trocadas pelas entidades pares contidas em uma camada 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TANENBAUM"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Entre cada par de camadas adjacentes existe uma interface.
  A interface define as operações e os serviços que a camada inferior tem
- a oferecer à camada que se encontra acima dela (TANENBAUM, 2003).
+ a oferecer à camada que se encontra acima dela.
 \end_layout
 
 \begin_layout Standard
 Um conjunto de camadas e protocolos é chamado arquitetura de rede.
  Uma lista de protocolos usados por um determinado sistema, um protocolo
- por camada, é chamada pilha de protocolos (TANENBAUM, 2003).
+ por camada, é chamada pilha de protocolos 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TANENBAUM"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1237,11 +1385,31 @@ International Standards Organization
 Open Systems Interconnection
 \shape default
 ), pois ele trata da interconexão de sistemas abertos — ou seja, sistemas
- que estão abertos à comunicação com outros sistemas (TANENBAUM, 2003).
+ que estão abertos à comunicação com outros sistemas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TANENBAUM"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-O modelo OSI define sete camadas conforme descrito na tabela 
+O modelo OSI define sete camadas segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{IRC}
+\end_layout
+
+\end_inset
+
+ conforme descrito na tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:-Modelo-OSI"
@@ -1269,7 +1437,7 @@ name "tab:-Modelo-OSI"
 
 \end_inset
 
- Modelo OSI
+ Modelo de Referência OSI
 \end_layout
 
 \end_inset
@@ -2434,7 +2602,7 @@ Diâmetro dos condutores.
 \end_layout
 
 \begin_layout Legend
-Fonte: o próprio autor
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -2450,7 +2618,7 @@ Na realidade, os dados não são transferidos diretamente da camada n de uma
  baixa.
  Abaixo da camada 1 encontra-se o meio físico através do qual se dá a comunicaçã
 o propriamente dita.
- Na Figura 
+ Na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Modelo-de-Referência"
@@ -2458,7 +2626,14 @@ reference "fig:Modelo-de-Referência"
 \end_inset
 
 , a comunicação virtual é mostrada por linhas pontilhadas e a comunicação
- física por linhas contínuas (TANENBAUM, 2003).
+ física por linhas contínuas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TANENBAUM"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2478,7 +2653,7 @@ name "fig:Modelo-de-Referência"
 
 \end_inset
 
-Modelo de Referência OSI
+Comunicação entre as camadas do Modelo OSI
 \end_layout
 
 \end_inset
@@ -2489,7 +2664,8 @@ Modelo de Referência OSI
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename modeloOsi2.jpg
+	filename Modelo OSI_new.jpg
+	scale 80
 
 \end_inset
 
@@ -2498,7 +2674,14 @@ Modelo de Referência OSI
 
 \begin_layout Plain Layout
 \align center
-Fonte:
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "apostila"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2564,7 +2747,20 @@ Controller Area Network
  de se interligar os componentes eletrônicos dos veículos modernos.
  Em decorrência da sua normalização e baixo custo de produção, tornou-se
  amplamente utilizado na indústria.
- O CAN consiste basicamente de um padrão de hardware com diferentes tipos
+ segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{SistemasAutoEmbarcados}
+\end_layout
+
+\end_inset
+
+o CAN consiste basicamente de um padrão de hardware com diferentes tipos
  de quadros (
 \shape italic
 frames
@@ -2578,7 +2774,14 @@ reference "tab:Redes-CAN"
 
 \end_inset
 
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CANoe"
 
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2895,7 +3098,7 @@ CAN FD > 1 Mbps
 
 \begin_layout Plain Layout
 \align center
-Fonte: o própro autor
+Fonte: Autora
 \end_layout
 
 \begin_layout Plain Layout
@@ -2935,6 +3138,36 @@ acknowledgement
 
 \begin_layout Subsection
 Características
+\end_layout
+
+\begin_layout Standard
+Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{LaboratoryCourseIndustrialAutomation}
+\end_layout
+
+\end_inset
+
+ e 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{CANET}
+\end_layout
+
+\end_inset
+
+ as características de uma rede CAN são enumeradas:
 \end_layout
 
 \begin_layout Itemize
@@ -3000,7 +3233,7 @@ Retransmissão automática de mensagens “em espera” logo que o barramento
 \end_layout
 
 \begin_layout Subsection
-A arquitetura CAN
+A Arquitetura CAN
 \end_layout
 
 \begin_layout Standard
@@ -3013,23 +3246,50 @@ data-link
 \shape italic
 (physical-layer
 \shape default
-) conforme Tabela 
+) conforme tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Arquitetura-CAN"
 
 \end_inset
 
- .
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CANoe"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Utilizando o protocolo CAN, a ligação entre o nível físico (nível 1 OSI)
  e o de aplicação (nível 7 OSI) é feita utilizando vários protocolos emergentes
  ou através de software desenvolvido pelo usuário.
- O exemplo de um protocolo, baseado em CAN, padrão industrial ao nível de
- aplicação é o DeviceNet da Allen-Bradley o qual é utilizado para ligar
- em rede controladores lógicos programáveis e sensores inteligentes.
+ O exemplo de um protocolo, baseado em CAN, segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {NETOartigofinal}
+\end_layout
+
+\end_inset
+
+ padrão industrial ao nível de aplicação é o 
+\shape italic
+DeviceNet
+\shape default
+ da 
+\shape italic
+Allen-Bradley
+\shape default
+ o qual é utilizado para ligar em rede CLPs (controladores lógicos programáveis)
+ e sensores inteligentes.
 \end_layout
 
 \begin_layout Standard
@@ -4094,7 +4354,7 @@ Conectores
 
 \begin_layout Plain Layout
 \align center
-Fonte: o própro autor
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -4143,7 +4403,7 @@ http://cache.freescale.com/files/microcontrollers/doc/data_sheet/BCANPSV2.pdf
 \begin_layout Standard
 LLC 
 \shape italic
-(Logical Link Control)
+(Logical Link Control):
 \shape default
  gerencia o controle e notificação de sobrecarga (
 \shape italic
@@ -4155,7 +4415,7 @@ overload
 \begin_layout Standard
 MAC 
 \shape italic
-(Medium Access Control)
+(Medium Access Control):
 \shape default
  fornece mecanismos de controle de acesso ao canal, o que torna possível
  vários nós se comunicarem dentro de uma rede de acesso múltiplo em um barrament
@@ -4172,7 +4432,7 @@ PLS (
 \shape italic
 Physical Layer Signalling
 \shape default
-) responsável pela codificação e decodificação de bits, 
+): responsável pela codificação e decodificação de bits, 
 \shape italic
 bit-timing
 \shape default
@@ -4184,7 +4444,7 @@ PMA (
 \shape italic
 Physical Medium Attachement
 \shape default
-) determina as características do transceptor.
+): determina as características do transceptor.
 \end_layout
 
 \begin_layout Standard
@@ -4192,7 +4452,7 @@ PMS (
 \shape italic
 physical Medium Specification
 \shape default
-) descreve juntamente com a PMA as camadas can de alta velocidade (
+): descreve juntamente com a PMA as camadas can de alta velocidade (
 \shape italic
 high-speed CAN
 \shape default
@@ -4208,7 +4468,7 @@ MDI (
 \shape italic
 Medium Dependent Interface
 \shape default
-) descreve o meio de transmissão juntamento com a PMS, além das conexões.
+): descreve o meio de transmissão juntamento com a PMS, além das conexões.
 \end_layout
 
 \begin_layout Standard
@@ -4216,9 +4476,9 @@ CIA-DS 102 (
 \shape italic
 Can in Automation
 \shape default
-) Nao existe nenhuma norma para a sub-camada MDI da camada física.
+): não existe nenhuma norma para a subcamada MDI da camada física.
  CiA DS-102 recomenda apenas o uso de conectores muito específicos (SUB-D9),
- bem como a descricao da pinagem do conectores.
+ bem como a descrição da pinagem do conectores.
 \end_layout
 
 \begin_layout Standard
@@ -4300,7 +4560,14 @@ Camada Física
 \end_layout
 
 \begin_layout Standard
-No padrão internacional ISO a camada física é definida como segue:
+No padrão internacional ISO a camada física é definida como segue, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LaboratoryCourseIndustrialAutomation"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Itemize
@@ -4350,7 +4617,7 @@ reference "fig:Lógica-AND"
 \end_inset
 
 .
- De acordo com a ISO 11898-2 (can alta velocidade), atribui-se valor lógico
+ De acordo com a ISO 11898-2 (CAN alta velocidade), atribui-se valor lógico
  "1" para uma tensão diferencial 
 \shape italic
 diff
@@ -4373,7 +4640,7 @@ diff
  diff
 \shape default
  < 0,9Volts, o valor lido no barramento será considerado como uma falha.Em
- contrapartida a ISO 11898-3 (can baixa velocidade) atribui uma tensão diferenci
+ contrapartida a ISO 11898-3 (CAN baixa velocidade) atribui uma tensão diferenci
 al típica de 5 volts para a lógica "1", e uma típica tensão diferencial
  de 2 volts corresponde a lógica "0".
  A figura
@@ -4423,7 +4690,12 @@ Lógica AND
 
 \begin_layout Plain Layout
 \align center
-Fonte: Vector
+Fonte: https://elearning.vector.com/index.php?seite=vl_can_introduction_en&root=
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+378422&wbt_ls_kapitel_id=489560&wbt_ls_seite_id=489584&d=yes
 \end_layout
 
 \begin_layout Plain Layout
@@ -4473,7 +4745,12 @@ name "fig:Nível-lógico"
 
 \begin_layout Plain Layout
 \align center
-Fonte: Vector
+Fonte: https://elearning.vector.com/index.php?seite=vl_can_introduction_en&root=
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+378422&wbt_ls_kapitel_id=489560&wbt_ls_seite_id=489580&d=yes
 \end_layout
 
 \begin_layout Plain Layout
@@ -4502,7 +4779,7 @@ Taxa de dados: para assegurar uma segura sincronização de bits o intervalo
  este valor a sistemas com comprimento de barramento até 40 m.
 \end_layout
 
-\begin_layout Itemize
+\begin_layout Standard
 \begin_inset Note Comment
 status open
 
@@ -4528,7 +4805,7 @@ A principal tarefa da camada de enlace é transmitir e receber dados da rede.
 \end_layout
 
 \begin_layout Standard
-Can transmite mensagens usando quadros (
+CAN transmite mensagens usando quadros (
 \shape italic
 data frames
 \shape default
@@ -4537,6 +4814,13 @@ data frames
 \shape italic
 frames
 \shape default
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WesternMichigan"
+
+\end_inset
+
 : 
 \end_layout
 
@@ -4592,9 +4876,13 @@ frame
 \end_layout
 
 \begin_layout Standard
-A frame de dados no formato padrão e no formato estendido possuem a mesma
- estrutura, se diferenciando apenas nos campos de arbitragem e de controle
- conforme figura 
+A 
+\shape italic
+frame
+\shape default
+ de dados no formato padrão e no formato estendido possuem a mesma estrutura,
+ se diferenciando apenas nos campos de arbitragem e de controle conforme
+ figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Frame-de-dados"
@@ -4607,6 +4895,7 @@ reference "fig:Frame-de-dados"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -4634,6 +4923,7 @@ name "fig:Frame-de-dados"
 \align center
 \begin_inset Graphics
 	filename Formato de mensagens CAN (data frames)  22.jpg
+	scale 90
 
 \end_inset
 
@@ -4642,7 +4932,7 @@ name "fig:Frame-de-dados"
 
 \begin_layout Plain Layout
 \align center
-Fonte: o próprio autor
+Fonte: Autora
 \end_layout
 
 \begin_layout Plain Layout
@@ -4668,7 +4958,59 @@ frame
 \end_layout
 
 \begin_layout Standard
-Os significados destes campos são: 
+Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {WesternMichigan}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {LaboratoryCourseIndustrialAutomation}
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {CANET}
+\end_layout
+
+\end_inset
+
+ e 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {CANoe}
+\end_layout
+
+\end_inset
+
+ os significados destes campos são: 
 \end_layout
 
 \begin_layout Description
@@ -4765,7 +5107,7 @@ Campo
 \series bold
 de dados
 \series default
- – o campo de dados suporta até 64 bits (8 bytes).
+ – O campo de dados suporta até 64 bits (8 bytes).
  
 \end_layout
 
@@ -4961,7 +5303,7 @@ reference "fig:Frame-de-Erro"
 \shape italic
  flag
 \shape default
- de sobrecarga consiste em seis bits “dominantes”.
+ de sobrecarga consiste em seis bits dominantes.
  Esta 
 \shape italic
 flag
@@ -5024,6 +5366,7 @@ name "fig:Frame-de-Erro"
 \align center
 \begin_inset Graphics
 	filename Framde de erro e sobrecarga3.jpg
+	scale 90
 
 \end_inset
 
@@ -5032,7 +5375,7 @@ name "fig:Frame-de-Erro"
 
 \begin_layout Plain Layout
 \align center
-Fonte: o próprio autor
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -5090,6 +5433,13 @@ Para a detecção de erros o protocolo CAN implementa seis mecanismos não
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Mecanismos-de-Detecção"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CANoe"
 
 \end_inset
 
@@ -5220,6 +5570,7 @@ Mecanismos de Detecção de Erros
 \align center
 \begin_inset Graphics
 	filename Datensicherung2.jpg
+	scale 90
 
 \end_inset
 
@@ -5228,7 +5579,7 @@ Mecanismos de Detecção de Erros
 
 \begin_layout Plain Layout
 \align center
-Fonte: o próprio autor
+Fonte: Autora
 \end_layout
 
 \begin_layout Plain Layout
@@ -5278,6 +5629,7 @@ reference "fig:Rede-CAN"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -5308,6 +5660,7 @@ Rede CAN
 \align center
 \begin_inset Graphics
 	filename Rede CAN.jpg
+	scale 80
 
 \end_inset
 
@@ -5316,7 +5669,7 @@ Rede CAN
 
 \begin_layout Plain Layout
 \align center
-Fonte: o própro autor
+Fonte: Autora
 \end_layout
 
 \begin_layout Plain Layout
@@ -5378,7 +5731,14 @@ Carrier Sense Multiple Access / Collision Detection with Non-Destructive
  cessará sua transmissão e o de maior prioridade continuará enviando sua
  mensagem deste ponto, sem ter que reiniciá-la.
  Isto é feito comparando-se o valor lógico presente no barramento com o
- valor enviado por cada unidade.
+ valor enviado por cada unidade, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "semeadora"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -5409,25 +5769,52 @@ Conceito
 \end_layout
 
 \begin_layout Standard
-A rede DeviceNet é uma rede de baixo nível que proporciona comunicações
- utilizando o mesmo meio físico entre equipamentos, desde os mais simples
- (como sensores e atuadores), até aos mais complexos, como Controladores
- Lógicos Programáveis (CLP) e microcomputadores.
+Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {Smar}
+\end_layout
+
+\end_inset
+
+ a rede 
+\shape italic
+DeviceNet
+\shape default
+ é uma rede de baixo nível que proporciona comunicações utilizando o mesmo
+ meio físico entre equipamentos, desde os mais simples (como sensores e
+ atuadores), até aos mais complexos, como Controladores Lógicos Programáveis
+ (CLP) e microcomputadores.
  Ela possui o protocolo aberto, tendo um número expressivo de fornecedores
  de equipamentos que adotaram o protocolo.
  
 \end_layout
 
 \begin_layout Standard
-Apresentado em 1994 originalmente pela Allen-Bradley, o DeviceNet teve sua
- tecnologia transferida para a ODVA em 1995.
+Apresentado em 1994 originalmente pela 
+\shape italic
+Allen-Bradley
+\shape default
+, o 
+\shape italic
+DeviceNet
+\shape default
+ teve sua tecnologia transferida para a ODVA em 1995.
  A ODVA (
 \shape italic
 Open DeviceNet Vendor Association
 \shape default
 ) é uma organização sem fins lucrativos composta por centenas de empresas
- ao redor do mundo que mantém, divulga e promove o DeviceNet e outras redes
- baseadas no protocolo CIP (
+ ao redor do mundo que mantém, divulga e promove o 
+\shape italic
+DeviceNet
+\shape default
+ e outras redes baseadas no protocolo CIP (
 \shape italic
 Common Industrial Protocol
 \shape default
@@ -5435,13 +5822,24 @@ Common Industrial Protocol
 \end_layout
 
 \begin_layout Standard
-A rede DeviceNet é classificada no nível de rede chamada 
+A rede 
+\shape italic
+DeviceNet
+\shape default
+ é classificada no nível de rede chamada 
 \shape italic
 devicebus
 \shape default
 , cuja características principais são: alta velocidade, comunicação a nível
  de byte englobando comunicação com equipamentos discretos e analógicos
- e alto poder de diagnostico dos dispositivos da rede.
+ e alto poder de diagnostico dos dispositivos da rede, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MonografiaDeviceNET"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -5471,6 +5869,36 @@ Os dados cíclicos representam informações trocadas periodicamente entre
 
 \begin_layout Subsection
 Características
+\end_layout
+
+\begin_layout Standard
+Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {MonografiaDeviceNET}
+\end_layout
+
+\end_inset
+
+ e 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {Rossit}
+\end_layout
+
+\end_inset
+
+ as características de uma rede DeviceNet são enumeradas:
 \end_layout
 
 \begin_layout Itemize
@@ -5569,10 +5997,27 @@ A Arquitetura DeviceNet
 \end_layout
 
 \begin_layout Standard
-A camada de enlace da rede DeviceNet é baseada no protocolo CAN e a camada
- de aplicação no protocolo CIP, que define uma arquitetura baseada em objetos
- e conexões entre eles e é independente das outras duas camadas.
- Essas camadas são mostradas na Tabela 
+A camada de enlace da rede 
+\shape italic
+DeviceNet
+\shape default
+ segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {ODVA}
+\end_layout
+
+\end_inset
+
+ é baseada no protocolo CAN e a camada de aplicação no protocolo CIP, que
+ define uma arquitetura baseada em objetos e conexões entre eles e é independent
+e das outras duas camadas.
+ Essas camadas são mostradas na tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Arquitetura-DeviceNet"
@@ -6192,7 +6637,7 @@ DeviceNet camada física
 
 \begin_layout Plain Layout
 \align center
-Fonte: [o próprio autor]
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -6214,15 +6659,26 @@ http://odva.or.kr/popup/2002oct_2.htm
 \end_layout
 
 \begin_layout Standard
-A rede DeviceNet identifica a camada física mas não usa a mesma interface
- de camada física como a ISO 11898, mas está baseado no protocolo de CAN
- Bus.
- DeviceNet provê isolamento óptico para proteção adicional e não usa conectores
- de 9- pinos tipo subD.
- Ela aborda três taxas de bauds: 125, 250 e 50048 Kbaud (500 metros) com
- até 64 dispositivos no barramento diferencial.
+A rede 
+\shape italic
+DeviceNet
+\shape default
+ identifica a camada física mas não usa a mesma interface de camada física
+ como a ISO 11898, mas está baseado no protocolo de CAN Bus.
+ 
+\shape italic
+DeviceNet
+\shape default
+ provê isolamento óptico para proteção adicional e não usa conectores de
+ 9- pinos tipo subD.
+ Ela aborda três taxas de 
+\shape italic
+bauds
+\shape default
+: 125, 250 e 50048 Kbaud (500 metros) com até 64 dispositivos no barramento
+ diferencial.
  Além disso o cabo leva 24 volts para alimentação nos dispositivos, como
- mostrado na Figura 
+ mostrado na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Meio-físico-do"
@@ -6266,6 +6722,7 @@ name "fig:Meio-físico-do"
 \align center
 \begin_inset Graphics
 	filename meio físico DeviceNet.jpg
+	scale 80
 
 \end_inset
 
@@ -6274,7 +6731,7 @@ name "fig:Meio-físico-do"
 
 \begin_layout Plain Layout
 \align center
-Fonte:[ROSSIT (2004)]
+Fonte: http://www.mecatronicaatual.com.br/educacao/1138-rede-devicenet
 \end_layout
 
 \end_inset
@@ -6304,8 +6761,11 @@ scanner
 
 \begin_layout Itemize
 63 para novos equipamentos que venham a ser incluídos, considerando-se que
- segundo os padrões DeviceNet, os equipamentos novos saem de fábrica com
- o endereço 63.
+ segundo os padrões 
+\shape italic
+DeviceNet
+\shape default
+, os equipamentos novos saem de fábrica com o endereço 63.
 \end_layout
 
 \begin_layout Standard
@@ -6315,7 +6775,20 @@ a baseada em objetos e conexões entre eles e é independente das outras camadas
 \end_layout
 
 \begin_layout Standard
-O CIP tem dois objetivos principais:
+Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline {Smar}
+\end_layout
+
+\end_inset
+
+ o CIP tem dois objetivos principais:
 \end_layout
 
 \begin_layout Itemize
@@ -6330,13 +6803,17 @@ Transporte de informações de configuração e diagnóstico do sistema sendo
 \end_layout
 
 \begin_layout Standard
-Um nó DeviceNet é então modelado por um conjunto de objetos CIP, os quais
- encapsulam dados e serviços e determinam assim seu comportamento.
+Um nó 
+\shape italic
+DeviceNet
+\shape default
+ é então modelado por um conjunto de objetos CIP, os quais encapsulam dados
+ e serviços e determinam assim seu comportamento.
  
 \end_layout
 
 \begin_layout Section
-TCP/IP (
+Suite de Protocolos TCP/IP (
 \shape italic
 Transmission Control Protocol / Internet Protocol
 \shape default
@@ -6422,28 +6899,64 @@ Advanced Research Project Agency Network
 links
 \shape default
  (vínculos) de comunicação com altas velocidades utilizando redes de comutação
- de pacotes.
+ de pacotes, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "apostilaTCPiP"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 O TCP/IP não é apenas um protocolo, mas uma suíte ou grupo de protocolos
  que se tornou padrão na indústria por oferecer comunicação em ambientes
- heterogêneos, tais como sistemas operacionais UNIX, Windows, MAC OS, minicomput
-adores e até mainframes.
+ heterogêneos, tais como sistemas operacionais 
+\shape italic
+UNIX
+\shape default
+, 
+\shape italic
+Windows
+\shape default
+, 
+\shape italic
+MAC
+\shape default
+ 
+\shape italic
+OS
+\shape default
+, minicomputadores e até mainframes, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "apostilaTCPiP"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Hoje o TCP/IP se refere a uma suíte de protocolos utilizados na Internet,
  a rede das redes.
  Este conjunto padrão de protocolos especifica como computadores se comunicam
- e fornece as convenções para a conexão e rota no tráfego da Internet através
- de conexões estabelecidas por roteadores.
+ e fornece as convenções para a conexão e rota no tráfego da internet através
+ de conexões estabelecidas por roteadores, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "apostilaTCPiP"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Os protocolos TCP/IP são organizados em quatro camadas: camada de Interface
- de rede, Internet, Transporte e Aplicacao.
- Essas camadas e sua relacao com o modelo OSI podem ser comparadas na Figura
+Os protocolos TCP/IP são organizados em quatro camadas: camada de interface
+ de rede, internet, transporte e aplicação.
+ Essas camadas e sua relação com o modelo OSI podem ser comparadas na figura
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6493,7 +7006,7 @@ name "fig:Suíte-de-Protocolos"
 
 \begin_layout Plain Layout
 \align center
-Fonte
+Fonte: https://tech4it.files.wordpress.com/2010/05/screenshot110.gif
 \end_layout
 
 \end_inset
@@ -6540,15 +7053,15 @@ protocolo de unidade de dados
 \end_inset
 
 ) através das camadas.
- Cada camada define seu próprio PDU, nominalmente, Segmento (
+ Cada camada define seu próprio PDU, nominalmente, segmento (
 \shape italic
-Segment
+segment
 \shape default
-) para a camada de transporte, Pacote (ou datagrama, 
+) para a camada de transporte, pacote (ou datagrama, 
 \shape italic
 packet
 \shape default
-) para a camada de rede e Quadro (
+) para a camada de rede e quadro (
 \shape italic
 frame
 \shape default
@@ -6562,12 +7075,22 @@ s de controle do protocolo em uso (cabeçalho).
 \shape italic
 host
 \shape default
- de origem até atingirem o nível físico e serem transmitidos ao host de
- destino que irá desencapsular estes dados até chegar ao nível de aplicação,
+ de origem até atingirem o nível físico e serem transmitidos ao 
+\shape italic
+host
+\shape default
+ de destino que irá desencapsular estes dados até chegar ao nível de aplicação,
  como mostrado na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Fluxo-de-Dados"
+
+\end_inset
+
+, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hamerski"
 
 \end_inset
 
@@ -6614,6 +7137,13 @@ name "fig:Fluxo-de-Dados"
 \begin_layout Plain Layout
 \align center
 Fonte:
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hamerski"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -6623,7 +7153,25 @@ Fonte:
 
 \begin_layout Standard
 No TCP/IP, além do endereço físico existem outros dois níveis de endereçamento:
- Nomes de Domínios e Endereços de IP
+ Nomes de Domínios e Endereços de IP.
+ Os nomes de domínio são utilizados em ambiente TCP/IP através de um serviço
+ denominado 
+\shape italic
+DNS Domain Name Server
+\shape default
+ (Servidor de Nome de Domínio).
+ O DNS oferece um esquema de nomes hierárquico para os hosts TCP/IP.
+ Esse esquema permite às organizações dividirem logicamente as suas redes
+ e delegar autoridade aos administradores de rede em cada uma das áreas,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "apostilaTCPiP"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -6632,13 +7180,16 @@ Camada de Interface de Rede
 
 \begin_layout Standard
 A camada de interface de rede é a camada de mais baixo nível dentro do modelo.
- Ela é responsável por colocar e retirar quadros (frames, pacotes) no meio
- físico.
+ Ela é responsável por colocar e retirar quadros (
+\shape italic
+frames
+\shape default
+, pacotes) no meio físico.
 \end_layout
 
 \begin_layout Standard
 Ethernet é um padrão de rede que compõem a suíte TCP/IP e que define as
- camadas física e de enlace do modelo OSI, conforme Tabela 
+ camadas física e de enlace do modelo OSI, conforme tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Arquitetura-Ethernet"
@@ -7070,7 +7621,7 @@ conectores
 
 \begin_layout Plain Layout
 \align center
-Fonte:[o proprio autor]
+Fonte: Autora
 \end_layout
 
 \end_inset
@@ -7101,7 +7652,14 @@ hubs
 \shape italic
 switchs
 \shape default
- (topologia física de estrela ).
+ (topologia física de estrela ), 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wut"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -7116,7 +7674,14 @@ Carrier Sense Multiple Access with Collision Detection
  colidindo.
  A primeira estacão que detectar a colisão interrompe imediatamente sua
  transmissão, reiniciando o processo de transmissão depois de um período
- de tempo, de forma a tornar improvável que uma nova colisão aconteça.
+ de tempo, de forma a tornar improvável que uma nova colisão aconteça, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ugb"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -7129,12 +7694,22 @@ address
  É composto por 6 bytes representados normalmente na forma hexadecimal,
  sendo os 3 primeiros bytes usados para identificação do fabricante e os
  próximos 3 para o número sequencial da placa em questão, por exemplo: 00-C0-3D-
-00-27-8B.
+00-27-8B, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "wut"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-O frame (quadro) de ethernet é dividido em campos como mostrado na Figura
- 
+O 
+\shape italic
+frame
+\shape default
+ (quadro) de ethernet é dividido em campos como mostrado na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Frame-de-Ethernet"
@@ -7209,7 +7784,7 @@ name "fig:Frame-de-Ethernet"
 
 \begin_layout Plain Layout
 \align center
-Fonte [http://tiigr1214nunomartins.blogspot.com.br/p/quando-o-router-inicia.html]
+Fonte: http://tiigr1214nunomartins.blogspot.com.br/p/quando-o-router-inicia.html
 \end_layout
 
 \begin_layout Plain Layout
@@ -7230,8 +7805,23 @@ Preâmbulo (
 \shape italic
 Preamble
 \shape default
-): Sequência alternada de 1 e 0 informando às estações receptoras que um
- frame está começando.
+): Sequência alternada de 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+ e 
+\begin_inset Quotes eld
+\end_inset
+
+0
+\begin_inset Quotes erd
+\end_inset
+
+ informando às estações receptoras que um frame está começando.
  
 \end_layout
 
@@ -7353,7 +7943,14 @@ host
 \shape italic
 host identification
 \shape default
-, endereço de nó).
+, endereço de nó), 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hamerski"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -7369,7 +7966,7 @@ Este protocolo recebe os dados da camada de transporte na forma de segmentos.
  Um datagrama IP pode ser dividido em: cabeçalho IP e dados.
  Os dados (tamanho livre, definido pelo tipo de rede) contém o dado que
  está sendo comunicado em si vem logo após o cabeçalho.
- O cabeçalho IP possui os campos retratados na Figura 
+ O cabeçalho IP possui os campos retratados na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Datagrama/Pacote-IP"
@@ -7421,7 +8018,7 @@ Cabecalho do Datagrama/Pacote IPV4
 
 \begin_layout Plain Layout
 \align center
-Fonte [http://www.techtudo.com.br/artigos/noticia/2012/05/o-que-e-ip.html]
+Fonte: http://www.techtudo.com.br/artigos/noticia/2012/05/o-que-e-ip.html
 \end_layout
 
 \end_inset
@@ -7556,7 +8153,7 @@ to Live
 \end_layout
 
 \begin_layout Description
-Protocolo (8bits): diz respeito a qual protocolo deverá receber o datagrama
+Protocolo (8bits): Diz respeito a qual protocolo deverá receber o datagrama
  na próxima camada, identificando qual protocolo que está ocupando a área
  de dados.
  Exemplos: ICMP=1, TCP=6, UDP=17;
@@ -7589,7 +8186,7 @@ Endereços
 \series bold
 de origem e destino
 \series default
- (ambos com 32bits): É o endereco de IP que caracteriza por completo toda
+ (ambos com 32bits): É o endereço de IP que caracteriza por completo toda
  informação sobre endereçamento , necessária ao processo de roteamento.
 \end_layout
 
@@ -7610,7 +8207,11 @@ http://www.inf.ufg.br/~fabrizzio/tcpip/parte06.pdf
 Na passagem da camada de internet para a camada de interface de rede o pacote/da
 tagrama IP é dividido em novos pacotes IP, fragmentos do original, ocorrendo
  novamente a fragmentação pelos roteadores, aonde cada novo pacote IP cabe
- em um único quadro/frame de ethernet.
+ em um único quadro/ 
+\shape italic
+frame
+\shape default
+ de ethernet.
  No destino final o processo é revertido, ocorrendo a remontagem do datagrama
  original.
 \end_layout
@@ -7626,7 +8227,14 @@ Address Resolution Protocol
 \begin_layout Standard
 ARP é responsável por mapear um endereço IP para um endereço tipo MAC, através
  de uma tabela que associa a localização lógica de uma determinada máquina
- com a sua estrutura física de comunicação.
+ com a sua estrutura física de comunicação, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hamerski"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -7639,7 +8247,14 @@ Internet Control Messsage Protocol
 
 \begin_layout Standard
 ICMP é responsável por enviar mensagens e relatar erros relacionados a entrega
- de um pacote.
+ de um pacote, 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hamerski"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -7659,13 +8274,29 @@ hosts
 \begin_layout Standard
 O protocolo fragmenta os dados da camada de aplicação por meio dos roteadores
  em segmentos e os transmite para a camada de internet.
- No host destino, o protocolo TCP remonta os segmentos.
+ No 
+\shape italic
+host
+\shape default
+ destino, o protocolo TCP remonta os segmentos.
  O TCP cuida também do controle de fluxo, impedindo que um transmissor rápido
- sobrecarregue um receptor lento com um volume de mensagens muito grande.
+ sobrecarregue um receptor lento com um volume de mensagens muito grande,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hamerski"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Todas as conexões TCP são full-duplex e ponto a ponto.
+Todas as conexões TCP são 
+\shape italic
+full-duplex
+\shape default
+ e ponto a ponto.
  
 \shape italic
 Full-duplex 
@@ -7677,17 +8308,39 @@ quer dizer que o tráfego pode ser feito em ambas as direções ao mesmo tempo.
 
 \begin_layout Standard
 O serviço TCP é obtido quando tanto o transmissor quanto o receptor criam
- pontos terminais, denominados sockets.
- Cada socket tem um endereço que consiste no endereço IP do host mais um
- número de 16 bits local para esse host, chamado porta.
+ pontos terminais, denominados 
+\shape italic
+sockets
+\shape default
+.
+ Cada 
+\shape italic
+socket
+\shape default
+ tem um endereço que consiste no endereço IP do 
+\shape italic
+host
+\shape default
+ mais um número de 16 bits local para esse 
+\shape italic
+host
+\shape default
+, chamado porta.
  Porta é o nome usado pelo TCP para um TSAP (
 \shape italic
 transport service acess point
 \shape default
 ).
  Para que uma conexão funcione, é necessário que uma conexão seja explicitamente
- estabelecida entre uma socket da máquina transmissora e uma socket da máquina
- receptora.
+ estabelecida entre uma 
+\shape italic
+socket
+\shape default
+ da máquina transmissora e uma 
+\shape italic
+socket
+\shape default
+ da máquina receptora.
  
 \end_layout
 
@@ -7740,7 +8393,7 @@ An IP address gets a packet to a machine, a port lets the machine decide
 
 \begin_layout Standard
 Assim como o IP, o TCP é dividido em dados e cabeçalho.
- A estrutura do cabeçalho TCP é mostrada na Figura 
+ A estrutura do cabeçalho TCP é mostrada na figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Formato-do-Segmento"
@@ -7790,7 +8443,7 @@ name "fig:Formato-do-Segmento"
 
 \begin_layout Plain Layout
 \align center
-Fonte[https://rapazes.wordpress.com/2010/05/27/camada-de-transporte-tcpip/]
+Fonte: https://rapazes.wordpress.com/2010/05/27/camada-de-transporte-tcpip/
 \end_layout
 
 \begin_layout Plain Layout
@@ -7824,7 +8477,7 @@ Porta
 \series bold
 de origem e destino 
 \series default
-(16 bits): usa um par de 16-bit para endereçamento de portas de origem e
+(16 bits): Usa um par de 16-bit para endereçamento de portas de origem e
  destino.
 \end_layout
 
@@ -7964,13 +8617,30 @@ Aplication Program Interfaces
  Seu objetivo é facilitar a implementação de programas de aplicação que
  fazem o uso de serviços de comunicação da rede.
  APIs são usualmente oferecidas para alguns sistemas operacionais (por exemplo,
- Unix, Linux, Windows, etc) e em algumas linguagens (por exemplo, C, C++,
- C#, Java, etc).
+ 
+\shape italic
+Unix, Linux, Windows
+\shape default
+, etc) e em algumas linguagens (por exemplo, C, C++, C#, Java, etc), 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "apostila"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Uma das APIs bem difundida é a Berkeley Socket, API em linguagem C com TCP
- em UNIX BSD (
+Uma das APIs bem difundida é a 
+\shape italic
+Berkeley
+\shape default
+ 
+\shape italic
+Socket
+\shape default
+, API em linguagem C com TCP em UNIX BSD (
 \shape italic
 UNIX Berkeley Software Distribution
 \shape default
@@ -7979,7 +8649,7 @@ UNIX Berkeley Software Distribution
 \shape italic
 system calls
 \shape default
-) como nos exemplos da Tabela 
+) como nos exemplos da tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Chamadas-de-sistema"
@@ -7990,10 +8660,17 @@ reference "tab:Chamadas-de-sistema"
 \end_layout
 
 \begin_layout Standard
-A interface entre um programa de aplicacao e os protocolos de comunicacao
+A interface entre um programa de aplicação e os protocolos de comunicação
  em um sistema operacional é conhecida como API.
- Sockets proveem uma implementacao da abstracao SAP (service access point)
- na camada de transporte na suite TCP/IP, a qual faz parte do BSD Unix.
+ 
+\shape italic
+Sockets
+\shape default
+ proveem uma implementação da abstração SAP (
+\shape italic
+service access point
+\shape default
+) na camada de transporte na suíte TCP/IP, a qual faz parte do BSD Unix.
 \end_layout
 
 \begin_layout Standard
@@ -8316,12 +8993,37 @@ ver se tem mensagens
 
 \begin_layout Plain Layout
 \align center
-Fonte[]
+Fonte: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "apostila"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+A
+\shape italic
+ Socketcan
+\shape default
+ prove uma interface de 
+\shape italic
+socket
+\shape default
+ para o espaço de aplicações do usuário construída baseada na camada de
+ rede do 
+\shape italic
+Linux
+\shape default
+.
+ 
 \end_layout
 
 \end_body

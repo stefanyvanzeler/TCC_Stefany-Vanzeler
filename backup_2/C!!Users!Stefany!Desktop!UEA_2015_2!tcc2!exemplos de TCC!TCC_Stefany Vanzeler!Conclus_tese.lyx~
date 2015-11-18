@@ -1,0 +1,204 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass abntex2
+\begin_preamble
+\autor{Walter Andrés Vermehren Valenzuela}
+\titulo{título }
+\orientador[Orientador:\vspace{1mm}\\ ]{José Sérgio da Rocha Neto }
+\coorientador[Co-orientador:\vspace{1mm}\\ ]{Antonio Marcus Nogueira Lima }
+\comentario{texto com a natureza e o objetivo do trabalho }
+\instituicao{Universidade Federal de Campina Grande \par Centro de Engenharia Elétrica e informática \vskip 10mm{ Programa de Pós-Graduação em Engenharia Elétrica}}
+\local{Campina Grande }
+\data{data (ano do depósito) }
+% this command was inserted by lyx2lyx
+\usepackage{multirow}
+\end_preamble
+\options ruledheader, brazil
+\use_default_options false
+\maintain_unincluded_children false
+\language brazilian
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+CONCLUSÕES
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:conclusões"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As redes industriais vêm sendo cada vez mais utilizadas devido ao desenvolviment
+o da informática e a constante redução dos custos de componentes microcontrolado
+s, o que possibilitou o desenvolvimento dos sistemas com comunicação serial
+ em larga escala aplicados às redes de comunicação e ao desenvolvimento
+ de vários protocolos de comunicação digital.
+ Elas apresentam como grande vantagem à redução significativa de cabos de
+ controle e seus acessórios que interligam os diversos dispositivos presentes
+ em um sistema automatizado para transmitir informações, que podem ser de
+ Input/Output (I/O), parâmetros e diagnósticos, proporcionando assim aumento
+ da eficiência, qualidade e segurança no sistema produtivo, além de maior
+ facilidade na instalação, manutenção e configuração dos equipamentos, fornecime
+nto de diagnósticos rápidos e redução de custos.
+ 
+\end_layout
+
+\begin_layout Standard
+A utilização da arquitetura CAN torna-se uma alternativa econômica de rede
+ de dados para muitas aplicações industriais por prover um acondicionamento
+ entre sensores e atuadores e toda a distribuição de controle em tempo real
+ de dados através do barramento, além de possuir um sistema de gerenciamento
+ de erros confiável.
+ Aliado a esses fatos, é importante também existir uma interface entre a
+ rede CAN e as outras redes, proporcionando o seu controle e monitoramento
+ remoto.
+ A rede Ethernet TCP/IP tem sido amplamente também utilizada na indústria,
+ por poder carregar grande quantidade de dados e ser adequada para o nível
+ de gerenciamento na automação industrial, porém não sendo adequada para
+ sistemas em tempo real.
+ Diante deste cenário, este trabalho possibilitou a implementação de uma
+ 
+\shape italic
+gateway
+\shape default
+ entre esses dois protocolos e o desenvolvimento de um sistema de monitoramento
+ de barramento CAN, promovendo uma interface de monitoramento e de controle
+ de rede CAN.
+\end_layout
+
+\begin_layout Standard
+Os resultados obtidos durantes os testes segundo especificado no Capítulo
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:RESULTADOS-E-DISCUSSÕES"
+
+\end_inset
+
+ validaram as arquiteturas de hardware e software propostas na metodologia
+ adotada no desenvolvimento do trabalho.
+ Os módulos criados provaram ser uma alternativa econômica de 
+\shape italic
+gateway
+\shape default
+ entre redes e sistemas de monitoramento, podendo ser utilizado como uma
+ interface de aprendizado nas aulas de redes industriais no laboratório
+ de automação industrial da EST.
+\end_layout
+
+\begin_layout Standard
+A pesquisa também proporcionou ao aluno a consolidação de disciplinas estudadas
+ ao longo do curso
+\end_layout
+
+\begin_layout Section
+Dificuldades encontradas
+\end_layout
+
+\begin_layout Standard
+A principal dificuldade encontrada foi a compra dos materiais, que são importado
+s.
+\end_layout
+
+\begin_layout Section
+Trabalhos futuros
+\end_layout
+
+\begin_layout Standard
+Tem-se como trabalhos futuros 
+\end_layout
+
+\begin_layout Itemize
+Conectar o protótipo como servidor na internet;
+\end_layout
+
+\begin_layout Itemize
+Adicionar ECUs à rede, como sensores inteligentes e o CLP DeviceNET do laboratór
+io de automação industrial da EST;
+\end_layout
+
+\begin_layout Itemize
+Criar um sistema supervisório para a rede CAN utilizando o protótipo;
+\end_layout
+
+\begin_layout Itemize
+Implementar um módulo dentro do sistema de monitoramento para adicionar
+ ECUs virtuais na rede CAN;
+\end_layout
+
+\begin_layout Itemize
+Implementar outras 
+\shape italic
+gateways
+\shape default
+ utilizando o protótipo.
+\end_layout
+
+\end_body
+\end_document
